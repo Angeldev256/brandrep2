@@ -86,16 +86,16 @@
                         "grid-margin": "4rem"
                     },
                     fontFamily: {
-                        "label-bold": ["Hanken Grotesk"],
-                        "display-xl": ["Anton"],
-                        "headline-lg-mobile": ["Anton"],
-                        "body-lg": ["Hanken Grotesk"],
-                        "headline-lg": ["Anton"],
-                        "body-md": ["Hanken Grotesk"],
-                        "headline-md": ["Anton"],
-                        "hero": ["Space Grotesk", "sans-serif"],
-                        "headline": ["Space Grotesk", "sans-serif"],
-                        "display": ["Space Grotesk", "sans-serif"],
+                        "label-bold": ["Manrope"],
+                        "display-xl": ["Manrope"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "body-lg": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "body-md": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"],
+                        "hero": ["Space Grotesk", "Manrope"],
+                        "headline": ["Space Grotesk", "Manrope"],
+                        "display": ["Space Grotesk", "Manrope"],
                         "ui": ["Manrope", "sans-serif"],
                         "body": ["Manrope", "sans-serif"],
                         "button": ["Manrope", "sans-serif"],
@@ -295,13 +295,13 @@
 
         <!-- Mobile Drawer -->
         <div id="mobile-menu" class="hidden fixed inset-x-0 top-24 bg-surface border-b-2 border-outline-variant p-6 flex-col gap-4 shadow-xl lg:hidden transition-all duration-300">
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/about">About Us</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/services">Services</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/media">Media Inventory</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/project">Projects</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/insights">Insights</a>
-            <a href="/quotation" class="mt-4 w-full text-center bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 block">Request Quotation</a>
-            <a href="/contact" class="mt-2 w-full text-center bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg block">Contact Us</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/about.html">About Us</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/services.html">Services</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/media.html">Media Inventory</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/project.html">Projects</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/insight.html">Insights</a>
+            <a href="/quotation.html" class="mt-4 w-full text-center bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 block">Request Quotation</a>
+            <a href="contact.html" class="mt-2 w-full text-center bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg block">Contact Us</a>
         </div>
     </nav>
 
@@ -559,11 +559,7 @@
     <!-- ============================================================ -->
     <!--  FLOATING WHATSAPP WIDGET                                    -->
     <!-- ============================================================ -->
-    <a class="fixed bottom-8 right-8 z-[110] bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:scale-110 active:scale-95 transition-all flex items-center justify-center focus:outline-none"
-    href="https://api.whatsapp.com/send?phone=256701234567&text=Hello%21%20I%20would%20like%20to%20inquire%20about%20your%20services."
-    target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
-    <span class="material-symbols-outlined text-3xl">chat</span>
-</a>
+   
 
 <!-- ============================================================ -->
 <!--  SUCCESS MODAL                                                -->
@@ -724,6 +720,7 @@
         selectedServices.clear();
     }
 </script>
+<script src="/chatbot.js"></script>
 
 </body>
 

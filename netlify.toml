@@ -1,0 +1,6 @@
+[build]
+  publish = "public"   # change this to your actual build output folder (e.g., "dist" or "." if files are at root)
+
+[build.processing]
+  cleanUrls = true     # this removes .html from URLs automatically
+  trailingSlash = false # optional: removes trailing slashes (/about/ → /about)
