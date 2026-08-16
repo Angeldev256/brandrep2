@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">Brand Republic Logo</title>
+  <rect width="200" height="80" rx="18" fill="#0F1E58" />
+  <path d="M48 16h18c15 0 24 8 24 23 0 15-9 23-24 23H48V16Zm24 11c-5 0-8 3-8 8s3 8 8 8h5c6 0 9-3 9-8s-3-8-9-8h-5Zm24 11c0-13 7-20 19-20 6 0 11 2 15 5l-6 12c-2-2-5-3-8-3-5 0-8 3-8 9 0 5 2 8 8 8 3 0 6-1 8-3l6 12c-4 3-9 5-15 5-12 0-19-7-19-20Z" fill="#FF6A00" />
+  <path d="M96 16h18v48H96z" fill="#FFFFFF" />
+  <path d="M132 16h18v48h-18z" fill="#FF6A00" />
+</svg>

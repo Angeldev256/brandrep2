@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beyond The Billboard – Brand Republic</title>
+
+    <!-- Tailwind CSS with custom config -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed": "#1b1b1b",
+                        "outline": "#7d7483",
+                        "on-surface-variant": "#4c4452",
+                        "outline-variant": "#cec3d4",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-variant": "#e2e2e2",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2f3131",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#6121a1",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "tertiary": "#2f3131",
+                        "on-primary-container": "#cea1ff",
+                        "primary-fixed-dim": "#dbb8ff",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#efdbff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#dbb8ff",
+                        "surface-container": "#eeeeee",
+                        "surface-tint": "#7a3fbb",
+                        "primary": "#470082",
+                        "secondary-fixed": "#e2e2e2",
+                        "secondary": "#5e5e5e",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "secondary-container": "#e2e2e2",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-highest": "#e2e2e2",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-primary-fixed": "#2b0052",
+                        "surface": "#f9f9f9",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-secondary-container": "#646464",
+                        "on-tertiary-container": "#b4b5b5",
+                        "primary-container": "#6121a1",
+                        "background": "#f9f9f9",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "surface-dim": "#dadada",
+                        "tertiary-container": "#454747",
+                        "on-background": "#1a1c1c",
+                        "surface-container-high": "#e8e8e8",
+                        "on-surface": "#1a1c1c"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "slant-angle": "15deg",
+                        "grid-margin": "4rem",
+                        "section-padding": "8rem",
+                        "grid-gutter": "1.5rem",
+                        "slant-offset": "100px"
+                    },
+                    fontFamily: {
+                        "hero": ["Space Grotesk", "sans-serif"],
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "ui": ["Manrope", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "button": ["Manrope", "sans-serif"],
+                        "caption": ["Manrope", "sans-serif"],
+                        "data": ["Manrope", "sans-serif"],
+                        "sans": ["Manrope", "sans-serif"]
+                    },
+                    fontSize: {
+                        "headline-md": ["40px", { "lineHeight": "44px", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg": ["72px", { "lineHeight": "76px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["48px", { "lineHeight": "52px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.02em",
+                            "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+        .font-label-bold {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+        }
+        .text-label-bold {
+            font-size: 14px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .bar {
+            transition: all 0.3s ease;
+        }
+        .hamburger-active .bar:nth-child(1) {
+            transform: rotate(45deg) translateY(7px);
+        }
+        .hamburger-active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-active .bar:nth-child(3) {
+            transform: rotate(-45deg) translateY(-7px);
+        }
+        body {
+            padding-top: 6rem;
+        }
+        ::selection {
+            background: #4a0e9b;
+            color: #ffffff;
+        }
+        .clip-slant {
+            clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+        }
+        .clip-slant-reverse {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%);
+        }
+        @media (max-width: 768px) {
+            .clip-slant {
+                clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+            }
+            .clip-slant-reverse {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 96%);
+            }
+        }
+        .slant-bullet {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .slant-bullet::before {
+            content: "/";
+            position: absolute;
+            left: 0;
+            color: #470082;
+            font-weight: 700;
+        }
+
+        /* ── Floating geometric art ── */
+        .geo-shape {
+            position: absolute;
+            border: 2px solid rgba(71, 0, 130, 0.15);
+            border-radius: 0;
+            pointer-events: none;
+            animation: float 8s ease-in-out infinite alternate;
+        }
+        .geo-shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+            transform: rotate(12deg);
+        }
+        .geo-shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            bottom: 15%;
+            right: 8%;
+            animation-delay: 2s;
+            transform: rotate(45deg);
+            border-color: rgba(97, 33, 161, 0.12);
+        }
+        .geo-shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 40%;
+            right: 25%;
+            animation-delay: 4s;
+            transform: rotate(22deg);
+            border-color: rgba(71, 0, 130, 0.1);
+        }
+        .geo-shape:nth-child(4) {
+            width: 160px;
+            height: 160px;
+            bottom: 30%;
+            left: 15%;
+            animation-delay: 1s;
+            transform: rotate(70deg);
+            border-color: rgba(97, 33, 161, 0.08);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+
+        /* ── Service card glow ── */
+        .service-glow {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .service-glow:hover {
+            box-shadow: 0 20px 60px rgba(71, 0, 130, 0.2), 0 0 80px rgba(71, 0, 130, 0.05);
+        }
+
+        /* ── Stat counter ── */
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* ── Decorative divider ── */
+        .divider-diamond {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .divider-diamond::before,
+        .divider-diamond::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(71, 0, 130, 0.3), transparent);
+        }
+        .divider-diamond .diamond {
+            width: 12px;
+            height: 12px;
+            background: #470082;
+            transform: rotate(45deg);
+            flex-shrink: 0;
+            opacity: 0.4;
+        }
+
+        /* ── Pulse ring ── */
+        .pulse-ring {
+            animation: pulseRing 2s ease-out infinite;
+        }
+        @keyframes pulseRing {
+            0% {
+                box-shadow: 0 0 0 0 rgba(71, 0, 130, 0.3);
+            }
+            100% {
+                box-shadow: 0 0 0 30px rgba(71, 0, 130, 0);
+            }
+        }
+
+        /* ── Scroll indicator ── */
+        .scroll-indicator {
+            animation: bounceDown 2s ease-in-out infinite;
+        }
+        @keyframes bounceDown {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(12px);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-[#f2f2f4] min-h-screen relative selection:bg-[#4a0e9b] selection:text-white overflow-x-hidden">
+
+    <!-- ===== FLOATING GEOMETRIC ART ===== -->
+    <div class="geo-shape"></div>
+    <div class="geo-shape"></div>
+    <div class="geo-shape"></div>
+    <div class="geo-shape"></div>
+
+    <!-- ============================================================ -->
+    <!--  STANDARD HEADER / NAVBAR                                    -->
+    <!-- ============================================================ -->
+    <nav class="fixed top-0 w-full z-[100] h-24 bg-surface/90 backdrop-blur-md border-b-2 border-outline-variant flex justify-between items-center px-[4rem] max-w-full mx-auto">
+        <a href="/" class="h-auto py-2 flex items-center focus:outline-none">
+            <img src="/Assets/bg.png" alt="Brand Republic Logo" class="h-20 md:h-25 w-auto object-contain">
+        </a>
+        <div class="font-manrope hidden lg:flex gap-6 items-center">
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="about.html">About Us</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="services.html">Services</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="media.html">Media Inventory</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="project.html">Projects</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="insights.html">Insights</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <a href="/quotation" class="hidden lg:inline-block bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 shadow-sm">
+                Request Quotation
+            </a>
+            <a href="/contact" class="hidden lg:inline-block bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg">
+                Contact Us
+            </a>
+            <button id="mobile-menu-btn" class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none z-[110]" aria-label="Toggle Navigation Menu">
+                <span class="bar w-6 h-0.5 bg-on-surface"></span>
+                <span class="bar w-6 h-0.5 bg-on-surface"></span>
+                <span class="bar w-6 h-0.5 bg-on-surface"></span>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden fixed inset-x-0 top-24 bg-surface border-b-2 border-outline-variant p-6 flex-col gap-4 shadow-xl lg:hidden transition-all duration-300">
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/about.html">About Us</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/services.html">Services</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/media.html">Media Inventory</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/project.html">Projects</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/insights.html">Insights</a>
+            <a href="/quotation" class="mt-4 w-full text-center bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 block">Request Quotation</a>
+            <a href="/contact" class="mt-2 w-full text-center bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg block">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- ============================================================ -->
+    <!--  HERO SECTION – ENHANCED WITH ART                           -->
+    <!-- ============================================================ -->
+    <header class="relative pt-section-padding pb-32 overflow-hidden clip-slant bg-surface-container">
+        <!-- Abstract art overlay -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none">
+            <svg class="w-full h-full" viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="1000" height="800" fill="none" />
+                <path d="M0 400 Q200 200 400 400 T800 400 T1000 300" stroke="#470082" stroke-width="2" fill="none" opacity="0.5"/>
+                <path d="M0 500 Q200 300 400 500 T800 500 T1000 400" stroke="#6121a1" stroke-width="1.5" fill="none" opacity="0.3"/>
+                <circle cx="200" cy="150" r="80" stroke="#470082" stroke-width="1.5" fill="none" opacity="0.3"/>
+                <circle cx="700" cy="600" r="120" stroke="#6121a1" stroke-width="1" fill="none" opacity="0.2"/>
+                <rect x="800" y="100" width="60" height="60" stroke="#470082" stroke-width="1.5" fill="none" opacity="0.3" transform="rotate(30 830 130)"/>
+                <rect x="100" y="650" width="80" height="80" stroke="#6121a1" stroke-width="1" fill="none" opacity="0.2" transform="rotate(45 140 690)"/>
+            </svg>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-grid-gutter px-grid-margin max-w-7xl mx-auto relative z-10">
+            <div class="flex flex-col justify-center" data-aos="fade-right" data-aos-duration="1000">
+                <span class="text-primary font-label-bold text-label-bold tracking-[0.2em] uppercase mb-4 flex items-center gap-3">
+                    <span class="w-12 h-0.5 bg-primary"></span>
+                    Redefining Visibility
+                </span>
+                <h1 class="font-display-xl text-headline-lg-mobile md:text-display-xl uppercase leading-none mb-6 text-on-background break-words">
+                    BEYOND <span class="text-primary">THE</span> BILLBOARD
+                </h1>
+                <p class="font-body text-body text-on-surface-variant max-w-md mb-8 leading-relaxed">
+                    We craft landmark experiences that command attention, spark conversation, and build brands in the real world — with relentless creativity and uncompromising execution.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="bg-primary text-on-primary font-label-bold text-label-bold px-8 py-4 uppercase tracking-widest hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-primary/20 flex items-center gap-2">
+                        <span>Explore Landmark Branding</span>
+                        <span class="material-icons-outlined text-lg">arrow_forward</span>
+                    </button>
+                    <button class="border-2 border-on-surface/30 hover:border-primary text-on-surface font-label-bold text-label-bold px-8 py-4 uppercase tracking-widest hover:-translate-y-1 transition-all duration-300">
+                        View Our Work
+                    </button>
+                </div>
+                <!-- Trust badge -->
+                <div class="flex items-center gap-6 mt-10 pt-6 border-t border-outline-variant/30">
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-primary/20 border-2 border-white flex items-center justify-center text-[10px] font-bold text-primary">BR</div>
+                        <div class="w-8 h-8 rounded-full bg-primary/15 border-2 border-white flex items-center justify-center text-[10px] font-bold text-primary">MT</div>
+                        <div class="w-8 h-8 rounded-full bg-primary/10 border-2 border-white flex items-center justify-center text-[10px] font-bold text-primary">SB</div>
+                        <div class="w-8 h-8 rounded-full bg-primary/5 border-2 border-white flex items-center justify-center text-[10px] font-bold text-primary">+</div>
+                    </div>
+                    <span class="font-body text-sm text-on-surface-variant">Trusted by <strong class="text-on-surface">200+</strong> brands across East Africa</span>
+                </div>
+            </div>
+            <div class="relative h-[400px] md:h-[600px] w-full" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <!-- Decorative frame -->
+                <div class="absolute -inset-4 border-2 border-primary/20 transform rotate-2"></div>
+                <div class="absolute -inset-4 border-2 border-primary/10 transform -rotate-3"></div>
+                <div class="absolute inset-0 bg-primary/5 transform skew-x-12 translate-x-10 z-0"></div>
+                <img class="object-cover w-full h-full relative z-10 shadow-2xl"
+                    alt="A wide angle photograph of a massive, illuminated digital billboard in a bustling city center at dusk."
+                    src="/Assets/imgs/3.png">
+                <!-- Pulse dot -->
+                <div class="absolute bottom-6 left-6 z-20 flex items-center gap-3 bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+                    </span>
+                    <span class="text-white text-xs font-bold uppercase tracking-widest">Live Campaign</span>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:block">
+            <div class="scroll-indicator flex flex-col items-center gap-2 text-on-surface-variant/60">
+                <span class="text-[10px] uppercase tracking-[0.2em] font-bold">Scroll</span>
+                <span class="material-icons-outlined">expand_more</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================ -->
+    <!--  SERVICES BENTO GRID – ENHANCED WITH ART & DETAILS           -->
+    <!-- ============================================================ -->
+    <section class="py-section-padding px-grid-margin bg-background relative z-10 -mt-20">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section header with art -->
+            <div class="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+                <div data-aos="fade-up">
+                    <span class="text-primary font-label-bold text-label-bold tracking-[0.2em] uppercase flex items-center gap-3 mb-2">
+                        <span class="w-8 h-0.5 bg-primary"></span>
+                        Our Ecosystem
+                    </span>
+                    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background uppercase leading-tight">
+                        Impact at Every <br><span class="text-primary">Scale</span>
+                    </h2>
+                </div>
+                <div class="flex items-center gap-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-px w-12 bg-outline-variant hidden sm:block"></div>
+                    <p class="font-body text-sm text-on-surface-variant max-w-xs">
+                        From iconic billboards to immersive digital experiences — we deliver visibility that resonates.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Divider art -->
+            <div class="divider-diamond mb-12">
+                <span class="diamond"></span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px] md:auto-rows-[340px]">
+
+                <!-- ===== BILLBOARDS – Expanded ===== -->
+                <div class="md:col-span-8 relative overflow-hidden group service-glow bg-surface-container-high border-2 border-transparent hover:border-primary transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <img class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply group-hover:scale-105 transition-transform duration-700"
+                        alt="A detailed photograph of a large traditional static billboard positioned high above a multi-lane highway."
+                        src="/Assets/imgs/8.png">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="material-icons-outlined text-primary text-3xl">aspect_ratio</span>
+                            <span class="font-label-bold text-on-primary tracking-widest uppercase border border-primary/30 px-3 py-1 text-[10px]">Iconic</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md text-on-primary uppercase mb-2">Billboards</h3>
+                        <p class="text-surface-variant font-body-md max-w-md hidden md:block">Massive reach and unmissable presence on major thoroughfares. The foundation of real-world brand building.</p>
+                        <!-- Expanded details -->
+                        <div class="flex flex-wrap gap-4 mt-4 hidden md:flex">
+                            <div class="flex items-center gap-2 text-surface-variant/80 text-xs font-bold uppercase tracking-wider">
+                                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                                48-sheet &amp; Unipole
+                            </div>
+                            <div class="flex items-center gap-2 text-surface-variant/80 text-xs font-bold uppercase tracking-wider">
+                                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                                Premium Locations
+                            </div>
+                            <div class="flex items-center gap-2 text-surface-variant/80 text-xs font-bold uppercase tracking-wider">
+                                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                                Illuminated Options
+                            </div>
+                        </div>
+                        <a class="inline-flex items-center gap-2 text-primary mt-4 font-label-bold hover:text-primary-fixed-dim transition-colors group" href="#">
+                            Learn more <span class="material-icons-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- Corner accent -->
+                    <div class="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-primary/30 group-hover:border-primary transition-colors"></div>
+                </div>
+
+                <!-- ===== TRANSIT – Expanded ===== -->
+                <div class="md:col-span-4 relative overflow-hidden group service-glow bg-surface-container-high border-2 border-transparent hover:border-primary transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <img class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply group-hover:scale-105 transition-transform duration-700"
+                        alt="A dynamic photograph of a subway train rushing through an underground station."
+                        src="/Assets/imgs/10.png">
+                    <div class="absolute inset-0 bg-primary/80 mix-blend-multiply"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full z-10">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="material-icons-outlined text-on-primary text-3xl">directions_bus</span>
+                            <span class="font-label-bold text-on-primary tracking-widest uppercase border border-white/20 px-3 py-1 text-[10px]">Mobile</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md text-on-primary uppercase mb-2">Transit</h3>
+                        <p class="text-primary-fixed-dim font-body-md">Engage commuters during their daily journeys.</p>
+                        <!-- Expanded details -->
+                        <div class="flex flex-wrap gap-3 mt-3">
+                            <span class="text-xs text-on-primary/70 font-bold uppercase tracking-wider">Bus Wraps</span>
+                            <span class="text-xs text-on-primary/70 font-bold uppercase tracking-wider">•</span>
+                            <span class="text-xs text-on-primary/70 font-bold uppercase tracking-wider">Taxi Branding</span>
+                            <span class="text-xs text-on-primary/70 font-bold uppercase tracking-wider">•</span>
+                            <span class="text-xs text-on-primary/70 font-bold uppercase tracking-wider">Terminal Displays</span>
+                        </div>
+                    </div>
+                    <div class="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-white/20 group-hover:border-white/50 transition-colors"></div>
+                </div>
+
+                <!-- ===== STREET FURNITURE – Expanded ===== -->
+                <div class="md:col-span-4 relative overflow-hidden group service-glow bg-secondary-container border-2 border-transparent hover:border-primary transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute inset-0 bg-surface-tint opacity-10"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full z-10">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="material-icons-outlined text-primary text-3xl">chair</span>
+                            <span class="font-label-bold text-primary tracking-widest uppercase border border-primary/30 px-3 py-1 text-[10px]">Hyper-local</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md text-on-background uppercase mb-2">Street-Level</h3>
+                        <p class="text-on-surface-variant font-body-md">Hyper-local targeting at eye level in dense urban centers.</p>
+                        <ul class="space-y-1 mt-3 font-label-bold text-on-background text-sm">
+                            <li class="slant-bullet">Bus Shelters</li>
+                            <li class="slant-bullet">Urban Panels</li>
+                            <li class="slant-bullet">Kiosk Branding</li>
+                        </ul>
+                        <a class="inline-flex items-center gap-2 text-primary mt-4 font-label-bold hover:text-primary-fixed-dim transition-colors group" href="#">
+                            Explore <span class="material-icons-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- Decorative pattern -->
+                    <div class="absolute top-0 right-0 w-24 h-24 opacity-5">
+                        <svg viewBox="0 0 100 100"><rect x="0" y="0" width="20" height="20" fill="#470082"/><rect x="25" y="0" width="20" height="20" fill="#470082"/><rect x="50" y="0" width="20" height="20" fill="#470082"/></svg>
+                    </div>
+                </div>
+
+                <!-- ===== DIGITAL + MOBILE – Expanded ===== -->
+                <div class="md:col-span-8 relative overflow-hidden group service-glow bg-on-background clip-slant-reverse border-2 border-transparent hover:border-primary transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
+                    <div class="absolute inset-0 opacity-30">
+                        <img class="w-full h-full object-cover"
+                            alt="Abstract visualization of digital data streams connecting mobile devices to large out-of-home screens."
+                            src="/Assets/imgs/11.png">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent"></div>
+                    <div class="absolute inset-0 flex flex-col justify-center p-12 z-10 max-w-2xl">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="material-icons-outlined text-primary text-5xl">smartphone</span>
+                            <span class="font-label-bold text-primary tracking-widest uppercase border border-primary/30 px-3 py-1 text-[10px]">Interactive</span>
+                        </div>
+                        <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-primary uppercase mb-4">
+                            Digital + Mobile
+                        </h3>
+                        <p class="text-surface-variant font-body-lg max-w-xl">Extend your real-world campaign directly into the hands of your audience. Seamlessly blend physical presence with digital retargeting for measurable impact.</p>
+                        <!-- Expanded details -->
+                        <div class="flex flex-wrap gap-4 mt-6">
+                            <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
+                                <span class="material-icons-outlined text-primary text-sm">qr_code</span>
+                                <span class="text-white text-xs font-bold uppercase tracking-wider">QR Engagement</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
+                                <span class="material-icons-outlined text-primary text-sm">analytics</span>
+                                <span class="text-white text-xs font-bold uppercase tracking-wider">Real-time Data</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
+                                <span class="material-icons-outlined text-primary text-sm">sync_alt</span>
+                                <span class="text-white text-xs font-bold uppercase tracking-wider">Dynamic Content</span>
+                            </div>
+                        </div>
+                        <button class="mt-8 bg-transparent border-2 border-primary text-on-primary font-label-bold text-label-bold px-8 py-3 uppercase hover:bg-primary transition-colors w-fit group flex items-center gap-2">
+                            View Capabilities
+                            <span class="material-icons-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </button>
+                    </div>
+                    <!-- Tech grid overlay -->
+                    <div class="absolute inset-0 pointer-events-none opacity-5">
+                        <div class="w-full h-full grid grid-cols-8 grid-rows-6 gap-1 p-4">
+                            <div class="border border-white/20"></div><div class="border border-white/20"></div><div class="border border-white/20"></div><div class="border border-white/20"></div>
+                            <div class="border border-white/20"></div><div class="border border-white/20"></div><div class="border border-white/20"></div><div class="border border-white/20"></div>
+                            <div class="border border-white/20"></div><div class="border border-white/20"></div><div class="border border-white/20"></div><div class="border border-white/20"></div>
+                            <div class="border border-white/20"></div><div class="border border-white/20"></div><div class="border border-white/20"></div><div class="border border-white/20"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ===== ADDITIONAL SERVICE DETAILS – Creative Solutions ===== -->
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="bg-white p-6 border-2 border-outline-variant/30 hover:border-primary transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-icons-outlined text-primary text-2xl group-hover:text-white">build</span>
+                    </div>
+                    <h4 class="font-headline-md text-xl uppercase text-on-surface mb-2">Special Builds</h4>
+                    <p class="font-body text-sm text-on-surface-variant">Custom fabricated installations, 3D structures, and architectural branding that transform spaces into landmarks.</p>
+                    <span class="inline-block mt-3 text-primary font-label-bold text-xs uppercase tracking-wider group-hover:translate-x-2 transition-transform">→ Explore</span>
+                </div>
+                <div class="bg-white p-6 border-2 border-outline-variant/30 hover:border-primary transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-icons-outlined text-primary text-2xl group-hover:text-white">palette</span>
+                    </div>
+                    <h4 class="font-headline-md text-xl uppercase text-on-surface mb-2">Environmental Branding</h4>
+                    <p class="font-body text-sm text-on-surface-variant">Immersive brand experiences that wrap interiors, exteriors, and entire environments in your visual identity.</p>
+                    <span class="inline-block mt-3 text-primary font-label-bold text-xs uppercase tracking-wider group-hover:translate-x-2 transition-transform">→ Explore</span>
+                </div>
+                <div class="bg-white p-6 border-2 border-outline-variant/30 hover:border-primary transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-icons-outlined text-primary text-2xl group-hover:text-white">campaign</span>
+                    </div>
+                    <h4 class="font-headline-md text-xl uppercase text-on-surface mb-2">Experiential Activations</h4>
+                    <p class="font-body text-sm text-on-surface-variant">Pop-up experiences, live events, and interactive installations that create unforgettable brand moments.</p>
+                    <span class="inline-block mt-3 text-primary font-label-bold text-xs uppercase tracking-wider group-hover:translate-x-2 transition-transform">→ Explore</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!--  IMPACT STATS – NEW SECTION                                  -->
+    <!-- ============================================================ -->
+    <section class="py-20 px-grid-margin bg-primary text-on-primary relative overflow-hidden">
+        <!-- Abstract art background -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="800" height="400" fill="none"/>
+                <circle cx="100" cy="80" r="60" stroke="white" stroke-width="1" fill="none"/>
+                <circle cx="700" cy="300" r="90" stroke="white" stroke-width="1" fill="none"/>
+                <rect x="400" y="50" width="40" height="40" stroke="white" stroke-width="1" fill="none" transform="rotate(45 420 70)"/>
+                <path d="M0 200 Q200 100 400 200 T800 200" stroke="white" stroke-width="1" fill="none"/>
+            </svg>
+        </div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div data-aos="zoom-in" data-aos-delay="100">
+                    <div class="font-display-xl text-5xl md:text-7xl text-primary-fixed-dim font-bold stat-number">15+</div>
+                    <p class="font-label-bold text-label-bold text-on-primary/80 mt-2 uppercase tracking-wider">Years of Excellence</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200">
+                    <div class="font-display-xl text-5xl md:text-7xl text-primary-fixed-dim font-bold stat-number">200+</div>
+                    <p class="font-label-bold text-label-bold text-on-primary/80 mt-2 uppercase tracking-wider">Brands Trust Us</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="300">
+                    <div class="font-display-xl text-5xl md:text-7xl text-primary-fixed-dim font-bold stat-number">50+</div>
+                    <p class="font-label-bold text-label-bold text-on-primary/80 mt-2 uppercase tracking-wider">Premium Locations</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="400">
+                    <div class="font-display-xl text-5xl md:text-7xl text-primary-fixed-dim font-bold stat-number">97%</div>
+                    <p class="font-label-bold text-label-bold text-on-primary/80 mt-2 uppercase tracking-wider">Client Retention</p>
+                </div>
+            </div>
+            <!-- Decorative line -->
+            <div class="w-24 h-1 bg-primary-fixed-dim/30 mx-auto mt-8"></div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!--  FOOTER                                                      -->
+    <!-- ============================================================ -->
+    <footer class="bg-on-background relative w-full pt-24 pb-8 border-t-8 border-primary">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-grid-gutter px-grid-margin max-w-full mx-auto mb-16">
+            <div class="col-span-1 md:col-span-4 flex justify-between items-center mb-12 border-b border-surface-variant/10 pb-12">
+                <div class="text-headline-md font-headline-md text-primary-fixed tracking-tighter">Brand Republic</div>
+                <div class="flex gap-6">
+                    <a class="w-12 h-12 rounded-full border border-surface-variant/30 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all" href="#">
+                        <span class="material-icons-outlined">share</span>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-label-bold text-primary mb-6 uppercase tracking-widest text-xs">Legal</h4>
+                <ul class="space-y-4">
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Privacy Policy</a></li>
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Cookie Policy</a></li>
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Terms of use</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-label-bold text-primary mb-6 uppercase tracking-widest text-xs">Company</h4>
+                <ul class="space-y-4">
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Leadership</a></li>
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Partners</a></li>
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">ESG</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-label-bold text-primary mb-6 uppercase tracking-widest text-xs">Investors</h4>
+                <ul class="space-y-4">
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Real Estate</a></li>
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Stock Info</a></li>
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Financials</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-label-bold text-primary mb-6 uppercase tracking-widest text-xs">Support</h4>
+                <ul class="space-y-4">
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="/contact">Contact</a></li>
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Newsroom</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="px-grid-margin text-center md:text-left text-surface-variant/30 font-body-md text-sm mt-8 border-t border-surface-variant/5 pt-8">
+            © 2026 Brand Republic Ltd. All rights reserved. Registered in Uganda.
+        </div>
+    </footer>
+
+    <!-- ============================================================ -->
+    <!--  FLOATING WHATSAPP WIDGET                                    -->
+    <!-- ============================================================ -->
+    <a class="fixed bottom-8 right-8 z-[200] bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center" href="#">
+        <span class="material-icons-outlined text-3xl">chat</span>
+    </a>
+
+    <!-- ============================================================ -->
+    <!--  SCRIPTS                                                     -->
+    <!-- ============================================================ -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 800,
+            offset: 100,
+            easing: 'ease-out-cubic',
+        });
+
+        // Mobile menu
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuBtn && mobileMenu) {
+                const bars = menuBtn.querySelectorAll('.bar');
+
+                menuBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const isOpen = !mobileMenu.classList.contains('hidden');
+
+                    if (isOpen) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                        bars.forEach(function(bar, index) {
+                            if (index === 0) bar.classList.remove('rotate-45', 'translate-y-2');
+                            if (index === 1) bar.classList.remove('opacity-0');
+                            if (index === 2) bar.classList.remove('-rotate-45', '-translate-y-2');
+                        });
+                    } else {
+                        mobileMenu.classList.remove('hidden');
+                        mobileMenu.classList.add('flex');
+                        bars.forEach(function(bar, index) {
+                            if (index === 0) bar.classList.add('rotate-45', 'translate-y-2');
+                            if (index === 1) bar.classList.add('opacity-0');
+                            if (index === 2) bar.classList.add('-rotate-45', '-translate-y-2');
+                        });
+                    }
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                        bars.forEach(function(bar, index) {
+                            if (index === 0) bar.classList.remove('rotate-45', 'translate-y-2');
+                            if (index === 1) bar.classList.remove('opacity-0');
+                            if (index === 2) bar.classList.remove('-rotate-45', '-translate-y-2');
+                        });
+                    }
+                });
+
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                        bars.forEach(function(bar, index) {
+                            if (index === 0) bar.classList.remove('rotate-45', 'translate-y-2');
+                            if (index === 1) bar.classList.remove('opacity-0');
+                            if (index === 2) bar.classList.remove('-rotate-45', '-translate-y-2');
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>

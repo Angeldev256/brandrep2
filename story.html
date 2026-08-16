@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Our Story | Brand Republic</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#470082",
+                        "on-primary-container": "#cea1ff",
+                        "surface-container-highest": "#e9e0eb",
+                        "surface-dim": "#e0d7e2",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-primary-fixed": "#2b0052",
+                        "secondary-fixed": "#e2e2e2",
+                        "surface-variant": "#e9e0eb",
+                        "tertiary": "#2f3131",
+                        "surface-container-low": "#faf1fc",
+                        "surface-container-high": "#eee5f0",
+                        "surface-container": "#f4ebf6",
+                        "on-surface-variant": "#4c4452",
+                        "inverse-surface": "#332f37",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#636564",
+                        "surface-tint": "#7a3fbb",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-primary-fixed-variant": "#6121a1",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1e1a22",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "inverse-primary": "#dbb8ff",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#454747",
+                        "outline-variant": "#cec3d4",
+                        "primary-fixed": "#efdbff",
+                        "surface-bright": "#fff7ff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "background": "#fff7ff",
+                        "on-tertiary-container": "#b4b5b5",
+                        "on-background": "#1e1a22",
+                        "surface": "#fff7ff",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "outline": "#7d7483",
+                        "secondary": "#5d5f5e",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f7eef9",
+                        "whatsapp-green": "#25D366",
+                        "primary-container": "#6121a1",
+                        "secondary-container": "#e2e2e2",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#dbb8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "slant-angle": "15deg",
+                        "section-padding": "8rem",
+                        "slant-offset": "100px",
+                        "grid-gutter": "1.5rem",
+                        "grid-margin": "4rem"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Hanken Grotesk"],
+                        "display-xl": ["Anton"],
+                        "headline-lg-mobile": ["Anton"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Anton"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Anton"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["48px", { "lineHeight": "52px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "headline-lg": ["72px", { "lineHeight": "76px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["40px", { "lineHeight": "44px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .slant-clip {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+
+        .slant-clip-reverse {
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .brutal-border {
+            border-left: 8px solid #470082;
+        }
+
+        .text-outline {
+            -webkit-text-stroke: 1px #470082;
+            color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md">
+    <!-- TopNavBar -->
+    <!-- Cinematic Hero -->
+    <header class="relative h-[90vh] w-full flex items-center overflow-hidden bg-on-background pt-20">
+        <div class="absolute inset-0 z-0 opacity-60">
+            <img alt="Ugandan urban landscape with high-impact billboards" class="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5M2bkhyZU1vH6LfoKgGOQIJYaJmAl6MQd2h2DvQu1hY-J6ili0kTGYcwYC5jPhIiBaRPUXuPgZWaDvU4Ue9jzFzY5ANtDAI3v6tm3h-cJG23FP6AfmeIl7KK9HWSulL6rsUJCTdM2ncq412qeU6ew0pdEfLJP75BeevP896FVfJnRH67N4d23rkZ0OK93tH_Q_e2XjEM8QhNHEI5CiGBXIPCaMaOy7asvcwsNNLiSe4gmlvYHAug9eLLuTsb-BsBxfw" />
+        </div>
+        <div class="relative z-10 px-grid-margin w-full">
+            <div class="max-w-4xl">
+                <span
+                    class="inline-block bg-primary text-on-primary font-label-bold text-label-bold px-4 py-1 mb-6 uppercase tracking-widest">Est.
+                </span>
+                <h1 class="font-display-xl text-display-xl text-on-primary uppercase leading-none mb-8">
+                    IMPOSSIBLE <br />to <span class="text-on-primary-container">IGNORE.</span>
+                </h1>
+                <p class="font-body-lg text-body-lg text-surface-container-highest max-w-2xl mb-10 brutal-border pl-6">
+                    Brand Republic is Uganda's premier high-impact media house. We don't just place ads; we dominate
+                    landscapes, command attention, and define the urban visual fabric of the nation.
+                </p>
+            </div>
+        </div>
+        <div class="absolute bottom-0 right-0 p-grid-margin hidden md:block">
+            <div class="flex flex-col items-end">
+                <div
+                    class="w-24 h-24 border-2 border-on-primary-container rounded-full flex items-center justify-center animate-spin-slow">
+                    <span class="material-symbols-outlined text-on-primary-container scale-150">arrow_downward</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Philosophy: Impact Brutalism -->
+    <section class="py-section-padding px-grid-margin bg-surface">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="font-headline-lg text-headline-lg text-on-background uppercase mb-8">Impact <br /> <span
+                        class="text-primary">Brutalism</span></h2>
+                <div class="space-y-6">
+                    <p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Brand Republic is a leading outdoor advertising and brand communications company dedicated to
+                        helping businesses create meaningful connections with their audiences through impactful,
+                        high-visibility media solutions.
+                        We believe that every brand deserves to be seen, remembered, and trusted. That belief drives
+                        everything we do—from carefully selecting premium advertising locations to delivering innovative
+                        campaigns that capture attention and inspire action.
+
+                    </p>
+                    <p class="font-body-md text-body-md text-on-surface-variant/80">
+                        With a strong presence across Uganda and a growing regional footprint, Brand Republic combines
+                        strategic thinking, creative excellence, engineering expertise, and operational precision to
+                        deliver advertising solutions that generate measurable business value. Whether launching a new
+                        product, strengthening brand awareness, or executing nationwide campaigns, we provide the
+                        platforms that place our clients where they matter most.
+                        Our portfolio spans premium billboards, digital LED displays, transit advertising, street
+                        furniture, wall branding, retail branding, and integrated outdoor media solutions. Every project
+                        is executed with uncompromising attention to quality, safety, reliability, and compliance.
+                        What truly sets Brand Republic apart is our commitment to innovation. We continuously invest in
+                        modern advertising technologies, data-driven planning, and smarter media solutions that enable
+                        our clients to maximise visibility and achieve stronger campaign performance in an increasingly
+                        competitive marketplace.
+                        More than an outdoor advertising company, we are a trusted strategic partner to brands that seek
+                        to lead their industries. We work collaboratively with our clients to understand their
+                        objectives, develop tailored media strategies, and deliver campaigns that create lasting
+                        impressions and measurable results.
+                        At Brand Republic, we don't simply display advertisements—we create landmarks, elevate brands,
+                        and build visibility that drives growth.
+
+
+                    </p>
+                    <div class="pt-8">
+                        <a class="font-label-bold text-label-bold text-primary uppercase flex items-center gap-2 group"
+                            href="#">
+                            Explore / <span
+                                class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group">
+                <div
+                    class="aspect-square bg-surface-container-highest rotate-2 group-hover:rotate-0 transition-transform duration-500 overflow-hidden rounded-xl border-2 border-outline-variant">
+                    <div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+                    <img class="w-full h-full object-cover"
+                        data-alt="A macro shot of industrial printing equipment producing a vibrant, large-scale outdoor advertisement. The focus is on the intense purple ink and the texture of the heavy-duty vinyl material. Modern brutalist style with high contrast and sharp details."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaltOf5uZT3_LewQcpZZhLjTAnnwjyNFmdgpDg9HVFXMeP98cejQIpYn64KCCLAa8AZWVrjATcHme-LuYYUSVkDMqDwwmEC3fYqmCzpiuLNHdnuH-E4dZplfCM2DCEEbJ1hU_dxPSjgNCSy4io0bNE1rE1em-wgFIKvhL03Pi6RmGWuga5GqRpXrr4VLuQEMXFn87YLmOsI5JLCPRjKjwERX956-VmHMXyguzu7Cf_GLWU974m0nKP" />
+                </div>
+                <div
+                    class="absolute -bottom-6 -left-6 bg-primary text-on-primary p-8 max-w-xs -rotate-3 group-hover:rotate-0 transition-transform duration-500">
+                    <h4 class="font-headline-md text-headline-md mb-2">RAW POWER</h4>
+                    <p class="font-label-bold text-label-bold opacity-80">Unfiltered visual communication at national
+                        scale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Why Brand Republic: Stats -->
+    <section class="bg-on-background py-section-padding text-on-primary slant-clip-reverse">
+        <div class="px-grid-margin max-w-full">
+            <h2 class="font-headline-lg text-headline-lg uppercase text-center mb-24">By The <span
+                    class="text-on-primary-container">Numbers</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="flex flex-col items-center text-center">
+                    <div class="text-primary-fixed-dim font-display-xl text-headline-lg mb-4 counter" data-target="500">
+                        0</div>
+                    <p class="font-label-bold text-label-bold uppercase tracking-tighter text-on-primary-fixed-variant">
+                        Premium Sites Nationwide</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="text-primary-fixed-dim font-display-xl text-headline-lg mb-4 counter" data-target="15">0
+                    </div>
+                    <p class="font-label-bold text-label-bold uppercase tracking-tighter text-on-primary-fixed-variant">
+                        Years of Dominance</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="text-primary-fixed-dim font-display-xl text-headline-lg mb-4 counter" data-target="98">0
+                    </div>
+                    <p class="font-label-bold text-label-bold uppercase tracking-tighter text-on-primary-fixed-variant">
+                        % Market Visibility</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="text-primary-fixed-dim font-display-xl text-headline-lg mb-4 counter" data-target="24">0
+                    </div>
+                    <p class="font-label-bold text-label-bold uppercase tracking-tighter text-on-primary-fixed-variant">
+                        / 7 Digital Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Timeline of Growth -->
+    <section class="py-section-padding px-grid-margin">
+        <div class="mb-20">
+            <h2 class="font-headline-lg text-headline-lg uppercase">Evolution <br /> <span class="text-outline">of a
+                    Giant</span></h2>
+        </div>
+        <div class="space-y-32 relative">
+            <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-outline-variant/30 hidden lg:block -translate-x-1/2">
+            </div>
+            <!-- 2008 -->
+            <div class="flex flex-col lg:flex-row items-center gap-12 relative">
+                <div class="lg:w-1/2 lg:text-right">
+                    <span class="font-display-xl text-headline-lg text-primary opacity-20">2008</span>
+                    <h3 class="font-headline-md text-headline-md uppercase mb-4">The Foundation</h3>
+                    <p class="font-body-md text-on-surface-variant max-w-md lg:ml-auto">Brand Republic launches in
+                        Kampala with 10 key billboard sites, challenging the status quo of outdoor advertising with
+                        superior print quality.</p>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-primary z-10 hidden lg:block outline outline-8 outline-surface">
+                </div>
+                <div class="lg:w-1/2">
+                    <div
+                        class="h-64 w-full bg-surface-container rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+                        <img class="w-full h-full object-cover"
+                            data-alt="Vintage-style black and white photography of a bustling Kampala street corner in 2008, featuring one prominent, high-quality billboard overlooking the traffic. The image is crisp with deep blacks and high contrast, echoing the urban brutalist style."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1tIr_guGnvG28CpU7SzERTU2OsmBEMa_SX5c76DWTpSl3h9sZF2Qa9ieCoC5XZ34j8VVpjTEvyupI28hewbceEMIN-ZFiO4w-qVNoMuG7FgBdxtDz-2HFaPChMhEWEpe1T1-H5JRaRF9ApOPmxAMIysII7kgDOwv-XGXQfxR5oLBlKxZOVxQi9InkKRtrIJnQlnGzFsukYxSuCXYuA8ankkt3WarO-FI28D7pRz2TSCfRMoGNvl80" />
+                    </div>
+                </div>
+            </div>
+            <!-- 2015 -->
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-12 relative">
+                <div class="lg:w-1/2 lg:text-left">
+                    <span class="font-display-xl text-headline-lg text-primary opacity-20">2015</span>
+                    <h3 class="font-headline-md text-headline-md uppercase mb-4">National Coverage</h3>
+                    <p class="font-body-md text-on-surface-variant max-w-md">Expansion into 15 districts. Brand Republic
+                        becomes the go-to partner for regional penetration and nationwide campaigns.</p>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-primary z-10 hidden lg:block outline outline-8 outline-surface">
+                </div>
+                <div class="lg:w-1/2">
+                    <div
+                        class="h-64 w-full bg-surface-container rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+                        <img class="w-full h-full object-cover"
+                            data-alt="A dynamic shot of a highway billboard in rural Uganda, set against a dramatic sky at sunset. The lighting is warm and golden, contrasting with the dark, silhouette-like landscape. The billboard is large, modern, and perfectly maintained, showing national scale."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB3enMZ21G6R7T_6zE2MI7ffDf6d0QBJnCWN5f0mzuutaOu2y2FaBege-zAH_7JMHmC7vjYzZJ1zKw50HVoNyNBJ5MRLEqjXediOCbkkwpI3rs4cWXFrNeoub8X8Ifb-nZGf2d5Cpp-Sgx0F92x_7n2PEjdY3_WdTwYsT5duQyROPDxYyLQM7QyY0Z-I-QOQ2bm361Xuz6J-ZDy--FSGMJmV5g6h0xexqwXdy5jFxwpMaqq8f5rBDG" />
+                    </div>
+                </div>
+            </div>
+            <!-- 2024 -->
+            <div class="flex flex-col lg:flex-row items-center gap-12 relative">
+                <div class="lg:w-1/2 lg:text-right">
+                    <span class="font-display-xl text-headline-lg text-primary opacity-20">2024</span>
+                    <h3 class="font-headline-md text-headline-md uppercase mb-4">Digital Innovation</h3>
+                    <p class="font-body-md text-on-surface-variant max-w-md lg:ml-auto">Launching a network of DOOH
+                        (Digital Out-of-Home) assets, integrating real-time data and interactive content.</p>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-primary z-10 hidden lg:block outline outline-8 outline-surface">
+                </div>
+                <div class="lg:w-1/2">
+                    <div
+                        class="h-64 w-full bg-surface-container rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+                        <img class="w-full h-full object-cover"
+                            data-alt="A futuristic digital billboard glowing in the night at a busy urban intersection. The screen displays high-definition, colorful motion graphics. The surrounding buildings are sleek and modern, illuminated by the vibrant light from the billboard. High-energy urban aesthetic."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTkBdFNvjExWIPXeRxiGNjvi_qKvjf7Yjvk4HZ-8nbYCANPfoUud8rBK7_kbEvPAT5H1bGnJyLQ5XLbuRshbE3AoQO-wbGATQeLcYLSFr5EOxgvcWy-5N56GJ1At5fkDIMK1p4yeEx7LF8sZQ_TM4ahyZjGs6Uy-DYU8d3q0zmIpWEYpOKhXXdbIogf9sFh8O8Y3oHTTrZW6Un-1peItAdlOPRGKj2wqy55-xHRlCsxmXLWFUBhsw9" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Grid: Creative Production & Innovation -->
+    <section class="bg-surface-container-low py-section-padding px-grid-margin">
+        <div class="mb-16">
+            <h2 class="font-headline-lg text-headline-lg uppercase mb-4">Our <span class="text-primary">Ecosystem</span>
+            </h2>
+            <p class="font-body-lg text-on-surface-variant max-w-2xl">Beyond billboards, we provide an end-to-end impact
+                ecosystem for modern brands.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Creative Production -->
+            <div class="bg-surface p-10 border-2 border-outline-variant hover:border-primary transition-colors group">
+                <div class="mb-8">
+                    <span class="material-symbols-outlined text-primary text-5xl">brush</span>
+                </div>
+                <h4 class="font-headline-md text-headline-md uppercase mb-4">Creative Production</h4>
+                <p class="font-body-md text-on-surface-variant mb-6">Our in-house studio specializes in large-format
+                    design that thrives in high-contrast urban environments.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span
+                        class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-bold text-[10px] rounded-full uppercase">Visual
+                        Design</span>
+                    <span
+                        class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-bold text-[10px] rounded-full uppercase">Motion
+                        Graphics</span>
+                </div>
+            </div>
+            <!-- Digital Innovation -->
+            <div class="bg-surface p-10 border-2 border-outline-variant hover:border-primary transition-colors group">
+                <div class="mb-8">
+                    <span class="material-symbols-outlined text-primary text-5xl">sensors</span>
+                </div>
+                <h4 class="font-headline-md text-headline-md uppercase mb-4">Digital Innovation</h4>
+                <p class="font-body-md text-on-surface-variant mb-6">Programmatic DOOH, hyper-targeted audience data,
+                    and interactive campaign executions.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span
+                        class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-bold text-[10px] rounded-full uppercase">Real-time
+                        Data</span>
+                    <span
+                        class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-bold text-[10px] rounded-full uppercase">Smart
+                        Placements</span>
+                </div>
+            </div>
+            <!-- National Coverage -->
+            <div class="bg-surface p-10 border-2 border-outline-variant hover:border-primary transition-colors group">
+                <div class="mb-8">
+                    <span class="material-symbols-outlined text-primary text-5xl">travel_explore</span>
+                </div>
+                <h4 class="font-headline-md text-headline-md uppercase mb-4">National Coverage</h4>
+                <p class="font-body-md text-on-surface-variant mb-6">Unrivaled access to major highways, secondary
+                    towns, and strategic urban centers across Uganda.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span
+                        class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-bold text-[10px] rounded-full uppercase">15+
+                        Districts</span>
+                    <span
+                        class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-bold text-[10px] rounded-full uppercase">High
+                        Traffic</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Map Section Placeholder -->
+    <section class="h-[600px] relative overflow-hidden">
+        <div class="w-full h-full grayscale brightness-50" data-location="Uganda" style="">
+            <img class="w-full h-full object-cover"
+                data-alt="A stylized, architectural map of Uganda highlighting key transportation hubs and urban centers where Brand Republic has a dominant presence. The map uses a minimalist, high-contrast aesthetic with deep purples and crisp whites, matching the brand identity."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcweVj6efFKndGWG0oldQggTaob-1Yh76IR7QzQz_CelIwVORB1dKZt2tVy8jk_CUqjbaYUfYzYxYd09s2gU5rAQWVej0KQGWgevDk1qHcKlYdmaRDfcmyxTP8RDFIufFAUxMewsj1qF3D_JPU8adNJNvPMJTs9IlEyIS9JYSINovNUdYt0_0I6PPQ66a_8I1QaA3GKRQYzSBHseFZNNiCIKUoGREefu3PPaQZDnKIjRedqay-g4lL" />
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div
+                class="bg-primary/90 backdrop-blur-md p-12 text-on-primary text-center max-w-lg pointer-events-auto shadow-2xl rotate-1">
+                <h3 class="font-headline-md text-headline-md mb-4 uppercase">Dominating the Map</h3>
+                <p class="font-body-md mb-8">From the heart of Kampala to the borders of the nation, our network is the
+                    infrastructure of visibility.</p>
+                <button
+                    class="bg-on-primary text-primary font-label-bold text-label-bold uppercase px-8 py-3 rounded-full hover:scale-110 transition-transform">View
+                    Full Inventory</button>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer
+        class="bg-on-background dark:bg-surface-container-lowest text-primary dark:text-primary-fixed relative w-full pt-section-padding pb-8 border-t-4 border-primary">
+        <div
+            class="grid grid-cols-1 md:grid-cols-4 gap-grid-gutter px-grid-margin max-w-full mx-auto focus-within:ring-2 focus-within:ring-primary">
+            <!-- Brand -->
+            <div class="col-span-1 md:col-span-1 mb-8 md:mb-0">
+                <div class="text-headline-md font-headline-md text-primary mb-4">
+
+                </div>
+                <p class="font-body-md text-surface-variant/70 mb-4">
+                    Building brands in the real world.
+                </p>
+            </div>
+            <!-- Links Group 1 -->
+            <div class="col-span-1">
+                <h4 class="font-label-bold text-label-bold text-surface mb-4 uppercase">Company</h4>
+                <ul class="space-y-2">
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2"
+                            href="#">Leadership</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2"
+                            href="#">Partners</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2"
+                            href="#">ESG</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2"
+                            href="#">Careers</a></li>
+                </ul>
+            </div>
+            <!-- Links Group 2 -->
+            <div class="col-span-1">
+                <h4 class="font-label-bold text-label-bold text-surface mb-4 uppercase">Investors &amp; News</h4>
+                <ul class="space-y-2">
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2"
+                            href="#">Investors</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2"
+                            href="#">Stock Info</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2"
+                            href="#">Financials</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2"
+                            href="#">Governance</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2"
+                            href="#">Newsroom</a></li>
+                </ul>
+            </div>
+            <!-- Links Group 3 -->
+            <div class="col-span-1">
+                <h4 class="font-label-bold text-label-bold text-surface mb-4 uppercase">Legal &amp; Contact</h4>
+                <ul class="space-y-2">
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2"
+                            href="#">Privacy Policy</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2"
+                            href="#">Cookie Policy</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2"
+                            href="#">Terms of use</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2"
+                            href="#">Posting Standards</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2"
+                            href="#">Real Estate Inquiries</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="px-grid-margin mt-16 pt-8 border-t border-surface-variant/20 text-center md:text-left flex flex-col md:flex-row justify-between items-center">
+            <p class="font-body-md text-surface-variant/50">
+                © 2024 OUTFRONT Media Inc.
+            </p>
+            <div class="flex gap-4 mt-4 md:mt-0">
+                <a class="text-surface-variant/70 hover:text-primary transition-colors" href="#"><span
+                        class="material-symbols-outlined">share</span></a>
+                <a class="text-surface-variant/70 hover:text-primary transition-colors" href="#"><span
+                        class="material-symbols-outlined">link</span></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FAB -->
+    <a class="fixed bottom-8 right-8 z-[110] bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:scale-110 active:scale-95 transition-all flex items-center justify-center focus:outline-none"
+   href="https://api.whatsapp.com/send?phone=256701234567&text=Hello%21%20I%20would%20like%20to%20inquire%20about%20your%20services." 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   aria-label="Chat with us on WhatsApp">
+    <span class="material-symbols-outlined text-3xl">chat</span>
+</a>
+    <script>
+        // Intersection Observer for counter animation
+        const counters = document.querySelectorAll('.counter');
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = +entry.target.getAttribute('data-target');
+                    const duration = 2000;
+                    const startTime = performance.now();
+
+                    function updateCounter(currentTime) {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const currentVal = Math.floor(progress * target);
+                        entry.target.innerText = currentVal + (target > 100 ? '+' : '');
+
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCounter);
+                        }
+                    }
+
+                    requestAnimationFrame(updateCounter);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        counters.forEach(counter => observer.observe(counter));
+
+        // Subtle Parallax Effect on Hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImg = document.querySelector('header img');
+            if (heroImg) {
+                heroImg.style.transform = `translateY(${scrolled * 0.4}px)`;
+            }
+        });
+    </script>
+</body>
+
+</html>

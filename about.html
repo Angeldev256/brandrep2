@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>We Build Brands in the Real World - Brand Republic</title>
+
+    <!-- Tailwind CSS CDN with custom config -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed": "#1b1b1b",
+                        "outline": "#7d7483",
+                        "on-surface-variant": "#4c4452",
+                        "outline-variant": "#cec3d4",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-variant": "#e2e2e2",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2f3131",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#6121a1",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "tertiary": "#2f3131",
+                        "on-primary-container": "#cea1ff",
+                        "primary-fixed-dim": "#dbb8ff",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#efdbff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#dbb8ff",
+                        "surface-container": "#eeeeee",
+                        "surface-tint": "#7a3fbb",
+                        "primary": "#470082",
+                        "secondary-fixed": "#e2e2e2",
+                        "secondary": "#5e5e5e",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "secondary-container": "#e2e2e2",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-highest": "#e2e2e2",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-primary-fixed": "#2b0052",
+                        "surface": "#f9f9f9",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-secondary-container": "#646464",
+                        "on-tertiary-container": "#b4b5b5",
+                        "primary-container": "#6121a1",
+                        "background": "#f9f9f9",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "surface-dim": "#dadada",
+                        "tertiary-container": "#454747",
+                        "on-background": "#1a1c1c",
+                        "surface-container-high": "#e8e8e8",
+                        "on-surface": "#1a1c1c"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "slant-angle": "15deg",
+                        "grid-margin": "4rem",
+                        "section-padding": "8rem",
+                        "grid-gutter": "1.5rem",
+                        "slant-offset": "100px"
+                    },
+                    fontFamily: {
+                        "hero": ["Space Grotesk", "sans-serif"],
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "ui": ["Manrope", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "button": ["Manrope", "sans-serif"],
+                        "caption": ["Manrope", "sans-serif"],
+                        "data": ["Manrope", "sans-serif"],
+                        "sans": ["Manrope", "sans-serif"]
+                    },
+                    fontSize: {
+                        "hero": [
+                            "72px",
+                            {
+                                "lineHeight": "76px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "hero-mobile": [
+                            "48px",
+                            {
+                                "lineHeight": "52px",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "section-headline": [
+                            "40px",
+                            {
+                                "lineHeight": "44px",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "stat-large": [
+                            "120px",
+                            {
+                                "lineHeight": "110px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "nav": [
+                            "16px",
+                            {
+                                "lineHeight": "24px",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "button": [
+                            "16px",
+                            {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "body": [
+                            "18px",
+                            {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "24px",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "caption": [
+                            "14px",
+                            {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "media-data": [
+                            "14px",
+                            {
+                                "lineHeight": "20px",
+                                "fontWeight": "600"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Google Fonts: Space Grotesk + Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Custom Styles -->
+    <style>
+        /* Custom frame rotation hover transitions */
+        .hero-frame-container:hover .hero-frame-bg {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .hero-frame-container:hover .hero-frame-fg {
+            transform: rotate(0deg) scale(1.01);
+        }
+
+        .leader-frame-container:hover .leader-frame-bg {
+            transform: rotate(0deg) scale(1.03);
+        }
+
+        .leader-frame-container:hover .leader-frame-fg {
+            transform: rotate(0deg);
+        }
+
+        /* Custom label-bold utilities (not in Tailwind config) */
+        .font-label-bold {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+        }
+
+        .text-label-bold {
+            font-size: 14px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* Clip slant reverse */
+        .clip-slant-reverse {
+            clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+        }
+
+        @media (max-width: 768px) {
+            .clip-slant-reverse {
+                clip-path: polygon(0 0, 100% 0, 100% 98%, 0 100%);
+            }
+        }
+
+        /* Fade-up animation */
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.97);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        .group {
+            will-change: transform, box-shadow;
+        }
+
+        /* Hamburger animation */
+        .hamburger-active .bar:nth-child(1) {
+            transform: rotate(45deg) translateY(7px);
+        }
+        .hamburger-active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-active .bar:nth-child(3) {
+            transform: rotate(-45deg) translateY(-7px);
+        }
+
+        .bar {
+            transition: all 0.3s ease;
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection color */
+        ::selection {
+            background: #4a0e9b;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f2f2f4] min-h-screen pt-20 relative selection:bg-[#4a0e9b] selection:text-white">
+
+    <!-- ========================================================= -->
+    <!-- TopNavBar – unified version -->
+    <!-- ========================================================= -->
+    <nav class="fixed top-0 w-full z-[100] h-24 bg-surface/90 backdrop-blur-md border-b-2 border-outline-variant flex justify-between items-center px-[4rem] max-w-full mx-auto">
+        <!-- Logo -->
+        <a href="index.html" class="h-auto py-2 flex items-center focus:outline-none">
+            <img src="Assets/bg.png" alt="Brand Republic Logo" class="h-20 md:h-25 w-auto object-contain">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="font-manrope hidden lg:flex gap-6 items-center">
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="about.html">About Us</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="services.html">Services</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="media.html">Media Inventory</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="project.html">Projects</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="insights.html">Insights</a>
+        </div>
+
+        <!-- Right Controls -->
+        <div class="flex items-center gap-4">
+            <a href="/quotation.html" class="hidden lg:inline-block bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 shadow-sm">
+                Request Quotation
+            </a>
+            <a href="/contact.html" class="hidden lg:inline-block bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg">
+                Contact Us
+            </a>
+            <!-- Mobile hamburger -->
+            <button id="mobile-menu-btn" class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none z-[110]" aria-label="Toggle Navigation Menu">
+                <span class="bar w-6 h-0.5 bg-on-surface transition-all duration-400"></span>
+                <span class="bar w-6 h-0.5 bg-on-surface transition-all duration-400"></span>
+                <span class="bar w-6 h-0.5 bg-on-surface transition-all duration-400"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden fixed inset-x-0 top-24 bg-surface border-b-2 border-outline-variant p-6 flex-col gap-4 shadow-xl lg:hidden transition-all duration-300">
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="about.html">About Us</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="services.html">Services</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="media.html">Media Inventory</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="project.html">Projects</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="insight.html">Insights</a>
+            <a href="/quotation.html" class="mt-4 w-full text-center bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 block">Request Quotation</a>
+            <a href="/contact.html" class="mt-2 w-full text-center bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg block">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- ========================================================= -->
+    <!-- 1. HERO SECTION -->
+    <!-- ========================================================= -->
+    <section class="min-h-[calc(100vh-5rem)] flex items-center py-12 px-4 sm:px-6 lg:px-12">
+        <div class="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+            <!-- Text Content -->
+            <div class="space-y-6" data-aos="fade-right" data-aos-duration="1000">
+                <h1 class="font-hero text-hero-mobile md:text-hero uppercase tracking-tight text-black leading-[0.95]">
+                    BUILT <br />
+                    <span class="text-[#4a0e9b]">FOR BRANDS</span> <br />
+                    THAT WANT TO BE SEEN
+                </h1>
+                <p class="font-body text-body text-slate-600 max-w-md">
+                    We believe great brands deserve more than advertising space. They deserve presence.
+                    Brand Republic combines strategic outdoor media, bold creative thinking and innovative brand
+                    solutions to help
+                    businesses stand out in the real world.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="media.html" class="inline-block bg-[#4a0e9b] hover:bg-[#380a78] text-white font-button text-button py-3.5 px-8 rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+                        DISCOVER OUR MEDIA
+                    </a>
+                    <a href="#leadership" class="inline-block border-2 border-slate-300 hover:border-black hover:bg-black hover:text-white text-slate-800 font-button text-button py-3.5 px-8 transition-all duration-300">
+                        VIEW LEADERSHIP
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Video/Image Stack -->
+            <div class="hero-frame-container relative mx-auto lg:ml-auto w-full max-w-md" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <div class="hero-frame-bg absolute -inset-3 bg-[#4a0e9b] transform rotate-3 transition-all duration-500 ease-out">
+                </div>
+                <div class="hero-frame-fg relative bg-white p-3 shadow-2xl transform -rotate-2 transition-all duration-500 ease-out">
+                    <div class="relative aspect-[4/3] w-full bg-slate-900 group cursor-pointer overflow-hidden">
+                        <img src="Assets/imgs/11.png" alt="Times Square Billboard" class="w-full h-full object-cover contrast-125 group-hover:scale-110 transition-transform duration-700" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 2. WHO WE ARE -->
+    <!-- ========================================================= -->
+    <section id="who-we-are" class="py-20 px-4 sm:px-6 lg:px-12 border-t border-slate-300/60">
+        <div class="max-w-6xl mx-auto space-y-12">
+
+            <h2 class="font-headline text-section-headline uppercase tracking-tight text-black" data-aos="fade-up">
+                WHO WE ARE
+            </h2>
+            <h1 class="font-headline text-section-headline uppercase tracking-tight text-black" data-aos="fade-up">
+                WE CREATE PRESENCE.
+            </h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 font-body text-body text-slate-600" data-aos="fade-up" data-aos-delay="100">
+                <div class="space-y-4">
+                    <p>
+                        Brand Republic is an outdoor advertising and brand experience company built to connect ambitious
+                        brands with
+                        audiences in the moments and places that matter.
+                    </p>
+                    <p>
+                        We provide strategically positioned outdoor media alongside creative branding, digital and
+                        custom-built
+                        advertising solutions designed to make brands more visible, memorable and impactful.
+                    </p>
+                    <p>
+                        Our approach goes beyond simply providing advertising space. We think about the audience, the
+                        environment,
+                        the idea and how every execution can work harder for the brand.
+                    </p>
+                    <p>
+                        What truly sets Brand Republic apart is our commitment to innovation. We continuously invest in
+                        modern
+                        advertising technologies, data-driven planning, and smarter media solutions that enable our
+                        clients to
+                        maximise visibility and achieve stronger campaign performance in an increasingly competitive
+                        marketplace.
+                    </p>
+                </div>
+                <div class="border-l-2 border-slate-400 pl-6 space-y-4">
+                    <p class="text-slate-900 font-semibold font-body text-body-md italic">
+                        "MAKE THE BRAND IMPOSSIBLE TO IGNORE."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Vision & Mission Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+
+                <div class="border-2 border-black p-8 bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(74,14,155,1)] hover:-translate-y-1 transition-all duration-300" data-aos="fade-right" data-aos-delay="200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="fa-regular fa-eye text-2xl text-[#4a0e9b]"></i>
+                        <h3 class="font-headline text-2xl font-bold uppercase tracking-wider">OUR VISION</h3>
+                    </div>
+                    <p class="font-body text-body text-slate-600">
+                        To redefine brand visibility by transforming spaces into powerful experiences that inspire
+                        people, elevate
+                        businesses, and shape the future of communication.
+                    </p>
+                </div>
+
+                <div class="p-8 bg-[#4a0e9b] text-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-300" data-aos="fade-left" data-aos-delay="300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="fa-regular fa-flag text-2xl text-white"></i>
+                        <h3 class="font-headline text-2xl font-bold uppercase tracking-wider">OUR MISSION</h3>
+                    </div>
+                    <p class="font-body text-body text-purple-100">
+                        To transform how brands are seen by delivering innovative outdoor advertising, branding, and
+                        integrated
+                        visual communication solutions that create meaningful connections, elevate brand experiences,
+                        and drive
+                        sustainable business growth.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 3. HOW WE WORK – FROM BRIEF TO IMPACT -->
+    <!-- ========================================================= -->
+    <section class="py-section-padding bg-surface-variant clip-slant-reverse overflow-hidden" id="how-we-work">
+        <div class="container mx-auto px-grid-margin relative z-10">
+
+            <div class="max-w-3xl mb-16">
+                <h2 class="font-headline text-4xl sm:text-6xl font-bold uppercase text-center text-black tracking-tight" data-aos="fade-down">
+                    FROM <span class="text-[#4a0e9b]">BRIEF TO IMPACT</span>
+                </h2>
+                <span class="text-primary font-label-bold text-label-bold uppercase tracking-[0.15em] inline-block mb-3 border-l-4 border-primary pl-4">
+                    / How We Work
+                </span>
+            </div>
+
+            <!-- Steps Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+
+                <!-- Step 01 – UNDERSTAND -->
+                <div class="group relative bg-surface border-2 border-outline-variant hover:border-primary rounded-2xl p-6 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 opacity-0 animate-fade-up [animation-delay:100ms]">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="font-headline-lg text-5xl font-bold text-primary/30 group-hover:text-primary transition-colors duration-500 leading-none">01</span>
+                        <span class="h-px flex-1 bg-outline-variant/50"></span>
+                    </div>
+                    <h4 class="font-headline-md text-[24px] leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors duration-300">
+                        UNDERSTAND
+                    </h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        We begin with the brand, the audience and the objective. What are we trying to achieve? Who
+                        needs to see it? Where do we need to reach them?
+                    </p>
+                    <div class="absolute bottom-0 left-0 h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl" style="width: 100%;"></div>
+                </div>
+
+                <!-- Step 02 – IDENTIFY -->
+                <div class="group relative bg-surface border-2 border-outline-variant hover:border-primary rounded-2xl p-6 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 opacity-0 animate-fade-up [animation-delay:200ms]">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="font-headline-lg text-5xl font-bold text-primary/30 group-hover:text-primary transition-colors duration-500 leading-none">02</span>
+                        <span class="h-px flex-1 bg-outline-variant/50"></span>
+                    </div>
+                    <h4 class="font-headline-md text-[24px] leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors duration-300">
+                        IDENTIFY
+                    </h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        We identify the locations, formats and opportunities best suited to the campaign.
+                    </p>
+                    <div class="absolute bottom-0 left-0 h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl" style="width: 100%;"></div>
+                </div>
+
+                <!-- Step 03 – CREATE -->
+                <div class="group relative bg-surface border-2 border-outline-variant hover:border-primary rounded-2xl p-6 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 opacity-0 animate-fade-up [animation-delay:300ms]">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="font-headline-lg text-5xl font-bold text-primary/30 group-hover:text-primary transition-colors duration-500 leading-none">03</span>
+                        <span class="h-px flex-1 bg-outline-variant/50"></span>
+                    </div>
+                    <h4 class="font-headline-md text-[24px] leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors duration-300">
+                        CREATE
+                    </h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        We develop the media approach, execution or custom solution required to bring the idea to life.
+                    </p>
+                    <div class="absolute bottom-0 left-0 h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl" style="width: 100%;"></div>
+                </div>
+
+                <!-- Step 04 – EXECUTE -->
+                <div class="group relative bg-surface border-2 border-outline-variant hover:border-primary rounded-2xl p-6 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 opacity-0 animate-fade-up [animation-delay:400ms]">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="font-headline-lg text-5xl font-bold text-primary/30 group-hover:text-primary transition-colors duration-500 leading-none">04</span>
+                        <span class="h-px flex-1 bg-outline-variant/50"></span>
+                    </div>
+                    <h4 class="font-headline-md text-[24px] leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors duration-300">
+                        EXECUTE
+                    </h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        Our teams coordinate production, installation and campaign deployment with a focus on quality,
+                        safety and consistency — on time, every time.
+                    </p>
+                    <div class="absolute bottom-0 left-0 h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl" style="width: 100%;"></div>
+                </div>
+
+                <!-- Step 05 – MONITOR -->
+                <div class="group relative bg-surface border-2 border-outline-variant hover:border-primary rounded-2xl p-6 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 opacity-0 animate-fade-up [animation-delay:500ms]">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="font-headline-lg text-5xl font-bold text-primary/30 group-hover:text-primary transition-colors duration-500 leading-none">05</span>
+                        <span class="h-px flex-1 bg-outline-variant/50"></span>
+                    </div>
+                    <h4 class="font-headline-md text-[24px] leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors duration-300">
+                        MONITOR
+                    </h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        We monitor campaigns throughout their lifecycle to ensure they continue delivering the
+                        visibility and presentation expected.
+                    </p>
+                    <div class="absolute bottom-0 left-0 h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl" style="width: 100%;"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 4. IMPACT BY THE NUMBERS -->
+    <!-- ========================================================= -->
+    <section class="py-20 px-4 sm:px-6 lg:px-12 bg-white/50 border-t border-slate-300/60">
+        <div class="max-w-6xl mx-auto space-y-8">
+
+            <h2 class="font-ui text-caption uppercase text-center tracking-widest text-black" data-aos="fade-down">
+                IMPACT BY THE NUMBERS
+            </h2>
+
+            <div class="bg-[#18181b] text-white py-12 px-6 text-center shadow-xl group" data-aos="zoom-in" data-aos-duration="800">
+                <div class="font-display text-stat-large text-[#6d13e2] tracking-tight group-hover:scale-105 transition-transform duration-500">
+                    2M+
+                </div>
+                <div class="font-ui text-caption text-slate-300 mt-2 uppercase tracking-[0.25em]">
+                    PEOPLE REACHED EVERY MONTH
+                </div>
+            </div>
+
+            <!-- Detail Metrics Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                <!-- Metric 1 -->
+                <div class="bg-white p-6 border border-slate-200 hover:border-black transition-colors" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fa-solid fa-city text-slate-400 mb-4 text-lg"></i>
+                    <h4 class="font-ui text-caption text-slate-400 uppercase tracking-widest mb-4">NETWORK & REACH</h4>
+                    <div class="space-y-2 font-data text-media-data text-slate-800">
+                        <div class="flex justify-between border-b border-slate-100 pb-1.5"><span>STRUCTURES</span><span class="text-[#4a0e9b]">10+</span></div>
+                        <div class="flex justify-between border-b border-slate-100 pb-1.5"><span>PREMIUM LOCS</span><span class="text-[#4a0e9b]">20+</span></div>
+                        <div class="flex justify-between"><span>CITIES</span><span class="text-[#4a0e9b]">10+</span></div>
+                    </div>
+                </div>
+
+                <!-- Metric 2 -->
+                <div class="bg-white p-6 border border-slate-200 hover:border-black transition-colors" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fa-regular fa-eye text-slate-400 mb-4 text-lg"></i>
+                    <h4 class="font-ui text-caption text-slate-400 uppercase tracking-widest mb-4">DAILY IMPRESSIONS</h4>
+                    <div class="space-y-2 font-data text-media-data text-slate-800">
+                        <div class="flex justify-between border-b border-slate-100 pb-1.5"><span>TRAFFIC</span><span class="text-[#4a0e9b]">52%</span></div>
+                        <div class="flex justify-between border-b border-slate-100 pb-1.5"><span>OCCUPANCY</span><span class="text-[#4a0e9b]">25%</span></div>
+                        <div class="flex justify-between"><span>PEDESTRIAN</span><span class="text-[#4a0e9b]">13%</span></div>
+                    </div>
+                </div>
+
+                <!-- Metric 3 -->
+                <div class="bg-white p-6 border border-slate-200 hover:border-black transition-colors" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fa-solid fa-users text-slate-400 mb-4 text-lg"></i>
+                    <h4 class="font-ui text-caption text-slate-400 uppercase tracking-widest mb-4">AUDIENCE PROFILE</h4>
+                    <div class="space-y-2 font-data text-media-data text-slate-800">
+                        <div class="flex justify-between border-b border-slate-100 pb-1.5"><span>PROFESSIONALS</span><span class="text-[#4a0e9b]">40%</span></div>
+                        <div class="flex justify-between border-b border-slate-100 pb-1.5"><span>COMMUTERS</span><span class="text-[#4a0e9b]">35%</span></div>
+                        <div class="flex justify-between"><span>SHOPPERS</span><span class="text-[#4a0e9b]">25%</span></div>
+                    </div>
+                </div>
+
+                <!-- Metric 4 (Ops Box) -->
+                <div class="bg-[#4a0e9b] text-white p-6 flex flex-col justify-between hover:bg-[#3d0b82] transition-colors" data-aos="fade-up" data-aos-delay="400">
+                    <div>
+                        <i class="fa-regular fa-clock text-purple-200 mb-4 text-lg"></i>
+                        <h4 class="font-ui text-caption text-purple-200 uppercase tracking-widest mb-4">OPS & COMPLIANCE</h4>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="font-display text-3xl font-bold">24 HR</div>
+                            <div class="font-ui text-caption text-purple-200">Emergency Response</div>
+                        </div>
+                        <hr class="border-purple-800" />
+                        <div>
+                            <div class="font-display text-3xl font-bold">99%</div>
+                            <div class="font-ui text-caption text-purple-200">On Time Delivery</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 5. OUR CORE VALUES -->
+    <!-- ========================================================= -->
+    <section class="py-20 px-4 sm:px-6 lg:px-12 border-t border-slate-300/60">
+        <div class="max-w-6xl mx-auto space-y-8">
+
+            <div class="flex flex-col sm:flex-row justify-between sm:items-end border-b border-slate-300 pb-4 gap-2" data-aos="fade-up">
+                <div>
+                    <h2 class="font-headline text-section-headline text-black">OUR VALUES</h2>
+                    <p class="font-caption text-caption text-slate-500">THE PRINCIPLES BEHIND OUR WORK.</p>
+                </div>
+                <a href="#charter" class="font-ui text-caption text-slate-800 hover:text-[#4a0e9b] uppercase tracking-wider transition-colors">
+                    READ THE FULL CHARTER &rarr;
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Value 1 -->
+                <div class="bg-white p-8 border border-slate-200 hover:border-black transition-all duration-300 min-h-[200px] flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fa-regular fa-eye text-2xl text-[#4a0e9b] group-hover:scale-110 transition-transform"></i>
+                    <div>
+                        <h3 class="font-headline text-2xl font-bold uppercase mb-1">BOLD THINKING</h3>
+                        <p class="font-body text-body text-slate-500">
+                            We believe memorable work begins with the confidence to think differently.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="bg-[#4a0e9b] text-white p-8 min-h-[200px] flex flex-col justify-between group hover:bg-[#3d0b82] transition-colors" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fa-solid fa-bolt text-2xl text-white group-hover:scale-110 transition-transform"></i>
+                    <div>
+                        <h3 class="font-headline text-2xl font-bold uppercase mb-1">EXCELLENCE</h3>
+                        <p class="font-body text-body text-purple-100">
+                            From the smallest production detail to the largest installation, quality matters.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="bg-[#18181b] text-white p-8 min-h-[200px] flex flex-col justify-between group hover:bg-black transition-colors" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fa-solid fa-gem text-2xl text-[#6d13e2] group-hover:scale-110 transition-transform"></i>
+                    <div>
+                        <h3 class="font-headline text-2xl font-bold uppercase text-[#6d13e2] mb-1">INTEGRITY</h3>
+                        <p class="font-body text-body text-slate-400">
+                            We build relationships through transparency, accountability and doing what we say we will
+                            do.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Value 4 -->
+                <div class="relative min-h-[200px] bg-slate-900 group overflow-hidden border border-slate-200 flex items-end p-8" data-aos="fade-up" data-aos-delay="400">
+                    <img src="Assets/imgs/5.png" alt="Creative Excellence" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700" />
+                    <div class="relative z-10 text-white">
+                        <h3 class="font-headline text-2xl font-bold uppercase mb-1">INNOVATION</h3>
+                        <p class="font-body text-body text-slate-200">
+                            We remain curious about new technologies, formats and ideas that can improve how brands
+                            connect with audiences.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Value 5 -->
+                <div class="relative min-h-[200px] bg-slate-900 group overflow-hidden border border-slate-200 flex items-end p-8" data-aos="fade-up" data-aos-delay="400">
+                    <img src="Assets/imgs/4.png" alt="Creative Excellence" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700" />
+                    <div class="relative z-10 text-white">
+                        <h3 class="font-headline text-2xl font-bold uppercase mb-1">OWNERSHIP</h3>
+                        <p class="font-body text-body text-slate-200">
+                            We take responsibility for our work and the results we commit to delivering.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 6. OUR CAPABILITIES -->
+    <!-- ========================================================= -->
+    <section class="py-section-padding bg-surface-container-low border-t-4 border-primary" id="capabilities">
+        <div class="container mx-auto px-grid-margin">
+
+            <h2 class="font-headline text-4xl sm:text-6xl font-bold uppercase text-center text-black tracking-tight" data-aos="fade-down">
+                OUR <span class="text-[#4a0e9b]">CAPABILITIES</span>
+            </h2>
+
+            <div class="max-w-3xl mb-16">
+                <h2 class="font-headline-lg text-headline-lg uppercase text-on-surface leading-[1.05] mb-4">
+                    ONE PARTNER.<br />
+                    <span class="text-primary">Brand Republic brings together media, creativity and execution across:</span>
+                </h2>
+            </div>
+
+            <!-- Capabilities Grid – 3 Columns -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Column 1: OUTDOOR MEDIA -->
+                <div class="group bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 hover:shadow-xl -rotate-0.5 hover:rotate-0">
+                    <div class="bg-primary text-white p-5 border-b-2 border-primary">
+                        <h3 class="font-headline-md text-[28px] uppercase leading-tight">
+                            OUTDOOR<br />MEDIA
+                        </h3>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="flex items-start gap-3 border-b border-outline-variant/30 pb-3 last:border-0 last:pb-0 group/item hover:pl-2 transition-all duration-200">
+                            <span class="text-primary font-bold text-lg leading-none">/</span>
+                            <span class="font-body-md text-body-md text-on-surface">Billboards</span>
+                        </div>
+                        <div class="flex items-start gap-3 border-b border-outline-variant/30 pb-3 last:border-0 last:pb-0 group/item hover:pl-2 transition-all duration-200">
+                            <span class="text-primary font-bold text-lg leading-none">/</span>
+                            <span class="font-body-md text-body-md text-on-surface">Digital Out-of-Home</span>
+                        </div>
+                        <div class="flex items-start gap-3 border-b border-outline-variant/30 pb-3 last:border-0 last:pb-0 group/item hover:pl-2 transition-all duration-200">
+                            <span class="text-primary font-bold text-lg leading-none">/</span>
+                            <span class="font-body-md text-body-md text-on-surface">Street Furniture</span>
+                        </div>
+                        <div class="flex items-start gap-3 border-b border-outline-variant/30 pb-3 last:border-0 last:pb-0 group/item hover:pl-2 transition-all duration-200">
+                            <span class="text-primary font-bold text-lg leading-none">/</span>
+                            <span class="font-body-md text-body-md text-on-surface">Transit Media</span>
+                        </div>
+                        <div class="flex items-start gap-3 border-b border-outline-variant/30 pb-3 last:border-0 last:pb-0 group/item hover:pl-2 transition-all duration-200">
+                            <span class="text-primary font-bold text-lg leading-none">/</span>
+                            <span class="font-body-md text-body-md text-on-surface">Landmark Media</span>
+                        </div>
+                    </div>
+                    <div class="h-1 w-full bg-primary/20 group-hover:bg-primary transition-colors duration-300"></div>
+                </div>
+
+                <!-- Column 2: BRAND SOLUTIONS -->
+                <div class="group bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 hover:shadow-xl rotate-0.5 hover:rotate-0">
+                    <div class="bg-primary text-white p-5 border-b-2 border-primary">
+                        <h3 class="font-headline-md text-[28px] uppercase leading-tight">
+                            BRAND<br />SOLUTIONS
+                        </h3>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="flex items-start gap-3 border-b border-outline-variant/30 pb-3 last:border-0 last:pb-0 group/item hover:pl-2 transition-all duration-200">
+                            <span class="text-primary font-bold text-lg leading-none">/</span>
+                            <span class="font-body-md text-body-md text-on-surface">Environmental Branding</span>
+                        </div>
+                        <div class="flex items-start gap-3 border-b border-outline-variant/30 pb-3 last:border-0 last:pb-0 group/item hover:pl-2 transition-all duration-200">
+                            <span class="text-primary font-bold text-lg leading-none">/</span>
+                            <span class="font-body-md text-body-md text-on-surface">Retail Branding</span>
+                        </div>
+                        <div class="flex items-start gap-3 border-b border-outline-variant/30 pb-3 last:border-0 last:pb-0 group/item hover:pl-2 transition-all duration-200">
+                            <span class="text-primary font-bold text-lg leading-none">/</span>
+                            <span class="font-body-md text-body-md text-on-surface">Corporate Signage</span>
+                        </div>
+                        <div class="flex items-start gap-3 border-b border-outline-variant/30 pb-3 last:border-0 last:pb-0 group/item hover:pl-2 transition-all duration-200">
+                            <span class="text-primary font-bold text-lg leading-none">/</span>
+                            <span class="font-body-md text-body-md text-on-surface">Building Branding</span>
+                        </div>
+                    </div>
+                    <div class="h-1 w-full bg-primary/20 group-hover:bg-primary transition-colors duration-300"></div>
+                </div>
+
+                <!-- Column 3: INNOVATION -->
+                <div class="group bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 hover:shadow-xl -rotate-0.5 hover:rotate-0">
+                    <div class="bg-primary text-white p-5 border-b-2 border-primary">
+                        <h3 class="font-headline-md text-[28px] uppercase leading-tight">
+                            INNOVATION
+                        </h3>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="flex items-start gap-3 border-b border-outline-variant/30 pb-3 last:border-0 last:pb-0 group/item hover:pl-2 transition-all duration-200">
+                            <span class="text-primary font-bold text-lg leading-none">/</span>
+                            <span class="font-body-md text-body-md text-on-surface">Special Builds</span>
+                        </div>
+                        <div class="flex items-start gap-3 border-b border-outline-variant/30 pb-3 last:border-0 last:pb-0 group/item hover:pl-2 transition-all duration-200">
+                            <span class="text-primary font-bold text-lg leading-none">/</span>
+                            <span class="font-body-md text-body-md text-on-surface">3D Installations</span>
+                        </div>
+                        <div class="flex items-start gap-3 border-b border-outline-variant/30 pb-3 last:border-0 last:pb-0 group/item hover:pl-2 transition-all duration-200">
+                            <span class="text-primary font-bold text-lg leading-none">/</span>
+                            <span class="font-body-md text-body-md text-on-surface">Digital Experiences</span>
+                        </div>
+                        <div class="flex items-start gap-3 border-b border-outline-variant/30 pb-3 last:border-0 last:pb-0 group/item hover:pl-2 transition-all duration-200">
+                            <span class="text-primary font-bold text-lg leading-none">/</span>
+                            <span class="font-body-md text-body-md text-on-surface">Experiential Activations</span>
+                        </div>
+                        <div class="flex items-start gap-3 border-b border-outline-variant/30 pb-3 last:border-0 last:pb-0 group/item hover:pl-2 transition-all duration-200">
+                            <span class="text-primary font-bold text-lg leading-none">/</span>
+                            <span class="font-body-md text-body-md text-on-surface">Custom Media Solutions</span>
+                        </div>
+                    </div>
+                    <div class="h-1 w-full bg-primary/20 group-hover:bg-primary transition-colors duration-300"></div>
+                </div>
+
+            </div>
+
+            <!-- Bottom CTA -->
+            <div class="mt-12 flex justify-center">
+                <a href="services.html" class="group inline-flex items-center gap-3 font-label-bold uppercase tracking-wider text-primary border-2 border-primary px-8 py-4 transition-all duration-300 hover:bg-primary hover:text-on-primary hover:shadow-xl">
+                    <span class="mr-1">/</span>
+                    <span>Explore Our Solutions</span>
+                    <span class="inline-block transition-transform duration-300 group-hover:translate-x-2">→</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 7. LED BY VISION -->
+    <!-- ========================================================= -->
+    <section id="leadership" class="py-20 px-4 sm:px-6 lg:px-12 border-t border-slate-300/60">
+        <div class="max-w-6xl mx-auto space-y-20">
+
+            <h2 class="font-headline text-4xl sm:text-6xl font-bold uppercase text-center text-black tracking-tight" data-aos="fade-down">
+                OUR <span class="text-[#4a0e9b]">PEOPLE</span>
+            </h2>
+
+            <!-- Leader 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-4xl mx-auto">
+                <div class="leader-frame-container relative mx-auto w-full max-w-xs" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="leader-frame-bg absolute -inset-2 bg-[#4a0e9b] transform -rotate-3 transition-transform duration-500">
+                    </div>
+                    <div class="leader-frame-fg relative bg-white p-2 shadow-2xl transform rotate-2 transition-transform duration-500">
+                        <img src="Assets/imgs/4.png" alt="Jeremy Male" class="w-full h-auto contrast-125 object-cover" />
+                    </div>
+                </div>
+
+                <div class="space-y-4" data-aos="fade-left" data-aos-duration="1000">
+                    <div>
+                        <h3 class="font-headline text-3xl font-bold uppercase tracking-wide">BUILT BY PEOPLE WHO CARE ABOUT THE WORK.</h3>
+                        <p class="font-ui text-caption text-slate-400 uppercase tracking-widest mt-0.5">CHAIRMAN &amp; CEO</p>
+                    </div>
+                    <blockquote class="font-body text-body text-slate-600 border-l-2 border-[#4a0e9b] pl-4 italic">
+                        "Behind every Brand Republic campaign is a team focused on strategy, creativity, operations and
+                        execution." <br />
+                        "We combine industry experience with an entrepreneurial mindset — giving us the ability to move
+                        quickly, think differently and remain closely involved from brief to delivery."
+                    </blockquote>
+                    <a href="about.html" class="font-ui text-caption text-slate-800 hover:text-[#4a0e9b] uppercase tracking-wider transition-colors pt-2 inline-block">
+                        MEET OUR TEAM &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- Leader 2 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-4xl mx-auto">
+                <div class="space-y-4 md:order-1 order-2" data-aos="fade-right" data-aos-duration="1000">
+                    <div>
+                        <h3 class="font-headline text-3xl font-bold uppercase tracking-wide">OUR AMBITION</h3>
+                        <p class="font-ui text-caption text-slate-400 uppercase tracking-widest mt-0.5">BUILDING THE NEXT GENERATION OF OUTDOOR MEDIA.</p>
+                    </div>
+                    <blockquote class="font-body text-body text-slate-600 border-l-2 border-black pl-4 italic">
+                        "The way people move through cities is changing. Technology is changing. Brands are changing.
+                        Outdoor media must evolve with them.
+                        <br />
+                        Our ambition is to build a company that doesn't simply participate in that evolution, but helps
+                        drive it — through better locations, better experiences, better technology and better
+                        execution."
+                        <br />
+                        For us, the future of outdoor advertising isn't simply about having more media.
+                    </blockquote>
+                    <a href="#" class="font-ui text-caption text-slate-800 hover:text-[#4a0e9b] uppercase tracking-wider transition-colors pt-2 inline-block">
+                        IT'S ABOUT MAKING MEDIA MATTER MORE &rarr;
+                    </a>
+                </div>
+
+                <div class="leader-frame-container relative mx-auto w-full max-w-xs md:order-2 order-1" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="leader-frame-bg absolute -inset-2 bg-black transform rotate-3 transition-transform duration-500">
+                    </div>
+                    <div class="leader-frame-fg relative bg-white p-2 shadow-2xl transform -rotate-2 transition-transform duration-500">
+                        <img src="Assets/imgs/9.png" alt="Jodi Senese" class="w-full h-auto contrast-125 object-cover" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="text-center pt-8" data-aos="zoom-in">
+                <button class="font-button text-button border-2 border-slate-800 hover:bg-black hover:text-white text-slate-900 py-3.5 px-8 uppercase tracking-widest transition-all duration-300 hover:shadow-lg">
+                    LET'S CREATE SOMETHING IMPOSSIBLE TO IGNORE.
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================================= -->
+    <footer class="bg-[#111113] text-white relative w-full pt-20 pb-12 border-t-8 border-[#4a0e9b]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 border-b border-slate-800 pb-8 gap-4">
+                <div class="font-headline text-3xl font-bold text-white tracking-tight uppercase">Brand Republic</div>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 font-ui">
+                <div>
+                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Legal</h4>
+                    <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Privacy Policy</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Cookie Policy</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Terms of use</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Company</h4>
+                    <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Leadership</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Partners</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">ESG</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Investors</h4>
+                    <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Real Estate</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Stock Info</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Financials</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Support</h4>
+                    <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="contact.html">Contact</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Newsroom</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center md:text-left font-ui text-caption text-slate-500 pt-8 border-t border-slate-900">
+                &copy; 2026 Brand Republic. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================= -->
+    <!-- SCRIPTS -->
+    <!-- ========================================================= -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 800,
+            offset: 100,
+            easing: 'ease-out-cubic',
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                mobileMenu.classList.toggle('hidden', isOpen);
+                mobileMenu.classList.toggle('flex', !isOpen);
+                menuBtn.querySelectorAll('.bar').forEach((bar, index) => {
+                    bar.style.transform = isOpen ? 'none' : index === 0 ? 'rotate(45deg) translateY(7px)' : index === 1 ? 'opacity:0' : 'rotate(-45deg) translateY(-7px)';
+                });
+            });
+        }
+
+        // How We Work – scroll-triggered step animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const steps = document.querySelectorAll('#how-we-work .animate-fade-up');
+
+            steps.forEach(step => {
+                step.classList.remove('animate-fade-up');
+                step.style.opacity = '0';
+                step.style.transform = 'translateY(30px) scale(0.97)';
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0) scale(1)';
+                        entry.target.classList.add('animate-fade-up');
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            steps.forEach(step => observer.observe(step));
+        });
+    </script>
+
+</body>
+
+</html>

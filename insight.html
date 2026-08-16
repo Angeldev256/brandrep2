@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Brand Republic – Intelligence for the Real World</title>
+
+    <!-- Tailwind CSS CDN with plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries">
+    </script>
+
+    <!-- Google Fonts: Anton, Hanken Grotesk, Space Grotesk, Manrope -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@400;500;700;900&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+
+    <!-- Tailwind Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed": "#1b1b1b",
+                        "outline": "#7d7483",
+                        "on-surface-variant": "#4c4452",
+                        "outline-variant": "#cec3d4",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-variant": "#e2e2e2",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2f3131",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#6121a1",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "tertiary": "#2f3131",
+                        "on-primary-container": "#cea1ff",
+                        "primary-fixed-dim": "#dbb8ff",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#efdbff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#dbb8ff",
+                        "surface-container": "#eeeeee",
+                        "surface-tint": "#7a3fbb",
+                        "primary": "#470082",
+                        "secondary-fixed": "#e2e2e2",
+                        "secondary": "#5e5e5e",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "secondary-container": "#e2e2e2",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-highest": "#e9e0eb",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-primary-fixed": "#2b0052",
+                        "surface": "#f9f9f9",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-secondary-container": "#646464",
+                        "on-tertiary-container": "#b4b5b5",
+                        "primary-container": "#6121a1",
+                        "background": "#f9f9f9",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "surface-dim": "#dadada",
+                        "tertiary-container": "#454747",
+                        "on-background": "#1a1c1c",
+                        "surface-container-high": "#e8e8e8",
+                        "on-surface": "#1a1c1c",
+                        "whatsapp-green": "#25D366"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "slant-angle": "15deg",
+                        "section-padding": "8rem",
+                        "slant-offset": "100px",
+                        "grid-gutter": "1.5rem",
+                        "grid-margin": "4rem"
+                    },
+                    fontFamily: {
+                        "hero": ["Space Grotesk", "sans-serif"],
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "ui": ["Manrope", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "button": ["Manrope", "sans-serif"],
+                        "caption": ["Manrope", "sans-serif"],
+                        "data": ["Manrope", "sans-serif"],
+                        "sans": ["Manrope", "sans-serif"]
+                    },
+                    fontSize: {
+                        "label-bold": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.02em",
+                            "fontWeight": "400" }],
+                        "headline-lg-mobile": ["48px", { "lineHeight": "52px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "headline-lg": ["72px", { "lineHeight": "76px", "letterSpacing": "-0.01em",
+                            "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["40px", { "lineHeight": "44px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+
+    <style>
+        /* ── Material Icons ── */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* ── Slant clips ── */
+        .slant-clip {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+        .slant-clip-reverse {
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        /* ── Brutalist utilities ── */
+        .brutal-border {
+            border-left: 8px solid #470082;
+        }
+        .text-outline {
+            -webkit-text-stroke: 1px #470082;
+            color: transparent;
+        }
+
+        /* ── Form brutalist styles ── */
+        .brutalist-border-box {
+            border: 2px solid #1a1c1c;
+            border-radius: 0px !important;
+            box-shadow: 4px 4px 0px 0px #1a1c1c;
+        }
+        .brutalist-card {
+            background-color: #ffffff;
+            border: 2px solid #1a1c1c;
+            border-radius: 0px !important;
+            box-shadow: 6px 6px 0px 0px #1a1c1c;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .brutalist-card:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 9px 9px 0px 0px #470082;
+            border-color: #470082;
+        }
+        .brutalist-input {
+            border: 2px solid #1a1c1c;
+            border-radius: 0px !important;
+            background-color: #ffffff;
+            transition: all 0.15s ease;
+        }
+        .brutalist-input:focus {
+            outline: none;
+            border-color: #6121a1;
+            box-shadow: 3px 3px 0px 0px #6121a1;
+        }
+        .service-option {
+            border: 1px solid #1a1c1c;
+            border-radius: 0px !important;
+            background-color: #ffffff;
+            transition: all 0.15s ease;
+            cursor: pointer;
+        }
+        .service-option:hover {
+            background-color: #f3f3f4;
+            transform: translate(-2px, -2px);
+            box-shadow: 3px 3px 0px 0px #1a1c1c;
+        }
+        .service-option.selected {
+            background-color: #6121a1;
+            color: #ffffff;
+            border-width: 2px;
+            box-shadow: 3px 3px 0px 0px #1a1c1c;
+        }
+        .service-option.selected .service-icon {
+            color: #ffffff;
+        }
+        .brutalist-btn-purple {
+            background-color: #6121a1;
+            color: #ffffff;
+            border: 2px solid #1a1c1c;
+            box-shadow: 4px 4px 0px 0px #1a1c1c;
+            border-radius: 0px !important;
+            transition: all 0.15s ease;
+        }
+        .brutalist-btn-purple:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #1a1c1c;
+            background-color: #470082;
+        }
+        .brutalist-btn-purple:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px 0px #1a1c1c;
+        }
+        .field-label {
+            font-family: 'Manrope', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 16px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #1a1c1c;
+        }
+
+        /* ── Navbar utilities ── */
+        .font-label-bold {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+        }
+        .text-label-bold {
+            font-size: 14px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* ── Hamburger animation ── */
+        .bar {
+            transition: all 0.3s ease;
+        }
+        .hamburger-active .bar:nth-child(1) {
+            transform: rotate(45deg) translateY(7px);
+        }
+        .hamburger-active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-active .bar:nth-child(3) {
+            transform: rotate(-45deg) translateY(-7px);
+        }
+
+        /* ── Body padding for fixed navbar ── */
+        body {
+            padding-top: 6rem;
+        }
+
+        /* ── Selection color ── */
+        ::selection {
+            background: #4a0e9b;
+            color: #ffffff;
+        }
+
+        /* ── Counter animation ── */
+        .counter {
+            transition: all 0.3s ease;
+        }
+
+        /* ── Brutalist button (for intelligence section) ── */
+        .brutalist-btn {
+            border: 2px solid #1a1c1c;
+            box-shadow: 4px 4px 0px 0px #1a1c1c;
+            transition: all 0.15s ease;
+        }
+        .brutalist-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #470082;
+        }
+        .brutalist-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px 0px #1a1c1c;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary">
+
+    <!-- ============================================================ -->
+    <!--  STANDARD HEADER / NAVBAR (shared component)                  -->
+    <!-- ============================================================ -->
+    <nav class="fixed top-0 w-full z-[100] h-24 bg-surface/90 backdrop-blur-md border-b-2 border-outline-variant flex justify-between items-center px-[4rem] max-w-full mx-auto">
+
+        <!-- Logo -->
+        <a href="/" class="h-auto py-2 flex items-center focus:outline-none">
+            <img src="/Assets/bg.png" alt="Brand Republic Logo" class="h-20 md:h-25 w-auto object-contain">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="font-manrope hidden lg:flex gap-6 items-center">
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="/about.html">About Us</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="/services.html">Services</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="/media.html">Media Inventory</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="/project.html">Projects</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="/insight.html">Insights</a>
+        </div>
+
+        <!-- Right Controls -->
+        <div class="flex items-center gap-4">
+            <a href="/quotation.html" class="hidden lg:inline-block bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 shadow-sm">
+                Request Quotation
+            </a>
+            <a href="/contact.html" class="hidden lg:inline-block bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg">
+                Contact Us
+            </a>
+            <!-- Mobile hamburger -->
+            <button id="mobile-menu-btn" class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none z-[110]" aria-label="Toggle Navigation Menu">
+                <span class="bar w-6 h-0.5 bg-on-surface"></span>
+                <span class="bar w-6 h-0.5 bg-on-surface"></span>
+                <span class="bar w-6 h-0.5 bg-on-surface"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden fixed inset-x-0 top-24 bg-surface border-b-2 border-outline-variant p-6 flex-col gap-4 shadow-xl lg:hidden transition-all duration-300">
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/about.html">About Us</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/services.html">Services</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/media.html">Media Inventory</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/project.html">Projects</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/insight.html">Insights</a>
+            <a href="quotation.html" class="mt-4 w-full text-center bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 block">Request Quotation</a>
+            <a href="contact.html   " class="mt-2 w-full text-center bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg block">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- ============================================================ -->
+    <!--  HERO SECTION – "Our Story"                                  -->
+    <!-- ============================================================ -->
+    <header class="relative h-[90vh] w-full flex items-center overflow-hidden bg-on-background">
+        <div class="absolute inset-0 z-0 opacity-60">
+            <img alt="Ugandan urban landscape with high-impact billboards" class="w-full h-full object-cover"
+            src="/Assets/imgs/12.PNG" />
+        </div>
+        <div class="relative z-10 px-grid-margin w-full">
+            <div class="max-w-4xl">
+                <span class="inline-block bg-primary text-on-primary font-label-bold text-label-bold px-4 py-1 mb-6 uppercase tracking-widest">Est. 2020</span>
+                <h1 class="font-display-xl text-display-xl text-on-primary uppercase leading-none mb-8">
+                    IMPOSSIBLE <br />to <span class="text-on-primary-container">IGNORE.</span>
+                </h1>
+                <p class="font-body-lg text-body-lg text-surface-container-highest max-w-2xl mb-10 brutal-border pl-6">
+                    Brand Republic is Uganda's premier high-impact media house. We don't just place ads; we dominate
+                    landscapes, command attention, and define the urban visual fabric of the nation.
+                </p>
+            </div>
+        </div>
+        <div class="absolute bottom-0 right-0 p-grid-margin hidden md:block">
+            <div class="flex flex-col items-end">
+                <div class="w-24 h-24 border-2 border-on-primary-container rounded-full flex items-center justify-center animate-spin-slow">
+                    <span class="material-symbols-outlined text-on-primary-container scale-150">arrow_downward</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+   
+
+    <!-- ============================================================ -->
+    <!--  INTELLIGENCE SECTION (newly added)                          -->
+    <!-- ============================================================ -->
+    <section class="py-16 px-4 sm:px-8 max-w-7xl mx-auto">
+        <!-- Hero / Header -->
+        <header class="mb-12">
+            <span class="text-primary font-bold text-xs uppercase tracking-[0.2em] inline-block mb-3 border-l-4 border-primary pl-3">
+                / Research &amp; Market Knowledge
+            </span>
+            <h1 class="font-headline font-bold text-4xl sm:text-6xl uppercase leading-tight tracking-tight mb-6">
+                INTELLIGENCE FOR<br>
+                <span class="text-primary">THE REAL WORLD.</span>
+            </h1>
+            <p class="font-body text-base sm:text-lg text-on-surface-variant max-w-2xl">
+                Actionable OOH guides, billboard pricing benchmarks, and data-driven audience intelligence across
+                Kampala and urban transit corridors.
+            </p>
+
+            <!-- Pillar Category Tabs -->
+            <div id="pillar-filters" class="flex flex-wrap gap-3 mt-8 pb-6 border-b-2 border-outline-variant">
+                <button data-pillar="all"
+                    class="pillar-btn brutalist-btn bg-primary text-on-primary px-6 py-2.5 font-bold text-xs uppercase tracking-wider">
+                    All Content
+                </button>
+                <button data-pillar="ooh-insights"
+                    class="pillar-btn brutalist-btn bg-surface text-on-surface px-6 py-2.5 font-bold text-xs uppercase tracking-wider hover:bg-primary hover:text-on-primary">
+                    OOH Insights &amp; Guides
+                </button>
+                <button data-pillar="market-intelligence"
+                    class="pillar-btn brutalist-btn bg-surface text-on-surface px-6 py-2.5 font-bold text-xs uppercase tracking-wider hover:bg-primary hover:text-on-primary">
+                    Audience &amp; Market Intelligence
+                </button>
+            </div>
+        </header>
+
+        <!-- Featured Market Intelligence Briefing -->
+        <section class="mb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 brutalist-card bg-surface overflow-hidden group">
+                <div class="lg:col-span-7 relative h-[300px] sm:h-[400px] lg:h-auto border-b-2 lg:border-b-0 lg:border-r-2 border-on-surface overflow-hidden">
+                    <img src="/Assets/imgs/5.png" alt="Kampala Mobility Insights"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <span class="absolute top-4 left-4 bg-primary text-on-primary font-bold text-xs uppercase tracking-wider px-3 py-1 border border-on-surface">
+                        Featured Report
+                    </span>
+                </div>
+                <div class="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-between bg-primary text-on-primary">
+                    <div>
+                        <span class="font-bold text-xs uppercase tracking-widest text-on-primary-container">Audience
+                            Intelligence / Kampala Corridor</span>
+                        <h2 class="font-headline font-bold text-2xl sm:text-3xl uppercase leading-tight mt-3 mb-4">
+                            Kampala Mobility &amp; Traffic Flow Report
+                        </h2>
+                        <p class="font-body text-sm sm:text-base text-slate-200 mb-6 leading-relaxed">
+                            A deep dive into vehicle counts, pedestrian density, and commuter dwell times across Jinja
+                            Road, Entebbe Expressway, and Northern Bypass.
+                        </p>
+                    </div>
+                    <button onclick="openModal('kampala-mobility')"
+                        class="brutalist-btn inline-flex items-center justify-between w-full bg-surface text-on-surface font-bold text-xs uppercase tracking-wider px-5 py-3.5 hover:bg-on-surface hover:text-surface transition-colors">
+                        <span>View Full Report</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Grid Section -->
+        <section>
+            <div class="flex justify-between items-center mb-8 border-b-2 border-on-surface pb-4">
+                <h2 id="grid-title" class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight">OOH
+                    Articles &amp; Market Intelligence</h2>
+                <div class="flex gap-2">
+                    <button class="brutalist-btn p-2 bg-surface hover:bg-primary hover:text-on-primary">
+                        <span class="material-symbols-outlined block text-base">arrow_back</span>
+                    </button>
+                    <button class="brutalist-btn p-2 bg-surface hover:bg-primary hover:text-on-primary">
+                        <span class="material-symbols-outlined block text-base">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid Container -->
+            <div id="articles-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Javascript dynamically renders items here -->
+            </div>
+        </section>
+    </section>
+
+    <!-- ============================================================ -->
+    <!--  ARTICLE MODAL (for intelligence section)                    -->
+    <!-- ============================================================ -->
+    <div id="article-modal"
+        class="fixed inset-0 bg-on-surface/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+        <div
+            class="brutalist-card bg-surface w-full max-w-3xl max-h-[90vh] overflow-y-auto relative flex flex-col my-auto">
+            <!-- Modal Header Sticky Bar -->
+            <div
+                class="sticky top-0 bg-surface border-b-2 border-on-surface p-4 flex justify-between items-center z-10">
+                <span id="modal-category"
+                    class="font-bold text-xs uppercase tracking-widest bg-primary text-on-primary px-3 py-1 border border-on-surface">Category</span>
+                <button onclick="closeModal()"
+                    class="brutalist-btn bg-surface hover:bg-primary hover:text-on-primary p-1 flex items-center justify-center">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+
+            <!-- Modal Content Body -->
+            <div class="p-6 sm:p-10">
+                <div
+                    class="flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-4">
+                    <span id="modal-date">2026 Edition</span>
+                    <span>•</span>
+                    <span id="modal-readtime">5 min read</span>
+                </div>
+                <h2 id="modal-title" class="font-headline font-bold text-2xl sm:text-4xl uppercase leading-tight mb-6">
+                    Title Placeholder
+                </h2>
+                <div class="mb-8 border-2 border-on-surface overflow-hidden h-64 sm:h-80">
+                    <img id="modal-image" src="" alt="Article cover" class="w-full h-full object-cover">
+                </div>
+                <div id="modal-body" class="space-y-4 font-body text-base text-on-surface-variant leading-relaxed">
+                    <!-- Dynamic Content -->
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="border-t-2 border-on-surface p-6 bg-surface flex justify-between items-center">
+                <span class="font-headline font-bold text-sm uppercase">Brand Republic Intelligence</span>
+                <button onclick="closeModal()"
+                    class="brutalist-btn bg-primary text-on-primary font-bold text-xs uppercase px-6 py-2.5">
+                    Close Preview
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!--  FOOTER                                                      -->
+    <!-- ============================================================ -->
+    <footer class="bg-on-background relative w-full pt-section-padding pb-8 border-t-4 border-primary">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-grid-gutter px-grid-margin max-w-full mx-auto">
+            <div class="col-span-1 md:col-span-1 mb-8 md:mb-0">
+                <div class="text-headline-md font-headline-md text-primary mb-4"></div>
+                <p class="font-body-md text-surface-variant/70 mb-4">Building brands in the real world.</p>
+            </div>
+            <div class="col-span-1">
+                <h4 class="font-label-bold text-label-bold text-surface mb-4 uppercase">Company</h4>
+                <ul class="space-y-2">
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Leadership</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Partners</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">ESG</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="col-span-1">
+                <h4 class="font-label-bold text-label-bold text-surface mb-4 uppercase">Investors &amp; News</h4>
+                <ul class="space-y-2">
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Investors</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Stock Info</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Financials</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Governance</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Newsroom</a></li>
+                </ul>
+            </div>
+            <div class="col-span-1">
+                <h4 class="font-label-bold text-label-bold text-surface mb-4 uppercase">Legal &amp; Contact</h4>
+                <ul class="space-y-2">
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Privacy Policy</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Cookie Policy</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Terms of use</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Posting Standards</a></li>
+                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Real Estate Inquiries</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="px-grid-margin mt-16 pt-8 border-t border-surface-variant/20 text-center md:text-left flex flex-col md:flex-row justify-between items-center">
+            <p class="font-body-md text-surface-variant/50">© 2026 Brand Republic Ltd. All rights reserved. Registered in Uganda.</p>
+            <div class="flex gap-4 mt-4 md:mt-0">
+                <a class="text-surface-variant/70 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+                <a class="text-surface-variant/70 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">link</span></a>
+            </div>
+        </div>
+    </footer>
+
+    
+<!-- ============================================================ -->
+<!--  SUCCESS MODAL (for brief form)                              -->
+<!-- ============================================================ -->
+<div id="success-modal" class="fixed inset-0 bg-on-surface/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="brutalist-card p-8 max-w-md w-full bg-white space-y-4 text-center border-4 border-on-surface">
+        <div class="w-12 h-12 bg-primary text-on-primary border-2 border-on-surface flex items-center justify-center mx-auto shadow-[3px_3px_0px_0px_#1a1c1c]">
+            <span class="material-symbols-outlined text-2xl">check</span>
+        </div>
+        <h3 class="font-headline font-bold text-2xl uppercase tracking-tight">BRIEF RECEIVED!</h3>
+        <p class="font-body text-sm text-on-surface-variant leading-relaxed">
+            Thank you! Our strategy team is currently analyzing your request and will reach out within 24 hours.
+        </p>
+        <button onclick="closeSuccessModal()" class="brutalist-btn-purple w-full font-body font-bold text-xs uppercase py-3">
+            CLOSE
+        </button>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!--  JAVASCRIPT – All page functionality                         -->
+<!-- ============================================================ -->
+<script>
+    // ── Navbar toggle ──
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
+            const bars = menuBtn.querySelectorAll('.bar');
+
+            menuBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const isOpen = !mobileMenu.classList.contains('hidden');
+
+                if (isOpen) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    bars.forEach(function(bar, index) {
+                        if (index === 0) bar.classList.remove('rotate-45', 'translate-y-2');
+                        if (index === 1) bar.classList.remove('opacity-0');
+                        if (index === 2) bar.classList.remove('-rotate-45', '-translate-y-2');
+                    });
+                } else {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+                    bars.forEach(function(bar, index) {
+                        if (index === 0) bar.classList.add('rotate-45', 'translate-y-2');
+                        if (index === 1) bar.classList.add('opacity-0');
+                        if (index === 2) bar.classList.add('-rotate-45', '-translate-y-2');
+                    });
+                }
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    bars.forEach(function(bar, index) {
+                        if (index === 0) bar.classList.remove('rotate-45', 'translate-y-2');
+                        if (index === 1) bar.classList.remove('opacity-0');
+                        if (index === 2) bar.classList.remove('-rotate-45', '-translate-y-2');
+                    });
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    bars.forEach(function(bar, index) {
+                        if (index === 0) bar.classList.remove('rotate-45', 'translate-y-2');
+                        if (index === 1) bar.classList.remove('opacity-0');
+                        if (index === 2) bar.classList.remove('-rotate-45', '-translate-y-2');
+                    });
+                }
+            });
+        }
+    });
+
+    // ── Counter animation ──
+    document.addEventListener('DOMContentLoaded', function() {
+        const counters = document.querySelectorAll('.counter');
+        const observerOptions = { threshold: 0.5 };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = +entry.target.getAttribute('data-target');
+                    const duration = 2000;
+                    const startTime = performance.now();
+
+                    function updateCounter(currentTime) {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const currentVal = Math.floor(progress * target);
+                        entry.target.innerText = currentVal + (target > 100 ? '+' : '');
+
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCounter);
+                        }
+                    }
+                    requestAnimationFrame(updateCounter);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        counters.forEach(counter => observer.observe(counter));
+    });
+
+    // ── Hero parallax ──
+    document.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImg = document.querySelector('header img');
+            if (heroImg) {
+                heroImg.style.transform = `translateY(${scrolled * 0.4}px)`;
+            }
+        });
+    });
+
+    // ── Brief form handlers ──
+    const selectedServices = new Set();
+
+    function toggleService(element, serviceName) {
+        if (selectedServices.has(serviceName)) {
+            selectedServices.delete(serviceName);
+            element.classList.remove('selected');
+        } else {
+            selectedServices.add(serviceName);
+            element.classList.add('selected');
+        }
+    }
+
+    function handleBriefSubmit(e) {
+        e.preventDefault();
+
+        const formData = {
+            services: Array.from(selectedServices),
+            company: document.getElementById('company_name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('telephone').value,
+            objective: document.getElementById('objective').value,
+            locations: document.getElementById('locations').value,
+            dates: document.getElementById('dates').value,
+            budget: document.getElementById('budget').value,
+        };
+
+        console.log('Submitted Campaign Brief:', formData);
+        document.getElementById('success-modal').classList.remove('hidden');
+    }
+
+    function closeSuccessModal() {
+        document.getElementById('success-modal').classList.add('hidden');
+        document.getElementById('brief-form').reset();
+        document.querySelectorAll('.service-option').forEach(el => el.classList.remove('selected'));
+        selectedServices.clear();
+    }
+
+    // ── Intelligence section: content repository, render, filters, modal ──
+    const contentRepository = [
+        // --- OOH INSIGHTS ---
+        {
+            id: 'cost-uganda',
+            pillar: 'ooh-insights',
+            category: 'OOH Insights (SEO)',
+            title: 'How Much Does Billboard Advertising Cost in Uganda?',
+            date: 'Updated 2026',
+            readTime: '6 min read',
+            image: '/Assets/imgs/6.png',
+            excerpt: 'Standard rate breakdowns across Kampala CBD, highways, flex skin printing, and municipal permits.',
+            content: `
+                    <p>In Kampala, standard billboard site rentals typically range between <strong>UGX 3,000,000 and UGX 9,500,000 per month</strong> depending on location prime status (e.g., Jinja Road vs. Upcountry corridors).</p>
+                    <p>Key cost factors to plan for include:</p>
+                    <ul class="list-disc pl-5 space-y-2 font-bold">
+                        <li><strong>Flex Printing &amp; Production:</strong> UGX 450,000 to UGX 1,200,000 for standard 48-sheet / unipole skins.</li>
+                        <li><strong>Installation &amp; Logistics:</strong> UGX 800,000 - UGX 1,500,000 crane hire fees.</li>
+                        <li><strong>KCCA Municipal Permits:</strong> Varies by signage square meterage and illumination status.</li>
+                    </ul>
+                `
+        },
+        {
+            id: 'best-locations-kampala',
+            pillar: 'ooh-insights',
+            category: 'OOH Insights (SEO)',
+            title: 'Best Billboard Locations in Kampala',
+            date: 'Updated 2026',
+            readTime: '5 min read',
+            image: '/Assets/imgs/9.png',
+            excerpt: 'Analyzing high-impact arterial routes: Jinja Road, Entebbe Road, Kira Road, and Clock Tower flyovers.',
+            content: `
+                    <p>Kampala's highest-converting OOH sites are concentrated along major vehicular commuter bottlenecks:</p>
+                    <ul class="list-disc pl-5 space-y-2 font-bold">
+                        <li><strong>Jinja Road Corridor:</strong> Captures Eastern commuter traffic, corporate workforce, and logistics movement.</li>
+                        <li><strong>Entebbe Highway &amp; Sky Tower:</strong> High-value airport traffic and affluent suburbs.</li>
+                        <li><strong>Northern Bypass Junctions:</strong> Massive vehicle volume connecting Ntinda, Naalya, and Kalerwe.</li>
+                    </ul>
+                `
+        },
+        {
+            id: 'choose-location',
+            pillar: 'ooh-insights',
+            category: 'OOH Insights (SEO)',
+            title: 'How to Choose a Billboard Location',
+            date: 'Updated 2026',
+            readTime: '4 min read',
+            image: '/Assets/imgs/7.png',
+            excerpt: 'Sightlines, dwell times, vehicular velocity, and obstruction audits before signing site contracts.',
+            content: `
+                    <p>Choosing an OOH site requires evaluating viewing angles, traffic speed, and dwell times. A billboard near a traffic bottleneck offers significantly higher read times than a board along a high-speed bypass with zero slowdowns.</p>
+                `
+        },
+        {
+            id: 'digital-vs-static',
+            pillar: 'ooh-insights',
+            category: 'OOH Insights (SEO)',
+            title: 'Digital vs Static Billboard Advertising',
+            date: 'Updated 2026',
+            readTime: '5 min read',
+            image: '/Assets/imgs/8.png',
+            excerpt: 'Comparing 100% share-of-voice static vinyl vs dynamic time-triggered DOOH screens.',
+            content: `
+                    <p>Static billboards offer 24/7 exclusivity, while Digital Out-of-Home (DOOH) allows multi-creative rotations, dayparting, and lower upfront production costs without vinyl re-skinning requirements.</p>
+                `
+        },
+        {
+            id: 'campaign-duration',
+            pillar: 'ooh-insights',
+            category: 'OOH Insights (SEO)',
+            title: 'How Long Should an OOH Campaign Run?',
+            date: 'Updated 2026',
+            readTime: '4 min read',
+            image: '/Assets/imgs/10.png',
+            excerpt: 'Why 4 to 12-week flight cycles build optimal ad recall and frequency retention.',
+            content: `
+                    <p>While tactical events run for 2-4 weeks, brand building campaigns typically require a minimum 12-week run to build strong psychological frequency across regular daily commuters.</p>
+                `
+        },
+        {
+            id: 'measure-outdoor',
+            pillar: 'ooh-insights',
+            category: 'OOH Insights (SEO)',
+            title: 'How to Measure Outdoor Advertising',
+            date: 'Updated 2026',
+            readTime: '6 min read',
+            image: '/Assets/imgs/11.png',
+            excerpt: 'Mobility signals, localized promo codes, footfall attribution, and brand lift studies.',
+            content: `
+                    <p>Combining mobile location data with vanity URLs, customized promo codes, and geotagged web traffic surges provides direct measurable impact for outdoor campaigns.</p>
+                `
+        },
+        // --- AUDIENCE & MARKET INTELLIGENCE ---
+        {
+            id: 'kampala-mobility',
+            pillar: 'market-intelligence',
+            category: 'Audience & Market Intelligence',
+            title: 'Kampala Mobility & Traffic Trends 2026',
+            date: 'Q3 Report',
+            readTime: '8 min read',
+            image: '/Assets/imgs/5.png',
+            excerpt: 'Comprehensive vehicular and commuter movement data across Greater Kampala Metropolitan Area.',
+            content: `
+                    <p>Morning peak traffic runs from 06:30 to 09:30 along commuter routes feeding CBD, while evening bottleneck traffic peaks between 17:00 and 20:30. Highly effective sites align with evening congestion points where dwell time doubles.</p>
+                `
+        },
+        {
+            id: 'audience-movement',
+            pillar: 'market-intelligence',
+            category: 'Audience & Market Intelligence',
+            title: 'Audience Movement & Dwell Time Analytics',
+            date: 'Q3 Report',
+            readTime: '7 min read',
+            image: '/Assets/imgs/9.png',
+            excerpt: 'Tracking pedestrian footfall and transit hub density around taxi parks and shopping malls.',
+            content: `
+                    <p>Dwell time at major transit terminals averages 14–22 minutes. Capturing these audiences requires high-resolution screens with readable copy from 15-meter distances.</p>
+                `
+        },
+        {
+            id: 'ooh-statistics',
+            pillar: 'market-intelligence',
+            category: 'Audience & Market Intelligence',
+            title: 'OOH Statistics & Market Growth',
+            date: '2026 Data',
+            readTime: '5 min read',
+            image: '/Assets/imgs/11.png',
+            excerpt: 'Market share, digital screen adoption rates, and regional ad spend figures.',
+            content: `
+                    <p>Digital billboard placements across Uganda have grown 34% year-over-year, driven by demand for flexible programmatic slot purchasing and instant creative switching.</p>
+                `
+        },
+        {
+            id: 'consumer-behaviour',
+            pillar: 'market-intelligence',
+            category: 'Audience & Market Intelligence',
+            title: 'Consumer Behaviour & OOH Recall Index',
+            date: '2026 Survey',
+            readTime: '6 min read',
+            image: '/Assets/imgs/7.png',
+            excerpt: 'How urban consumers interact with outdoor ads before making digital search actions.',
+            content: `
+                    <p>Surveys show 68% of Kampala urban consumers perform a mobile search for a brand within 2 hours of seeing a memorable outdoor billboard during traffic slowdowns.</p>
+                `
+        }
+    ];
+
+    // Render Cards Function
+    function renderItems(items) {
+        const container = document.getElementById('articles-container');
+        if (!container) return;
+        container.innerHTML = items.map(item => `
+                <article class="brutalist-card flex flex-col justify-between overflow-hidden group">
+                    <div>
+                        <div class="h-48 border-b-2 border-on-surface overflow-hidden relative">
+                            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-surface border border-on-surface font-bold text-[10px] uppercase tracking-wider px-2.5 py-1">
+                                ${item.category}
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-3">
+                                <span>${item.date}</span>
+                                <span>•</span>
+                                <span>${item.readTime}</span>
+                            </div>
+                            <h3 class="font-headline font-bold text-xl uppercase leading-tight mb-3 group-hover:text-primary transition-colors">
+                                ${item.title}
+                            </h3>
+                            <p class="font-body text-sm text-on-surface-variant line-clamp-3 mb-4">
+                                ${item.excerpt}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openModal('${item.id}')" class="brutalist-btn w-full bg-primary text-on-primary font-bold text-xs uppercase tracking-wider py-2.5 flex items-center justify-center gap-2">
+                            <span>Read Article</span>
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </article>
+            `).join('');
+    }
+
+    // Initialize Render
+    document.addEventListener('DOMContentLoaded', function() {
+        renderItems(contentRepository);
+    });
+
+    // Filter Event Listeners
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.pillar-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const targetPillar = e.target.getAttribute('data-pillar');
+
+                document.querySelectorAll('.pillar-btn').forEach(b => {
+                    b.classList.remove('bg-primary', 'text-on-primary');
+                    b.classList.add('bg-surface', 'text-on-surface');
+                });
+                e.target.classList.remove('bg-surface', 'text-on-surface');
+                e.target.classList.add('bg-primary', 'text-on-primary');
+
+                if (targetPillar === 'all') {
+                    renderItems(contentRepository);
+                } else {
+                    const filtered = contentRepository.filter(i => i.pillar === targetPillar);
+                    renderItems(filtered);
+                }
+            });
+        });
+    });
+
+    // Modal Handlers
+    function openModal(id) {
+        const item = contentRepository.find(a => a.id === id);
+        if (!item) return;
+
+        document.getElementById('modal-category').innerText = item.category;
+        document.getElementById('modal-date').innerText = item.date;
+        document.getElementById('modal-readtime').innerText = item.readTime;
+        document.getElementById('modal-title').innerText = item.title;
+        document.getElementById('modal-image').src = item.image;
+        document.getElementById('modal-body').innerHTML = item.content;
+
+        document.getElementById('article-modal').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        document.getElementById('article-modal').classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+</script>
+
+</body>
+
+</html>
