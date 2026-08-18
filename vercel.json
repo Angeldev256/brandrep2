@@ -1,5 +1,9 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/$1.html" }
+  "version": 2,
+  "routes": [
+    {
+      "src": "/Assets/(.*)",
+      "dest": "/html/digitalize/assets/$1"
+    }
   ]
 }
