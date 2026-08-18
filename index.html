@@ -91,8 +91,10 @@
                         "hero": ["72px", { "lineHeight": "76px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
                         "hero-mobile": ["48px", { "lineHeight": "52px", "fontWeight": "700" }],
                         "section-headline": ["40px", { "lineHeight": "44px", "fontWeight": "700" }],
-                        "stat-large": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.02em",
-                            "fontWeight": "600" }],
+                        "stat-large": ["120px", {
+                            "lineHeight": "110px", "letterSpacing": "-0.02em",
+                            "fontWeight": "600"
+                        }],
                         "nav": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
                         "button": ["16px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "400" }],
                         "body": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
@@ -114,14 +116,17 @@
     <!-- Google Fonts: Space Grotesk + Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
 
     <style>
         /* ── Custom label-bold utilities (used in navbar) ── */
         .font-label-bold {
-            font-family: 'Manrope', sans-serif;
+            font-family: 'Manrope', ;
             font-weight: 700;
         }
+
         .text-label-bold {
             font-size: 14px;
             letter-spacing: 0.05em;
@@ -132,6 +137,7 @@
         .clip-slant-reverse {
             clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
         }
+
         @media (max-width: 768px) {
             .clip-slant-reverse {
                 clip-path: polygon(0 0, 100% 0, 100% 98%, 0 100%);
@@ -144,11 +150,13 @@
                 opacity: 0;
                 transform: translateY(30px) scale(0.97);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0) scale(1);
             }
         }
+
         .animate-fade-up {
             animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
@@ -158,17 +166,21 @@
             0% {
                 transform: translateX(0);
             }
+
             100% {
                 transform: translateX(-50%);
             }
         }
+
         .animate-marquee {
             animation: marquee 20s linear infinite;
             width: max-content;
         }
+
         .animate-marquee:hover {
             animation-play-state: paused;
         }
+
         .animate-marquee img {
             display: inline-block;
             vertical-align: middle;
@@ -179,12 +191,15 @@
         .bar {
             transition: all 0.3s ease;
         }
+
         .hamburger-active .bar:nth-child(1) {
             transform: rotate(45deg) translateY(7px);
         }
+
         .hamburger-active .bar:nth-child(2) {
             opacity: 0;
         }
+
         .hamburger-active .bar:nth-child(3) {
             transform: rotate(-45deg) translateY(-7px);
         }
@@ -193,13 +208,16 @@
         html {
             scroll-behavior: smooth;
         }
+
         ::selection {
             background: #4a0e9b;
             color: #ffffff;
         }
+
         .group {
             will-change: transform, box-shadow;
         }
+
         .slant-clip-reverse {
             clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
         }
@@ -208,15 +226,19 @@
         .stat-item {
             transition-property: opacity, transform;
         }
+
         .stat-item.opacity-0 {
             opacity: 0;
         }
+
         .stat-item.translate-y-4 {
             transform: translateY(1rem);
         }
+
         .stat-item.opacity-100 {
             opacity: 1;
         }
+
         .stat-item.translate-y-0 {
             transform: translateY(0);
         }
@@ -225,12 +247,15 @@
         .hero-frame-container:hover .hero-frame-bg {
             transform: rotate(0deg) scale(1.02);
         }
+
         .hero-frame-container:hover .hero-frame-fg {
             transform: rotate(0deg) scale(1.01);
         }
+
         .leader-frame-container:hover .leader-frame-bg {
             transform: rotate(0deg) scale(1.03);
         }
+
         .leader-frame-container:hover .leader-frame-fg {
             transform: rotate(0deg);
         }
@@ -242,6 +267,7 @@
             transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
                 transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
         }
+
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
@@ -253,6 +279,7 @@
             transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
                 transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
         }
+
         .reveal-left.visible {
             opacity: 1;
             transform: translateX(0);
@@ -264,6 +291,7 @@
             transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
                 transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
         }
+
         .reveal-right.visible {
             opacity: 1;
             transform: translateX(0);
@@ -275,6 +303,7 @@
             transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
                 transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
         }
+
         .reveal-scale.visible {
             opacity: 1;
             transform: scale(1);
@@ -286,6 +315,7 @@
             transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
                 transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
         }
+
         .stagger-item.visible {
             opacity: 1;
             transform: translateY(0);
@@ -295,57 +325,72 @@
         .stagger-delay-1 {
             transition-delay: 0.05s;
         }
+
         .stagger-delay-2 {
             transition-delay: 0.10s;
         }
+
         .stagger-delay-3 {
             transition-delay: 0.15s;
         }
+
         .stagger-delay-4 {
             transition-delay: 0.20s;
         }
+
         .stagger-delay-5 {
             transition-delay: 0.25s;
         }
+
         .stagger-delay-6 {
             transition-delay: 0.30s;
         }
+
         .stagger-delay-7 {
             transition-delay: 0.35s;
         }
+
         .stagger-delay-8 {
             transition-delay: 0.40s;
         }
+
         .stagger-delay-9 {
             transition-delay: 0.45s;
         }
+
         .stagger-delay-10 {
             transition-delay: 0.50s;
         }
 
         /* floating animation for hero */
         @keyframes float {
+
             0%,
             100% {
                 transform: translateY(0px);
             }
+
             50% {
                 transform: translateY(-12px);
             }
         }
+
         .animate-float {
             animation: float 5s ease-in-out infinite;
         }
 
         @keyframes float-slow {
+
             0%,
             100% {
                 transform: translateY(0px);
             }
+
             50% {
                 transform: translateY(-8px);
             }
         }
+
         .animate-float-slow {
             animation: float-slow 7s ease-in-out infinite;
         }
@@ -355,6 +400,7 @@
             0% {
                 background-position: -200% 0;
             }
+
             100% {
                 background-position: 200% 0;
             }
@@ -370,15 +416,18 @@
             overflow: hidden;
             display: block;
         }
+
         .hero-line .line-inner {
             display: block;
             transform: translateY(100%);
             opacity: 0;
             animation: heroReveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
+
         .hero-line:nth-child(1) .line-inner {
             animation-delay: 0.2s;
         }
+
         .hero-line:nth-child(2) .line-inner {
             animation-delay: 0.4s;
         }
@@ -388,6 +437,7 @@
                 transform: translateY(100%);
                 opacity: 0;
             }
+
             100% {
                 transform: translateY(0);
                 opacity: 1;
@@ -405,6 +455,7 @@
             transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
                 box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
         }
+
         .card-lift:hover {
             transform: translateY(-6px) scale(1.01);
             box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
@@ -415,10 +466,12 @@
             0% {
                 width: 0%;
             }
+
             100% {
                 width: 100%;
             }
         }
+
         .progress-animate {
             animation: progressGrow 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
@@ -435,25 +488,30 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
         .slide-up-fade {
             animation: slideUpFade 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
         /* pulse glow for CTA */
         @keyframes pulseGlow {
+
             0%,
             100% {
                 box-shadow: 0 0 0 0 rgba(71, 0, 130, 0.4);
             }
+
             50% {
                 box-shadow: 0 0 0 12px rgba(71, 0, 130, 0);
             }
         }
+
         .pulse-glow {
             animation: pulseGlow 2s ease-in-out infinite;
         }
@@ -469,26 +527,31 @@
         .img-zoom {
             overflow: hidden;
         }
+
         .img-zoom img {
             transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
             will-change: transform;
         }
+
         .img-zoom:hover img {
             transform: scale(1.08);
         }
 
         /* scroll indicator fade */
         @keyframes scrollBounce {
+
             0%,
             100% {
                 transform: translateY(0);
                 opacity: 0.6;
             }
+
             50% {
                 transform: translateY(8px);
                 opacity: 1;
             }
         }
+
         .scroll-bounce {
             animation: scrollBounce 2s ease-in-out infinite;
         }
@@ -498,6 +561,7 @@
             display: inline-block;
             transition: transform 0.3s ease;
         }
+
         .stat-item:hover .stat-number {
             transform: scale(1.05);
         }
@@ -509,41 +573,57 @@
     <!-- ========================================================= -->
     <!-- TOP NAVBAR – unified version with label-bold font -->
     <!-- ========================================================= -->
-    <nav class="fixed top-0 w-full z-[100] h-24 bg-surface/90 backdrop-blur-md border-b-2 border-outline-variant flex justify-between items-center px-[4rem] max-w-full mx-auto nav-blur">
+    <nav
+        class="fixed top-0 w-full z-[100] h-24 bg-surface/90 backdrop-blur-md border-b-2 border-outline-variant flex justify-between items-center px-[4rem] max-w-full mx-auto nav-blur">
         <a href="/" class="h-auto py-2 flex items-center focus:outline-none">
             <img src="/Assets/bg.png" alt="Brand Republic Logo" class="h-20 md:h-25 w-auto object-contain">
         </a>
 
         <div class="font-manrope hidden lg:flex gap-6 items-center">
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="/about.html">About Us</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="/services.html">Services</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="/media.html">Media Inventory</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="/project.html">Projects</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="/insight.html">Insights</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide"
+                href="/about.html">About</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide"
+                href="/media.html">Media</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide"
+                href="/innovation.html">Innovation</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide"
+                href="/insight.html">Insights</a>
         </div>
 
         <div class="flex items-center gap-4">
-            <a href="quotation.html" class="hidden lg:inline-block bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 shadow-sm">
+            <a href="quotation.html"
+                class="hidden lg:inline-block bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 shadow-sm">
                 Request Quotation
             </a>
-            <a href="contact.html" class="hidden lg:inline-block bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg pulse-glow">
+            <a href="contact.html"
+                class="hidden lg:inline-block bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg pulse-glow">
                 Contact Us
             </a>
-            <button id="mobile-menu-btn" class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none z-[110]" aria-label="Toggle Navigation Menu">
+            <button id="mobile-menu-btn"
+                class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none z-[110]"
+                aria-label="Toggle Navigation Menu">
                 <span class="bar w-6 h-0.5 bg-on-surface"></span>
                 <span class="bar w-6 h-0.5 bg-on-surface"></span>
                 <span class="bar w-6 h-0.5 bg-on-surface"></span>
             </button>
         </div>
 
-        <div id="mobile-menu" class="hidden fixed inset-x-0 top-24 bg-surface border-b-2 border-outline-variant p-6 flex-col gap-4 shadow-xl lg:hidden transition-all duration-300">
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/about.html">About Us</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="services.html">Services</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/media.html">Media Inventory</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="project.html">Projects</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/insight.html">Insights</a>
-            <a href="quotation.html" class="mt-4 w-full text-center bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 block">Request Quotation</a>
-            <a href="contact.html" class="mt-2 w-full text-center bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg block">Contact Us</a>
+        <div id="mobile-menu"
+            class="hidden fixed inset-x-0 top-24 bg-surface border-b-2 border-outline-variant p-6 flex-col gap-4 shadow-xl lg:hidden transition-all duration-300">
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30"
+                href="/about.html">About Us</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30"
+                href="/media.html">Media </a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30"
+                href="project.html">Innovation</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30"
+                href="/insight.html">Insights</a>
+            <a href="quotation.html"
+                class="mt-4 w-full text-center bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 block">Request
+                Quotation</a>
+            <a href="contact.html"
+                class="mt-2 w-full text-center bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg block">Contact
+                Us</a>
         </div>
     </nav>
 
@@ -551,50 +631,43 @@
     <!-- 1. HERO CAROUSEL (full-screen)                            -->
     <!-- ========================================================= -->
     <section class="relative h-screen w-full overflow-hidden bg-on-background group" id="hero-carousel">
-        <div class="relative w-full h-full flex transition-transform duration-1000 cubic-bezier(0.4, 0, 0.2, 1)" id="carousel-inner" style="transform: translateX(0%);">
 
+        <!-- Sliding Background Images -->
+        <div class="absolute inset-0 w-full h-full flex transition-transform duration-1000 cubic-bezier(0.4, 0, 0.2, 1)"
+            id="carousel-inner" style="transform: translateX(0%);">
             <!-- Slide 1 -->
             <div class="w-full h-full flex-shrink-0 relative">
-                <img alt="Skyline advertising" class="absolute inset-0 w-full h-full object-cover brightness-50" src="/Assets/imgs/1.png">
-                <div class="absolute inset-0 flex items-center z-10 px-4 sm:px-8 lg:px-16">
-                    <div class="container mx-auto">
-                        <h1 class="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white font-bold leading-tight uppercase max-w-5xl drop-shadow-2xl">
-                            <span class="hero-line"><span class="line-inner">WE MAKE BRANDS</span></span>
-                            <span class="hero-line"><span class="line-inner text-primary-fixed block sm:inline">IMPOSSIBLE TO IGNORE.</span></span>
-                        </h1>
-                        <a href="/media.html" class="mt-6 sm:mt-8 lg:mt-10 inline-block bg-primary text-on-primary font-label-bold text-sm sm:text-base lg:text-lg uppercase py-3 px-6 sm:py-4 sm:px-8 rounded-full hover:scale-105 transition-transform duration-300 shadow-2xl pulse-glow">
-                            EXPLORE OUR MEDIA
-                        </a>
-                    </div>
-                </div>
+                <img alt="Skyline advertising background 1"
+                    class="absolute inset-0 w-full h-full object-cover brightness-50" src="/Assets/imgs/1.png">
             </div>
 
             <!-- Slide 2 -->
             <div class="w-full h-full flex-shrink-0 relative">
-                <img alt="Skyline advertising" class="absolute inset-0 w-full h-full object-cover brightness-50" src="/Assets/imgs/1.png">
-                <div class="absolute inset-0 flex items-center z-10 px-4 sm:px-8 lg:px-16">
-                    <div class="container mx-auto">
-                        <h1 class="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white font-bold leading-tight uppercase max-w-5xl drop-shadow-2xl">
-                            <span class="hero-line"><span class="line-inner">UGANDA'S</span></span>
-                            <span class="hero-line"><span class="line-inner text-primary-fixed block sm:inline">OUTDOOR MEDIA.</span></span>
-                        </h1>
-                    </div>
-                </div>
+                <img alt="Skyline advertising background 2"
+                    class="absolute inset-0 w-full h-full object-cover brightness-50" src="/Assets/imgs/2.png">
             </div>
 
             <!-- Slide 3 -->
             <div class="w-full h-full flex-shrink-0 relative">
-                <img alt="Skyline advertising" class="absolute inset-0 w-full h-full object-cover brightness-50" src="/Assets/imgs/6.png">
-                <div class="absolute inset-0 flex items-center z-10 px-4 sm:px-8 lg:px-16">
-                    <div class="container mx-auto">
-                        <h1 class="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white font-bold leading-tight uppercase max-w-5xl drop-shadow-2xl">
-                            <span class="hero-line"><span class="line-inner">DOMINATE THE</span></span>
-                            <span class="hero-line"><span class="line-inner text-primary-fixed block sm:inline">SKYLINE.</span></span>
-                        </h1>
-                    </div>
-                </div>
+                <img alt="Skyline advertising background 3"
+                    class="absolute inset-0 w-full h-full object-cover brightness-50" src="/Assets/imgs/6.png">
             </div>
+        </div>
 
+        <!-- Static Text Overlay (Stays fixed while backgrounds slide) -->
+        <div class="absolute inset-0 flex items-center z-10 px-4 sm:px-8 lg:px-16 pointer-events-none">
+            <div class="container mx-auto pointer-events-auto">
+                <h1
+                    class="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white font-bold leading-tight uppercase max-w-5xl drop-shadow-2xl">
+                    <span class="hero-line"><span class="line-inner">WE MAKE BRANDS</span></span>
+                    <span class="hero-line"><span class="line-inner text-primary-fixed block sm:inline">IMPOSSIBLE TO
+                            IGNORE</span></span>
+                </h1>
+                <a href="/media.html"
+                    class="mt-6 sm:mt-8 lg:mt-10 inline-block bg-primary text-on-primary font-label-bold text-sm sm:text-base lg:text-lg uppercase py-3 px-6 sm:py-4 sm:px-8 rounded-full hover:scale-105 transition-transform duration-300 shadow-2xl pulse-glow">
+                    EXPLORE OUR MEDIA
+                </a>
+            </div>
         </div>
 
         <!-- Pagination Dots -->
@@ -604,54 +677,68 @@
             <button class="carousel-dot w-3 h-3 rounded-full hover:bg-white transition-all bg-white/50"></button>
         </div>
     </section>
-
     <!-- ========================================================= -->
     <!-- 2. WHO WE ARE (with parallax image)                       -->
     <!-- ========================================================= -->
-    <section class="relative py-section-padding bg-primary text-on-primary overflow-hidden" id="who-we-are">
+    <section class="relative py-16 md:py-24 bg-primary text-on-primary overflow-hidden" id="who-we-are">
         <div class="absolute left-0 top-0 w-1/3 h-full slant-clip-reverse hidden lg:block overflow-hidden group/image">
-            <img alt="Urban billboard" class="w-full h-full object-cover opacity-60 mix-blend-luminosity transition-all duration-700 ease-out will-change-transform scale-105 group-hover/image:scale-110 group-hover/image:rotate-1 parallax-image" src="/Assets/imgs/3.png">
-            <div class="absolute inset-0 bg-primary/0 transition-all duration-700 group-hover/image:bg-primary/20"></div>
+            <img alt="Urban billboard"
+                class="w-full h-full object-cover opacity-60 mix-blend-luminosity transition-all duration-700 ease-out will-change-transform scale-105 group-hover/image:scale-110 group-hover/image:rotate-1 parallax-image"
+                src="/Assets/imgs/3.png">
+            <div class="absolute inset-0 bg-primary/0 transition-all duration-700 group-hover/image:bg-primary/20">
+            </div>
         </div>
 
-        <div class="container mx-auto px-grid-margin grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter relative z-10">
-            <div class="lg:col-start-6 lg:col-span-7 flex flex-col items-start gap-8 reveal" data-delay="200">
+        <div class="container mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10">
+            <!-- Changed gap-8 to gap-6 to slightly tighten the space between the button, paragraph, and link -->
+            <div class="lg:col-start-6 lg:col-span-7 flex flex-col items-start gap-6 reveal" data-delay="200">
                 <div class="flex gap-4 flex-wrap">
-                    <a class="border-2 border-on-primary rounded-xl px-8 py-4 font-label-bold text-sm uppercase tracking-widest bg-on-primary text-primary transition-all shadow-xl hover:shadow-2xl hover:scale-105 hover:bg-primary hover:text-on-primary hover:border-on-primary duration-300" href="/about">Who we are</a>
+                    <a class="border-2 border-on-primary rounded-xl px-8 py-4 font-label-bold text-sm uppercase tracking-widest bg-on-primary text-primary transition-all shadow-xl hover:shadow-2xl hover:scale-105 hover:bg-primary hover:text-on-primary hover:border-on-primary duration-300"
+                        href="about.html">Who we are</a>
                 </div>
-                <p class="font-body text-body max-w-2xl opacity-90 leading-relaxed">
+
+                <!-- Increased text size (text-xl md:text-2xl) and tightened line height (leading-tight) -->
+                <p class="font-body text-xl md:text-2xl max-w-3xl opacity-90 leading-tight">
                     Brand Republic is an outdoor advertising and brand experience company connecting
-                    ambitious brands with audiences across high-impact environments.<br>
+                    ambitious brands with audiences across high-impact environments.<br><br>
                     From premium roadside media and digital displays to landmark branding, transit
                     media and custom-built brand experiences, we combine strategic locations, bold
                     creativity and reliable execution to make brands impossible to ignore.
                 </p>
-                <a href="about.html" class="font-bold flex items-center gap-2 text-sm uppercase tracking-wider group/link hover:text-primary-fixed transition-colors duration-300">
+
+                <a href="about.html"
+                    class="font-bold flex items-center gap-2 text-sm md:text-base uppercase tracking-wider group/link hover:text-primary-fixed transition-colors duration-300 mt-2">
                     DISCOVER BRAND REPUBLIC
                     <span class="inline-block transition-transform duration-300 group-hover/link:translate-x-2">→</span>
                 </a>
             </div>
         </div>
     </section>
-
     <!-- ========================================================= -->
     <!-- 3. TRUSTED LEADERS MARQUEE                               -->
     <!-- ========================================================= -->
     <section class="py-20 bg-surface-container-lowest border-y border-outline-variant/30 overflow-hidden">
         <div class="container mx-auto px-grid-margin">
-            <p class="text-center font-label-bold text-outline uppercase tracking-[0.2em] mb-12 reveal" data-delay="100">Trusted by industry leaders</p>
+            <p class="text-center font-label-bold text-outline uppercase tracking-[0.2em] mb-12 reveal"
+                data-delay="100">Trusted by industry leaders</p>
             <div class="relative w-full overflow-hidden">
-                <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-surface-container-lowest to-transparent z-10"></div>
-                <div class="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-surface-container-lowest to-transparent z-10"></div>
+                <div
+                    class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-surface-container-lowest to-transparent z-10">
+                </div>
+                <div
+                    class="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-surface-container-lowest to-transparent z-10">
+                </div>
                 <div class="flex animate-marquee whitespace-nowrap gap-12 md:gap-24 opacity-80">
-                    <img alt="Coca-Cola Logo" class="h-16 md:h-20 object-contain inline-block" src="/Assets/cocacola.png">
+                    <img alt="Coca-Cola Logo" class="h-16 md:h-20 object-contain inline-block"
+                        src="/Assets/cocacola.png">
                     <img alt="MTN Logo" class="h-16 md:h-20 object-contain inline-block" src="/Assets/airtel.png">
                     <img alt="Stanbic Bank Logo" class="h-16 md:h-20 object-contain inline-block" src="/Assets/mtn.png">
                     <img alt="nbs" class="h-16 md:h-20 object-contain inline-block" src="/Assets/smirnoff.png">
                     <img alt="Stanbic" class="h-16 md:h-20 object-contain inline-block" src="/Assets/stanbic.png">
                     <img alt="Partner Logo" class="h-12 object-contain inline-block" src="/Assets/ncba-bank.png">
                     <!-- duplicate for seamless loop -->
-                    <img alt="Coca-Cola Logo" class="h-16 md:h-20 object-contain inline-block" src="/Assets/smirnoff.png">
+                    <img alt="Coca-Cola Logo" class="h-16 md:h-20 object-contain inline-block"
+                        src="/Assets/smirnoff.png">
                     <img alt="MTN Logo" class="h-16 md:h-20 object-contain inline-block" src="/Assets/airtel.png">
                     <img alt="Stanbic Bank Logo" class="h-16 md:h-20 object-contain inline-block" src="/Assets/mtn.png">
                     <img alt="nbs" class="h-16 md:h-20 object-contain inline-block" src="/Assets/nbs.png">
@@ -667,77 +754,86 @@
     <!-- ========================================================= -->
     <section class="px-grid-margin py-16 bg-surface-variant clip-slant-reverse pb-32" id="media">
         <div class="mb-12 flex flex-wrap items-end justify-between gap-4">
-            <h3 class="font-headline text-section-headline text-on-surface uppercase border-b-4 border-primary inline-block pb-2 reveal" data-delay="100">Our Media</h3>
-            <a href="/media.html" class="font-label-bold text-label-bold uppercase text-primary hover:text-on-surface transition-colors flex items-center gap-2 reveal" data-delay="200">visual overview &rarr;</a>
+            <h3 class="font-headline text-section-headline text-on-surface uppercase border-b-4 border-primary inline-block pb-2 reveal"
+                data-delay="100">Our Media</h3>
+            <a href="/media.html"
+                class="font-label-bold text-label-bold uppercase text-primary hover:text-on-surface transition-colors flex items-center gap-2 reveal"
+                data-delay="200">visual overview &rarr;</a>
         </div>
 
         <div class="flex flex-nowrap gap-grid-gutter overflow-x-auto pb-4">
             <!-- Card 1 -->
             <a href="/media.html" class="block no-underline flex-shrink-0 w-72 stagger-item stagger-delay-1">
-                <article class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full rotate-1 hover:rotate-0 hover:shadow-xl card-lift">
+                <article
+                    class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full rotate-1 hover:rotate-0 hover:shadow-xl card-lift">
                     <div class="h-48 overflow-hidden img-zoom">
                         <img class="w-full h-full object-cover" src="/Assets/imgs/7.png" alt="Billboard">
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
-                        <span class="text-primary font-label-bold text-label-bold uppercase mb-2">Billboards Guide</span>
-                        <h4 class="font-headline text-2xl leading-tight uppercase text-on-surface mb-4 group-hover:text-primary transition-colors">How Much Does a Billboard Cost in Uganda?</h4>
-                        <div class="flex items-center text-primary font-label-bold text-label-bold uppercase"><span class="mr-1">/</span><span>Explore</span></div>
+                        <span class="text-primary font-label-bold text-label-bold uppercase mb-2">Billboards </span>
+                        <div class="flex items-center text-primary font-label-bold text-label-bold uppercase"><span
+                                class="mr-1">/</span><span>Explore</span></div>
                     </div>
                 </article>
             </a>
 
             <!-- Card 2 -->
             <a href="/media.html" class="block no-underline flex-shrink-0 w-72 stagger-item stagger-delay-2">
-                <article class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full -rotate-1 hover:rotate-0 hover:shadow-xl card-lift">
+                <article
+                    class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full -rotate-1 hover:rotate-0 hover:shadow-xl card-lift">
                     <div class="h-48 overflow-hidden img-zoom">
                         <img class="w-full h-full object-cover" src="/Assets/imgs/6.png" alt="Kampala">
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
-                        <span class="text-primary font-label-bold text-label-bold uppercase mb-2">Digital OOH Analysis</span>
-                        <h4 class="font-headline text-2xl leading-tight uppercase text-on-surface mb-4 group-hover:text-primary transition-colors">Best Billboard Locations in Kampala</h4>
-                        <div class="flex items-center text-primary font-label-bold text-label-bold uppercase"><span class="mr-1">/</span><span>View</span></div>
+                        <span class="text-primary font-label-bold text-label-bold uppercase mb-2">Digital OOH </span>
+                        <div class="flex items-center text-primary font-label-bold text-label-bold uppercase"><span
+                                class="mr-1">/</span><span>View</span></div>
                     </div>
                 </article>
             </a>
 
             <!-- Card 3 -->
             <a href="/media.html" class="block no-underline flex-shrink-0 w-72 stagger-item stagger-delay-3">
-                <article class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full rotate-2 hover:rotate-0 hover:shadow-xl card-lift">
+                <article
+                    class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full rotate-2 hover:rotate-0 hover:shadow-xl card-lift">
                     <div class="h-48 overflow-hidden img-zoom">
                         <img class="w-full h-full object-cover" src="/Assets/imgs/5.png" alt="LED">
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
-                        <span class="text-primary font-label-bold text-label-bold uppercase mb-2">Street Furniture Specs</span>
-                        <h4 class="font-headline text-2xl leading-tight uppercase text-on-surface mb-4 group-hover:text-primary transition-colors">LED Screen Advertising Guide</h4>
-                        <div class="flex items-center text-primary font-label-bold text-label-bold uppercase"><span class="mr-1">/</span><span>Read Specs</span></div>
+                        <span class="text-primary font-label-bold text-label-bold uppercase mb-2">Street Furniture
+                        </span>
+                        <div class="flex items-center text-primary font-label-bold text-label-bold uppercase"><span
+                                class="mr-1">/</span><span>Read Specs</span></div>
                     </div>
                 </article>
             </a>
 
             <!-- Card 4 -->
             <a href="/media.html" class="block no-underline flex-shrink-0 w-72 stagger-item stagger-delay-4">
-                <article class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full -rotate-2 hover:rotate-0 hover:shadow-xl card-lift">
+                <article
+                    class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full -rotate-2 hover:rotate-0 hover:shadow-xl card-lift">
                     <div class="h-48 overflow-hidden img-zoom">
                         <img class="w-full h-full object-cover" src="/Assets/imgs/1.png" alt="Transit">
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
                         <span class="text-primary font-label-bold text-label-bold uppercase mb-2">Transit Media</span>
-                        <h4 class="font-headline text-2xl leading-tight uppercase text-on-surface mb-4 group-hover:text-primary transition-colors">Transit Advertising Explained</h4>
-                        <div class="flex items-center text-primary font-label-bold text-label-bold uppercase"><span class="mr-1">/</span><span>Analyze ROI</span></div>
+                        <div class="flex items-center text-primary font-label-bold text-label-bold uppercase"><span
+                                class="mr-1">/</span><span>Analyze ROI</span></div>
                     </div>
                 </article>
             </a>
 
             <!-- Card 5 -->
             <a href="/media.html" class="block no-underline flex-shrink-0 w-72 stagger-item stagger-delay-5">
-                <article class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full rotate-1 hover:rotate-0 hover:shadow-xl card-lift">
+                <article
+                    class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full rotate-1 hover:rotate-0 hover:shadow-xl card-lift">
                     <div class="h-48 overflow-hidden img-zoom">
                         <img class="w-full h-full object-cover" src="/Assets/imgs/8.png" alt="Audience">
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
-                        <span class="text-primary font-label-bold text-label-bold uppercase mb-2">Audience Special Builds</span>
-                        <h4 class="font-headline text-2xl leading-tight uppercase text-on-surface mb-4 group-hover:text-primary transition-colors">OOH Audience Measurement Deep Dive</h4>
-                        <div class="flex items-center text-primary font-label-bold text-label-bold uppercase"><span class="mr-1">/</span><span>View</span></div>
+                        <span class="text-primary font-label-bold text-label-bold uppercase mb-2">Audience</span>
+                        <div class="flex items-center text-primary font-label-bold text-label-bold uppercase"><span
+                                class="mr-1">/</span><span>View</span></div>
                     </div>
                 </article>
             </a>
@@ -747,33 +843,42 @@
     <!-- ========================================================= -->
     <!-- 5. MEDIA INVENTORY – interactive map + search            -->
     <!-- ========================================================= -->
-    <section id="inventory" class="w-full bg-[#121212] text-white py-20 px-6 md:px-12 lg:px-20 font-['Manrope']">
+    <section id="inventory" class="w-full bg-[#121212] text-white py-20 px-6 md:px-12 lg:px-20 ">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
                 <div class="lg:col-span-7 reveal" data-delay="100">
-                    <span class="text-xs uppercase tracking-widest text-[#cea1ff] font-bold mb-2 block">Media Inventory</span>
-                    <h2 class="font-['Manrope'] text-4xl sm:text-6xl uppercase tracking-tight mb-6">Find The Perfect <br />Location For Your Brand</h2>
-                    <p class="text-gray-400 text-sm max-w-xl mb-8">Explore our interactive map and discover available advertising sites across Uganda.</p>
+                    <span class="text-xs uppercase tracking-widest text-[#cea1ff] font-bold mb-2 block">Media
+                        Inventory</span>
+                    <h2 class="font-['Manrope'] text-4xl sm:text-6xl uppercase tracking-tight mb-6">Find The Perfect
+                        <br />Location For Your Brand
+                    </h2>
+                    <p class="text-gray-400 text-sm max-w-xl mb-8">Explore our interactive map and discover available
+                        advertising sites across Uganda.</p>
 
                     <div class="relative w-full h-80 sm:h-96 bg-gray-900 border border-gray-800 overflow-hidden group">
-                        <img src="/Assets/imgs/3.PNG" alt="Map Preview" class="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-500">
+                        <img src="/Assets/imgs/3.PNG" alt="Map Preview"
+                            class="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-500">
                         <div class="absolute inset-0 flex flex-col items-center justify-center">
                             <div class="relative">
-                                <span class="animate-ping absolute inline-flex h-12 w-12 rounded-full bg-[#6121a1] opacity-75"></span>
-                                <div class="w-8 h-8 bg-[#6121a1] rounded-full border-2 border-white flex items-center justify-center shadow-lg">
+                                <span
+                                    class="animate-ping absolute inline-flex h-12 w-12 rounded-full bg-[#6121a1] opacity-75"></span>
+                                <div
+                                    class="w-8 h-8 bg-[#6121a1] rounded-full border-2 border-white flex items-center justify-center shadow-lg">
                                     <div class="w-3 h-3 bg-white rounded-full"></div>
                                 </div>
                             </div>
                             <div class="mt-3 bg-black border border-white px-4 py-2 text-center shadow-2xl">
-                                <span id="selected-location-pin" class="font-['Anton'] text-xl tracking-wider text-white uppercase block">KAMPALA</span>
-                                <span class="text-[9px] font-bold text-[#cea1ff] uppercase tracking-widest block">// HQ MEDIA ZONE</span>
+                                <span id="selected-location-pin"
+                                    class="font-['Manrope'] text-xl tracking-wider text-white uppercase block">KAMPALA</span>
+                                <span class="text-[9px] font-bold text-[#cea1ff] uppercase tracking-widest block">// HQ
+                                    MEDIA ZONE</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="flex flex-wrap gap-6 mt-8">
-                       
+
                         <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-400">
                             <span class="w-2 h-2 rounded-full bg-[#6121a1]"></span><span>Verified Locations</span>
                         </div>
@@ -784,11 +889,15 @@
                 </div>
 
                 <div class="lg:col-span-5 bg-[#1e1e1e] border border-gray-800 p-6 sm:p-8 reveal" data-delay="200">
-                    <h3 class="font-['Anton'] text-xl uppercase tracking-wider text-gray-300 mb-6">Search Inventory</h3>
+                    <h3 class="font-['Manrope'] text-xl uppercase tracking-wider text-gray-300 mb-6">Search Inventory
+                    </h3>
                     <form onsubmit="event.preventDefault(); handleSearch(event);" class="space-y-4">
                         <div>
-                            <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">Select City</label>
-                            <select id="city-select" class="w-full bg-[#121212] border border-gray-700 text-white text-xs font-bold uppercase px-4 py-3 rounded-full focus:outline-none focus:border-[#6121a1] transition-colors duration-300">
+                            <label
+                                class="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">Select
+                                City</label>
+                            <select id="city-select"
+                                class="w-full bg-[#121212] border border-gray-700 text-white text-xs font-bold uppercase px-4 py-3 rounded-full focus:outline-none focus:border-[#6121a1] transition-colors duration-300">
                                 <option value="Kampala">Kampala</option>
                                 <option value="Entebbe">Entebbe</option>
                                 <option value="Jinja">Jinja</option>
@@ -796,8 +905,11 @@
                             </select>
                         </div>
                         <div>
-                            <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">Media Type</label>
-                            <select id="type-select" class="w-full bg-[#121212] border border-gray-700 text-white text-xs font-bold uppercase px-4 py-3 rounded-full focus:outline-none focus:border-[#6121a1] transition-colors duration-300">
+                            <label
+                                class="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">Media
+                                Type</label>
+                            <select id="type-select"
+                                class="w-full bg-[#121212] border border-gray-700 text-white text-xs font-bold uppercase px-4 py-3 rounded-full focus:outline-none focus:border-[#6121a1] transition-colors duration-300">
                                 <option value="All">All Media Types</option>
                                 <option value="Billboard">Billboard</option>
                                 <option value="Street Pole">Street Pole</option>
@@ -805,14 +917,19 @@
                             </select>
                         </div>
                         <div>
-                            <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">Road / Location</label>
-                            <select class="w-full bg-[#121212] border border-gray-700 text-white text-xs font-bold uppercase px-4 py-3 rounded-full focus:outline-none focus:border-[#6121a1] transition-colors duration-300">
+                            <label
+                                class="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">Road
+                                / Location</label>
+                            <select
+                                class="w-full bg-[#121212] border border-gray-700 text-white text-xs font-bold uppercase px-4 py-3 rounded-full focus:outline-none focus:border-[#6121a1] transition-colors duration-300">
                                 <option>All Routes</option>
                                 <option>Jinja Road</option>
                                 <option>Entebbe Express Highway</option>
                             </select>
                         </div>
-                        <button type="submit" class="w-full bg-[#6121a1] hover:bg-[#470082] text-white font-bold text-xs uppercase tracking-widest py-4 rounded-full transition-all duration-300 mt-4 hover:scale-[1.02] shadow-lg hover:shadow-[#6121a1]/30">Search Sites</button>
+                        <button type="submit"
+                            class="w-full bg-[#6121a1] hover:bg-[#470082] text-white font-bold text-xs uppercase tracking-widest py-4 rounded-full transition-all duration-300 mt-4 hover:scale-[1.02] shadow-lg hover:shadow-[#6121a1]/30">Search
+                            Sites</button>
                     </form>
                     <div id="search-results" class="hidden mt-4 p-3 bg-[#121212] border border-gray-700 rounded-lg">
                         <p id="search-msg" class="text-sm text-gray-300 font-medium"></p>
@@ -822,86 +939,117 @@
             </div>
         </div>
     </section>
-
     <!-- ========================================================= -->
     <!-- 6. WHY US – horizontal scroll                            -->
     <!-- ========================================================= -->
     <section class="px-grid-margin py-16 bg-surface-variant clip-slant-reverse pb-32">
-        <div class="mb-12">
-            <h3 class="font-headline text-section-headline text-on-surface uppercase border-b-4 border-primary inline-block pb-2 reveal" data-delay="100">Why Us</h3>
+        <div class="mb-12 flex flex-wrap items-end justify-between gap-4">
+            <h3 class="font-headline text-section-headline text-on-surface uppercase border-b-4 border-primary inline-block pb-2 reveal"
+                data-delay="100">WHY US</h3>
+            <a href="/media.html"
+                class="font-label-bold text-label-bold uppercase text-primary hover:text-on-surface transition-colors flex items-center gap-2 reveal"
+                data-delay="200">visual overview &rarr;</a>
         </div>
-        <div class="flex flex-nowrap gap-grid-gutter overflow-x-auto pb-4">
-            <!-- Card 1 -->
-            <article class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full rotate-1 hover:rotate-0 hover:shadow-xl flex-shrink-0 w-72 stagger-item stagger-delay-1 card-lift">
-                <div class="h-48 bg-on-background/5 flex items-center justify-center transition-all duration-500 group-hover:bg-primary/10">
-                    <svg class="w-20 h-20 text-on-surface-variant group-hover:text-primary transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                    </svg>
+        <!-- Centered and constrained width container -->
+        <div class="flex flex-nowrap md:justify-center gap-6 overflow-x-auto pb-4 max-w-7xl mx-auto w-full px-4">
+
+            <!-- Card 1: Strategic Locations -->
+            <article
+                class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full hover:shadow-xl flex-shrink-0 w-72 card-lift overflow-hidden rounded-lg">
+                <!-- Image Container -->
+                <div class="h-56 relative overflow-hidden bg-slate-100">
+                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=600&q=80"
+                        alt="Strategic Locations Concept"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
                 </div>
-                <div class="p-6 flex-grow flex flex-col">
-                    <span class="text-primary font-label-bold text-label-bold uppercase mb-2"> </span>
-                    <h4 class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">Strategic Locations</h4>
-                    <p class="font-body-md text-body-md text-on-surface-variant mb-6 mt-auto">Prime spots for maximum visibility.</p>
-                    <div class="flex items-center text-primary font-label-bold text-label-bold uppercase"><span class="mr-1">/</span><span>Find Spots</span></div>
+                <div class="p-6 flex-grow flex flex-col bg-white">
+                    <span class="text-primary font-label-bold text-label-bold uppercase mb-2"></span>
+                    <h4
+                        class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">
+                        Strategic Locations</h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-6 mt-auto">Prime spots for maximum
+                        visibility.</p>
+                    <div class="flex items-center text-primary font-label-bold text-label-bold uppercase"><span
+                            class="mr-1">/</span><span>Find Spots</span></div>
                 </div>
             </article>
 
-            <!-- Card 2 -->
-            <article class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full -rotate-1 hover:rotate-0 hover:shadow-xl flex-shrink-0 w-72 stagger-item stagger-delay-2 card-lift">
-                <div class="h-48 bg-on-background/5 flex items-center justify-center transition-all duration-500 group-hover:bg-primary/10">
-                    <svg class="w-20 h-20 text-on-surface-variant group-hover:text-primary transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-                    </svg>
+            <!-- Card 2: Creative Thinking (Matches your 'Think Different' and 'Colorful Mind' concepts) -->
+            <article
+                class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full hover:shadow-xl flex-shrink-0 w-72 card-lift overflow-hidden rounded-lg">
+                <!-- Image Container -->
+                <div class="h-56 relative overflow-hidden bg-slate-100">
+                    <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=600&q=80"
+                        alt="Creative Thinking Concept"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
                 </div>
-                <div class="p-6 flex-grow flex flex-col">
+                <div class="p-6 flex-grow flex flex-col bg-white">
                     <span class="text-primary font-label-bold text-label-bold uppercase mb-2"></span>
-                    <h4 class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">Creative Thinking</h4>
-                    <p class="font-body-md text-body-md text-on-surface-variant mb-6 mt-auto">Bold concepts that capture attention.</p>
-                    <div class="flex items-center text-primary font-label-bold text-label-bold uppercase"><span class="mr-1">/</span><span>Get Inspired</span></div>
+                    <h4
+                        class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">
+                        Creative Thinking</h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-6 mt-auto">Bold concepts that capture
+                        attention.</p>
+                    <div class="flex items-center text-primary font-label-bold text-label-bold uppercase"><span
+                            class="mr-1">/</span><span>Get Inspired</span></div>
                 </div>
             </article>
 
-            <!-- Card 3 -->
-            <article class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full rotate-2 hover:rotate-0 hover:shadow-xl flex-shrink-0 w-72 stagger-item stagger-delay-3 card-lift">
-                <div class="h-48 bg-on-background/5 flex items-center justify-center transition-all duration-500 group-hover:bg-primary/10">
-                    <svg class="w-20 h-20 text-on-surface-variant group-hover:text-primary transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.431.992a7.723 7.723 0 0 1 0 .255c-.007.378.138.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                    </svg>
+            <!-- Card 3: Reliable Execution -->
+            <article
+                class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full hover:shadow-xl flex-shrink-0 w-72 card-lift overflow-hidden rounded-lg">
+                <!-- Image Container -->
+                <div class="h-56 relative overflow-hidden bg-slate-100">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80"
+                        alt="Reliable Execution Concept"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
                 </div>
-                <div class="p-6 flex-grow flex flex-col">
+                <div class="p-6 flex-grow flex flex-col bg-white">
                     <span class="text-primary font-label-bold text-label-bold uppercase mb-2"></span>
-                    <h4 class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">Reliable Execution</h4>
-                    <p class="font-body-md text-body-md text-on-surface-variant mb-6 mt-auto">Flawless delivery from start to finish.</p>
-                    <div class="flex items-center text-primary font-label-bold text-label-bold uppercase"><span class="mr-1">/</span><span>Our Process</span></div>
+                    <h4
+                        class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">
+                        Reliable Execution</h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-6 mt-auto">Flawless delivery from
+                        start to finish.</p>
+                    <div class="flex items-center text-primary font-label-bold text-label-bold uppercase"><span
+                            class="mr-1">/</span><span>Our Process</span></div>
                 </div>
             </article>
 
-            <!-- Card 4 -->
-            <article class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full -rotate-2 hover:rotate-0 hover:shadow-xl flex-shrink-0 w-72 stagger-item stagger-delay-4 card-lift">
-                <div class="h-48 bg-on-background/5 flex items-center justify-center transition-all duration-500 group-hover:bg-primary/10">
-                    <svg class="w-20 h-20 text-on-surface-variant group-hover:text-primary transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
-                    </svg>
+            <!-- Card 4: Innovation -->
+            <article
+                class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full hover:shadow-xl flex-shrink-0 w-72 card-lift overflow-hidden rounded-lg">
+                <!-- Image Container -->
+                <div class="h-56 relative overflow-hidden bg-slate-100">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80"
+                        alt="Innovation Concept"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
                 </div>
-                <div class="p-6 flex-grow flex flex-col">
+                <div class="p-6 flex-grow flex flex-col bg-white">
                     <span class="text-primary font-label-bold text-label-bold uppercase mb-2"></span>
-                    <h4 class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">Innovation</h4>
-                    <p class="font-body-md text-body-md text-on-surface-variant mb-6 mt-auto">Future-ready tech for dynamic campaigns.</p>
-                    <div class="flex items-center text-primary font-label-bold text-label-bold uppercase"><span class="mr-1">/</span><span>Explore Tech</span></div>
+                    <h4
+                        class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">
+                        Innovation</h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-6 mt-auto">Future-ready tech for
+                        dynamic campaigns.</p>
+                    <div class="flex items-center text-primary font-label-bold text-label-bold uppercase"><span
+                            class="mr-1">/</span><span>Explore Tech</span></div>
                 </div>
             </article>
+
         </div>
     </section>
-
     <!-- ========================================================= -->
     <!-- 7. PROJECTS SHOWCASE                                     -->
     <!-- ========================================================= -->
     <section class="px-grid-margin py-16 bg-surface-variant clip-slant-reverse pb-32">
-        <div class="max-w-7xl mx-auto mb-12 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-            <h3 class="font-headline text-section-headline text-on-surface uppercase border-b-4 border-primary inline-block pb-2 reveal" data-delay="100">Exceptional Projects</h3>
-            <a href="/project" class="group flex items-center text-primary font-label-bold text-label-bold uppercase transition-colors hover:text-on-surface reveal" data-delay="200">
+        <div
+            class="max-w-7xl mx-auto mb-12 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <h3 class="font-headline text-section-headline text-on-surface uppercase border-b-4 border-primary inline-block pb-2 reveal"
+                data-delay="100">Exceptional Projects</h3>
+            <a href="/project"
+                class="group flex items-center text-primary font-label-bold text-label-bold uppercase transition-colors hover:text-on-surface reveal"
+                data-delay="200">
                 <span class="mr-2">VIEW ALL PROJECTS</span>
                 <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
             </a>
@@ -909,16 +1057,21 @@
 
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
             <!-- Project 1 -->
-            <article class="w-full max-w-sm bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full rotate-1 hover:rotate-0 hover:shadow-xl stagger-item stagger-delay-1 card-lift">
+            <article
+                class="w-full max-w-sm bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full rotate-1 hover:rotate-0 hover:shadow-xl stagger-item stagger-delay-1 card-lift">
                 <div class="h-64 lg:h-72 overflow-hidden img-zoom">
                     <img class="w-full h-full object-cover" alt="MTN Uganda" src="/Assets/imgs/12.png">
                 </div>
                 <div class="p-6 flex-grow flex flex-col">
                     <span class="text-primary font-label-bold text-label-bold uppercase mb-1">Client</span>
-                    <h4 class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">MTN Uganda</h4>
+                    <h4
+                        class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">
+                        MTN Uganda</h4>
                     <div class="space-y-1 mt-auto mb-4">
-                        <p class="font-body-md text-body-md text-on-surface-variant"><span class="text-on-surface font-bold">Campaign:</span> Y'ello Data Blast</p>
-                        <p class="font-body-md text-body-md text-on-surface-variant"><span class="text-on-surface font-bold">Location:</span> Kampala, Uganda</p>
+                        <p class="font-body-md text-body-md text-on-surface-variant"><span
+                                class="text-on-surface font-bold">Campaign:</span> Y'ello Data Blast</p>
+                        <p class="font-body-md text-body-md text-on-surface-variant"><span
+                                class="text-on-surface font-bold">Location:</span> Kampala, Uganda</p>
                     </div>
                     <div class="flex items-center text-primary font-label-bold text-label-bold uppercase group/link">
                         <span class="mr-1">/</span>
@@ -928,16 +1081,21 @@
             </article>
 
             <!-- Project 2 -->
-            <article class="w-full max-w-sm bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full -rotate-1 hover:rotate-0 hover:shadow-xl stagger-item stagger-delay-2 card-lift">
+            <article
+                class="w-full max-w-sm bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full -rotate-1 hover:rotate-0 hover:shadow-xl stagger-item stagger-delay-2 card-lift">
                 <div class="h-64 lg:h-72 overflow-hidden img-zoom">
                     <img class="w-full h-full object-cover" alt="Pepsi" src="/Assets/imgs/10.png">
                 </div>
                 <div class="p-6 flex-grow flex flex-col">
                     <span class="text-primary font-label-bold text-label-bold uppercase mb-1">Client</span>
-                    <h4 class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">Pepsi</h4>
+                    <h4
+                        class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">
+                        Pepsi</h4>
                     <div class="space-y-1 mt-auto mb-4">
-                        <p class="font-body-md text-body-md text-on-surface-variant"><span class="text-on-surface font-bold">Campaign:</span> Refresh Summer</p>
-                        <p class="font-body-md text-body-md text-on-surface-variant"><span class="text-on-surface font-bold">Location:</span> Nairobi, Kenya</p>
+                        <p class="font-body-md text-body-md text-on-surface-variant"><span
+                                class="text-on-surface font-bold">Campaign:</span> Refresh Summer</p>
+                        <p class="font-body-md text-body-md text-on-surface-variant"><span
+                                class="text-on-surface font-bold">Location:</span> Nairobi, Kenya</p>
                     </div>
                     <div class="flex items-center text-primary font-label-bold text-label-bold uppercase group/link">
                         <span class="mr-1">/</span>
@@ -947,16 +1105,21 @@
             </article>
 
             <!-- Project 3 -->
-            <article class="w-full max-w-sm bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full rotate-2 hover:rotate-0 hover:shadow-xl stagger-item stagger-delay-3 card-lift">
+            <article
+                class="w-full max-w-sm bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full rotate-2 hover:rotate-0 hover:shadow-xl stagger-item stagger-delay-3 card-lift">
                 <div class="h-64 lg:h-72 overflow-hidden img-zoom">
                     <img class="w-full h-full object-cover" alt="Toyota" src="/Assets/imgs/7.png">
                 </div>
                 <div class="p-6 flex-grow flex flex-col">
                     <span class="text-primary font-label-bold text-label-bold uppercase mb-1">Client</span>
-                    <h4 class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">Toyota</h4>
+                    <h4
+                        class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">
+                        Toyota</h4>
                     <div class="space-y-1 mt-auto mb-4">
-                        <p class="font-body-md text-body-md text-on-surface-variant"><span class="text-on-surface font-bold">Campaign:</span> Drive the Future</p>
-                        <p class="font-body-md text-body-md text-on-surface-variant"><span class="text-on-surface font-bold">Location:</span> Dar es Salaam, Tanzania</p>
+                        <p class="font-body-md text-body-md text-on-surface-variant"><span
+                                class="text-on-surface font-bold">Campaign:</span> Drive the Future</p>
+                        <p class="font-body-md text-body-md text-on-surface-variant"><span
+                                class="text-on-surface font-bold">Location:</span> Dar es Salaam, Tanzania</p>
                     </div>
                     <div class="flex items-center text-primary font-label-bold text-label-bold uppercase group/link">
                         <span class="mr-1">/</span>
@@ -974,55 +1137,81 @@
         <div class="container mx-auto px-grid-margin relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-grid-gutter mb-20">
                 <div class="reveal" data-delay="100">
-                    <h2 class="font-headline text-section-headline uppercase text-white leading-none mb-6">THE KEY NUMBERS</h2>
-                    <p class="font-body text-body text-surface-variant max-w-md mb-8">Our media reaches <strong class="text-white">millions of commuters</strong> daily across Uganda's prime commercial hubs.</p>
+                    <h2 class="font-headline text-section-headline uppercase text-white leading-none mb-6">THE KEY
+                        NUMBERS</h2>
+                    <p class="font-body text-body text-surface-variant max-w-md mb-8">Our media reaches <strong
+                            class="text-white">millions of commuters</strong> daily across Uganda's prime commercial
+                        hubs.</p>
                 </div>
                 <div class="flex items-center lg:justify-end mt-6 lg:mt-0 reveal" data-delay="200">
                     <div class="border-l-2 border-primary-fixed/50 pl-6">
-                        <p class="text-surface-variant font-body text-body max-w-xs">Trusted by <span class="text-white font-bold">200+ brands</span> with a proven track record of delivering measurable results across the country.</p>
+                        <p class="text-surface-variant font-body text-body max-w-xs">Trusted by <span
+                                class="text-white font-bold">200+ brands</span> with a proven track record of delivering
+                            measurable results across the country.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 mt-20 pt-10 border-t border-surface-variant/20">
+            <div
+                class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 mt-20 pt-10 border-t border-surface-variant/20">
                 <!-- Stat 1 -->
-                <div class="group cursor-pointer stat-item opacity-0 translate-y-4 transition-all duration-700 ease-out stagger-item stagger-delay-1">
-                    <h3 class="font-headline text-primary-fixed uppercase text-5xl sm:text-6xl md:text-7xl mb-2 group-hover:scale-105 transition-transform origin-left">
+                <div
+                    class="group cursor-pointer stat-item opacity-0 translate-y-4 transition-all duration-700 ease-out stagger-item stagger-delay-1">
+                    <h3
+                        class="font-headline text-primary-fixed uppercase text-5xl sm:text-6xl md:text-7xl mb-2 group-hover:scale-105 transition-transform origin-left">
                         <span class="stat-number" data-target="50" data-suffix="+">0</span>
                     </h3>
-                    <div class="font-label-bold text-white uppercase tracking-widest flex items-center gap-2 mb-3 text-sm md:text-base">Media Locations</div>
+                    <div
+                        class="font-label-bold text-white uppercase tracking-widest flex items-center gap-2 mb-3 text-sm md:text-base">
+                        Media Locations</div>
                     <div class="h-1 w-12 bg-primary transition-all duration-500 group-hover:w-full"></div>
                 </div>
                 <!-- Stat 2 -->
-                <div class="group cursor-pointer stat-item opacity-0 translate-y-4 transition-all duration-700 ease-out delay-100 stagger-item stagger-delay-2">
-                    <h3 class="font-headline text-primary-fixed uppercase text-5xl sm:text-6xl md:text-7xl mb-2 group-hover:scale-105 transition-transform origin-left">
+                <div
+                    class="group cursor-pointer stat-item opacity-0 translate-y-4 transition-all duration-700 ease-out delay-100 stagger-item stagger-delay-2">
+                    <h3
+                        class="font-headline text-primary-fixed uppercase text-5xl sm:text-6xl md:text-7xl mb-2 group-hover:scale-105 transition-transform origin-left">
                         <span class="stat-number" data-target="2" data-suffix="M+">0</span>
                     </h3>
-                    <div class="font-label-bold text-white uppercase tracking-widest flex items-center gap-2 mb-3 text-sm md:text-base">Monthly Impressions</div>
+                    <div
+                        class="font-label-bold text-white uppercase tracking-widest flex items-center gap-2 mb-3 text-sm md:text-base">
+                        Monthly Impressions</div>
                     <div class="h-1 w-12 bg-primary transition-all duration-500 group-hover:w-full"></div>
                 </div>
                 <!-- Stat 3 -->
-                <div class="group cursor-pointer stat-item opacity-0 translate-y-4 transition-all duration-700 ease-out delay-200 stagger-item stagger-delay-3">
-                    <h3 class="font-headline text-primary-fixed uppercase text-5xl sm:text-6xl md:text-7xl mb-2 group-hover:scale-105 transition-transform origin-left">
+                <div
+                    class="group cursor-pointer stat-item opacity-0 translate-y-4 transition-all duration-700 ease-out delay-200 stagger-item stagger-delay-3">
+                    <h3
+                        class="font-headline text-primary-fixed uppercase text-5xl sm:text-6xl md:text-7xl mb-2 group-hover:scale-105 transition-transform origin-left">
                         <span class="stat-number" data-target="200" data-suffix="+">0</span>
                     </h3>
-                    <div class="font-label-bold text-white uppercase tracking-widest flex items-center gap-2 mb-3 text-sm md:text-base">Campaigns Delivered</div>
+                    <div
+                        class="font-label-bold text-white uppercase tracking-widest flex items-center gap-2 mb-3 text-sm md:text-base">
+                        Campaigns Delivered</div>
                     <div class="h-1 w-12 bg-primary transition-all duration-500 group-hover:w-full"></div>
                 </div>
                 <!-- Stat 4 -->
-                <div class="group cursor-pointer stat-item opacity-0 translate-y-4 transition-all duration-700 ease-out delay-300 stagger-item stagger-delay-4">
-                    <h3 class="font-headline text-primary-fixed uppercase text-5xl sm:text-6xl md:text-7xl mb-2 group-hover:scale-105 transition-transform origin-left">
+                <div
+                    class="group cursor-pointer stat-item opacity-0 translate-y-4 transition-all duration-700 ease-out delay-300 stagger-item stagger-delay-4">
+                    <h3
+                        class="font-headline text-primary-fixed uppercase text-5xl sm:text-6xl md:text-7xl mb-2 group-hover:scale-105 transition-transform origin-left">
                         <span class="stat-number" data-target="100" data-suffix="%">0</span>
                     </h3>
-                    <div class="font-label-bold text-white uppercase tracking-widest flex items-center gap-2 mb-3 text-sm md:text-base">Countrywide Reach</div>
+                    <div
+                        class="font-label-bold text-white uppercase tracking-widest flex items-center gap-2 mb-3 text-sm md:text-base">
+                        Countrywide Reach</div>
                     <div class="h-1 w-12 bg-primary transition-all duration-500 group-hover:w-full"></div>
                 </div>
                 <!-- Stat 5 -->
-                <div class="group cursor-pointer stat-item opacity-0 translate-y-4 transition-all duration-700 ease-out delay-400 stagger-item stagger-delay-5">
-                    <h3 class="font-headline text-primary-fixed uppercase text-5xl sm:text-6xl md:text-7xl mb-2 group-hover:scale-105 transition-transform origin-left">
+                <div
+                    class="group cursor-pointer stat-item opacity-0 translate-y-4 transition-all duration-700 ease-out delay-400 stagger-item stagger-delay-5">
+                    <h3
+                        class="font-headline text-primary-fixed uppercase text-5xl sm:text-6xl md:text-7xl mb-2 group-hover:scale-105 transition-transform origin-left">
                         <span class="stat-number" data-target="8" data-suffix="+">0</span>
                     </h3>
-                    <div class="font-label-bold text-white uppercase tracking-widest flex items-center gap-2 mb-3 text-sm md:text-base">Years Experience</div>
+                    <div
+                        class="font-label-bold text-white uppercase tracking-widest flex items-center gap-2 mb-3 text-sm md:text-base">
+                        Years Experience</div>
                     <div class="h-1 w-12 bg-primary transition-all duration-500 group-hover:w-full"></div>
                 </div>
             </div>
@@ -1034,42 +1223,55 @@
     <!-- ========================================================= -->
     <footer class="bg-on-background relative w-full pt-24 pb-8 border-t-8 border-primary">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-grid-gutter px-grid-margin max-w-full mx-auto mb-16">
-            <div class="col-span-1 md:col-span-4 flex justify-between items-center mb-12 border-b border-surface-variant/10 pb-12">
+            <div
+                class="col-span-1 md:col-span-4 flex justify-between items-center mb-12 border-b border-surface-variant/10 pb-12">
                 <div class="text-headline-md font-headline-md text-primary-fixed tracking-tighter">Brand Republic</div>
             </div>
             <div>
                 <h4 class="font-label-bold text-primary mb-6 uppercase tracking-widest text-xs">Legal</h4>
                 <ul class="space-y-4">
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Privacy Policy</a></li>
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Cookie Policy</a></li>
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Terms of use</a></li>
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase"
+                            href="#">Privacy Policy</a></li>
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase"
+                            href="#">Cookie Policy</a></li>
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase"
+                            href="#">Terms of use</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-label-bold text-primary mb-6 uppercase tracking-widest text-xs">Company</h4>
                 <ul class="space-y-4">
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Leadership</a></li>
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Partners</a></li>
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">ESG</a></li>
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase"
+                            href="#">Leadership</a></li>
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase"
+                            href="#">Partners</a></li>
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase"
+                            href="#">ESG</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-label-bold text-primary mb-6 uppercase tracking-widest text-xs">Investors</h4>
                 <ul class="space-y-4">
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Real Estate</a></li>
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Stock Info</a></li>
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Financials</a></li>
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase"
+                            href="#">Real Estate</a></li>
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase"
+                            href="#">Stock Info</a></li>
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase"
+                            href="#">Financials</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-label-bold text-primary mb-6 uppercase tracking-widest text-xs">Support</h4>
                 <ul class="space-y-4">
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="/contact">Contact</a></li>
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Newsroom</a></li>
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase"
+                            href="/contact">Contact</a></li>
+                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase"
+                            href="#">Newsroom</a></li>
                 </ul>
             </div>
         </div>
-        <div class="px-grid-margin text-center md:text-left text-surface-variant/30 font-body-md text-sm mt-8 border-t border-surface-variant/5 pt-8">
+        <div
+            class="px-grid-margin text-center md:text-left text-surface-variant/30 font-body-md text-sm mt-8 border-t border-surface-variant/5 pt-8">
             © 2026 Brand Republic Ltd. All rights reserved. Registered in Uganda.
         </div>
     </footer>
@@ -1089,12 +1291,12 @@
         });
 
         // ── Mobile menu toggle ──
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const menuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             if (menuBtn && mobileMenu) {
                 const bars = menuBtn.querySelectorAll('.bar');
-                menuBtn.addEventListener('click', function() {
+                menuBtn.addEventListener('click', function () {
                     const isOpen = !mobileMenu.classList.contains('hidden');
                     if (isOpen) {
                         mobileMenu.classList.add('hidden');
@@ -1115,7 +1317,7 @@
                     }
                 });
                 // Close on outside click
-                document.addEventListener('click', function(e) {
+                document.addEventListener('click', function (e) {
                     if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
                         mobileMenu.classList.add('hidden');
                         mobileMenu.classList.remove('flex');
@@ -1130,7 +1332,7 @@
         });
 
         // ── Hero Carousel ──
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const inner = document.getElementById('carousel-inner');
             const dots = document.querySelectorAll('.carousel-dot');
             let currentSlide = 0;
@@ -1139,7 +1341,7 @@
             function updateCarousel() {
                 if (!inner) return;
                 inner.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
-                dots.forEach(function(dot, index) {
+                dots.forEach(function (dot, index) {
                     if (index === currentSlide) {
                         dot.classList.remove('bg-white/50');
                         dot.classList.add('bg-white', 'scale-125');
@@ -1150,14 +1352,14 @@
                 });
             }
 
-            dots.forEach(function(dot, index) {
-                dot.addEventListener('click', function() {
+            dots.forEach(function (dot, index) {
+                dot.addEventListener('click', function () {
                     currentSlide = index;
                     updateCarousel();
                 });
             });
 
-            setInterval(function() {
+            setInterval(function () {
                 currentSlide = (currentSlide + 1) % totalSlides;
                 updateCarousel();
             }, 6000);
@@ -1166,27 +1368,27 @@
         });
 
         // ── Parallax image on "Who We Are" ──
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const section = document.querySelector('#who-we-are');
             const image = section ? section.querySelector('img') : null;
             if (section && image) {
-                section.addEventListener('mousemove', function(e) {
+                section.addEventListener('mousemove', function (e) {
                     const rect = section.getBoundingClientRect();
                     const x = (e.clientX - rect.left) / rect.width - 0.5;
                     const y = (e.clientY - rect.top) / rect.height - 0.5;
                     image.style.transform = 'translate(' + (x * 8) + 'px, ' + (y * 8) + 'px) scale(1.05)';
                 });
-                section.addEventListener('mouseleave', function() {
+                section.addEventListener('mouseleave', function () {
                     image.style.transform = 'translate(0, 0) scale(1.05)';
                 });
             }
         });
 
         // ── Count-up for stats ──
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const statItems = document.querySelectorAll('.stat-item');
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('opacity-100', 'translate-y-0');
                         entry.target.classList.remove('opacity-0', 'translate-y-4');
@@ -1215,15 +1417,15 @@
                     }
                 });
             }, { threshold: 0.3 });
-            statItems.forEach(function(item) { observer.observe(item); });
+            statItems.forEach(function (item) { observer.observe(item); });
         });
 
         // ── Inventory: city select updates pin ──
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const citySelect = document.getElementById('city-select');
             const locationPin = document.getElementById('selected-location-pin');
             if (citySelect && locationPin) {
-                citySelect.addEventListener('change', function(e) {
+                citySelect.addEventListener('change', function (e) {
                     locationPin.textContent = e.target.value.toUpperCase();
                 });
             }
@@ -1243,16 +1445,16 @@
         }
 
         // ── Ensure steps in "How We Work" are animated on scroll ──
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             var steps = document.querySelectorAll('#how-we-work .animate-fade-up');
             if (steps.length) {
-                steps.forEach(function(step) {
+                steps.forEach(function (step) {
                     step.classList.remove('animate-fade-up');
                     step.style.opacity = '0';
                     step.style.transform = 'translateY(30px) scale(0.97)';
                 });
-                var stepObserver = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
+                var stepObserver = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
                         if (entry.isIntersecting) {
                             entry.target.style.opacity = '1';
                             entry.target.style.transform = 'translateY(0) scale(1)';
@@ -1260,18 +1462,18 @@
                         }
                     });
                 }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
-                steps.forEach(function(step) { stepObserver.observe(step); });
+                steps.forEach(function (step) { stepObserver.observe(step); });
             }
         });
 
         // ── ✦ NEW: Enhanced reveal animations via Intersection Observer ──
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Reveal elements with class .reveal, .reveal-left, .reveal-right, .reveal-scale
             const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-item');
 
             if (revealElements.length) {
-                const revealObserver = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
+                const revealObserver = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
                         if (entry.isIntersecting) {
                             // Add visible class
                             entry.target.classList.add('visible');
@@ -1291,7 +1493,7 @@
                     rootMargin: '0px 0px -30px 0px'
                 });
 
-                revealElements.forEach(function(el) {
+                revealElements.forEach(function (el) {
                     // Set initial state if not already set by CSS
                     if (!el.classList.contains('visible')) {
                         revealObserver.observe(el);
@@ -1302,13 +1504,13 @@
             // ── Parallax effect on scroll for hero images ──
             const heroSection = document.querySelector('#hero-carousel');
             if (heroSection) {
-                window.addEventListener('scroll', function() {
+                window.addEventListener('scroll', function () {
                     const scrollPos = window.scrollY;
                     const heroHeight = heroSection.offsetHeight;
                     if (scrollPos < heroHeight) {
                         const progress = scrollPos / heroHeight;
                         const images = heroSection.querySelectorAll('.object-cover');
-                        images.forEach(function(img) {
+                        images.forEach(function (img) {
                             if (img) {
                                 img.style.transform = 'scale(' + (1 + progress * 0.08) + ') translateY(' + (progress *
                                     20) + 'px)';
@@ -1320,15 +1522,15 @@
 
             // ── Smooth counter for stat numbers on hover ──
             const statNumbers = document.querySelectorAll('.stat-number');
-            statNumbers.forEach(function(el) {
-                el.addEventListener('mouseenter', function() {
+            statNumbers.forEach(function (el) {
+                el.addEventListener('mouseenter', function () {
                     this.style.transition = 'transform 0.3s cubic-bezier(0.22, 1, 0.36, 1)';
                 });
             });
 
             // ── Add smooth scroll to all anchor links ──
-            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-                anchor.addEventListener('click', function(e) {
+            document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+                anchor.addEventListener('click', function (e) {
                     const targetId = this.getAttribute('href');
                     if (targetId && targetId.length > 1) {
                         const target = document.querySelector(targetId);
@@ -1346,7 +1548,7 @@
             // ── Navbar background opacity on scroll ──
             const nav = document.querySelector('nav');
             if (nav) {
-                window.addEventListener('scroll', function() {
+                window.addEventListener('scroll', function () {
                     if (window.scrollY > 60) {
                         nav.classList.add('shadow-lg');
                         nav.style.backgroundColor = 'rgba(249, 249, 249, 0.92)';
@@ -1360,8 +1562,8 @@
             // ── Animate progress bars when they come into view ──
             const progressBars = document.querySelectorAll('.h-1.bg-primary\\/20');
             if (progressBars.length) {
-                const progressObserver = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
+                const progressObserver = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
                         if (entry.isIntersecting) {
                             const bar = entry.target.querySelector('.bg-primary');
                             if (bar) {
@@ -1371,17 +1573,17 @@
                         }
                     });
                 }, { threshold: 0.3 });
-                progressBars.forEach(function(el) { progressObserver.observe(el); });
+                progressBars.forEach(function (el) { progressObserver.observe(el); });
             }
 
             // ── Logo hover pulse effect ──
             const logo = document.querySelector('nav img');
             if (logo) {
-                logo.addEventListener('mouseenter', function() {
+                logo.addEventListener('mouseenter', function () {
                     this.style.transform = 'scale(1.03)';
                     this.style.transition = 'transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)';
                 });
-                logo.addEventListener('mouseleave', function() {
+                logo.addEventListener('mouseleave', function () {
                     this.style.transform = 'scale(1)';
                 });
             }
