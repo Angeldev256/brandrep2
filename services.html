@@ -300,12 +300,11 @@
         <a href="/" class="h-auto py-2 flex items-center focus:outline-none">
             <img src="/Assets/bg.png" alt="Brand Republic Logo" class="h-20 md:h-25 w-auto object-contain">
         </a>
-        <div class="font-manrope hidden lg:flex gap-6 items-center">
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="about.html">About Us</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="services.html">Services</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="media.html">Media Inventory</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="project.html">Projects</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="insights.html">Insights</a>
+        <div class="font-ui hidden lg:flex gap-6 items-center">
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="/about.html">About</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="/media.html">Media</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="/project.html">Innovation</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="/insight.html">Insights</a>
         </div>
         <div class="flex items-center gap-4">
             <a href="/quotation" class="hidden lg:inline-block bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 shadow-sm">
@@ -322,12 +321,15 @@
         </div>
         <div id="mobile-menu" class="hidden fixed inset-x-0 top-24 bg-surface border-b-2 border-outline-variant p-6 flex-col gap-4 shadow-xl lg:hidden transition-all duration-300">
             <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/about.html">About Us</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/services.html">Services</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/media.html">Media Inventory</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/project.html">Projects</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/insights.html">Insights</a>
-            <a href="/quotation" class="mt-4 w-full text-center bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 block">Request Quotation</a>
-            <a href="/contact" class="mt-2 w-full text-center bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg block">Contact Us</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/media.html">Media </a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="project.html">Innovation</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/insight.html">Insights</a>
+            <a href="quotation.html"
+                class="mt-4 w-full text-center bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 block">Request
+                Quotation</a>
+            <a href="contact.html"
+                class="mt-2 w-full text-center bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg block">Contact
+                Us</a>
         </div>
     </nav>
 
@@ -638,50 +640,70 @@
     <!-- ============================================================ -->
     <!--  FOOTER                                                      -->
     <!-- ============================================================ -->
-    <footer class="bg-on-background relative w-full pt-24 pb-8 border-t-8 border-primary">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-grid-gutter px-grid-margin max-w-full mx-auto mb-16">
-            <div class="col-span-1 md:col-span-4 flex justify-between items-center mb-12 border-b border-surface-variant/10 pb-12">
-                <div class="text-headline-md font-headline-md text-primary-fixed tracking-tighter">Brand Republic</div>
-                <div class="flex gap-6">
-                    <a class="w-12 h-12 rounded-full border border-surface-variant/30 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all" href="#">
-                        <span class="material-icons-outlined">share</span>
+    <!-- ========================================================= -->
+    <!-- FOOTER – redesigned with social icons and updated links  -->
+    <!-- ========================================================= -->
+    <footer class="bg-[#111113] text-white relative w-full pt-20 pb-12 border-t-8 border-[#4a0e9b]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+            <!-- Brand + Social Icons -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 border-b border-slate-800 pb-8 gap-4">
+                <div class="font-headline text-3xl font-bold text-white tracking-tight uppercase">Brand Republic</div>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#" aria-label="Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
                     </a>
                 </div>
             </div>
-            <div>
-                <h4 class="font-label-bold text-primary mb-6 uppercase tracking-widest text-xs">Legal</h4>
-                <ul class="space-y-4">
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Privacy Policy</a></li>
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Cookie Policy</a></li>
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Terms of use</a></li>
-                </ul>
+
+            <!-- Footer Links Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 font-ui">
+                <!-- Legal -->
+                <div>
+                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Legal</h4>
+                    <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Privacy Policy</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Cookie Policy</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Terms of use</a></li>
+                    </ul>
+                </div>
+                <!-- Company -->
+                <div>
+                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Company</h4>
+                    <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="about.html">About</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="project.html">Innovation</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="insight.html">Insights</a></li>
+                    </ul>
+                </div>
+                <!-- Investors -->
+                <div>
+                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Investors</h4>
+                    <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Real Estate</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Stock Info</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Financials</a></li>
+                    </ul>
+                </div>
+                <!-- Support -->
+                <div>
+                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Support</h4>
+                    <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="contact.html">Contact</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Newsroom</a></li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <h4 class="font-label-bold text-primary mb-6 uppercase tracking-widest text-xs">Company</h4>
-                <ul class="space-y-4">
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Leadership</a></li>
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Partners</a></li>
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">ESG</a></li>
-                </ul>
+
+            <!-- Copyright -->
+            <div class="text-center md:text-left font-ui text-caption text-slate-500 pt-8 border-t border-slate-900">
+                &copy; 2026 Brand Republic. All rights reserved.
             </div>
-            <div>
-                <h4 class="font-label-bold text-primary mb-6 uppercase tracking-widest text-xs">Investors</h4>
-                <ul class="space-y-4">
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Real Estate</a></li>
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Stock Info</a></li>
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Financials</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-label-bold text-primary mb-6 uppercase tracking-widest text-xs">Support</h4>
-                <ul class="space-y-4">
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="/contact">Contact</a></li>
-                    <li><a class="font-label-bold text-label-bold text-surface-variant/70 hover:text-white transition-colors hover:underline decoration-primary decoration-2 uppercase" href="#">Newsroom</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="px-grid-margin text-center md:text-left text-surface-variant/30 font-body-md text-sm mt-8 border-t border-surface-variant/5 pt-8">
-            © 2026 Brand Republic Ltd. All rights reserved. Registered in Uganda.
         </div>
     </footer>
 

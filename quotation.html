@@ -152,7 +152,6 @@
             background-color: #ffffff;
             border: 2px solid #1a1c1c;
             border-radius: 0px !important;
-            box-shadow: 6px 6px 0px 0px #1a1c1c;
         }
         .brutalist-input {
             border: 2px solid #1a1c1c;
@@ -164,6 +163,14 @@
             outline: none;
             border-color: #6121a1;
             box-shadow: 3px 3px 0px 0px #6121a1;
+        }
+        .brutalist-input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            cursor: pointer;
+            opacity: 0.6;
+        }
+        .brutalist-input[type="date"]::-webkit-calendar-picker-indicator:hover {
+            opacity: 1;
         }
         .service-option {
             border: 1px solid #1a1c1c;
@@ -253,15 +260,30 @@
         .counter {
             transition: all 0.3s ease;
         }
+
+        /* ── Navbar backdrop blur ── */
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* ── Pulse glow for CTA ── */
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(71, 0, 130, 0.4); }
+            50% { box-shadow: 0 0 0 12px rgba(71, 0, 130, 0); }
+        }
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
     </style>
 </head>
 
 <body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary">
 
     <!-- ============================================================ -->
-    <!--  STANDARD HEADER / NAVBAR (shared component)                  -->
+    <!--  NAVBAR – Updated to match media page version                 -->
     <!-- ============================================================ -->
-    <nav class="fixed top-0 w-full z-[100] h-24 bg-surface/90 backdrop-blur-md border-b-2 border-outline-variant flex justify-between items-center px-[4rem] max-w-full mx-auto">
+    <nav class="fixed top-0 w-full z-[100] h-24 bg-surface/90 backdrop-blur-md border-b-2 border-outline-variant flex justify-between items-center px-[4rem] max-w-full mx-auto nav-blur">
 
         <!-- Logo -->
         <a href="/" class="h-auto py-2 flex items-center focus:outline-none">
@@ -269,11 +291,10 @@
         </a>
 
         <!-- Desktop Navigation -->
-        <div class="font-manrope hidden lg:flex gap-6 items-center">
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="about.html">About Us</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="services.html">Services</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="media.html">Media Inventory</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="project.html">Projects</a>
+        <div class="font-ui hidden lg:flex gap-6 items-center">
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="about.html">About</a>
+            <a class="text-primary font-label-bold text-label-bold uppercase tracking-wide border-b-2 border-primary pb-1" href="media.html">Media</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="project.html">Innovation</a>
             <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="insights.html">Insights</a>
         </div>
 
@@ -282,7 +303,7 @@
             <a href="quotation.html" class="hidden lg:inline-block bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 shadow-sm">
                 Request Quotation
             </a>
-            <a href="contact.html" class="hidden lg:inline-block bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg">
+            <a href="contact.html" class="hidden lg:inline-block bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg pulse-glow">
                 Contact Us
             </a>
             <!-- Mobile hamburger -->
@@ -296,9 +317,8 @@
         <!-- Mobile Drawer -->
         <div id="mobile-menu" class="hidden fixed inset-x-0 top-24 bg-surface border-b-2 border-outline-variant p-6 flex-col gap-4 shadow-xl lg:hidden transition-all duration-300">
             <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/about.html">About Us</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/services.html">Services</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/media.html">Media Inventory</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/project.html">Projects</a>
+            <a class="text-primary font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/media.html">Media</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/project.html">Innovation</a>
             <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/insight.html">Insights</a>
             <a href="/quotation.html" class="mt-4 w-full text-center bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 block">Request Quotation</a>
             <a href="contact.html" class="mt-2 w-full text-center bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg block">Contact Us</a>
@@ -306,7 +326,7 @@
     </nav>
 
     <!-- ============================================================ -->
-    <!--  BRIEF SUBMISSION FORM (merged from second file)             -->
+    <!--  BRIEF SUBMISSION FORM                                       -->
     <!-- ============================================================ -->
     <section class="py-section-padding px-4 sm:px-8 lg:px-12 bg-background">
         <div class="max-w-7xl mx-auto space-y-8">
@@ -389,7 +409,7 @@
 
                     <hr class="border-t-2 border-on-surface/20">
 
-                    <!-- 3. CAMPAIGN DETAILS -->
+                    <!-- 3. CAMPAIGN DETAILS – Updated with date pickers -->
                     <div class="space-y-4">
                         <h2 class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight text-on-surface">
                             CAMPAIGN DETAILS
@@ -404,8 +424,17 @@
                                 <input type="text" id="locations" placeholder="e.g. Kampala, Entebbe" class="brutalist-input w-full p-3 font-body text-sm">
                             </div>
                             <div class="space-y-1">
-                                <label for="dates" class="field-label">CAMPAIGN DATES</label>
-                                <input type="text" id="dates" placeholder="Start - End Date" class="brutalist-input w-full p-3 font-body text-sm">
+                                <label for="start_date" class="field-label">CAMPAIGN START DATE</label>
+                                <input type="date" id="start_date" class="brutalist-input w-full p-3 font-body text-sm">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                                <label for="end_date" class="field-label">CAMPAIGN END DATE</label>
+                                <input type="date" id="end_date" class="brutalist-input w-full p-3 font-body text-sm">
+                            </div>
+                            <div class="space-y-1">
+                                <!-- Empty cell for alignment -->
                             </div>
                         </div>
                     </div>
@@ -511,216 +540,192 @@
     <!-- ============================================================ -->
     <!--  FOOTER                                                      -->
     <!-- ============================================================ -->
-    <footer class="bg-on-background relative w-full pt-section-padding pb-8 border-t-4 border-primary">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-grid-gutter px-grid-margin max-w-full mx-auto">
-            <div class="col-span-1 md:col-span-1 mb-8 md:mb-0">
-                <div class="text-headline-md font-headline-md text-primary mb-4"></div>
-                <p class="font-body-md text-surface-variant/70 mb-4">Building brands in the real world.</p>
+    <!-- ========================================================= -->
+    <!-- FOOTER – redesigned with social icons and updated links  -->
+    <!-- ========================================================= -->
+    <footer class="bg-[#111113] text-white relative w-full pt-20 pb-12 border-t-8 border-[#4a0e9b]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+            <!-- Brand + Social Icons -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 border-b border-slate-800 pb-8 gap-4">
+                <div class="font-headline text-3xl font-bold text-white tracking-tight uppercase">Brand Republic</div>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#" aria-label="Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
             </div>
-            <div class="col-span-1">
-                <h4 class="font-label-bold text-label-bold text-surface mb-4 uppercase">Company</h4>
-                <ul class="space-y-2">
-                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Leadership</a></li>
-                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Partners</a></li>
-                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">ESG</a></li>
-                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Careers</a></li>
-                </ul>
+
+            <!-- Footer Links Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 font-ui">
+                <!-- Legal -->
+                <div>
+                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Legal</h4>
+                    <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Privacy Policy</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Cookie Policy</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Terms of use</a></li>
+                    </ul>
+                </div>
+                <!-- Company -->
+                <div>
+                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Company</h4>
+                    <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="about.html">About</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="project.html">Innovation</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="insight.html">Insights</a></li>
+                    </ul>
+                </div>
+                <!-- Investors -->
+                <div>
+                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Investors</h4>
+                    <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Real Estate</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Stock Info</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Financials</a></li>
+                    </ul>
+                </div>
+                <!-- Support -->
+                <div>
+                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Support</h4>
+                    <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="contact.html">Contact</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Newsroom</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="col-span-1">
-                <h4 class="font-label-bold text-label-bold text-surface mb-4 uppercase">Investors &amp; News</h4>
-                <ul class="space-y-2">
-                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Investors</a></li>
-                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Stock Info</a></li>
-                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Financials</a></li>
-                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Governance</a></li>
-                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Newsroom</a></li>
-                </ul>
-            </div>
-            <div class="col-span-1">
-                <h4 class="font-label-bold text-label-bold text-surface mb-4 uppercase">Legal &amp; Contact</h4>
-                <ul class="space-y-2">
-                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Privacy Policy</a></li>
-                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Cookie Policy</a></li>
-                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Terms of use</a></li>
-                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Posting Standards</a></li>
-                    <li><a class="font-body-md text-surface-variant/70 hover:text-surface transition-colors hover:underline decoration-primary decoration-2" href="#">Real Estate Inquiries</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="px-grid-margin mt-16 pt-8 border-t border-surface-variant/20 text-center md:text-left flex flex-col md:flex-row justify-between items-center">
-            <p class="font-body-md text-surface-variant/50">© 2026 Brand Republic Ltd. All rights reserved. Registered in Uganda.</p>
-            <div class="flex gap-4 mt-4 md:mt-0">
-                <a class="text-surface-variant/70 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
-                <a class="text-surface-variant/70 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">link</span></a>
+
+            <!-- Copyright -->
+            <div class="text-center md:text-left font-ui text-caption text-slate-500 pt-8 border-t border-slate-900">
+                &copy; 2026 Brand Republic. All rights reserved.
             </div>
         </div>
     </footer>
 
     <!-- ============================================================ -->
-    <!--  FLOATING WHATSAPP WIDGET                                    -->
+    <!--  SUCCESS MODAL                                                -->
     <!-- ============================================================ -->
-   
-
-<!-- ============================================================ -->
-<!--  SUCCESS MODAL                                                -->
-<!-- ============================================================ -->
-<div id="success-modal" class="fixed inset-0 bg-on-surface/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-    <div class="brutalist-card p-8 max-w-md w-full bg-white space-y-4 text-center border-4 border-on-surface">
-        <div class="w-12 h-12 bg-primary text-on-primary border-2 border-on-surface flex items-center justify-center mx-auto shadow-[3px_3px_0px_0px_#1a1c1c]">
-            <span class="material-symbols-outlined text-2xl">check</span>
+    <div id="success-modal" class="fixed inset-0 bg-on-surface/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="brutalist-card p-8 max-w-md w-full bg-white space-y-4 text-center border-4 border-on-surface">
+            <div class="w-12 h-12 bg-primary text-on-primary border-2 border-on-surface flex items-center justify-center mx-auto shadow-[3px_3px_0px_0px_#1a1c1c]">
+                <span class="material-symbols-outlined text-2xl">check</span>
+            </div>
+            <h3 class="font-headline font-bold text-2xl uppercase tracking-tight">BRIEF RECEIVED!</h3>
+            <p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                Thank you! Our strategy team is currently analyzing your request and will reach out within 24 hours.
+            </p>
+            <button onclick="closeSuccessModal()" class="brutalist-btn-purple w-full font-body font-bold text-xs uppercase py-3">
+                CLOSE
+            </button>
         </div>
-        <h3 class="font-headline font-bold text-2xl uppercase tracking-tight">BRIEF RECEIVED!</h3>
-        <p class="font-body text-sm text-on-surface-variant leading-relaxed">
-            Thank you! Our strategy team is currently analyzing your request and will reach out within 24 hours.
-        </p>
-        <button onclick="closeSuccessModal()" class="brutalist-btn-purple w-full font-body font-bold text-xs uppercase py-3">
-            CLOSE
-        </button>
     </div>
-</div>
 
-<!-- ============================================================ -->
-<!--  JAVASCRIPT                                                   -->
-<!-- ============================================================ -->
-<script>
-    // ── Navbar toggle ──
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+    <!-- ============================================================ -->
+    <!--  JAVASCRIPT                                                   -->
+    <!-- ============================================================ -->
+    <script>
+        // ── Navbar toggle ──
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-        if (menuBtn && mobileMenu) {
-            const bars = menuBtn.querySelectorAll('.bar');
+            if (menuBtn && mobileMenu) {
+                const bars = menuBtn.querySelectorAll('.bar');
 
-            menuBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                const isOpen = !mobileMenu.classList.contains('hidden');
+                menuBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const isOpen = !mobileMenu.classList.contains('hidden');
 
-                if (isOpen) {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('flex');
-                    bars.forEach(function(bar, index) {
-                        if (index === 0) bar.classList.remove('rotate-45', 'translate-y-2');
-                        if (index === 1) bar.classList.remove('opacity-0');
-                        if (index === 2) bar.classList.remove('-rotate-45', '-translate-y-2');
-                    });
-                } else {
-                    mobileMenu.classList.remove('hidden');
-                    mobileMenu.classList.add('flex');
-                    bars.forEach(function(bar, index) {
-                        if (index === 0) bar.classList.add('rotate-45', 'translate-y-2');
-                        if (index === 1) bar.classList.add('opacity-0');
-                        if (index === 2) bar.classList.add('-rotate-45', '-translate-y-2');
-                    });
-                }
-            });
-
-            document.addEventListener('click', function(e) {
-                if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('flex');
-                    bars.forEach(function(bar, index) {
-                        if (index === 0) bar.classList.remove('rotate-45', 'translate-y-2');
-                        if (index === 1) bar.classList.remove('opacity-0');
-                        if (index === 2) bar.classList.remove('-rotate-45', '-translate-y-2');
-                    });
-                }
-            });
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('flex');
-                    bars.forEach(function(bar, index) {
-                        if (index === 0) bar.classList.remove('rotate-45', 'translate-y-2');
-                        if (index === 1) bar.classList.remove('opacity-0');
-                        if (index === 2) bar.classList.remove('-rotate-45', '-translate-y-2');
-                    });
-                }
-            });
-        }
-    });
-
-    // ── Counter animation ──
-    document.addEventListener('DOMContentLoaded', function() {
-        const counters = document.querySelectorAll('.counter');
-        const observerOptions = { threshold: 0.5 };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = +entry.target.getAttribute('data-target');
-                    const duration = 2000;
-                    const startTime = performance.now();
-
-                    function updateCounter(currentTime) {
-                        const elapsed = currentTime - startTime;
-                        const progress = Math.min(elapsed / duration, 1);
-                        const currentVal = Math.floor(progress * target);
-                        entry.target.innerText = currentVal + (target > 100 ? '+' : '');
-
-                        if (progress < 1) {
-                            requestAnimationFrame(updateCounter);
-                        }
+                    if (isOpen) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                        bars.forEach(function(bar, index) {
+                            if (index === 0) bar.classList.remove('rotate-45', 'translate-y-2');
+                            if (index === 1) bar.classList.remove('opacity-0');
+                            if (index === 2) bar.classList.remove('-rotate-45', '-translate-y-2');
+                        });
+                    } else {
+                        mobileMenu.classList.remove('hidden');
+                        mobileMenu.classList.add('flex');
+                        bars.forEach(function(bar, index) {
+                            if (index === 0) bar.classList.add('rotate-45', 'translate-y-2');
+                            if (index === 1) bar.classList.add('opacity-0');
+                            if (index === 2) bar.classList.add('-rotate-45', '-translate-y-2');
+                        });
                     }
-                    requestAnimationFrame(updateCounter);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
+                });
 
-        counters.forEach(counter => observer.observe(counter));
-    });
+                document.addEventListener('click', function(e) {
+                    if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                        bars.forEach(function(bar, index) {
+                            if (index === 0) bar.classList.remove('rotate-45', 'translate-y-2');
+                            if (index === 1) bar.classList.remove('opacity-0');
+                            if (index === 2) bar.classList.remove('-rotate-45', '-translate-y-2');
+                        });
+                    }
+                });
 
-    // ── Hero parallax ──
-    document.addEventListener('DOMContentLoaded', function() {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const heroImg = document.querySelector('header img');
-            if (heroImg) {
-                heroImg.style.transform = `translateY(${scrolled * 0.4}px)`;
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                        bars.forEach(function(bar, index) {
+                            if (index === 0) bar.classList.remove('rotate-45', 'translate-y-2');
+                            if (index === 1) bar.classList.remove('opacity-0');
+                            if (index === 2) bar.classList.remove('-rotate-45', '-translate-y-2');
+                        });
+                    }
+                });
             }
         });
-    });
 
-    // ── Brief form handlers ──
-    const selectedServices = new Set();
+        // ── Brief form handlers ──
+        const selectedServices = new Set();
 
-    function toggleService(element, serviceName) {
-        if (selectedServices.has(serviceName)) {
-            selectedServices.delete(serviceName);
-            element.classList.remove('selected');
-        } else {
-            selectedServices.add(serviceName);
-            element.classList.add('selected');
+        function toggleService(element, serviceName) {
+            if (selectedServices.has(serviceName)) {
+                selectedServices.delete(serviceName);
+                element.classList.remove('selected');
+            } else {
+                selectedServices.add(serviceName);
+                element.classList.add('selected');
+            }
         }
-    }
 
-    function handleBriefSubmit(e) {
-        e.preventDefault();
+        function handleBriefSubmit(e) {
+            e.preventDefault();
 
-        const formData = {
-            services: Array.from(selectedServices),
-            company: document.getElementById('company_name').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('telephone').value,
-            objective: document.getElementById('objective').value,
-            locations: document.getElementById('locations').value,
-            dates: document.getElementById('dates').value,
-            budget: document.getElementById('budget').value,
-        };
+            const formData = {
+                services: Array.from(selectedServices),
+                company: document.getElementById('company_name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('telephone').value,
+                objective: document.getElementById('objective').value,
+                locations: document.getElementById('locations').value,
+                startDate: document.getElementById('start_date').value,
+                endDate: document.getElementById('end_date').value,
+                budget: document.getElementById('budget').value,
+            };
 
-        console.log('Submitted Campaign Brief:', formData);
-        document.getElementById('success-modal').classList.remove('hidden');
-    }
+            console.log('Submitted Campaign Brief:', formData);
+            document.getElementById('success-modal').classList.remove('hidden');
+        }
 
-    function closeSuccessModal() {
-        document.getElementById('success-modal').classList.add('hidden');
-        document.getElementById('brief-form').reset();
-        document.querySelectorAll('.service-option').forEach(el => el.classList.remove('selected'));
-        selectedServices.clear();
-    }
-</script>
-<script src="/chatbot.js"></script>
+        function closeSuccessModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+            document.getElementById('brief-form').reset();
+            document.querySelectorAll('.service-option').forEach(el => el.classList.remove('selected'));
+            selectedServices.clear();
+        }
+    </script>
+    <script src="/chatbot.js"></script>
 
 </body>
 

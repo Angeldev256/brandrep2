@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,15 @@
     <!-- Google Fonts & Material Symbols -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <script>
         tailwind.config = {
             theme: {
@@ -39,15 +46,15 @@
                         'surface-variant': '#e2e2e2'
                     },
                     fontFamily: {
-                        "hero": ["Space Grotesk", "sans-serif"],
-                        "headline": ["Space Grotesk", "sans-serif"],
-                        "display": ["Space Grotesk", "sans-serif"],
-                        "ui": ["Manrope", "sans-serif"],
-                        "body": ["Manrope", "sans-serif"],
-                        "button": ["Manrope", "sans-serif"],
-                        "caption": ["Manrope", "sans-serif"],
-                        "data": ["Manrope", "sans-serif"],
-                        "sans": ["Manrope", "sans-serif"]
+                        "hero": ["Space Grotesk", "Manrope"],
+                        "headline": ["Space Grotesk", "Manrope"],
+                        "display": ["Space Grotesk", "Manrope"],
+                        "ui": ["Manrope", "Manrope"],
+                        "body": ["Manrope", "Manrope"],
+                        "button": ["Manrope", "Manrope"],
+                        "caption": ["Manrope", "Manrope"],
+                        "data": ["Manrope", "Manrope"],
+                        "sans": ["Manrope", "Manrope"]
                     },
                     spacing: {
                         'grid-margin': '48px',
@@ -57,82 +64,826 @@
             }
         }
     </script>
+
+    <style>
+        .font-label-bold {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+        }
+
+        .text-label-bold {
+            font-size: 14px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .bar {
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-active .bar:nth-child(1) {
+            transform: rotate(45deg) translateY(7px);
+        }
+
+        .hamburger-active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-active .bar:nth-child(3) {
+            transform: rotate(-45deg) translateY(-7px);
+        }
+
+        body {
+            padding-top: 6rem;
+        }
+
+        ::selection {
+            background: #4a0e9b;
+            color: #ffffff;
+        }
+
+        .media-showcase-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 2px solid #1a1c1c;
+            box-shadow: 6px 6px 0px 0px #1a1c1c;
+        }
+
+        .media-showcase-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 10px 10px 0px 0px #470082;
+            border-color: #470082;
+        }
+
+        .media-showcase-card .card-img {
+            transition: transform 0.6s ease;
+        }
+
+        .media-showcase-card:hover .card-img {
+            transform: scale(1.06);
+        }
+
+        .category-badge {
+            background: #470082;
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.25rem 0.75rem;
+            border: 2px solid #1a1c1c;
+            box-shadow: 2px 2px 0px 0px #1a1c1c;
+        }
+
+        .category-divider {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .category-divider::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(71, 0, 130, 0.3), transparent);
+        }
+
+        .scroll-indicator {
+            animation: bounceDown 2s ease-in-out infinite;
+        }
+
+        @keyframes bounceDown {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(10px);
+            }
+        }
+
+        .geo-shape {
+            position: absolute;
+            border: 2px solid rgba(255, 255, 255, 0.08);
+            pointer-events: none;
+            animation: float 8s ease-in-out infinite alternate;
+        }
+
+        .geo-shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            right: 8%;
+            animation-delay: 0s;
+            transform: rotate(12deg);
+        }
+
+        .geo-shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            bottom: 15%;
+            left: 5%;
+            animation-delay: 2s;
+            transform: rotate(45deg);
+        }
+
+        .geo-shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 50%;
+            right: 25%;
+            animation-delay: 4s;
+            transform: rotate(22deg);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+
+        /* Map embed container */
+        .map-container iframe {
+            width: 100%;
+            height: 250px;
+            border: 2px solid #1a1c1c;
+            filter: grayscale(20%) contrast(1.1);
+            transition: filter 0.3s ease;
+        }
+
+        .map-container iframe:hover {
+            filter: grayscale(0%) contrast(1);
+        }
+
+        .map-container .map-overlay {
+            transition: opacity 0.3s ease;
+        }
+
+        .map-container:hover .map-overlay {
+            opacity: 1;
+        }
+    </style>
 </head>
+
 <body class="bg-background text-on-background font-manrope selection:bg-primary selection:text-on-primary">
 
-    <!-- Top Navigation -->
-    <nav class="font-manrope fixed top-0 w-full z-[100] h-24 bg-surface/90 backdrop-blur-md border-b-2 border-outline-variant flex justify-between items-center px-4 md:px-grid-margin max-w-full mx-auto">
-        <!-- Brand Logo wrapped in link to Home -->
+    <!-- ========================================================= -->
+    <!--  NAVBAR (unchanged)                                       -->
+    <!-- ========================================================= -->
+    <nav
+        class="fixed top-0 w-full z-[100] h-24 bg-surface/90 backdrop-blur-md border-b-2 border-outline-variant flex justify-between items-center px-[4rem] max-w-full mx-auto nav-blur">
         <a href="/" class="h-auto py-2 flex items-center focus:outline-none">
-            <img src="/Assets/bg.png" alt="Brand Republic Logo" class="h-20 md:h-25 w-auto object-contain" onerror="this.onerror=null; this.src='https://via.placeholder.com/200x80?text=Brand+Republic';">
+            <img src="/Assets/bg.png" alt="Brand Republic Logo" class="h-20 md:h-25 w-auto object-contain">
         </a>
-
-        <!-- Desktop Navigation Links -->
-        <div class="font-manrope hidden lg:flex gap-6 items-center">
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-bold text-sm uppercase tracking-wider" href="about.html">About Us</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-bold text-sm uppercase tracking-wider" href="services.html">Services</a>
-            <a class="text-primary transition-colors duration-300 font-bold text-sm uppercase tracking-wider border-b-2 border-primary" href="media.html">Media Inventory</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-bold text-sm uppercase tracking-wider" href="project.html">Projects</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-bold text-sm uppercase tracking-wider" href="insight.html">Insights</a>
+        <div class="font-ui hidden lg:flex gap-6 items-center">
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide"
+                href="/about.html">About</a>
+            <a class="text-primary font-label-bold text-label-bold uppercase tracking-wide border-b-2 border-primary pb-1"
+                href="/media.html">Media</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide"
+                href="/project.html">Innovation</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide"
+                href="/insight.html">Insights</a>
         </div>
-
-        <!-- Right Controls: Buttons & Mobile Hamburger Toggle -->
         <div class="flex items-center gap-4">
-            <a href="quotation.html" class="hidden lg:inline-block bg-transparent text-primary border-2 border-primary font-bold text-xs uppercase tracking-wider py-2.5 px-6 hover:bg-primary hover:text-on-primary transition-colors duration-300 shadow-sm">
+            <a href="quotation.html"
+                class="hidden lg:inline-block bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 shadow-sm">
                 Request Quotation
             </a>
-
-            <a href="contact.html" class="hidden lg:inline-block bg-primary text-on-primary font-bold text-xs uppercase tracking-wider py-2.5 px-6 hover:bg-primary-container transition-colors duration-300 shadow-lg">
+            <a href="contact.html"
+                class="hidden lg:inline-block bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg pulse-glow">
                 Contact Us
             </a>
-
-            <!-- Mobile Hamburger Button -->
-            <button id="mobile-menu-btn" class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none z-[110]" aria-label="Toggle Navigation Menu">
-                <span class="bar w-6 h-0.5 bg-on-surface transition-all duration-300"></span>
-                <span class="bar w-6 h-0.5 bg-on-surface transition-all duration-300"></span>
-                <span class="bar w-6 h-0.5 bg-on-surface transition-all duration-300"></span>
+            <button id="mobile-menu-btn"
+                class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none z-[110]"
+                aria-label="Toggle Navigation Menu">
+                <span class="bar w-6 h-0.5 bg-on-surface"></span>
+                <span class="bar w-6 h-0.5 bg-on-surface"></span>
+                <span class="bar w-6 h-0.5 bg-on-surface"></span>
             </button>
         </div>
-
-        <!-- Mobile Slide-Down Drawer -->
-        <div id="mobile-menu" class="hidden fixed inset-x-0 top-24 bg-surface border-b-2 border-outline-variant p-6 flex-col gap-4 shadow-xl lg:hidden transition-all duration-300">
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-bold text-lg py-2 border-b border-outline-variant/30" href="/about.html">About Us</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-bold text-lg py-2 border-b border-outline-variant/30" href="/services.html">Services</a>
-            <a class="text-primary font-bold text-lg py-2 border-b border-outline-variant/30" href="/media.html">Media Inventory</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-bold text-lg py-2 border-b border-outline-variant/30" href="/project.html">Projects</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-bold text-lg py-2 border-b border-outline-variant/30" href="/insight.html">Insights</a>
-
-            <a href="/quotation.html" class="mt-4 w-full text-center bg-transparent text-primary border-2 border-primary font-bold text-sm uppercase tracking-wider py-3 hover:bg-primary hover:text-on-primary transition-colors duration-300 block">
-                Request Quotation
-            </a>
-
-            <a href="/contact" class="mt-2 w-full text-center bg-primary text-on-primary font-bold text-sm uppercase tracking-wider py-3 hover:bg-primary-container transition-colors duration-300 shadow-lg block">
-                Contact Us
-            </a>
+        <div id="mobile-menu"
+            class="hidden fixed inset-x-0 top-24 bg-surface border-b-2 border-outline-variant p-6 flex-col gap-4 shadow-xl lg:hidden transition-all duration-300">
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30"
+                href="/about.html">About Us</a>
+            <a class="text-primary font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30"
+                href="/media.html">Media</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30"
+                href="project.html">Innovation</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30"
+                href="/insight.html">Insights</a>
+            <a href="quotation.html"
+                class="mt-4 w-full text-center bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 block">Request
+                Quotation</a>
+            <a href="contact.html"
+                class="mt-2 w-full text-center bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg block">Contact
+                Us</a>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="pt-24 pb-16">
-        
-        <!-- Hero Header -->
-        <section class="px-4 md:px-grid-margin pt-12 md:pt-20 pb-12 relative overflow-hidden bg-surface-container-lowest border-b-2 border-outline-variant z-10">
-            <div class="max-w-7xl mx-auto relative z-20">
-                <h1 class="font-space font-bold text-4xl md:text-6xl uppercase text-on-background mb-4 tracking-tight leading-tight">
-                    FIND YOUR NEXT <br><span class="text-primary">GREAT LOCATION.</span>
-                </h1>
-                <p class="font-manrope text-base md:text-lg text-on-surface-variant max-w-2xl mb-8">
-                    Explore high-impact static and digital OOH media inventory across prime high-traffic routes. Click any image for a full-screen display mockup.
-                </p>
-                
+
+    <!-- ========================================================= -->
+    <!--  MAIN CONTENT                                             -->
+    <!-- ========================================================= -->
+    <main class="pt-2 pb-16">
+
+        <!-- ========================================================= -->
+        <!--  HERO – MEDIA THAT PUTS BRANDS WHERE ATTENTION LIVES      -->
+        <!-- ========================================================= -->
+        <section class="relative bg-on-background text-on-primary overflow-hidden">
+            <div class="geo-shape"></div>
+            <div class="geo-shape"></div>
+            <div class="geo-shape"></div>
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+
+            </div>
+            <div class="max-w-7xl mx-auto px-4 md:px-grid-margin py-16 md:py-24 relative z-10">
+                <div data-aos="fade-up">
+                    <span
+                        class="inline-block font-label-bold text-xs uppercase tracking-[0.2em] text-primary-fixed-dim border border-primary-fixed-dim/30 px-4 py-1.5 mb-6">
+                        / Premium Media Inventory
+                    </span>
+                    <h1
+                        class="font-hero text-4xl md:text-6xl lg:text-7xl uppercase leading-[1.05] tracking-tight text-on-primary">
+                        MEDIA THAT PUTS <br class="hidden sm:block" />
+                        <span class="text-primary-fixed-dim">BRANDS WHERE</span> <br class="hidden sm:block" />
+                        ATTENTION LIVES.
+                    </h1>
+
+                    <div class="scroll-indicator flex flex-col items-center gap-2 text-on-primary/40 mt-10">
+                        <span class="text-[10px] uppercase tracking-[0.2em] font-bold">Scroll to explore</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!--  MEDIA CATEGORIES SHOWCASE                                -->
+        <!-- ========================================================= -->
+        <section id="media-categories" class="py-20 px-4 md:px-grid-margin bg-surface">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-16" data-aos="fade-up">
+                    <span
+                        class="text-primary font-label-bold text-xs uppercase tracking-[0.2em] flex items-center gap-3">
+                        <span class="w-8 h-0.5 bg-primary"></span>
+                        Our Network
+                    </span>
+                    <h2 class="font-headline text-3xl md:text-5xl uppercase tracking-tight text-on-surface mt-2">
+                        Every <span class="text-primary">Format.</span> <br class="sm:hidden" />
+                        Every <span class="text-primary">Location.</span>
+                    </h2>
+                    <p class="font-body text-sm text-on-surface-variant max-w-2xl mt-2">
+                        Explore our full range of premium advertising formats — each designed to capture attention in
+                        the
+                        moments that matter most.
+                    </p>
+                </div>
+
+                <!-- ===== 1. BILLBOARDS ===== -->
+                <div class="mb-20" data-aos="fade-up">
+                    <div class="category-divider mb-6">
+                        <span class="category-badge">Category 01</span>
+                        <h3 class="font-headline text-3xl uppercase tracking-tight text-on-surface">Billboards</h3>
+                    </div>
+                    <p class="font-body text-sm text-on-surface-variant max-w-2xl mb-8">
+                        The cornerstone of outdoor advertising. Massive, unmissable, and strategically positioned along
+                        Uganda's busiest corridors.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Large Format -->
+                        <div class="media-showcase-card bg-white overflow-hidden group flex flex-col">
+                            <div class="h-56 overflow-hidden relative">
+                                <img class="card-img w-full h-full object-cover" src="/Assets/imgs/8.png"
+                                    alt="Large Format Billboard">
+                                <span
+                                    class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-on-surface shadow-[2px_2px_0px_0px_#1a1c1c]">
+                                    Large Format
+                                </span>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col">
+                                <h4 class="font-headline text-xl uppercase leading-tight text-on-surface mb-1">Large
+                                    Format</h4>
+                                <p class="font-body text-sm text-on-surface-variant flex-grow">Dominant 48-sheet and
+                                    unipole structures for maximum visibility.</p>
+                                <span
+                                    class="text-primary font-label-bold text-[10px] uppercase tracking-wider mt-3 flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
+                                    View specs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Portrait -->
+                        <div class="media-showcase-card bg-white overflow-hidden group flex flex-col">
+                            <div class="h-56 overflow-hidden relative">
+                                <img class="card-img w-full h-full object-cover" src="/Assets/imgs/3.png"
+                                    alt="Portrait Billboard">
+                                <span
+                                    class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-on-surface shadow-[2px_2px_0px_0px_#1a1c1c]">
+                                    Portrait
+                                </span>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col">
+                                <h4 class="font-headline text-xl uppercase leading-tight text-on-surface mb-1">Portrait
+                                </h4>
+                                <p class="font-body text-sm text-on-surface-variant flex-grow">Vertical format ideal for
+                                    high-density urban corridors and pedestrian zones.</p>
+                                <span
+                                    class="text-primary font-label-bold text-[10px] uppercase tracking-wider mt-3 flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
+                                    View specs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Landscape -->
+                        <div class="media-showcase-card bg-white overflow-hidden group flex flex-col">
+                            <div class="h-56 overflow-hidden relative">
+                                <img class="card-img w-full h-full object-cover" src="/Assets/imgs/6.png"
+                                    alt="Landscape Billboard">
+                                <span
+                                    class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-on-surface shadow-[2px_2px_0px_0px_#1a1c1c]">
+                                    Landscape
+                                </span>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col">
+                                <h4 class="font-headline text-xl uppercase leading-tight text-on-surface mb-1">Landscape
+                                </h4>
+                                <p class="font-body text-sm text-on-surface-variant flex-grow">Wide-format boards
+                                    perfect for highway exposure and scenic routes.</p>
+                                <span
+                                    class="text-primary font-label-bold text-[10px] uppercase tracking-wider mt-3 flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
+                                    View specs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Gantries -->
+                        <div class="media-showcase-card bg-white overflow-hidden group flex flex-col">
+                            <div class="h-56 overflow-hidden relative">
+                                <img class="card-img w-full h-full object-cover" src="/Assets/imgs/7.png"
+                                    alt="Gantry Billboard">
+                                <span
+                                    class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-on-surface shadow-[2px_2px_0px_0px_#1a1c1c]">
+                                    Gantries
+                                </span>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col">
+                                <h4 class="font-headline text-xl uppercase leading-tight text-on-surface mb-1">Gantries
+                                </h4>
+                                <p class="font-body text-sm text-on-surface-variant flex-grow">Overhead structures
+                                    capturing high-speed traffic on major highways.</p>
+                                <span
+                                    class="text-primary font-label-bold text-[10px] uppercase tracking-wider mt-3 flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
+                                    View specs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Wall Wraps -->
+                        <div class="media-showcase-card bg-white overflow-hidden group flex flex-col">
+                            <div class="h-56 overflow-hidden relative">
+                                <img class="card-img w-full h-full object-cover" src="/Assets/imgs/9.png"
+                                    alt="Wall Wrap">
+                                <span
+                                    class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-on-surface shadow-[2px_2px_0px_0px_#1a1c1c]">
+                                    Wall Wraps
+                                </span>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col">
+                                <h4 class="font-headline text-xl uppercase leading-tight text-on-surface mb-1">Wall
+                                    Wraps</h4>
+                                <p class="font-body text-sm text-on-surface-variant flex-grow">Building-scale branding
+                                    that transforms entire facades into media.</p>
+                                <span
+                                    class="text-primary font-label-bold text-[10px] uppercase tracking-wider mt-3 flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
+                                    View specs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== 2. DIGITAL OUT-OF-HOME ===== -->
+                <div class="mb-20" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-divider mb-6">
+                        <span class="category-badge">Category 02</span>
+                        <h3 class="font-headline text-3xl uppercase tracking-tight text-on-surface">Digital Out-of-Home
+                        </h3>
+                    </div>
+                    <p class="font-body text-sm text-on-surface-variant max-w-2xl mb-8">
+                        Dynamic, data-driven, and attention-grabbing. Digital screens that adapt to your campaign in
+                        real-time.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- LED Screens -->
+                        <div class="media-showcase-card bg-white overflow-hidden group flex flex-col">
+                            <div class="h-56 overflow-hidden relative">
+                                <img class="card-img w-full h-full object-cover" src="/Assets/imgs/5.png"
+                                    alt="LED Screen">
+                                <span
+                                    class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-on-surface shadow-[2px_2px_0px_0px_#1a1c1c]">
+                                    LED Screens
+                                </span>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col">
+                                <h4 class="font-headline text-xl uppercase leading-tight text-on-surface mb-1">LED
+                                    Screens</h4>
+                                <p class="font-body text-sm text-on-surface-variant flex-grow">High-brightness,
+                                    full-color digital displays for premium locations.</p>
+                                <span
+                                    class="text-primary font-label-bold text-[10px] uppercase tracking-wider mt-3 flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
+                                    View specs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Digital Billboards -->
+                        <div class="media-showcase-card bg-white overflow-hidden group flex flex-col">
+                            <div class="h-56 overflow-hidden relative">
+                                <img class="card-img w-full h-full object-cover" src="/Assets/imgs/11.png"
+                                    alt="Digital Billboard">
+                                <span
+                                    class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-on-surface shadow-[2px_2px_0px_0px_#1a1c1c]">
+                                    Digital Billboards
+                                </span>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col">
+                                <h4 class="font-headline text-xl uppercase leading-tight text-on-surface mb-1">Digital
+                                    Billboards</h4>
+                                <p class="font-body text-sm text-on-surface-variant flex-grow">Massive digital canvases
+                                    with dynamic content rotation capabilities.</p>
+                                <span
+                                    class="text-primary font-label-bold text-[10px] uppercase tracking-wider mt-3 flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
+                                    View specs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Digital Networks -->
+                        <div class="media-showcase-card bg-white overflow-hidden group flex flex-col">
+                            <div class="h-56 overflow-hidden relative">
+                                <img class="card-img w-full h-full object-cover" src="/Assets/imgs/10.png"
+                                    alt="Digital Network">
+                                <span
+                                    class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-on-surface shadow-[2px_2px_0px_0px_#1a1c1c]">
+                                    Digital Networks
+                                </span>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col">
+                                <h4 class="font-headline text-xl uppercase leading-tight text-on-surface mb-1">Digital
+                                    Networks</h4>
+                                <p class="font-body text-sm text-on-surface-variant flex-grow">Interconnected screen
+                                    networks for synchronized, multi-location campaigns.</p>
+                                <span
+                                    class="text-primary font-label-bold text-[10px] uppercase tracking-wider mt-3 flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
+                                    View specs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== 3. STREET FURNITURE ===== -->
+                <div class="mb-20" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-divider mb-6">
+                        <span class="category-badge">Category 03</span>
+                        <h3 class="font-headline text-3xl uppercase tracking-tight text-on-surface">Street Furniture
+                        </h3>
+                    </div>
+                    <p class="font-body text-sm text-on-surface-variant max-w-2xl mb-8">
+                        Hyper-local, eye-level advertising integrated into the urban landscape. Reach pedestrians where
+                        they
+                        stop and engage.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Street Poles -->
+                        <div class="media-showcase-card bg-white overflow-hidden group flex flex-col">
+                            <div class="h-56 overflow-hidden relative">
+                                <img class="card-img w-full h-full object-cover" src="/Assets/imgs/12.png"
+                                    alt="Street Pole">
+                                <span
+                                    class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-on-surface shadow-[2px_2px_0px_0px_#1a1c1c]">
+                                    Street Poles
+                                </span>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col">
+                                <h4 class="font-headline text-xl uppercase leading-tight text-on-surface mb-1">Street
+                                    Poles</h4>
+                                <p class="font-body text-sm text-on-surface-variant flex-grow">Strategic pole-mounted
+                                    displays along high-footfall urban routes.</p>
+                                <span
+                                    class="text-primary font-label-bold text-[10px] uppercase tracking-wider mt-3 flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
+                                    View specs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Bus Shelters -->
+                        <div class="media-showcase-card bg-white overflow-hidden group flex flex-col">
+                            <div class="h-56 overflow-hidden relative">
+                                <img class="card-img w-full h-full object-cover" src="/Assets/imgs/1.png"
+                                    alt="Bus Shelter">
+                                <span
+                                    class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-on-surface shadow-[2px_2px_0px_0px_#1a1c1c]">
+                                    Bus Shelters
+                                </span>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col">
+                                <h4 class="font-headline text-xl uppercase leading-tight text-on-surface mb-1">Bus
+                                    Shelters</h4>
+                                <p class="font-body text-sm text-on-surface-variant flex-grow">Premium display space at
+                                    major transit hubs with high dwell time.</p>
+                                <span
+                                    class="text-primary font-label-bold text-[10px] uppercase tracking-wider mt-3 flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
+                                    View specs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Urban Furniture -->
+                        <div class="media-showcase-card bg-white overflow-hidden group flex flex-col">
+                            <div class="h-56 overflow-hidden relative">
+                                <img class="card-img w-full h-full object-cover" src="/Assets/imgs/2.png"
+                                    alt="Urban Furniture">
+                                <span
+                                    class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-on-surface shadow-[2px_2px_0px_0px_#1a1c1c]">
+                                    Urban Furniture
+                                </span>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col">
+                                <h4 class="font-headline text-xl uppercase leading-tight text-on-surface mb-1">Urban
+                                    Furniture</h4>
+                                <p class="font-body text-sm text-on-surface-variant flex-grow">Kiosks, benches, and city
+                                    fixtures transformed into advertising touchpoints.</p>
+                                <span
+                                    class="text-primary font-label-bold text-[10px] uppercase tracking-wider mt-3 flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
+                                    View specs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== 4. TRANSIT MEDIA ===== -->
+                <div class="mb-20" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-divider mb-6">
+                        <span class="category-badge">Category 04</span>
+                        <h3 class="font-headline text-3xl uppercase tracking-tight text-on-surface">Transit Media</h3>
+                    </div>
+                    <p class="font-body text-sm text-on-surface-variant max-w-2xl mb-8">
+                        Mobile advertising that moves with your audience. Branded vehicles and transit hubs that command
+                        attention across the entire city.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Bus Branding -->
+                        <div class="media-showcase-card bg-white overflow-hidden group flex flex-col">
+                            <div class="h-56 overflow-hidden relative">
+                                <img class="card-img w-full h-full object-cover" src="/Assets/imgs/10.png"
+                                    alt="Bus Branding">
+                                <span
+                                    class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-on-surface shadow-[2px_2px_0px_0px_#1a1c1c]">
+                                    Bus Branding
+                                </span>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col">
+                                <h4 class="font-headline text-xl uppercase leading-tight text-on-surface mb-1">Bus
+                                    Branding</h4>
+                                <p class="font-body text-sm text-on-surface-variant flex-grow">Full or partial bus wraps
+                                    that turn public transport into moving billboards.</p>
+                                <span
+                                    class="text-primary font-label-bold text-[10px] uppercase tracking-wider mt-3 flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
+                                    View specs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Vehicle Branding -->
+                        <div class="media-showcase-card bg-white overflow-hidden group flex flex-col">
+                            <div class="h-56 overflow-hidden relative">
+                                <img class="card-img w-full h-full object-cover" src="/Assets/imgs/4.png"
+                                    alt="Vehicle Branding">
+                                <span
+                                    class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-on-surface shadow-[2px_2px_0px_0px_#1a1c1c]">
+                                    Vehicle Branding
+                                </span>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col">
+                                <h4 class="font-headline text-xl uppercase leading-tight text-on-surface mb-1">Vehicle
+                                    Branding</h4>
+                                <p class="font-body text-sm text-on-surface-variant flex-grow">Fleet branding for taxis,
+                                    delivery vans, and commercial vehicles.</p>
+                                <span
+                                    class="text-primary font-label-bold text-[10px] uppercase tracking-wider mt-3 flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
+                                    View specs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Transport Hubs -->
+                        <div class="media-showcase-card bg-white overflow-hidden group flex flex-col">
+                            <div class="h-56 overflow-hidden relative">
+                                <img class="card-img w-full h-full object-cover" src="/Assets/imgs/12.png"
+                                    alt="Transport Hub">
+                                <span
+                                    class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-on-surface shadow-[2px_2px_0px_0px_#1a1c1c]">
+                                    Transport Hubs
+                                </span>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col">
+                                <h4 class="font-headline text-xl uppercase leading-tight text-on-surface mb-1">Transport
+                                    Hubs</h4>
+                                <p class="font-body text-sm text-on-surface-variant flex-grow">High-traffic terminal and
+                                    station advertising with captive audiences.</p>
+                                <span
+                                    class="text-primary font-label-bold text-[10px] uppercase tracking-wider mt-3 flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
+                                    View specs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== 5. SPECIAL MEDIA ===== -->
+                <div class="mb-16" data-aos="fade-up" data-aos-delay="400">
+                    <div class="category-divider mb-6">
+                        <span class="category-badge">Category 05</span>
+                        <h3 class="font-headline text-3xl uppercase tracking-tight text-on-surface">Special Media</h3>
+                    </div>
+                    <p class="font-body text-sm text-on-surface-variant max-w-2xl mb-8">
+                        Landmark sites and custom-built structures that create unforgettable brand moments. Exclusive,
+                        high-impact, and impossible to miss.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Landmark Sites -->
+                        <div class="media-showcase-card bg-white overflow-hidden group flex flex-col">
+                            <div class="h-48 overflow-hidden relative">
+                                <img class="card-img w-full h-full object-cover" src="/Assets/imgs/3.png"
+                                    alt="Landmark Site">
+                                <span
+                                    class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-on-surface shadow-[2px_2px_0px_0px_#1a1c1c]">
+                                    Landmark
+                                </span>
+                            </div>
+                            <div class="p-4 flex-grow flex flex-col">
+                                <h4 class="font-headline text-lg uppercase leading-tight text-on-surface mb-1">Landmark
+                                    Sites</h4>
+                                <p class="font-body text-sm text-on-surface-variant flex-grow">Iconic locations with
+                                    unmatched visibility and prestige.</p>
+                                <span
+                                    class="text-primary font-label-bold text-[10px] uppercase tracking-wider mt-2 flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
+                                    Explore <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Roundabouts -->
+                        <div class="media-showcase-card bg-white overflow-hidden group flex flex-col">
+                            <div class="h-48 overflow-hidden relative">
+                                <img class="card-img w-full h-full object-cover" src="/Assets/imgs/7.png"
+                                    alt="Roundabout">
+                                <span
+                                    class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-on-surface shadow-[2px_2px_0px_0px_#1a1c1c]">
+                                    Roundabout
+                                </span>
+                            </div>
+                            <div class="p-4 flex-grow flex flex-col">
+                                <h4 class="font-headline text-lg uppercase leading-tight text-on-surface mb-1">
+                                    Roundabouts</h4>
+                                <p class="font-body text-sm text-on-surface-variant flex-grow">360-degree visibility at
+                                    major traffic circles and junctions.</p>
+                                <span
+                                    class="text-primary font-label-bold text-[10px] uppercase tracking-wider mt-2 flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
+                                    Explore <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Building Wraps -->
+                        <div class="media-showcase-card bg-white overflow-hidden group flex flex-col">
+                            <div class="h-48 overflow-hidden relative">
+                                <img class="card-img w-full h-full object-cover" src="/Assets/imgs/9.png"
+                                    alt="Building Wrap">
+                                <span
+                                    class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-on-surface shadow-[2px_2px_0px_0px_#1a1c1c]">
+                                    Building Wrap
+                                </span>
+                            </div>
+                            <div class="p-4 flex-grow flex flex-col">
+                                <h4 class="font-headline text-lg uppercase leading-tight text-on-surface mb-1">Building
+                                    Wraps</h4>
+                                <p class="font-body text-sm text-on-surface-variant flex-grow">Full-building fabric
+                                    wraps that transform entire structures.</p>
+                                <span
+                                    class="text-primary font-label-bold text-[10px] uppercase tracking-wider mt-2 flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
+                                    Explore <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Custom Structures -->
+                        <div class="media-showcase-card bg-white overflow-hidden group flex flex-col">
+                            <div class="h-48 overflow-hidden relative">
+                                <img class="card-img w-full h-full object-cover" src="/Assets/imgs/8.png"
+                                    alt="Custom Structure">
+                                <span
+                                    class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-on-surface shadow-[2px_2px_0px_0px_#1a1c1c]">
+                                    Custom
+                                </span>
+                            </div>
+                            <div class="p-4 flex-grow flex flex-col">
+                                <h4 class="font-headline text-lg uppercase leading-tight text-on-surface mb-1">Custom
+                                    Structures</h4>
+                                <p class="font-body text-sm text-on-surface-variant flex-grow">Bespoke advertising
+                                    installations designed to make a statement.</p>
+                                <span
+                                    class="text-primary font-label-bold text-[10px] uppercase tracking-wider mt-2 flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
+                                    Explore <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================================= -->
+                <!--  EXPLORE OUR MEDIA NETWORK – Bridge to Inventory          -->
+                <!-- ========================================================= -->
+                <div
+                    class="mt-20 py-16 px-6 sm:px-12 bg-primary relative overflow-hidden border-2 border-on-surface shadow-[6px_6px_0px_0px_#1a1c1c]">
+                    <div class="absolute inset-0 opacity-10 pointer-events-none">
+                        <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="150" cy="200" r="100" stroke="white" stroke-width="1" fill="none" />
+                            <circle cx="650" cy="250" r="140" stroke="white" stroke-width="1" fill="none" />
+                            <rect x="500" y="50" width="50" height="50" stroke="white" stroke-width="1" fill="none"
+                                transform="rotate(30 525 75)" />
+                            <rect x="100" y="300" width="70" height="70" stroke="white" stroke-width="1" fill="none"
+                                transform="rotate(45 135 335)" />
+                            <path d="M0 150 Q200 50 400 150 T800 150" stroke="white" stroke-width="1.5" fill="none" />
+                        </svg>
+                    </div>
+                    <div class="max-w-3xl mx-auto text-center relative z-10">
+                        <span
+                            class="inline-block font-label-bold text-xs uppercase tracking-[0.2em] text-on-primary/60 border border-on-primary/20 px-4 py-1.5 mb-6">
+                            / Find Your Platform
+                        </span>
+                        <h2
+                            class="font-headline text-3xl sm:text-5xl uppercase tracking-tight text-on-primary leading-tight">
+                            EXPLORE OUR <br class="sm:hidden" />
+                            <span class="text-primary-fixed-dim">MEDIA NETWORK</span>
+                        </h2>
+                        <p class="font-body text-base text-on-primary/70 max-w-xl mx-auto mt-4 leading-relaxed">
+                            Browse our complete inventory by location, format, and availability. Find the perfect site
+                            for your next campaign.
+                        </p>
+                        <div class="mt-10">
+                            <a href="#inventory-section"
+                                class="group inline-flex items-center gap-3 bg-on-primary text-primary font-label-bold text-sm uppercase tracking-wider px-10 py-4 border-2 border-on-primary shadow-[4px_4px_0px_0px_rgba(0,0,0,0.25)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.35)] hover:-translate-y-1 transition-all duration-300">
+                                EXPLORE MEDIA INVENTORY
+                                <span
+                                    class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            </a>
+                        </div>
+                        <div class="flex flex-wrap justify-center gap-4 mt-6 text-on-primary/50">
+                            <a href="#media-categories"
+                                class="text-xs uppercase tracking-wider hover:text-on-primary transition-colors border-b border-transparent hover:border-on-primary/30">Browse
+                                Formats</a>
+                            <span class="text-on-primary/20">|</span>
+                            <a href="#inventory-section"
+                                class="text-xs uppercase tracking-wider hover:text-on-primary transition-colors border-b border-transparent hover:border-on-primary/30">View
+                                Locations</a>
+                            <span class="text-on-primary/20 hidden xs:inline">|</span>
+                            <a href="quotation.html"
+                                class="text-xs uppercase tracking-wider hover:text-on-primary transition-colors border-b border-transparent hover:border-on-primary/30">Request
+                                Quotation</a>
+                        </div>
+                        <div class="w-16 h-0.5 bg-on-primary/20 mx-auto mt-8"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!--  INVENTORY SECTION – with updated VIEW SITE buttons       -->
+        <!-- ========================================================= -->
+        <section id="inventory-section" class="px-4 md:px-grid-margin pt-8 pb-16 bg-surface">
+            <div class="max-w-7xl mx-auto">
+
+                <div class="mb-12" data-aos="fade-up">
+                    <span
+                        class="text-primary font-label-bold text-xs uppercase tracking-[0.2em] flex items-center gap-3">
+                        <span class="w-8 h-0.5 bg-primary"></span>
+                        Live Inventory
+                    </span>
+                    <h2 class="font-headline text-3xl md:text-5xl uppercase tracking-tight text-on-surface mt-2">
+                        FIND YOUR NEXT <br><span class="text-primary">GREAT LOCATION.</span>
+                    </h2>
+                    <p class="font-body text-sm text-on-surface-variant max-w-2xl mt-2">
+                        Explore high-impact static and digital OOH media inventory across prime high-traffic routes.
+                        Click any image for a full-screen display mockup.
+                    </p>
+                </div>
+
                 <!-- Filters Bar -->
-                <div class="bg-surface border-2 border-on-background p-4 md:p-6 shadow-[4px_4px_0px_0px_#000000]">
+                <div class="bg-surface border-2 border-on-background p-4 md:p-6 shadow-[4px_4px_0px_0px_#000000] mb-10">
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                        <!-- City Filter -->
                         <div>
-                            <label class="block font-bold text-xs uppercase tracking-wider text-on-surface mb-2">City</label>
+                            <label
+                                class="block font-bold text-xs uppercase tracking-wider text-on-surface mb-2">City</label>
                             <div class="relative">
-                                <select class="w-full pl-3 pr-8 py-2.5 bg-surface-container-lowest border-2 border-on-background focus:border-primary focus:ring-0 appearance-none text-sm font-semibold rounded-none">
+                                <select
+                                    class="w-full pl-3 pr-8 py-2.5 bg-surface-container-lowest border-2 border-on-background focus:border-primary focus:ring-0 appearance-none text-sm font-semibold rounded-none">
                                     <option>All Cities</option>
                                     <option>Kampala</option>
                                     <option>Jinja</option>
@@ -140,15 +891,16 @@
                                     <option>Arua</option>
                                     <option>Mbarara</option>
                                 </select>
-                                <span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-on-background pointer-events-none text-sm">expand_more</span>
+                                <span
+                                    class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-on-background pointer-events-none text-sm">expand_more</span>
                             </div>
                         </div>
-
-                        <!-- Road Filter -->
                         <div>
-                            <label class="block font-bold text-xs uppercase tracking-wider text-on-surface mb-2">Road / Location</label>
+                            <label class="block font-bold text-xs uppercase tracking-wider text-on-surface mb-2">Road /
+                                Location</label>
                             <div class="relative">
-                                <select class="w-full pl-3 pr-8 py-2.5 bg-surface-container-lowest border-2 border-on-background focus:border-primary focus:ring-0 appearance-none text-sm font-semibold rounded-none">
+                                <select
+                                    class="w-full pl-3 pr-8 py-2.5 bg-surface-container-lowest border-2 border-on-background focus:border-primary focus:ring-0 appearance-none text-sm font-semibold rounded-none">
                                     <option>All Roads</option>
                                     <option>Entebbe Road</option>
                                     <option>Jinja Road</option>
@@ -156,15 +908,16 @@
                                     <option>Ggaba Road</option>
                                     <option>Lugogo Bypass</option>
                                 </select>
-                                <span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-on-background pointer-events-none text-sm">expand_more</span>
+                                <span
+                                    class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-on-background pointer-events-none text-sm">expand_more</span>
                             </div>
                         </div>
-
-                        <!-- Media Type Filter -->
                         <div>
-                            <label class="block font-bold text-xs uppercase tracking-wider text-on-surface mb-2">Media Type</label>
+                            <label class="block font-bold text-xs uppercase tracking-wider text-on-surface mb-2">Media
+                                Type</label>
                             <div class="relative">
-                                <select class="w-full pl-3 pr-8 py-2.5 bg-surface-container-lowest border-2 border-on-background focus:border-primary focus:ring-0 appearance-none text-sm font-semibold rounded-none">
+                                <select
+                                    class="w-full pl-3 pr-8 py-2.5 bg-surface-container-lowest border-2 border-on-background focus:border-primary focus:ring-0 appearance-none text-sm font-semibold rounded-none">
                                     <option>All Types</option>
                                     <option>Landscape Billboard</option>
                                     <option>Portrait Billboard</option>
@@ -172,397 +925,529 @@
                                     <option>Gantry / Archway</option>
                                     <option>Street Furniture</option>
                                 </select>
-                                <span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-on-background pointer-events-none text-sm">expand_more</span>
+                                <span
+                                    class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-on-background pointer-events-none text-sm">expand_more</span>
                             </div>
                         </div>
-
-                        <!-- Size Filter -->
                         <div>
-                            <label class="block font-bold text-xs uppercase tracking-wider text-on-surface mb-2">Size</label>
+                            <label
+                                class="block font-bold text-xs uppercase tracking-wider text-on-surface mb-2">Size</label>
                             <div class="relative">
-                                <select class="w-full pl-3 pr-8 py-2.5 bg-surface-container-lowest border-2 border-on-background focus:border-primary focus:ring-0 appearance-none text-sm font-semibold rounded-none">
+                                <select
+                                    class="w-full pl-3 pr-8 py-2.5 bg-surface-container-lowest border-2 border-on-background focus:border-primary focus:ring-0 appearance-none text-sm font-semibold rounded-none">
                                     <option>All Sizes</option>
                                     <option>12m × 6m</option>
                                     <option>10m × 5m</option>
                                     <option>12m × 3m</option>
                                     <option>6m × 3m</option>
                                 </select>
-                                <span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-on-background pointer-events-none text-sm">expand_more</span>
+                                <span
+                                    class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-on-background pointer-events-none text-sm">expand_more</span>
                             </div>
                         </div>
-
-                        <!-- Availability Filter -->
-                       
                     </div>
-
                     <div class="mt-4 flex justify-end">
-                        <button class="w-full sm:w-auto bg-on-background text-surface px-8 py-3 font-bold text-xs uppercase tracking-wider hover:bg-primary transition-colors flex items-center justify-center gap-2 border-2 border-on-background">
+                        <button
+                            class="w-full sm:w-auto bg-on-background text-surface px-8 py-3 font-bold text-xs uppercase tracking-wider hover:bg-primary transition-colors flex items-center justify-center gap-2 border-2 border-on-background">
                             <span class="material-symbols-outlined text-base">filter_list</span> Apply Filters
                         </button>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Inventory Site Cards Grid -->
-        <section class="px-4 md:px-grid-margin py-16 bg-surface">
-            <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Inventory Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Site Card 1 -->
-                <div class="group bg-surface-container-lowest border-2 border-on-background shadow-[4px_4px_0px_0px_#000000] flex flex-col justify-between transition-transform hover:-translate-y-1">
-                    <div>
-                        <!-- Site Image Preview (Clickable for Fullscreen Mockup) -->
-                        <div class="relative h-64 w-full overflow-hidden bg-surface-container border-b-2 border-on-background cursor-pointer group/img" onclick="openLightbox('/Assets/imgs/1.png')">
-                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105" src="/Assets/imgs/1.png" alt="BR-001 Site Photograph">
-                            <div class="absolute inset-0 bg-on-background/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
-                                <span class="material-symbols-outlined text-white text-4xl bg-on-background/80 p-3 rounded-full">fullscreen</span>
+                    <!-- Card 1: BR-001 -->
+                    <div
+                        class="group bg-surface-container-lowest border-2 border-on-background shadow-[4px_4px_0px_0px_#000000] flex flex-col justify-between transition-transform hover:-translate-y-1">
+                        <div>
+                            <div class="relative h-64 w-full overflow-hidden bg-surface-container border-b-2 border-on-background cursor-pointer group/img"
+                                onclick="openLightbox('/Assets/imgs/1.png')">
+                                <img class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+                                    src="/Assets/imgs/1.png" alt="BR-001 Site Photograph">
+                                <div
+                                    class="absolute inset-0 bg-on-background/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span
+                                        class="material-symbols-outlined text-white text-4xl bg-on-background/80 p-3 rounded-full">fullscreen</span>
+                                </div>
+                                <div
+                                    class="absolute top-3 left-3 bg-primary text-on-primary px-3 py-1 font-bold text-xs uppercase tracking-widest border border-on-background">
+                                    BR-001
+                                </div>
                             </div>
-                            <div class="absolute top-3 left-3 bg-primary text-on-primary px-3 py-1 font-bold text-xs uppercase tracking-widest border border-on-background">
-                                BR-001
+                            <div class="p-6">
+                                <h3 class="font-space font-bold text-2xl uppercase mb-1 text-on-background">
+                                    Kampala – Entebbe Road
+                                </h3>
+                                <p class="font-bold text-xs uppercase tracking-widest text-primary mb-4">Landscape
+                                    Billboard</p>
+                                <div
+                                    class="grid grid-cols-2 gap-y-3 gap-x-2 text-xs font-semibold py-4 border-y border-outline-variant">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base text-outline">straighten</span>
+                                        <span>12m × 6m</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base text-outline">lightbulb</span>
+                                        <span>Illuminated</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base text-outline">navigation</span>
+                                        <span>Inbound</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span
+                                            class="material-symbols-outlined text-base text-outline">directions_car</span>
+                                        <span>~85,000 veh/day</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <!-- Site Details -->
-                        <div class="p-6">
-                            <h3 class="font-space font-bold text-2xl uppercase mb-1 text-on-background">
-                                Kampala – Entebbe Road
-                            </h3>
-                            <p class="font-bold text-xs uppercase tracking-widest text-primary mb-4">Landscape Billboard</p>
-
-                            <div class="grid grid-cols-2 gap-y-3 gap-x-2 text-xs font-semibold py-4 border-y border-outline-variant">
-                                <div class="flex items-center gap-1.5">
-                                    <span class="material-symbols-outlined text-base text-outline">straighten</span>
-                                    <span>12m × 6m</span>
-                                </div>
-                                <div class="flex items-center gap-1.5">
-                                    <span class="material-symbols-outlined text-base text-outline">lightbulb</span>
-                                    <span>Illuminated</span>
-                                </div>
-                                <div class="flex items-center gap-1.5">
-                                    <span class="material-symbols-outlined text-base text-outline">navigation</span>
-                                    <span>Inbound</span>
-                                </div>
-                                <div class="flex items-center gap-1.5">
-                                    <span class="material-symbols-outlined text-base text-outline">directions_car</span>
-                                    <span>~85,000 veh/day</span>
-                                </div>
-                            </div>
+                        <div class="p-6 pt-0">
+                            <a href="#site-detail-modal" onclick="openSiteDetail(
+                                'BR-001',
+                                'Kampala – Entebbe Road',
+                                '12m × 6m',
+                                'Landscape Billboard',
+                                'Illuminated',
+                                'Inbound',
+                                '85,000 vehicles/day',
+                                'High density commuters, airport traffic, and business professionals.',
+                                '/Assets/imgs/8.png',
+                                'Entebbe Road, Kampala, Uganda'
+                            )"
+                                class="w-full bg-primary text-on-primary py-3 px-4 font-bold text-xs uppercase tracking-wider text-center block border-2 border-on-background hover:bg-primary-container transition-colors shadow-[2px_2px_0px_0px_#000000]">
+                                VIEW SITE →
+                            </a>
                         </div>
                     </div>
 
-                    <div class="p-6 pt-0">
-                        <a href="#site-detail-modal" onclick="openSiteDetail('BR-001', 'Kampala – Entebbe Road', '12m × 6m', 'Landscape Billboard', 'Illuminated', 'Inbound', '85,000 vehicles/day', 'High density commuters, airport traffic, and business professionals.', '/Assets/imgs/8.png')" class="w-full bg-primary text-on-primary py-3 px-4 font-bold text-xs uppercase tracking-wider text-center block border-2 border-on-background hover:bg-primary-container transition-colors shadow-[2px_2px_0px_0px_#000000]">
-                            VIEW SITE →
-                        </a>
+                    <!-- Card 2: BR-002 -->
+                    <div
+                        class="group bg-surface-container-lowest border-2 border-on-background shadow-[4px_4px_0px_0px_#000000] flex flex-col justify-between transition-transform hover:-translate-y-1">
+                        <div>
+                            <div class="relative h-64 w-full overflow-hidden bg-surface-container border-b-2 border-on-background cursor-pointer group/img"
+                                onclick="openLightbox('/Assets/imgs/9.png')">
+                                <img class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+                                    src="/Assets/imgs/9.png" alt="BR-002 Site Photograph">
+                                <div
+                                    class="absolute inset-0 bg-on-background/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span
+                                        class="material-symbols-outlined text-white text-4xl bg-on-background/80 p-3 rounded-full">fullscreen</span>
+                                </div>
+                                <div
+                                    class="absolute top-3 left-3 bg-primary text-on-primary px-3 py-1 font-bold text-xs uppercase tracking-widest border border-on-background">
+                                    BR-002
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-space font-bold text-2xl uppercase mb-1 text-on-background">
+                                    Jinja Road – Lugogo
+                                </h3>
+                                <p class="font-bold text-xs uppercase tracking-widest text-primary mb-4">Digital LED
+                                    Display (DOOH)</p>
+                                <div
+                                    class="grid grid-cols-2 gap-y-3 gap-x-2 text-xs font-semibold py-4 border-y border-outline-variant">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base text-outline">straighten</span>
+                                        <span>10m × 5m</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base text-outline">lightbulb</span>
+                                        <span>High Brightness LED</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base text-outline">navigation</span>
+                                        <span>Bi-Directional</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span
+                                            class="material-symbols-outlined text-base text-outline">directions_car</span>
+                                        <span>~110,000 veh/day</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <a href="#site-detail-modal" onclick="openSiteDetail(
+                                'BR-002',
+                                'Jinja Road – Lugogo',
+                                '10m × 5m',
+                                'Digital Display (DOOH)',
+                                'Ultra Bright Digital LED',
+                                'Bi-Directional',
+                                '110,000 vehicles/day',
+                                'Shoppers, sports attendees, corporate executives, and urban traffic.',
+                                '/Assets/imgs/9.png',
+                                'Jinja Road, Lugogo, Kampala, Uganda'
+                            )"
+                                class="w-full bg-primary text-on-primary py-3 px-4 font-bold text-xs uppercase tracking-wider text-center block border-2 border-on-background hover:bg-primary-container transition-colors shadow-[2px_2px_0px_0px_#000000]">
+                                VIEW SITE →
+                            </a>
+                        </div>
                     </div>
+
+                    <!-- Card 3: BR-003 -->
+                    <div
+                        class="group bg-surface-container-lowest border-2 border-on-background shadow-[4px_4px_0px_0px_#000000] flex flex-col justify-between transition-transform hover:-translate-y-1">
+                        <div>
+                            <div class="relative h-64 w-full overflow-hidden bg-surface-container border-b-2 border-on-background cursor-pointer group/img"
+                                onclick="openLightbox('/Assets/imgs/8.png')">
+                                <img class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+                                    src="/Assets/imgs/8.png" alt="BR-003 Site Photograph">
+                                <div
+                                    class="absolute inset-0 bg-on-background/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span
+                                        class="material-symbols-outlined text-white text-4xl bg-on-background/80 p-3 rounded-full">fullscreen</span>
+                                </div>
+                                <div
+                                    class="absolute top-3 left-3 bg-primary text-on-primary px-3 py-1 font-bold text-xs uppercase tracking-widest border border-on-background">
+                                    BR-003
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-space font-bold text-2xl uppercase mb-1 text-on-background">
+                                    Northern Bypass Flyover
+                                </h3>
+                                <p class="font-bold text-xs uppercase tracking-widest text-primary mb-4">Gantry
+                                    Billboard</p>
+                                <div
+                                    class="grid grid-cols-2 gap-y-3 gap-x-2 text-xs font-semibold py-4 border-y border-outline-variant">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base text-outline">straighten</span>
+                                        <span>18m × 4m</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base text-outline">lightbulb</span>
+                                        <span>Illuminated</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base text-outline">navigation</span>
+                                        <span>Outbound</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span
+                                            class="material-symbols-outlined text-base text-outline">directions_car</span>
+                                        <span>~95,000 veh/day</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <a href="#site-detail-modal" onclick="openSiteDetail(
+                                'BR-003',
+                                'Northern Bypass Flyover',
+                                '18m × 4m',
+                                'Gantry Billboard',
+                                'Illuminated',
+                                'Outbound',
+                                '95,000 vehicles/day',
+                                'Inter-city freight, regional travelers, and daily suburban commuters.',
+                                '/Assets/imgs/8.png',
+                                'Northern Bypass, Kampala, Uganda'
+                            )"
+                                class="w-full bg-primary text-on-primary py-3 px-4 font-bold text-xs uppercase tracking-wider text-center block border-2 border-on-background hover:bg-primary-container transition-colors shadow-[2px_2px_0px_0px_#000000]">
+                                VIEW SITE →
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Site Card 2 -->
-                <div class="group bg-surface-container-lowest border-2 border-on-background shadow-[4px_4px_0px_0px_#000000] flex flex-col justify-between transition-transform hover:-translate-y-1">
-                    <div>
-                        <!-- Site Image Preview -->
-                        <div class="relative h-64 w-full overflow-hidden bg-surface-container border-b-2 border-on-background cursor-pointer group/img" onclick="openLightbox('/Assets/imgs/9.png')">
-                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105" src="/Assets/imgs/9.png" alt="BR-002 Site Photograph">
-                            <div class="absolute inset-0 bg-on-background/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
-                                <span class="material-symbols-outlined text-white text-4xl bg-on-background/80 p-3 rounded-full">fullscreen</span>
-                            </div>
-                            <div class="absolute top-3 left-3 bg-primary text-on-primary px-3 py-1 font-bold text-xs uppercase tracking-widest border border-on-background">
-                                BR-002
-                            </div>
-                        </div>
-
-                        <!-- Site Details -->
-                        <div class="p-6">
-                            <h3 class="font-space font-bold text-2xl uppercase mb-1 text-on-background">
-                                Jinja Road – Lugogo
-                            </h3>
-                            <p class="font-bold text-xs uppercase tracking-widest text-primary mb-4">Digital LED Display (DOOH)</p>
-
-                            <div class="grid grid-cols-2 gap-y-3 gap-x-2 text-xs font-semibold py-4 border-y border-outline-variant">
-                                <div class="flex items-center gap-1.5">
-                                    <span class="material-symbols-outlined text-base text-outline">straighten</span>
-                                    <span>10m × 5m</span>
-                                </div>
-                                <div class="flex items-center gap-1.5">
-                                    <span class="material-symbols-outlined text-base text-outline">lightbulb</span>
-                                    <span>High Brightness LED</span>
-                                </div>
-                                <div class="flex items-center gap-1.5">
-                                    <span class="material-symbols-outlined text-base text-outline">navigation</span>
-                                    <span>Bi-Directional</span>
-                                </div>
-                                <div class="flex items-center gap-1.5">
-                                    <span class="material-symbols-outlined text-base text-outline">directions_car</span>
-                                    <span>~110,000 veh/day</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="p-6 pt-0">
-                        <a href="#site-detail-modal" onclick="openSiteDetail('BR-002', 'Jinja Road – Lugogo', '10m × 5m', 'Digital Display (DOOH)', 'Ultra Bright Digital LED', 'Bi-Directional', '110,000 vehicles/day', 'Shoppers, sports attendees, corporate executives, and urban traffic.', '/Assets/imgs/9.png')" class="w-full bg-primary text-on-primary py-3 px-4 font-bold text-xs uppercase tracking-wider text-center block border-2 border-on-background hover:bg-primary-container transition-colors shadow-[2px_2px_0px_0px_#000000]">
-                            VIEW SITE →
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Site Card 3 -->
-                <div class="group bg-surface-container-lowest border-2 border-on-background shadow-[4px_4px_0px_0px_#000000] flex flex-col justify-between transition-transform hover:-translate-y-1">
-                    <div>
-                        <!-- Site Image Preview -->
-                        <div class="relative h-64 w-full overflow-hidden bg-surface-container border-b-2 border-on-background cursor-pointer group/img" onclick="openLightbox('/Assets/imgs/8.png')">
-                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105" src="/Assets/imgs/8.png" alt="BR-003 Site Photograph">
-                            <div class="absolute inset-0 bg-on-background/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
-                                <span class="material-symbols-outlined text-white text-4xl bg-on-background/80 p-3 rounded-full">fullscreen</span>
-                            </div>
-                            <div class="absolute top-3 left-3 bg-primary text-on-primary px-3 py-1 font-bold text-xs uppercase tracking-widest border border-on-background">
-                                BR-003
-                            </div>
-                        </div>
-
-                        <!-- Site Details -->
-                        <div class="p-6">
-                            <h3 class="font-space font-bold text-2xl uppercase mb-1 text-on-background">
-                                Northern Bypass Flyover
-                            </h3>
-                            <p class="font-bold text-xs uppercase tracking-widest text-primary mb-4">Gantry Billboard</p>
-
-                            <div class="grid grid-cols-2 gap-y-3 gap-x-2 text-xs font-semibold py-4 border-y border-outline-variant">
-                                <div class="flex items-center gap-1.5">
-                                    <span class="material-symbols-outlined text-base text-outline">straighten</span>
-                                    <span>18m × 4m</span>
-                                </div>
-                                <div class="flex items-center gap-1.5">
-                                    <span class="material-symbols-outlined text-base text-outline">lightbulb</span>
-                                    <span>Illuminated</span>
-                                </div>
-                                <div class="flex items-center gap-1.5">
-                                    <span class="material-symbols-outlined text-base text-outline">navigation</span>
-                                    <span>Outbound</span>
-                                </div>
-                                <div class="flex items-center gap-1.5">
-                                    <span class="material-symbols-outlined text-base text-outline">directions_car</span>
-                                    <span>~95,000 veh/day</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="p-6 pt-0">
-                        <a href="#site-detail-modal" onclick="openSiteDetail('BR-003', 'Northern Bypass Flyover', '18m × 4m', 'Gantry Billboard', 'Illuminated', 'Outbound', '95,000 vehicles/day', 'Inter-city freight, regional travelers, and daily suburban commuters.', 'https://images.unsplash.com/photo-1562979314-bee7453e911c?auto=format&fit=crop&w=1600&q=80')" class="w-full bg-primary text-on-primary py-3 px-4 font-bold text-xs uppercase tracking-wider text-center block border-2 border-on-background hover:bg-primary-container transition-colors shadow-[2px_2px_0px_0px_#000000]">
-                            VIEW SITE →
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Site Detail Modal Component -->
-        <div id="site-detail-modal" class="hidden fixed inset-0 z-[150] bg-on-background/80 backdrop-blur-sm p-4 overflow-y-auto flex items-center justify-center">
-            <div class="bg-surface border-4 border-on-background max-w-4xl w-full p-6 md:p-8 relative shadow-[8px_8px_0px_0px_#000000] my-8">
-                <!-- Close Button -->
-                <button onclick="closeSiteDetail()" class="absolute top-4 right-4 bg-on-background text-surface w-10 h-10 flex items-center justify-center border-2 border-on-background hover:bg-primary transition-colors">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
-
-                <div class="flex items-center gap-3 mb-2">
-                    <span id="modal-site-code" class="bg-primary text-on-primary px-3 py-1 font-bold text-xs uppercase tracking-widest border border-on-background">BR-001</span>
-                    <span class="text-xs font-bold uppercase tracking-wider text-outline">Individual Site Page</span>
-                </div>
-
-                <h2 id="modal-site-title" class="font-space font-bold text-3xl md:text-4xl uppercase mb-6 text-on-background border-b-2 border-on-background pb-3">
-                    BR-001 – ENTEBBE ROAD
-                </h2>
-
-                <!-- Modal Grid Structure -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <!-- Image Preview Area -->
-                    <div>
-                        <div class="border-2 border-on-background h-64 relative bg-surface-container overflow-hidden cursor-pointer group" onclick="triggerModalImageFullscreen()">
-                            <img id="modal-site-img" src="" alt="Site Detail Image" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-on-background/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <span class="material-symbols-outlined text-white text-4xl">fullscreen</span>
-                            </div>
-                        </div>
-                        <p class="text-[11px] font-bold text-outline mt-2 uppercase tracking-wider text-center">Click photograph for larger fullscreen mockup</p>
-                    </div>
-
-                    <!-- Site Specifications Table -->
-                    <div class="bg-surface-container-lowest border-2 border-on-background p-4 space-y-2 text-xs font-semibold">
-                        <div class="flex justify-between py-1.5 border-b border-outline-variant">
-                            <span class="text-outline uppercase">City / Location:</span>
-                            <span id="modal-site-location" class="text-on-background font-bold">Kampala</span>
-                        </div>
-                        <div class="flex justify-between py-1.5 border-b border-outline-variant">
-                            <span class="text-outline uppercase">Coordinates:</span>
-                            <span class="text-on-background font-bold">0.3136° N, 32.5811° E</span>
-                        </div>
-                        <div class="flex justify-between py-1.5 border-b border-outline-variant">
-                            <span class="text-outline uppercase">Dimensions:</span>
-                            <span id="modal-site-dimensions" class="text-on-background font-bold">12m × 6m</span>
-                        </div>
-                        <div class="flex justify-between py-1.5 border-b border-outline-variant">
-                            <span class="text-outline uppercase">Media Type:</span>
-                            <span id="modal-site-type" class="text-on-background font-bold">Landscape Billboard</span>
-                        </div>
-                        <div class="flex justify-between py-1.5 border-b border-outline-variant">
-                            <span class="text-outline uppercase">Illumination:</span>
-                            <span id="modal-site-illumination" class="text-on-background font-bold">Illuminated</span>
-                        </div>
-                        <div class="flex justify-between py-1.5 border-b border-outline-variant">
-                            <span class="text-outline uppercase">Traffic Direction:</span>
-                            <span id="modal-site-direction" class="text-on-background font-bold">Inbound</span>
-                        </div>
-                        <div class="flex justify-between py-1.5 border-b border-outline-variant">
-                            <span class="text-outline uppercase">Estimated Traffic:</span>
-                            <span id="modal-site-traffic" class="text-on-background font-bold">85,000 vehicles/day</span>
-                        </div>
-                        <div class="pt-1.5">
-                            <span class="text-outline uppercase block mb-1">Audience Information:</span>
-                            <p id="modal-site-audience" class="text-on-background font-normal leading-relaxed">High density commuters and business professionals.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Call To Action Section -->
-                <div class="bg-primary text-on-primary p-6 border-2 border-on-background shadow-[4px_4px_0px_0px_#000000] text-center">
-                    <h3 class="font-space font-bold text-2xl uppercase mb-2">INTERESTED IN THIS LOCATION?</h3>
-                    <p class="text-xs uppercase tracking-wider mb-4 opacity-90">Secure priority placement or request custom booking specs today.</p>
-                    <a href="/quotation" class="inline-block bg-surface text-on-background font-bold text-xs uppercase tracking-wider py-3 px-8 border-2 border-on-background hover:bg-on-background hover:text-surface transition-colors shadow-[2px_2px_0px_0px_#000000]">
-                        REQUEST THIS SITE
+                <div class="mt-12 flex justify-center">
+                    <a href="/media.html"
+                        class="group inline-flex items-center gap-3 font-label-bold uppercase tracking-wider text-primary border-2 border-primary px-8 py-4 transition-all duration-300 hover:bg-primary hover:text-on-primary hover:shadow-xl">
+                        <span class="mr-1">/</span>
+                        <span>Explore media Inventory</span>
+                        <span class="inline-block transition-transform duration-300 group-hover:translate-x-2">→</span>
                     </a>
                 </div>
+
             </div>
-        </div>
- <!-- Bottom CTA -->
-            <div class="mt-12 flex justify-center">
-                <a href="/media.html" class="group inline-flex items-center gap-3 font-label-bold uppercase tracking-wider text-primary border-2 border-primary px-8 py-4 transition-all duration-300 hover:bg-primary hover:text-on-primary hover:shadow-xl">
-                    <span class="mr-1">/</span>
-                    <span>Explore media Inventory</span>
-                    <span class="inline-block transition-transform duration-300 group-hover:translate-x-2">→</span>
-                </a>
-            </div>
+        </section>
 
     </main>
 
-    <!-- Fullscreen Pure Image Lightbox Modal (No text, no subtitles) -->
-    <div id="fullscreen-lightbox" class="hidden fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-2 md:p-6 cursor-zoom-out" onclick="closeLightbox()">
-        <!-- Close Button -->
-        <button onclick="closeLightbox()" class="absolute top-6 right-6 bg-white/20 hover:bg-white text-white hover:text-black w-12 h-12 flex items-center justify-center transition-colors rounded-full z-[210]">
-            <span class="material-symbols-outlined text-2xl">close</span>
-        </button>
-        <!-- Full Image container without any text or subtitles -->
-        <img id="lightbox-img" class="max-w-full max-h-full object-contain shadow-2xl" src="" alt="Full Screen Display Mockup">
+    <!-- ========================================================= -->
+    <!--  SITE DETAIL MODAL – with embedded map                    -->
+    <!-- ========================================================= -->
+    <div id="site-detail-modal"
+        class="hidden fixed inset-0 z-[150] bg-on-background/80 backdrop-blur-sm p-4 overflow-y-auto flex items-center justify-center">
+        <div
+            class="bg-surface border-4 border-on-background max-w-4xl w-full p-6 md:p-8 relative shadow-[8px_8px_0px_0px_#000000] my-8">
+            <button onclick="closeSiteDetail()"
+                class="absolute top-4 right-4 bg-on-background text-surface w-10 h-10 flex items-center justify-center border-2 border-on-background hover:bg-primary transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div class="flex items-center gap-3 mb-2">
+                <span id="modal-site-code"
+                    class="bg-primary text-on-primary px-3 py-1 font-bold text-xs uppercase tracking-widest border border-on-background">BR-001</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-outline">Individual Site Page</span>
+            </div>
+            <h2 id="modal-site-title"
+                class="font-space font-bold text-3xl md:text-4xl uppercase mb-6 text-on-background border-b-2 border-on-background pb-3">
+                BR-001 – ENTEBBE ROAD
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <!-- Image -->
+                <div>
+                    <div class="border-2 border-on-background h-64 relative bg-surface-container overflow-hidden cursor-pointer group"
+                        onclick="triggerModalImageFullscreen()">
+                        <img id="modal-site-img" src="" alt="Site Detail Image" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-on-background/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-4xl">fullscreen</span>
+                        </div>
+                    </div>
+                    <p class="text-[11px] font-bold text-outline mt-2 uppercase tracking-wider text-center">Click
+                        photograph for larger fullscreen mockup</p>
+                </div>
+                <!-- Specs -->
+                <div
+                    class="bg-surface-container-lowest border-2 border-on-background p-4 space-y-2 text-xs font-semibold">
+                    <div class="flex justify-between py-1.5 border-b border-outline-variant">
+                        <span class="text-outline uppercase">City / Location:</span>
+                        <span id="modal-site-location" class="text-on-background font-bold">Kampala</span>
+                    </div>
+                    <div class="flex justify-between py-1.5 border-b border-outline-variant">
+                        <span class="text-outline uppercase">Coordinates:</span>
+                        <span class="text-on-background font-bold">0.3136° N, 32.5811° E</span>
+                    </div>
+                    <div class="flex justify-between py-1.5 border-b border-outline-variant">
+                        <span class="text-outline uppercase">Dimensions:</span>
+                        <span id="modal-site-dimensions" class="text-on-background font-bold">12m × 6m</span>
+                    </div>
+                    <div class="flex justify-between py-1.5 border-b border-outline-variant">
+                        <span class="text-outline uppercase">Media Type:</span>
+                        <span id="modal-site-type" class="text-on-background font-bold">Landscape Billboard</span>
+                    </div>
+                    <div class="flex justify-between py-1.5 border-b border-outline-variant">
+                        <span class="text-outline uppercase">Illumination:</span>
+                        <span id="modal-site-illumination" class="text-on-background font-bold">Illuminated</span>
+                    </div>
+                    <div class="flex justify-between py-1.5 border-b border-outline-variant">
+                        <span class="text-outline uppercase">Traffic Direction:</span>
+                        <span id="modal-site-direction" class="text-on-background font-bold">Inbound</span>
+                    </div>
+                    <div class="flex justify-between py-1.5 border-b border-outline-variant">
+                        <span class="text-outline uppercase">Estimated Traffic:</span>
+                        <span id="modal-site-traffic" class="text-on-background font-bold">85,000 vehicles/day</span>
+                    </div>
+                    <div class="pt-1.5">
+                        <span class="text-outline uppercase block mb-1">Audience Information:</span>
+                        <p id="modal-site-audience" class="text-on-background font-normal leading-relaxed">High density
+                            commuters and business professionals.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== NEW: LIVE MAP SECTION ===== -->
+            <div class="mb-8">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="font-bold text-xs uppercase tracking-wider text-outline">📍 Live Location</span>
+                    <a id="modal-map-link" href="#" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-1 text-primary font-label-bold text-xs uppercase tracking-wider hover:underline">
+                        Open in Google Maps
+                        <span class="material-symbols-outlined text-sm">open_in_new</span>
+                    </a>
+                </div>
+                <div class="map-container relative border-2 border-on-background overflow-hidden">
+                    <iframe id="modal-map-iframe" src="" allowfullscreen loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <!-- Clickable overlay to open Google Maps -->
+                    <a id="modal-map-overlay-link" href="#" target="_blank" rel="noopener noreferrer"
+                        class="absolute inset-0 z-10 flex items-center justify-center bg-black/5 opacity-0 hover:opacity-100 transition-opacity">
+                        <span
+                            class="bg-primary text-on-primary px-6 py-3 font-bold text-xs uppercase tracking-wider border-2 border-on-background shadow-[4px_4px_0px_0px_#000000]">
+                            View on Google Maps
+                        </span>
+                    </a>
+                </div>
+                <p class="text-[11px] font-bold text-outline mt-1 uppercase tracking-wider text-center">Click the map or
+                    the button above to open in Google Maps</p>
+            </div>
+
+            <!-- CTA -->
+            <div
+                class="bg-primary text-on-primary p-6 border-2 border-on-background shadow-[4px_4px_0px_0px_#000000] text-center">
+                <h3 class="font-space font-bold text-2xl uppercase mb-2">INTERESTED IN THIS LOCATION?</h3>
+                <p class="text-xs uppercase tracking-wider mb-4 opacity-90">Secure priority placement or request custom
+                    booking specs today.</p>
+                <a href="/quotation"
+                    class="inline-block bg-surface text-on-background font-bold text-xs uppercase tracking-wider py-3 px-8 border-2 border-on-background hover:bg-on-background hover:text-surface transition-colors shadow-[2px_2px_0px_0px_#000000]">
+                    REQUEST THIS SITE
+                </a>
+            </div>
+        </div>
     </div>
 
-   
+    <!-- ========================================================= -->
+    <!--  FULLSCREEN LIGHTBOX                                      -->
+    <!-- ========================================================= -->
+    <div id="fullscreen-lightbox"
+        class="hidden fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-2 md:p-6 cursor-zoom-out"
+        onclick="closeLightbox()">
+        <button onclick="closeLightbox()"
+            class="absolute top-6 right-6 bg-white/20 hover:bg-white text-white hover:text-black w-12 h-12 flex items-center justify-center transition-colors rounded-full z-[210]">
+            <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+        <img id="lightbox-img" class="max-w-full max-h-full object-contain shadow-2xl" src=""
+            alt="Full Screen Display Mockup">
+    </div>
 
-    <!-- Footer -->
-    <footer class="bg-on-background relative w-full pt-24 pb-8 border-t-8 border-primary text-surface">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-grid-gutter px-4 md:px-grid-margin max-w-full mx-auto mb-16">
-            <div class="col-span-1 md:col-span-4 flex justify-between items-center mb-12 border-b border-surface-variant/10 pb-12">
-                <div class="text-headline-md font-space font-bold text-3xl text-primary-fixed tracking-tighter uppercase">
-                    Brand Republic
-                </div>
-                <div class="flex gap-6">
-                    <a class="w-12 h-12 rounded-full border border-surface-variant/30 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all" href="#">
-                        <span class="material-symbols-outlined">share</span>
+    <!-- ========================================================= -->
+    <!--  FOOTER                                                   -->
+    <!-- ========================================================= -->
+    <!-- ========================================================= -->
+    <!-- FOOTER – redesigned with social icons and updated links  -->
+    <!-- ========================================================= -->
+    <footer class="bg-[#111113] text-white relative w-full pt-20 pb-12 border-t-8 border-[#4a0e9b]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+            <!-- Brand + Social Icons -->
+            <div
+                class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 border-b border-slate-800 pb-8 gap-4">
+                <div class="font-headline text-3xl font-bold text-white tracking-tight uppercase">Brand Republic</div>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all"
+                        href="#" aria-label="Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all"
+                        href="#" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all"
+                        href="#" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
                     </a>
                 </div>
             </div>
-            <div>
-                <h4 class="font-bold text-primary mb-6 uppercase tracking-widest text-xs">Legal</h4>
-                <ul class="space-y-4 text-xs font-semibold">
-                    <li><a class="text-surface-variant/70 hover:text-white transition-colors uppercase" href="#">Privacy Policy</a></li>
-                    <li><a class="text-surface-variant/70 hover:text-white transition-colors uppercase" href="#">Cookie Policy</a></li>
-                    <li><a class="text-surface-variant/70 hover:text-white transition-colors uppercase" href="#">Terms of use</a></li>
-                </ul>
+
+            <!-- Footer Links Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 font-ui">
+                <!-- Legal -->
+                <div>
+                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Legal</h4>
+                    <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Privacy Policy</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Cookie Policy</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Terms of use</a></li>
+                    </ul>
+                </div>
+                <!-- Company -->
+                <div>
+                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Company</h4>
+                    <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="about.html">About</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="project.html">Innovation</a>
+                        </li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="insight.html">Insights</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Investors -->
+                <div>
+                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Investors</h4>
+                    <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Real Estate</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Stock Info</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Financials</a></li>
+                    </ul>
+                </div>
+                <!-- Support -->
+                <div>
+                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Support</h4>
+                    <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="contact.html">Contact</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Newsroom</a></li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <h4 class="font-bold text-primary mb-6 uppercase tracking-widest text-xs">Company</h4>
-                <ul class="space-y-4 text-xs font-semibold">
-                    <li><a class="text-surface-variant/70 hover:text-white transition-colors uppercase" href="#">Leadership</a></li>
-                    <li><a class="text-surface-variant/70 hover:text-white transition-colors uppercase" href="#">Partners</a></li>
-                    <li><a class="text-surface-variant/70 hover:text-white transition-colors uppercase" href="#">ESG</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-primary mb-6 uppercase tracking-widest text-xs">Investors</h4>
-                <ul class="space-y-4 text-xs font-semibold">
-                    <li><a class="text-surface-variant/70 hover:text-white transition-colors uppercase" href="#">Real Estate</a></li>
-                    <li><a class="text-surface-variant/70 hover:text-white transition-colors uppercase" href="#">Stock Info</a></li>
-                    <li><a class="text-surface-variant/70 hover:text-white transition-colors uppercase" href="#">Financials</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-primary mb-6 uppercase tracking-widest text-xs">Support</h4>
-                <ul class="space-y-4 text-xs font-semibold">
-                    <li><a class="text-surface-variant/70 hover:text-white transition-colors uppercase" href="/contact">Contact</a></li>
-                    <li><a class="text-surface-variant/70 hover:text-white transition-colors uppercase" href="#">Newsroom</a></li>
-                </ul>
+
+            <!-- Copyright -->
+            <div class="text-center md:text-left font-ui text-caption text-slate-500 pt-8 border-t border-slate-900">
+                &copy; 2026 Brand Republic. All rights reserved.
             </div>
         </div>
-        <div class="px-4 md:px-grid-margin text-center md:text-left text-surface-variant/30 text-xs mt-8 border-t border-surface-variant/5 pt-8">
-            © 2026 Brand Republic Ltd. All rights reserved. Registered in Uganda.
-        </div>
-    </footer>
 
-    <!-- Interactive JavaScript -->
-    <script>
-        // Mobile Navigation Toggle
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('flex');
-        });
+        <!-- ========================================================= -->
+        <!--  SCRIPTS                                                  -->
+        <!-- ========================================================= -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+        </script>
+        <script>
+            AOS.init({
+                once: true,
+                duration: 700,
+                offset: 80,
+                easing: 'ease-out-cubic',
+            });
 
-        // Fullscreen Pure Image Lightbox Functionality
-        function openLightbox(imgSrc) {
-            const lightbox = document.getElementById('fullscreen-lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            lightboxImg.src = imgSrc;
-            lightbox.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
+            // ── Mobile Navigation Toggle ──
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-        function closeLightbox() {
-            const lightbox = document.getElementById('fullscreen-lightbox');
-            lightbox.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+            });
 
-        // Site Detail Modal Functions
-        function openSiteDetail(code, title, dimensions, type, illumination, direction, traffic, audience, imgSrc) {
-            document.getElementById('modal-site-code').innerText = code;
-            document.getElementById('modal-site-title').innerText = code + ' – ' + title.toUpperCase();
-            document.getElementById('modal-site-location').innerText = title;
-            document.getElementById('modal-site-dimensions').innerText = dimensions;
-            document.getElementById('modal-site-type').innerText = type;
-            document.getElementById('modal-site-illumination').innerText = illumination;
-            document.getElementById('modal-site-direction').innerText = direction;
-            document.getElementById('modal-site-traffic').innerText = traffic;
-            document.getElementById('modal-site-audience').innerText = audience;
-            document.getElementById('modal-site-img').src = imgSrc;
-
-            document.getElementById('site-detail-modal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeSiteDetail() {
-            document.getElementById('site-detail-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        function triggerModalImageFullscreen() {
-            const currentModalSrc = document.getElementById('modal-site-img').src;
-            if(currentModalSrc) {
-                openLightbox(currentModalSrc);
+            // ── Fullscreen Lightbox ──
+            function openLightbox(imgSrc) {
+                const lightbox = document.getElementById('fullscreen-lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                lightboxImg.src = imgSrc;
+                lightbox.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
             }
-        }
-    </script>
-    <script src="/chatbot.js"></script>
+
+            function closeLightbox() {
+                const lightbox = document.getElementById('fullscreen-lightbox');
+                lightbox.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+
+            // ── Site Detail Modal with Map ──
+            function openSiteDetail(code, title, dimensions, type, illumination, direction, traffic, audience, imgSrc, mapQuery) {
+                // Populate details
+                document.getElementById('modal-site-code').innerText = code;
+                document.getElementById('modal-site-title').innerText = code + ' – ' + title.toUpperCase();
+                document.getElementById('modal-site-location').innerText = title;
+                document.getElementById('modal-site-dimensions').innerText = dimensions;
+                document.getElementById('modal-site-type').innerText = type;
+                document.getElementById('modal-site-illumination').innerText = illumination;
+                document.getElementById('modal-site-direction').innerText = direction;
+                document.getElementById('modal-site-traffic').innerText = traffic;
+                document.getElementById('modal-site-audience').innerText = audience;
+                document.getElementById('modal-site-img').src = imgSrc;
+
+                // Build Google Maps embed URL (no API key needed for simple place query)
+                const encodedQuery = encodeURIComponent(mapQuery);
+                const embedUrl = `https://www.google.com/maps?q=${encodedQuery}&output=embed`;
+                const linkUrl = `https://www.google.com/maps?q=${encodedQuery}`;
+
+                document.getElementById('modal-map-iframe').src = embedUrl;
+                document.getElementById('modal-map-link').href = linkUrl;
+                document.getElementById('modal-map-overlay-link').href = linkUrl;
+
+                document.getElementById('site-detail-modal').classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeSiteDetail() {
+                document.getElementById('site-detail-modal').classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+
+            function triggerModalImageFullscreen() {
+                const currentModalSrc = document.getElementById('modal-site-img').src;
+                if (currentModalSrc) {
+                    openLightbox(currentModalSrc);
+                }
+            }
+        </script>
+        <script src="/chatbot.js"></script>
 </body>
+
 </html>
