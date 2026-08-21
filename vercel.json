@@ -2,7 +2,7 @@
   "version": 2,
   "routes": [
     {
-      "src": "/assets/(.*)",
+      "src": "assets/(.*)",
       "dest": "/html/digitalize/assets/$1"
     }
   ]
