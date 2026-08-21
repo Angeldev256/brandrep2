@@ -12,7 +12,7 @@
 
     <!-- Google Fonts:  Space Grotesk, Manrope -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@400;500;700;900&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
         rel="stylesheet" />
 
     <!-- Material Icons -->
@@ -306,7 +306,7 @@
     <nav
         class="fixed top-0 w-full z-[100] h-24 bg-surface/90 backdrop-blur-md border-b-2 border-outline-variant flex justify-between items-center px-[4rem] max-w-full mx-auto nav-blur">
         <a href="/" class="h-auto py-2 flex items-center focus:outline-none">
-            <img src="/Assets/bg.png" alt="Brand Republic Logo" class="h-20 md:h-25 w-auto object-contain">
+            <img src="/assets/bg.png" alt="Brand Republic Logo" class="h-20 md:h-25 w-auto object-contain">
         </a>
 
         <div class="font-ui hidden lg:flex gap-6 items-center">
@@ -360,32 +360,40 @@
     <!-- ============================================================ -->
     <!--  HERO SECTION – "Our Story"                                  -->
     <!-- ============================================================ -->
-    <header class="relative h-[90vh] w-full flex items-center overflow-hidden bg-on-background">
-        <div class="absolute inset-0 z-0 opacity-60">
-            <img alt="Ugandan urban landscape with high-impact billboards" class="w-full h-full object-cover"
-                src="/Assets/imgs/12.PNG" />
-        </div>
-        <div class="relative z-10 px-grid-margin w-full">
-            <div class="max-w-4xl">
-                <span
-                    class="inline-block bg-primary text-on-primary font-label-bold text-label-bold px-4 py-1 mb-6 uppercase tracking-widest">Est.
-                    </span>
-                <h1 class="font-display-xl text-display-xl text-on-primary uppercase leading-none mb-8">
-                    IMPOSSIBLE <br />to <span class="text-on-primary-container">IGNORE.</span>
-                </h1>
-                <p class="font-body-lg text-body-lg text-surface-container-highest max-w-2xl mb-10 brutal-border pl-6">
-                    Brand Republic is Uganda's premier high-impact media house. We don't just place ads; we dominate
-                    landscapes, command attention, and define the urban visual fabric of the nation.
-                </p>
-            </div>
-        </div>
-        <div class="absolute bottom-0 right-0 p-grid-margin hidden md:block">
-            <div class="flex flex-col items-end">
-                
-            </div>
-        </div>
-    </header>
+   <header class="relative min-h-[90vh] w-full flex items-center overflow-hidden bg-on-background">
+    <!-- Background Image with subtle overlay for readability -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-black/40 z-10"></div> <!-- Dark overlay ensures text stays legible -->
+        <img alt="Ugandan urban landscape with high-impact billboards" class="w-full h-full object-cover opacity-60"
+            src="/assets/imgs/12.PNG" />
+    </div>
 
+    <!-- Text Content -->
+    <div class="relative z-20 w-full px-4 sm:px-6 md:px-grid-margin">
+        <div class="max-w-4xl">
+            <!-- Est. Badge -->
+            <span
+                class="inline-block bg-primary text-on-primary font-label-bold text-label-bold px-4 py-1 mb-6 uppercase tracking-widest">Est.
+                2015</span>
+
+            <!-- Optimized Headline (Responsive sizes) -->
+            <h1 class="font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-display-xl text-on-primary uppercase leading-[1.05] mb-6">
+                IMPOSSIBLE <br />to <span class="text-on-primary-container">IGNORE.</span>
+            </h1>
+
+            <!-- Optimized Paragraph (Shorter, punchier, and mobile-friendly sizing) -->
+            <p class="font-body text-base sm:text-lg md:text-xl text-surface-container-highest max-w-2xl mb-10 brutal-border pl-4 sm:pl-6 border-l-4 border-primary">
+                Uganda's premier high-impact media house. We don't place ads—we dominate landscapes, command attention, and shape the nation's urban fabric.
+            </p>
+        </div>
+    </div>
+
+    <!-- Decorative bottom-right element (hidden on mobile) -->
+    <div class="absolute bottom-0 right-0 p-grid-margin hidden md:block">
+        <div class="flex flex-col items-end">
+        </div>
+    </div>
+</header>
 
 
     <!-- ============================================================ -->
@@ -429,7 +437,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 brutalist-card bg-surface overflow-hidden group">
                 <div
                     class="lg:col-span-7 relative h-[300px] sm:h-[400px] lg:h-auto border-b-2 lg:border-b-0 lg:border-r-2 border-on-surface overflow-hidden">
-                    <img src="/Assets/imgs/5.png" alt="Kampala Mobility Insights"
+                    <img src="/assets/imgs/5.png" alt="Kampala Mobility Insights"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     <span
                         class="absolute top-4 left-4 bg-primary text-on-primary font-bold text-xs uppercase tracking-wider px-3 py-1 border border-on-surface">
@@ -770,7 +778,7 @@
                 title: 'How Much Does Billboard Advertising Cost in Uganda?',
                 date: 'Updated 2026',
                 readTime: '6 min read',
-                image: '/Assets/imgs/6.png',
+                image: '/assets/imgs/6.png',
                 excerpt: 'Standard rate breakdowns across Kampala CBD, highways, flex skin printing, and municipal permits.',
                 content: `
                     <p>In Kampala, standard billboard site rentals typically range between <strong>UGX 3,000,000 and UGX 9,500,000 per month</strong> depending on location prime status (e.g., Jinja Road vs. Upcountry corridors).</p>
@@ -789,7 +797,7 @@
                 title: 'Best Billboard Locations in Kampala',
                 date: 'Updated 2026',
                 readTime: '5 min read',
-                image: '/Assets/imgs/9.png',
+                image: '/assets/imgs/9.png',
                 excerpt: 'Analyzing high-impact arterial routes: Jinja Road, Entebbe Road, Kira Road, and Clock Tower flyovers.',
                 content: `
                     <p>Kampala's highest-converting OOH sites are concentrated along major vehicular commuter bottlenecks:</p>
@@ -807,7 +815,7 @@
                 title: 'How to Choose a Billboard Location',
                 date: 'Updated 2026',
                 readTime: '4 min read',
-                image: '/Assets/imgs/7.png',
+                image: '/assets/imgs/7.png',
                 excerpt: 'Sightlines, dwell times, vehicular velocity, and obstruction audits before signing site contracts.',
                 content: `
                     <p>Choosing an OOH site requires evaluating viewing angles, traffic speed, and dwell times. A billboard near a traffic bottleneck offers significantly higher read times than a board along a high-speed bypass with zero slowdowns.</p>
@@ -820,7 +828,7 @@
                 title: 'OOH in 2026: Key trends shaping the next era of out-of-home advertising',
                 date: 'January 26, 2026',
                 readTime: '5 min read',
-                image: '/Assets/imgs/9.png',
+                image: '/assets/imgs/9.png',
                 excerpt: 'Out-of-home (OOH) advertising continues to gain momentum as marketers seek real-world reach that complements digital channels. With total OOH revenue surpassing $9 billion last year, growth is being fueled by consistent year-over-year gains and the rapid expansion of digital formats.',
                 content: `
                     <p>Out-of-home (OOH) advertising continues to gain momentum as marketers seek real-world reach that complements digital channels. With total OOH revenue surpassing $9 billion last year, growth is being fueled by consistent year-over-year gains and the rapid expansion of digital formats.
@@ -837,7 +845,7 @@ As we look ahead to 2026, the question is no longer whether OOH belongs in omnic
                 title: 'Out Of Home Trend Report 2026',
                 date: 'Updated 2026',
                 readTime: '4 min read',
-                image: '/Assets/imgs/5.png',
+                image: '/assets/imgs/5.png',
                 excerpt: 'Out-of-Home has always lived where people live: in streets, stations, shopping areas, campuses, public squares, roadside environments and retail spaces. In 2026, that public role is becoming more relevant than ever. As media becomes increasingly fragmented, personalised and algorithm-driven, OOH remains one of the few channels that can still create shared visibility at scale. It reaches people in the real world, in moments of movement, waiting, shopping, commuting and experiencing.',
                 content: `
                     <p>ut-of-Home has always lived where people live: in streets, stations, shopping areas, campuses, public squares, roadside environments and retail spaces. In 2026, that public role is becoming more relevant than ever. As media becomes increasingly fragmented, personalised and algorithm-driven, OOH remains one of the few channels that can still create shared visibility at scale. It reaches people in the real world, in moments of movement, waiting, shopping, commuting and experiencing.
@@ -857,7 +865,7 @@ This report was made in partnership with the Artemis Academie, Ocean Outdoor, JC
                 title: 'How to Measure Outdoor Advertising',
                 date: 'Updated 2026',
                 readTime: '6 min read',
-                image: '/Assets/imgs/11.png',
+                image: '/assets/imgs/11.png',
                 excerpt: 'Mobility signals, localized promo codes, footfall attribution, and brand lift studies.',
                 content: `
                     <p>Combining mobile location data with vanity URLs, customized promo codes, and geotagged web traffic surges provides direct measurable impact for outdoor campaigns.</p>
@@ -871,7 +879,7 @@ This report was made in partnership with the Artemis Academie, Ocean Outdoor, JC
                 title: 'Kampala Mobility & Traffic Trends 2026',
                 date: 'Q3 Report',
                 readTime: '8 min read',
-                image: '/Assets/imgs/12.png',
+                image: '/assets/imgs/12.png',
                 excerpt: 'Comprehensive vehicular and commuter movement data across Greater Kampala Metropolitan Area.',
                 content: `
                     <p>Morning peak traffic runs from 06:30 to 09:30 along commuter routes feeding CBD, while evening bottleneck traffic peaks between 17:00 and 20:30. Highly effective sites align with evening congestion points where dwell time doubles.</p>
@@ -884,7 +892,7 @@ This report was made in partnership with the Artemis Academie, Ocean Outdoor, JC
                 title: 'Audience Movement & Dwell Time Analytics',
                 date: 'Q3 Report',
                 readTime: '7 min read',
-                image: '/Assets/imgs/9.png',
+                image: '/assets/imgs/9.png',
                 excerpt: 'Tracking pedestrian footfall and transit hub density around taxi parks and shopping malls.',
                 content: `
                     <p>Dwell time at major transit terminals averages 14–22 minutes. Capturing these audiences requires high-resolution screens with readable copy from 15-meter distances.</p>
@@ -897,7 +905,7 @@ This report was made in partnership with the Artemis Academie, Ocean Outdoor, JC
                 title: 'OOH Statistics & Market Growth',
                 date: '2026 Data',
                 readTime: '5 min read',
-                image: '/Assets/imgs/11.png',
+                image: '/assets/imgs/11.png',
                 excerpt: 'Market share, digital screen adoption rates, and regional ad spend figures.',
                 content: `
                     <p>Digital billboard placements across Uganda have grown 34% year-over-year, driven by demand for flexible programmatic slot purchasing and instant creative switching.</p>
@@ -910,7 +918,7 @@ This report was made in partnership with the Artemis Academie, Ocean Outdoor, JC
                 title: 'Consumer Behaviour & OOH Recall Index',
                 date: '2026 Survey',
                 readTime: '6 min read',
-                image: '/Assets/imgs/7.png',
+                image: '/assets/imgs/7.png',
                 excerpt: 'How urban consumers interact with outdoor ads before making digital search actions.',
                 content: `
                     <p>Surveys show 68% of Kampala urban consumers perform a mobile search for a brand within 2 hours of seeing a memorable outdoor billboard during traffic slowdowns.</p>
