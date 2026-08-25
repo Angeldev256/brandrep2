@@ -105,12 +105,12 @@
         .media-showcase-card {
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             border: 2px solid #1a1c1c;
-            box-shadow: 6px 6px 0px 0px #1a1c1c;
+           
         }
 
         .media-showcase-card:hover {
             transform: translate(-4px, -4px);
-            box-shadow: 10px 10px 0px 0px #470082;
+            
             border-color: #470082;
         }
 
@@ -295,34 +295,40 @@
         <!-- ========================================================= -->
         <!--  HERO – MEDIA THAT PUTS BRANDS WHERE ATTENTION LIVES      -->
         <!-- ========================================================= -->
-        <section class="relative bg-on-background text-on-primary overflow-hidden">
-            <div class="geo-shape"></div>
-            <div class="geo-shape"></div>
-            <div class="geo-shape"></div>
-            <div class="absolute inset-0 opacity-10 pointer-events-none">
+       <section class="relative bg-cover bg-center bg-no-repeat text-on-primary overflow-hidden"
+         style="background-image: url('/assets/imgs/3.PNG');">
 
+    <!-- Dark overlay for readability -->
+    <div class="absolute inset-0 bg-black/60 pointer-events-none"></div>
+
+    <!-- Decorative geo shapes (kept as is) -->
+    <div class="geo-shape"></div>
+    <div class="geo-shape"></div>
+    <div class="geo-shape"></div>
+
+    <!-- Optional extra overlay (you can keep or remove) -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 md:px-grid-margin py-16 md:py-24 relative z-10">
+        <div data-aos="fade-up">
+            <span
+                class="inline-block font-label-bold text-xs uppercase tracking-[0.2em] text-primary-fixed-dim border border-primary-fixed-dim/30 px-4 py-1.5 mb-6">
+                / Premium Media Inventory
+            </span>
+            <h1
+                class="font-hero text-4xl md:text-6xl lg:text-7xl uppercase leading-[1.05] tracking-tight text-on-primary">
+                MEDIA THAT PUTS <br class="hidden sm:block" />
+                <span class="text-primary-fixed-dim">BRANDS WHERE</span> <br class="hidden sm:block" />
+                ATTENTION LIVES.
+            </h1>
+
+            <div class="scroll-indicator flex flex-col items-center gap-2 text-on-primary/40 mt-10">
+                <span class="text-[10px] uppercase tracking-[0.2em] font-bold">Scroll to explore</span>
+                <span class="material-symbols-outlined">expand_more</span>
             </div>
-            <div class="max-w-7xl mx-auto px-4 md:px-grid-margin py-16 md:py-24 relative z-10">
-                <div data-aos="fade-up">
-                    <span
-                        class="inline-block font-label-bold text-xs uppercase tracking-[0.2em] text-primary-fixed-dim border border-primary-fixed-dim/30 px-4 py-1.5 mb-6">
-                        / Premium Media Inventory
-                    </span>
-                    <h1
-                        class="font-hero text-4xl md:text-6xl lg:text-7xl uppercase leading-[1.05] tracking-tight text-on-primary">
-                        MEDIA THAT PUTS <br class="hidden sm:block" />
-                        <span class="text-primary-fixed-dim">BRANDS WHERE</span> <br class="hidden sm:block" />
-                        ATTENTION LIVES.
-                    </h1>
-
-                    <div class="scroll-indicator flex flex-col items-center gap-2 text-on-primary/40 mt-10">
-                        <span class="text-[10px] uppercase tracking-[0.2em] font-bold">Scroll to explore</span>
-                        <span class="material-symbols-outlined">expand_more</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        </div>
+    </div>
+</section>
         <!-- ========================================================= -->
         <!--  MEDIA CATEGORIES SHOWCASE                                -->
         <!-- ========================================================= -->

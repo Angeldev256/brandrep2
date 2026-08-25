@@ -816,7 +816,7 @@
                 <article
                     class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full -rotate-1 hover:rotate-0 hover:shadow-xl card-lift">
                     <div class="h-48 overflow-hidden img-zoom">
-                        <img class="w-full h-full object-cover" src="/assets/imgs/10.png" alt="Kampala">
+                        <img class="w-full h-full object-cover" src="/assets/imgs/16.jpg" alt="Kampala">
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
                         <span class="text-primary font-label-bold text-label-bold uppercase mb-2">Digital OOH </span>
@@ -847,7 +847,7 @@
                 <article
                     class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full -rotate-2 hover:rotate-0 hover:shadow-xl card-lift">
                     <div class="h-48 overflow-hidden img-zoom">
-                        <img class="w-full h-full object-cover" src="/assets/imgs/1.png" alt="Transit">
+                        <img class="w-full h-full object-cover" src="/assets/imgs/5.png" alt="Transit">
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
                         <span class="text-primary font-label-bold text-label-bold uppercase mb-2">Transit Media</span>
@@ -1130,7 +1130,7 @@
                     resultsMsg.textContent = 'Found 14 available ' + type + ' sites in ' + city + roadDisplay;
                     resultsBox.classList.remove('hidden');
                 }
-
+                
                 // Update map
                 if (mapIframe && locationPin) {
                     const query = encodeURIComponent(locationString);
@@ -1148,98 +1148,97 @@
     <!-- ========================================================= -->
     <!-- 6. WHY US – horizontal scroll                            -->
     <!-- ========================================================= -->
-    <section class="px-grid-margin py-16 bg-surface-variant clip-slant-reverse pb-32">
+   <section class="px-grid-margin py-16 bg-surface-variant clip-slant-reverse pb-32">
 
-        <div
-            class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12 border-b-2 border-outline-variant/50 pb-6">
-            <div>
-                <h2 class="font-headline font-bold text-3xl sm:text-4xl uppercase tracking-tight text-on-surface mt-1">
-                    WHY <span class="text-primary">US</span>
-                </h2>
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12 border-b-2 border-outline-variant/50 pb-6">
+        <div>
+            <h2 class="font-headline font-bold text-3xl sm:text-4xl uppercase tracking-tight text-on-surface mt-1">
+                WHY <span class="text-primary">US</span>
+            </h2>
+        </div>
+        <a href="/media.html"
+            class="group flex items-center gap-2 font-label-bold text-sm uppercase tracking-wider text-primary hover:text-on-surface transition-colors border-b-2 border-transparent hover:border-primary pb-0.5">
+            VISUAL OVERVIEW &rarr;
+        </a>
+    </div>
+
+    <!-- Grid container – cards will be equal height automatically -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto w-full px-4">
+
+        <!-- Card 1: Strategic Locations -->
+        <article
+            class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col hover:shadow-xl card-lift overflow-hidden rounded-lg">
+            <div class="h-56 relative overflow-hidden bg-slate-100 flex-shrink-0">
+                <img src="/assets/imgs/location.jpg" alt="Strategic Locations Concept"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
             </div>
-            <a href="/media.html"
-                class="group flex items-center gap-2 font-label-bold text-sm uppercase tracking-wider text-primary hover:text-on-surface transition-colors border-b-2 border-transparent hover:border-primary pb-0.5">
-                VISUAL OVERVIEW &rarr;
-            </a>
-        </div>
+            <div class="p-6 flex-grow flex flex-col justify-between bg-white">
+                <h4
+                    class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">
+                    Strategic location
+                </h4>
+                <div class="flex items-center text-primary font-label-bold text-label-bold uppercase">
+                    <span class="mr-1">/</span><span>Find Spots</span>
+                </div>
+            </div>
+        </article>
 
-        <!-- Centered and constrained width container -->
-        <div class="flex flex-nowrap md:justify-center gap-6 overflow-x-auto pb-4 max-w-7xl mx-auto w-full px-4">
+        <!-- Card 2: Creative Thinking -->
+        <article
+            class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col hover:shadow-xl card-lift overflow-hidden rounded-lg">
+            <div class="h-56 relative overflow-hidden bg-slate-100 flex-shrink-0">
+                <img src="/assets/Gemini_Generated_Image_p4z6z2p4z6z2p4z6.jpg" alt="Creative Thinking Concept"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between bg-white">
+                <h4
+                    class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">
+                    creative Thinking
+                </h4>
+                <div class="flex items-center text-primary font-label-bold text-label-bold uppercase">
+                    <span class="mr-1">/</span><span>Get Inspired</span>
+                </div>
+            </div>
+        </article>
 
-            <!-- Card 1: Strategic Locations -->
-            <article
-                class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full hover:shadow-xl flex-shrink-0 w-72 card-lift overflow-hidden rounded-lg">
-                <div class="h-56 relative overflow-hidden bg-slate-100">
-                    <img src="/assets/Gemini_Generated_Image_p4z6z2p4z6z2p4z6.jpg" alt="Strategic Locations Concept"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
+        <!-- Card 3: Reliable Execution -->
+        <article
+            class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col hover:shadow-xl card-lift overflow-hidden rounded-lg">
+            <div class="h-56 relative overflow-hidden bg-slate-100 flex-shrink-0">
+                <img src="/assets/imgs/as1.jpeg" alt="Reliable Execution Concept"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between bg-white">
+                <h4
+                    class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">
+                    Reliable Execution
+                </h4>
+                <div class="flex items-center text-primary font-label-bold text-label-bold uppercase">
+                    <span class="mr-1">/</span><span>Our Process</span>
                 </div>
-                <div class="p-6 flex-grow flex flex-col justify-between bg-white">
-                    <h4
-                        class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">
-                        Strategic location
-                    </h4>
-                    <div class="flex items-center text-primary font-label-bold text-label-bold uppercase">
-                        <span class="mr-1">/</span><span>Find Spots</span>
-                    </div>
-                </div>
-            </article>
+            </div>
+        </article>
 
-            <!-- Card 2: Creative Thinking -->
-            <article
-                class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full hover:shadow-xl flex-shrink-0 w-72 card-lift overflow-hidden rounded-lg">
-                <div class="h-56 relative overflow-hidden bg-slate-100">
-                    <img src="/assets/Gemini_Generated_Image_p4z6z2p4z6z2p4z6.jpg" alt="Creative Thinking Concept"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
+        <!-- Card 4: Innovation -->
+        <article
+            class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col hover:shadow-xl card-lift overflow-hidden rounded-lg">
+            <div class="h-56 relative overflow-hidden bg-slate-100 flex-shrink-0">
+                <img src="/assets/imgs/inno.jpg" alt="Innovation Concept"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between bg-white">
+                <h4
+                    class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">
+                    Innovation
+                </h4>
+                <div class="flex items-center text-primary font-label-bold text-label-bold uppercase">
+                    <span class="mr-1">/</span><span>Explore Tech</span>
                 </div>
-                <div class="p-6 flex-grow flex flex-col justify-between bg-white">
-                    <h4
-                        class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">
-                        creative Thinking
-                    </h4>
-                    <div class="flex items-center text-primary font-label-bold text-label-bold uppercase">
-                        <span class="mr-1">/</span><span>Get Inspired</span>
-                    </div>
-                </div>
-            </article>
+            </div>
+        </article>
 
-            <!-- Card 3: Reliable Execution -->
-            <article
-                class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full hover:shadow-xl flex-shrink-0 w-72 card-lift overflow-hidden rounded-lg">
-                <div class="h-56 relative overflow-hidden bg-slate-100">
-                    <img src="/assets/Gemini_Generated_Image_p4z6z2p4z6z2p4z6.jpg" alt="Reliable Execution Concept"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
-                </div>
-                <div class="p-6 flex-grow flex flex-col justify-between bg-white">
-                    <h4
-                        class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">
-                        Reliable Execution
-                    </h4>
-                    <div class="flex items-center text-primary font-label-bold text-label-bold uppercase">
-                        <span class="mr-1">/</span><span>Our Process</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Card 4: Innovation -->
-            <article
-                class="bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full hover:shadow-xl flex-shrink-0 w-72 card-lift overflow-hidden rounded-lg">
-                <div class="h-56 relative overflow-hidden bg-slate-100">
-                    <img src="/assets/Gemini_Generated_Image_p4z6z2p4z6z2p4z6.jpg" alt="Innovation Concept"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
-                </div>
-                <div class="p-6 flex-grow flex flex-col justify-between bg-white">
-                    <h4
-                        class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">
-                        Innovation
-                    </h4>
-                    <div class="flex items-center text-primary font-label-bold text-label-bold uppercase">
-                        <span class="mr-1">/</span><span>Explore Tech</span>
-                    </div>
-                </div>
-            </article>
-
-        </div>
-    </section>
+    </div>
+</section>
     <!-- ========================================================= -->
     <!-- 7. PROJECTS SHOWCASE                                     -->
     <!-- ========================================================= -->
@@ -1267,7 +1266,7 @@
             <article
                 class="w-full max-w-sm bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full rotate-1 hover:rotate-0 hover:shadow-xl stagger-item stagger-delay-1 card-lift">
                 <div class="h-64 lg:h-72 overflow-hidden img-zoom">
-                    <img class="w-full h-full object-cover" alt="MTN Uganda" src="/assets/imgs/12.png">
+                    <img class="w-full h-full object-cover" alt="MTN Uganda" src="/assets/imgs/dfcu.jpeg">
                 </div>
                 <div class="p-6 flex-grow flex flex-col">
                     <span class="text-primary font-label-bold text-label-bold uppercase mb-1">Client</span>
@@ -1315,18 +1314,18 @@
             <article
                 class="w-full max-w-sm bg-surface border-2 border-outline-variant hover:border-primary transition-all duration-300 group flex flex-col h-full rotate-2 hover:rotate-0 hover:shadow-xl stagger-item stagger-delay-3 card-lift">
                 <div class="h-64 lg:h-72 overflow-hidden img-zoom">
-                    <img class="w-full h-full object-cover" alt="Toyota" src="/assets/imgs/7.png">
+                    <img class="w-full h-full object-cover" alt="Toyota" src="/assets/imgs/12.png">
                 </div>
                 <div class="p-6 flex-grow flex flex-col">
                     <span class="text-primary font-label-bold text-label-bold uppercase mb-1">Client</span>
                     <h4
                         class="font-headline text-2xl leading-tight uppercase text-on-surface mb-3 group-hover:text-primary transition-colors">
-                        Toyota</h4>
+                        Plascon</h4>
                     <div class="space-y-1 mt-auto mb-4">
                         <p class="font-body-md text-body-md text-on-surface-variant"><span
-                                class="text-on-surface font-bold">Campaign:</span> Drive the Future</p>
+                                class="text-on-surface font-bold">Campaign:</span> Colors of Wonder</p>
                         <p class="font-body-md text-body-md text-on-surface-variant"><span
-                                class="text-on-surface font-bold">Location:</span> Dar es Salaam, Tanzania</p>
+                                class="text-on-surface font-bold">Location:</span> Kalerwe fly over bridge</p>
                     </div>
                     <div class="flex items-center text-primary font-label-bold text-label-bold uppercase group/link">
                         <span class="mr-1">/</span>
@@ -1722,16 +1721,15 @@
                 <div>
                     <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Legal</h4>
                     <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="about.html">About</a></li>
                         <li><a class="hover:text-white transition-colors uppercase" href="#">Privacy Policy</a></li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="#">Cookie Policy</a></li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="#">Terms of use</a></li>
-                    </ul>
+                               </ul>
                 </div>
                 <!-- Company -->
                 <div>
                     <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Company</h4>
                     <ul class="space-y-2 text-caption text-slate-400">
-                        <li><a class="hover:text-white transition-colors uppercase" href="about.html">About</a></li>
+                        
                         <li><a class="hover:text-white transition-colors uppercase" href="project.html">Innovation</a>
                         </li>
                         <li><a class="hover:text-white transition-colors uppercase" href="insights.html">Insights</a>
@@ -1739,20 +1737,13 @@
                     </ul>
                 </div>
                 <!-- Investors -->
-                <div>
-                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Investors</h4>
-                    <ul class="space-y-2 text-caption text-slate-400">
-                        <li><a class="hover:text-white transition-colors uppercase" href="#">Real Estate</a></li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="#">Stock Info</a></li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="#">Financials</a></li>
-                    </ul>
-                </div>
+                
                 <!-- Support -->
                 <div>
                     <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Support</h4>
                     <ul class="space-y-2 text-caption text-slate-400">
                         <li><a class="hover:text-white transition-colors uppercase" href="contact.html">Contact</a></li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="#">Newsroom</a></li>
+                        
                     </ul>
                 </div>
             </div>
