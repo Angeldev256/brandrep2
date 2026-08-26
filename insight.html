@@ -766,7 +766,186 @@
 
         // ── Intelligence section: content repository, render, filters, modal ──
         const contentRepository = [
-            // --- OOH INSIGHTS ---
+            // ======= NEW: 16 OOH FAQ Articles (Questions 1–5 go to homepage, but all are here) =======
+            {
+                id: 'what-is-ooh',
+                pillar: 'ooh-insights',
+                category: 'OOH Insights (FAQ)',
+                title: 'What is Out-of-Home (OOH) advertising?',
+                date: 'Updated 2026',
+                readTime: '2 min read',
+                image: '/assets/imgs/6.png',
+                excerpt: 'OOH advertising reaches audiences while they are outside their homes through formats such as billboards, digital screens, street furniture, transit media and other advertising structures.',
+                content: `<p>Out-of-Home (OOH) advertising reaches audiences while they are outside their homes through formats such as billboards, digital screens, street furniture, transit media and other advertising structures. It is one of the oldest forms of advertising, but has evolved significantly with digital technology.</p>`
+            },
+            {
+                id: 'why-billboards',
+                pillar: 'ooh-insights',
+                category: 'OOH Insights (FAQ)',
+                title: 'Why should I advertise on billboards?',
+                date: 'Updated 2026',
+                readTime: '2 min read',
+                image: '/assets/imgs/7.png',
+                excerpt: 'Billboards provide high visibility, repeated exposure and broad audience reach.',
+                content: `<p>Billboards provide high visibility, repeated exposure and broad audience reach. They are particularly effective for building brand awareness, supporting campaigns and maintaining a strong presence in strategic locations. They are a cost-effective way to reach a large audience daily.</p>`
+            },
+            {
+                id: 'choose-location-faq',
+                pillar: 'ooh-insights',
+                category: 'OOH Insights (FAQ)',
+                title: 'How do I choose the right billboard location?',
+                date: 'Updated 2026',
+                readTime: '2 min read',
+                image: '/assets/imgs/8.png',
+                excerpt: 'The best location depends on your target audience, campaign objectives, traffic patterns, visibility, direction of travel and budget.',
+                content: `<p>The best location depends on your target audience, campaign objectives, traffic patterns, visibility, direction of travel and budget. Brand Republic can recommend locations based on these factors. We conduct site audits and traffic analysis to ensure maximum impact.</p>`
+            },
+            {
+                id: 'billboard-cost',
+                pillar: 'ooh-insights',
+                category: 'OOH Insights (FAQ)',
+                title: 'How much does billboard advertising cost?',
+                date: 'Updated 2026',
+                readTime: '2 min read',
+                image: '/assets/imgs/9.png',
+                excerpt: 'Rates vary depending on location, format, size, audience exposure, illumination, campaign duration and demand.',
+                content: `<p>Rates vary depending on location, format, size, audience exposure, illumination, campaign duration and demand. We provide quotations based on the specific sites and campaign requirements selected. Contact us for a tailored quote.</p>`
+            },
+            {
+                id: 'help-select-locations',
+                pillar: 'ooh-insights',
+                category: 'OOH Insights (FAQ)',
+                title: 'Can Brand Republic help me select locations?',
+                date: 'Updated 2026',
+                readTime: '2 min read',
+                image: '/assets/imgs/10.png',
+                excerpt: 'Yes. We can develop a media recommendation based on your target audience, geographic priorities, campaign objectives and available budget.',
+                content: `<p>Yes. We can develop a media recommendation based on your target audience, geographic priorities, campaign objectives and available budget. Our team uses data-driven insights to propose the best sites for your campaign.</p>`
+            },
+            // Questions 6–16
+            {
+                id: 'minimum-booking',
+                pillar: 'ooh-insights',
+                category: 'OOH Insights (FAQ)',
+                title: 'What is the minimum booking period?',
+                date: 'Updated 2026',
+                readTime: '2 min read',
+                image: '/assets/imgs/11.png',
+                excerpt: 'This depends on the media format and location. Most traditional billboard campaigns are booked for agreed campaign periods, while digital OOH can offer more flexible scheduling.',
+                content: `<p>This depends on the media format and location. Most traditional billboard campaigns are booked for agreed campaign periods, while digital OOH can offer more flexible scheduling. We can discuss your specific needs.</p>`
+            },
+            {
+                id: 'traditional-vs-digital',
+                pillar: 'ooh-insights',
+                category: 'OOH Insights (FAQ)',
+                title: 'What is the difference between traditional and digital billboards?',
+                date: 'Updated 2026',
+                readTime: '2 min read',
+                image: '/assets/imgs/12.png',
+                excerpt: 'Traditional billboards display printed artwork continuously, while digital billboards use LED screens that can display multiple creatives, scheduled messages, animations and time-sensitive content.',
+                content: `<p>Traditional billboards display printed artwork continuously, while digital billboards use LED screens that can display multiple creatives, scheduled messages, animations and time-sensitive content. Digital offers greater flexibility and real-time updates.</p>`
+            },
+            {
+                id: 'multiple-locations',
+                pillar: 'ooh-insights',
+                category: 'OOH Insights (FAQ)',
+                title: 'Can I advertise in multiple locations at the same time?',
+                date: 'Updated 2026',
+                readTime: '2 min read',
+                image: '/assets/imgs/6.png',
+                excerpt: 'Yes. Campaigns can be developed across multiple locations, cities and media formats to increase reach and frequency.',
+                content: `<p>Yes. Campaigns can be developed across multiple locations, cities and media formats to increase reach and frequency. We can create a multi-site plan that maximizes your exposure.</p>`
+            },
+            {
+                id: 'creative-services',
+                pillar: 'ooh-insights',
+                category: 'OOH Insights (FAQ)',
+                title: 'Do you provide billboard artwork and creative services?',
+                date: 'Updated 2026',
+                readTime: '2 min read',
+                image: '/assets/imgs/7.png',
+                excerpt: 'Yes. Brand Republic can support campaign adaptation, artwork development and creative OOH concepts, including special builds and innovative executions.',
+                content: `<p>Yes. Brand Republic can support campaign adaptation, artwork development and creative OOH concepts, including special builds and innovative executions. Our creative team can bring your vision to life.</p>`
+            },
+            {
+                id: 'printing-installation',
+                pillar: 'ooh-insights',
+                category: 'OOH Insights (FAQ)',
+                title: 'Who handles printing and installation?',
+                date: 'Updated 2026',
+                readTime: '2 min read',
+                image: '/assets/imgs/8.png',
+                excerpt: 'Brand Republic can coordinate production, installation, flighting and campaign maintenance, depending on the selected media format.',
+                content: `<p>Brand Republic can coordinate production, installation, flighting and campaign maintenance, depending on the selected media format. We manage the entire process to ensure quality and timely delivery.</p>`
+            },
+            {
+                id: 'launch-timeline',
+                pillar: 'ooh-insights',
+                category: 'OOH Insights (FAQ)',
+                title: 'How long does it take to launch an OOH campaign?',
+                date: 'Updated 2026',
+                readTime: '2 min read',
+                image: '/assets/imgs/9.png',
+                excerpt: 'Timelines depend on site availability, artwork approval, production and installation requirements.',
+                content: `<p>Timelines depend on site availability, artwork approval, production and installation requirements. Standard campaigns can generally be launched relatively quickly once artwork and booking requirements are confirmed.</p>`
+            },
+            {
+                id: 'view-locations',
+                pillar: 'ooh-insights',
+                category: 'OOH Insights (FAQ)',
+                title: 'Can I see available billboard locations before booking?',
+                date: 'Updated 2026',
+                readTime: '2 min read',
+                image: '/assets/imgs/10.png',
+                excerpt: 'Yes. Clients can review available media locations and request specific sites based on their campaign requirements.',
+                content: `<p>Yes. Clients can review available media locations and request specific sites based on their campaign requirements. We provide a media inventory and site visits upon request.</p>`
+            },
+            {
+                id: 'measure-performance',
+                pillar: 'ooh-insights',
+                category: 'OOH Insights (FAQ)',
+                title: 'How do you measure OOH advertising performance?',
+                date: 'Updated 2026',
+                readTime: '2 min read',
+                image: '/assets/imgs/11.png',
+                excerpt: 'Performance can be evaluated using factors such as traffic volumes, estimated audience exposure, geographic coverage, campaign reach and digital engagement mechanisms such as QR codes.',
+                content: `<p>Depending on the campaign and available data, performance can be evaluated using factors such as traffic volumes, estimated audience exposure, geographic coverage, campaign reach and digital engagement mechanisms such as QR codes.</p>`
+            },
+            {
+                id: 'target-audiences',
+                pillar: 'ooh-insights',
+                category: 'OOH Insights (FAQ)',
+                title: 'Can billboard campaigns be targeted to specific audiences?',
+                date: 'Updated 2026',
+                readTime: '2 min read',
+                image: '/assets/imgs/12.png',
+                excerpt: 'Yes. While OOH reaches broad audiences, strategic site selection allows campaigns to target particular geographic areas, commuter routes, commercial districts and audience profiles.',
+                content: `<p>Yes. While OOH reaches broad audiences, strategic site selection allows campaigns to target particular geographic areas, commuter routes, commercial districts and audience profiles. We help you choose sites that align with your target demographic.</p>`
+            },
+            {
+                id: 'custom-solutions',
+                pillar: 'ooh-insights',
+                category: 'OOH Insights (FAQ)',
+                title: 'Does Brand Republic offer customised or innovative OOH solutions?',
+                date: 'Updated 2026',
+                readTime: '2 min read',
+                image: '/assets/imgs/6.png',
+                excerpt: 'Yes. Beyond conventional billboards, we develop customised advertising structures, special builds, experiential concepts and innovative outdoor media solutions.',
+                content: `<p>Yes. Beyond conventional billboards, we develop customised advertising structures, special builds, experiential concepts and innovative outdoor media solutions. We can create a unique presence that stands out.</p>`
+            },
+            {
+                id: 'how-to-book',
+                pillar: 'ooh-insights',
+                category: 'OOH Insights (FAQ)',
+                title: 'How do I book a billboard?',
+                date: 'Updated 2026',
+                readTime: '2 min read',
+                image: '/assets/imgs/7.png',
+                excerpt: 'Select a location from our media inventory or contact our team with your campaign requirements.',
+                content: `<p>Select a location from our media inventory or contact our team with your campaign requirements. We will confirm availability, provide a quotation and guide you through artwork, production and installation. Simply reach out to get started.</p>`
+            },
+
+            // === EXISTING ARTICLES (kept as is) ===
             {
                 id: 'cost-uganda',
                 pillar: 'ooh-insights',
