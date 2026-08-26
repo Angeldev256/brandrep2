@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brand Republic - Projects & Case Studies</title>
-     <link rel="icon" type="image/png" href="assets/bg.png">
+    <link rel="icon" type="image/png" href="assets/bg.png">
 
     <!-- Google Fonts: Space Grotesk & Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +15,7 @@
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -88,24 +89,17 @@
             -webkit-backdrop-filter: blur(12px);
         }
 
-        /* ── Pulse glow for CTA ── */
-        @keyframes pulseGlow {
-
-            0%,
-            100% {
-                box-shadow: 0 0 0 0 rgba(71, 0, 130, 0.4);
-            }
-
-            50% {
-                box-shadow: 0 0 0 12px rgba(71, 0, 130, 0);
-            }
+        /* ── Body padding for fixed navbar ── */
+        body {
+            padding-top: 6rem;
         }
 
-        .pulse-glow {
-            animation: pulseGlow 2s ease-in-out infinite;
+        ::selection {
+            background: #4a0e9b;
+            color: #ffffff;
         }
 
-        /* ── Neo-Brutalist Core Specifications ── */
+        /* ── Neo-Brutalist Core Specifications (No Shadows) ── */
         .grid-background {
             background-color: #f9f9f9;
             background-image: linear-gradient(#e2e2e2 1px, transparent 1px), linear-gradient(90deg, #e2e2e2 1px, transparent 1px);
@@ -115,65 +109,57 @@
         .brutalist-card {
             background-color: #ffffff;
             border: 2px solid #1a1c1c;
-
             border-radius: 0px !important;
             transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .brutalist-card:hover {
             transform: translate(-3px, -3px);
-
             border-color: #1a1c1c;
         }
 
         .brutalist-card-accent {
             background-color: #efdbff;
             border: 2px solid #1a1c1c;
-            box-shadow: 6px 6px 0px 0px #1a1c1c;
             border-radius: 0px !important;
             transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .brutalist-card-accent:hover {
             transform: translate(-3px, -3px);
-            box-shadow: 10px 10px 0px 0px #1a1c1c;
         }
 
         .brutalist-btn {
             border: 2px solid #1a1c1c;
-            box-shadow: 4px 4px 0px 0px #1a1c1c;
             border-radius: 0px !important;
             transition: all 0.15s ease;
+            cursor: pointer;
         }
 
         .brutalist-btn:hover {
             transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0px 0px #6121a1;
         }
 
         .brutalist-btn:active {
             transform: translate(2px, 2px);
-            box-shadow: 0px 0px 0px 0px #1a1c1c;
         }
 
         .brutalist-btn-purple {
             background-color: #6121a1;
             color: #ffffff;
             border: 2px solid #1a1c1c;
-            box-shadow: 4px 4px 0px 0px #1a1c1c;
             border-radius: 0px !important;
             transition: all 0.15s ease;
+            cursor: pointer;
         }
 
         .brutalist-btn-purple:hover {
             transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0px 0px #1a1c1c;
             background-color: #470082;
         }
 
         .brutalist-btn-purple:active {
             transform: translate(2px, 2px);
-            box-shadow: 0px 0px 0px 0px #1a1c1c;
         }
 
         .chip-tag {
@@ -187,14 +173,24 @@
             text-transform: uppercase;
         }
 
-        /* ── Body padding for fixed navbar ── */
-        body {
-            padding-top: 6rem;
+        /* ── Video container ── */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            background: #0a0a0a;
         }
 
-        ::selection {
-            background: #4a0e9b;
-            color: #ffffff;
+        .video-wrapper video {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+
+        .video-wrapper video::-webkit-media-controls {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 0;
         }
     </style>
 </head>
@@ -227,11 +223,11 @@
         <!-- Right Controls -->
         <div class="flex items-center gap-4">
             <a href="quotation.html"
-                class="hidden lg:inline-block bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 shadow-sm">
+                class="hidden lg:inline-block bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300">
                 Request Quotation
             </a>
             <a href="contact.html"
-                class="hidden lg:inline-block bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg pulse-glow">
+                class="hidden lg:inline-block bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300">
                 Contact Us
             </a>
             <!-- Mobile hamburger -->
@@ -259,7 +255,7 @@
                 class="mt-4 w-full text-center bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 block">Request
                 Quotation</a>
             <a href="contact.html"
-                class="mt-2 w-full text-center bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg block">Contact
+                class="mt-2 w-full text-center bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 block">Contact
                 Us</a>
         </div>
     </nav>
@@ -276,7 +272,7 @@
                     class="font-headline font-bold text-4xl sm:text-6xl md:text-7xl lg:text-[80px] leading-[1.1] tracking-[-0.04em] uppercase text-on-surface mb-4">
                     IDEAS BROUGHT<br>
                     <span
-                        class="inline-block bg-primary text-on-primary px-4 py-1 mt-2 border-2 border-on-surface shadow-[4px_4px_0px_0px_#1a1c1c]">
+                        class="inline-block bg-primary text-on-primary px-4 py-1 mt-2 border-2 border-on-surface">
                         TO LIFE.
                     </span>
                 </h1>
@@ -287,31 +283,63 @@
             </div>
         </section>
 
-        <!-- Projects Grid Section -->
+        <!-- Projects Grid Section – 2 Cards with Local Video Assets -->
         <section class="py-16 px-4 sm:px-8 lg:px-12 max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
 
-                <!-- Card 1: NEO-TOKYO UNLIMITED -->
+                <!-- Card 1: DFCU BANK – Image + Video (local assets) -->
                 <article class="brutalist-card flex flex-col justify-between overflow-hidden">
                     <div>
+                        <!-- Hero Image -->
                         <div
                             class="relative h-64 sm:h-72 border-b-2 border-on-surface bg-neutral-900 overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1000&q=80"
-                                alt="Neo-Tokyo Unlimited"
-                                class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-500">
+                            <img src="/Assets/imgs/dfcu.jpeg"
+                                alt="DFCU Bank Billboard Campaign"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <span
                                 class="absolute top-3 left-3 bg-primary text-on-primary font-headline font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 border border-on-surface">
                                 DIGITAL MEGA-BILLBOARD
                             </span>
                         </div>
+
+                        <!-- Video Player – LOCKED to local assets -->
+                       <div class="video-wrapper border-b-2 border-on-surface bg-black relative">
+
+    <!-- Video Player with download protection -->
+    <video
+        controls
+        controlsList="nodownload noremoteplayback"
+        disablePictureInPicture
+        oncontextmenu="return false;"
+        poster="/Assets/imgs/around.jpeg"
+        preload="metadata"
+        playsinline
+        class="w-full"
+    >
+        <source src="/Assets/videos/vid2.mp4" type="video/mp4">
+        <!-- Add WebM fallback for better browser support -->
+        <source src="/Assets/videos/vid2.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Overlay to prevent drag-and-drop saving -->
+    <div class="absolute inset-0 pointer-events-none z-10"></div>
+
+    <!-- Video caption bar -->
+    <div class="bg-black/80 text-white text-[10px] uppercase tracking-widest px-3 py-1 font-bold flex items-center justify-between">
+        <span>🎬 Campaign Reel</span>
+        <span>DFCU Bank • Kyusa Level</span>
+    </div>
+</div>
+
                         <div class="p-6 sm:p-8">
                             <h2
                                 class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight text-on-surface mb-3">
-                                NEO-TOKYO UNLIMITED
+                                DFCU BANK
                             </h2>
                             <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="chip-tag bg-surface px-2.5 py-1">TECH GIANT</span>
-                                <span class="chip-tag bg-surface px-2.5 py-1">SHIBUYA CROSSING</span>
+                                <span class="chip-tag bg-surface px-2.5 py-1">Kyusa level</span>
+                                <span class="chip-tag bg-surface px-2.5 py-1">Busega roundabout</span>
                             </div>
                             <div class="space-y-3 font-body text-sm sm:text-base text-on-surface-variant">
                                 <p><strong class="text-on-surface">Challenge:</strong> Reclaiming the night in a
@@ -330,23 +358,37 @@
                     </div>
                 </article>
 
-                <!-- Card 2: FUTURE IS NOW (Accent Styling) -->
+                <!-- Card 2: FUTURE IS NOW – Image + Video (local assets, accent styling) -->
                 <article class="brutalist-card-accent flex flex-col justify-between overflow-hidden">
                     <div>
+                        <!-- Hero Image -->
                         <div
                             class="relative h-64 sm:h-72 border-b-2 border-on-surface bg-neutral-900 overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=80"
-                                alt="Future is Now"
-                                class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-500">
+                            <img src="/Assets/imgs/11.png"
+                                alt="Future is Now Building Wrap"
+                                class="w-full h-full object-cover  group-hover:scale-105 transition-transform duration-500">
                             <span
                                 class="absolute top-3 left-3 bg-on-surface text-surface font-headline font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 border border-on-surface">
                                 BUILDING WRAP
                             </span>
                         </div>
+
+                        <!-- Video Player – LOCKED to local assets -->
+                        <div class="video-wrapper border-b-2 border-on-surface bg-black">
+                        <video controls poster="/Assets/imgs/12.png" preload="metadata">
+                                <source src="#" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="bg-black/80 text-white text-[10px] uppercase tracking-widest px-3 py-1 font-bold flex items-center justify-between">
+                                <span>🎬 Installation Timelapse</span>
+                                <span>Future Is Now • Central London</span>
+                            </div>
+                        </div>
+
                         <div class="p-6 sm:p-8">
                             <h2
                                 class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight text-on-surface mb-3">
-                                FUTURE IS NOW
+                                PLASCON
                             </h2>
                             <div class="flex flex-wrap gap-2 mb-6">
                                 <span class="chip-tag bg-surface px-2.5 py-1">ARCHITECTURE FIRM</span>
@@ -362,161 +404,6 @@
                     </div>
                     <div class="p-6 sm:p-8 pt-0">
                         <button onclick="openModal('future-now')"
-                            class="brutalist-btn-purple w-full font-body font-bold text-xs sm:text-sm uppercase tracking-wider py-3 px-4 flex items-center justify-between">
-                            <span>VIEW CASE STUDY</span>
-                            <span class="material-symbols-outlined text-base">arrow_forward</span>
-                        </button>
-                    </div>
-                </article>
-
-                <!-- Card 3: BLOCK HAUL -->
-                <article class="brutalist-card flex flex-col justify-between overflow-hidden">
-                    <div>
-                        <div
-                            class="relative h-64 sm:h-72 border-b-2 border-on-surface bg-neutral-900 overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1000&q=80"
-                                alt="Block Haul"
-                                class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-500">
-                            <span
-                                class="absolute top-3 left-3 bg-primary text-on-primary font-headline font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 border border-on-surface">
-                                FLEET WRAP
-                            </span>
-                        </div>
-                        <div class="p-6 sm:p-8">
-                            <h2
-                                class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight text-on-surface mb-3">
-                                BLOCK HAUL
-                            </h2>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="chip-tag bg-surface px-2.5 py-1">URBAN LOGISTICS</span>
-                                <span class="chip-tag bg-surface px-2.5 py-1">BERLIN TRANSIT GRID</span>
-                            </div>
-                            <div class="space-y-3 font-body text-sm sm:text-base text-on-surface-variant">
-                                <p><strong class="text-on-surface">Challenge:</strong> Turning a functional fleet into a
-                                    moving brand statement.</p>
-                                <p><strong class="text-on-surface">Idea:</strong> High-vis geometric abstractions.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6 sm:p-8 pt-0">
-                        <button onclick="openModal('block-haul')"
-                            class="brutalist-btn w-full bg-surface text-on-surface font-body font-bold text-xs sm:text-sm uppercase tracking-wider py-3 px-4 flex items-center justify-between hover:bg-on-surface hover:text-surface">
-                            <span>VIEW CASE STUDY</span>
-                            <span class="material-symbols-outlined text-base">arrow_forward</span>
-                        </button>
-                    </div>
-                </article>
-
-                <!-- Card 4: VIVID SPACE (Accent Styling) -->
-                <article class="brutalist-card-accent flex flex-col justify-between overflow-hidden">
-                    <div>
-                        <div
-                            class="relative h-64 sm:h-72 border-b-2 border-on-surface bg-neutral-900 overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80"
-                                alt="Vivid Space"
-                                class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-500">
-                            <span
-                                class="absolute top-3 left-3 bg-on-surface text-surface font-headline font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 border border-on-surface">
-                                TRANSIT HUB TAKEOVER
-                            </span>
-                        </div>
-                        <div class="p-6 sm:p-8">
-                            <h2
-                                class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight text-primary mb-3">
-                                VIVID SPACE
-                            </h2>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="chip-tag bg-surface px-2.5 py-1">LUXURY RETAIL</span>
-                                <span class="chip-tag bg-surface px-2.5 py-1">PARIS METRO</span>
-                            </div>
-                            <div class="space-y-3 font-body text-sm sm:text-base text-on-surface-variant">
-                                <p><strong class="text-on-surface">Challenge:</strong> Transforming a sterile transit
-                                    corridor into a sensory experience.</p>
-                                <p><strong class="text-on-surface">Idea:</strong> Floor-to-ceiling anamorphic typography
-                                    and purple gradients.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6 sm:p-8 pt-0">
-                        <button onclick="openModal('vivid-space')"
-                            class="brutalist-btn-purple w-full font-body font-bold text-xs sm:text-sm uppercase tracking-wider py-3 px-4 flex items-center justify-between">
-                            <span>VIEW CASE STUDY</span>
-                            <span class="material-symbols-outlined text-base">arrow_forward</span>
-                        </button>
-                    </div>
-                </article>
-
-                <!-- Card 5: CITY MOVES -->
-                <article class="brutalist-card flex flex-col justify-between overflow-hidden">
-                    <div>
-                        <div
-                            class="relative h-64 sm:h-72 border-b-2 border-on-surface bg-neutral-900 overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1000&q=80"
-                                alt="City Moves"
-                                class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-500">
-                            <span
-                                class="absolute top-3 left-3 bg-primary text-on-primary font-headline font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 border border-on-surface">
-                                STREET FURNITURE
-                            </span>
-                        </div>
-                        <div class="p-6 sm:p-8">
-                            <h2
-                                class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight text-on-surface mb-3">
-                                CITY MOVES
-                            </h2>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="chip-tag bg-surface px-2.5 py-1">LIFESTYLE BRAND</span>
-                                <span class="chip-tag bg-surface px-2.5 py-1">EUROPE</span>
-                            </div>
-                            <div class="space-y-3 font-body text-sm sm:text-base text-on-surface-variant">
-                                <p><strong class="text-on-surface">Challenge:</strong> Standing out in high-density
-                                    pedestrian zones.</p>
-                                <p><strong class="text-on-surface">Idea:</strong> Integrated poster series with
-                                    high-contrast brutalist art.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6 sm:p-8 pt-0">
-                        <button onclick="openModal('city-moves')"
-                            class="brutalist-btn w-full bg-surface text-on-surface font-body font-bold text-xs sm:text-sm uppercase tracking-wider py-3 px-4 flex items-center justify-between hover:bg-on-surface hover:text-surface">
-                            <span>VIEW CASE STUDY</span>
-                            <span class="material-symbols-outlined text-base">arrow_forward</span>
-                        </button>
-                    </div>
-                </article>
-
-                <!-- Card 6: NATURE'S PATH (Accent Styling) -->
-                <article class="brutalist-card-accent flex flex-col justify-between overflow-hidden">
-                    <div>
-                        <div
-                            class="relative h-64 sm:h-72 border-b-2 border-on-surface bg-neutral-900 overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80"
-                                alt="Nature's Path"
-                                class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-500">
-                            <span
-                                class="absolute top-3 left-3 bg-on-surface text-surface font-headline font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 border border-on-surface">
-                                3D SCULPTURE
-                            </span>
-                        </div>
-                        <div class="p-6 sm:p-8">
-                            <h2
-                                class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight text-on-surface mb-3">
-                                NATURE'S PATH
-                            </h2>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="chip-tag bg-surface px-2.5 py-1">SUSTAINABLE TECH</span>
-                                <span class="chip-tag bg-surface px-2.5 py-1">PUBLIC PARK</span>
-                            </div>
-                            <div class="space-y-3 font-body text-sm sm:text-base text-on-surface-variant">
-                                <p><strong class="text-on-surface">Challenge:</strong> Blending technology with natural
-                                    public spaces.</p>
-                                <p><strong class="text-on-surface">Idea:</strong> A 'Living' digital sculpture using
-                                    wood and curved screens.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6 sm:p-8 pt-0">
-                        <button onclick="openModal('natures-path')"
                             class="brutalist-btn-purple w-full font-body font-bold text-xs sm:text-sm uppercase tracking-wider py-3 px-4 flex items-center justify-between">
                             <span>VIEW CASE STUDY</span>
                             <span class="material-symbols-outlined text-base">arrow_forward</span>
@@ -584,7 +471,7 @@
 
                     <!-- Mockup Frame -->
                     <div
-                        class="border-4 border-on-surface bg-neutral-900 p-3 sm:p-6 shadow-[8px_8px_0px_0px_#1a1c1c] relative group">
+                        class="border-4 border-on-surface bg-neutral-900 p-3 sm:p-6 relative group">
 
                         <!-- Billboard Construction Structure Visual -->
                         <div
@@ -647,21 +534,21 @@
                         Campaign Impact &amp; Reach Data
                     </h3>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-                        <div class="border-2 border-on-surface p-4 bg-white shadow-[4px_4px_0px_0px_#1a1c1c]">
+                        <div class="border-2 border-on-surface p-4 bg-white">
                             <span id="modal-stat-1"
                                 class="font-headline font-bold text-3xl sm:text-4xl text-primary block">2.4M+</span>
                             <span
                                 class="font-body text-xs font-bold uppercase tracking-wider text-on-surface-variant mt-1 block">Weekly
                                 Impressions</span>
                         </div>
-                        <div class="border-2 border-on-surface p-4 bg-white shadow-[4px_4px_0px_0px_#1a1c1c]">
+                        <div class="border-2 border-on-surface p-4 bg-white">
                             <span id="modal-stat-2"
                                 class="font-headline font-bold text-3xl sm:text-4xl text-primary block">+84%</span>
                             <span
                                 class="font-body text-xs font-bold uppercase tracking-wider text-on-surface-variant mt-1 block">Brand
                                 Recall Lift</span>
                         </div>
-                        <div class="border-2 border-on-surface p-4 bg-white shadow-[4px_4px_0px_0px_#1a1c1c]">
+                        <div class="border-2 border-on-surface p-4 bg-white">
                             <span id="modal-stat-3"
                                 class="font-headline font-bold text-3xl sm:text-4xl text-primary block">100%</span>
                             <span
@@ -692,7 +579,8 @@
             </div>
         </div>
     </div>
-<!-- ========================================================= -->
+
+    <!-- ========================================================= -->
     <!-- FOOTER – redesigned with social icons and updated links  -->
     <!-- ========================================================= -->
     <footer class="bg-[#111113] text-white relative w-full pt-20 pb-12 border-t-8 border-[#4a0e9b]">
@@ -719,33 +607,26 @@
 
             <!-- Footer Links Grid -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 font-ui">
-                <!-- Legal -->
                 <div>
                     <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Legal</h4>
                     <ul class="space-y-2 text-caption text-slate-400">
                         <li><a class="hover:text-white transition-colors uppercase" href="about.html">About</a></li>
                         <li><a class="hover:text-white transition-colors uppercase" href="#">Privacy Policy</a></li>
-                               </ul>
+                    </ul>
                 </div>
-                <!-- Company -->
                 <div>
                     <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Company</h4>
                     <ul class="space-y-2 text-caption text-slate-400">
-                        
                         <li><a class="hover:text-white transition-colors uppercase" href="project.html">Innovation</a>
                         </li>
                         <li><a class="hover:text-white transition-colors uppercase" href="insights.html">Insights</a>
                         </li>
                     </ul>
                 </div>
-                <!-- Investors -->
-                
-                <!-- Support -->
                 <div>
                     <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Support</h4>
                     <ul class="space-y-2 text-caption text-slate-400">
                         <li><a class="hover:text-white transition-colors uppercase" href="contact.html">Contact</a></li>
-                        
                     </ul>
                 </div>
             </div>
@@ -822,11 +703,11 @@
         const caseStudyData = {
             'neo-tokyo': {
                 type: 'DIGITAL MEGA-BILLBOARD',
-                client: 'TECH GIANT / SHIBUYA CROSSING',
-                title: 'NEO-TOKYO UNLIMITED',
-                summary: 'An unprecedented 3D anamorphic installation dominating one of the busiest pedestrian intersections on earth.',
-                image: 'https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1200&q=80',
-                challenge: 'In a neon-saturated urban environment like Shibuya, standard digital displays fade into background noise. The client needed to command absolute attention without increasing visual clutter.',
+                client: 'DFCU BANK / KYUSA LEVEL',
+                title: 'DFCU BANK',
+                summary: 'A hyper-vibrant 3D anamorphic digital billboard dominating one of Kampala\'s busiest intersections.',
+                image: '/Assets/imgs/dfcu.jpeg',
+                challenge: 'In a neon-saturated urban environment like Kampala, standard digital displays fade into background noise. The client needed to command absolute attention without increasing visual clutter.',
                 solution: 'We engineered a dynamic 3D anamorphic depth display that breaks out of physical screen boundaries, creating an optical illusion visible across a 160-degree viewing angle.',
                 stat1: '4.8M+',
                 stat2: '+112%',
@@ -835,62 +716,14 @@
             'future-now': {
                 type: 'BUILDING WRAP',
                 client: 'ARCHITECTURE FIRM / CENTRAL LONDON',
-                title: 'FUTURE IS NOW',
+                title: 'PLASCON',
                 summary: 'A massive 12-story typographic architectural mesh wrap dominating central London skyline.',
-                image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80',
+                image: '/Assets/imgs/12.png',
                 challenge: 'The campaign required covering a massive active construction site without obstructing natural interior daylight for surrounding tenanted floors.',
                 solution: 'We deployed a high-density perforated micro-mesh fabric printed with bold high-contrast brutalist typography that acts as a solid visual wall from afar while staying transparent from within.',
                 stat1: '1.9M+',
                 stat2: '+76%',
-                stat3: '12 Stories'
-            },
-            'block-haul': {
-                type: 'FLEET WRAP',
-                client: 'URBAN LOGISTICS / BERLIN TRANSIT GRID',
-                title: 'BLOCK HAUL',
-                summary: 'A mobile high-vis geometric fleet transformation converting delivery trucks into moving art installations.',
-                image: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1200&q=80',
-                challenge: 'Standard delivery vehicles were invisible in heavy European metropolitan traffic, missing potential high-frequency brand touchpoints.',
-                solution: 'We applied high-reflectivity geometric vinyl wraps utilizing stark brutalist blocking that increased vehicle visibility by 300% under both sunlight and streetlamps.',
-                stat1: '3.1M+',
-                stat2: '+95%',
-                stat3: '120 Fleets'
-            },
-            'vivid-space': {
-                type: 'TRANSIT HUB TAKEOVER',
-                client: 'LUXURY RETAIL / PARIS METRO',
-                title: 'VIVID SPACE',
-                summary: 'A immersive floor-to-ceiling takeover combining lightboxes, purple gradients, and scale typography.',
-                image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80',
-                challenge: 'Paris Metro transit corridors are utilitarian and sterile, causing commuters to move through rapidly without engaging with traditional poster placements.',
-                solution: 'We wrapped entire floor surfaces, LED wall tracks, and overhead arches in high-chroma purple gradients and anamorphic typography that turns commuter transit into a gallery walkthrough.',
-                stat1: '5.2M+',
-                stat2: '+140%',
-                stat3: '100%'
-            },
-            'city-moves': {
-                type: 'STREET FURNITURE',
-                client: 'LIFESTYLE BRAND / EUROPE',
-                title: 'CITY MOVES',
-                summary: 'A citywide high-impact poster system across pedestrian transit stops and street furniture.',
-                image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80',
-                challenge: 'Reaching active urban pedestrians on foot required multiple sequential touchpoints rather than a single massive placement.',
-                solution: 'We deployed a synchronized 400-site street furniture series featuring bold high-contrast monochrome artwork with QR conversion tracking.',
-                stat1: '8.4M+',
-                stat2: '+68%',
-                stat3: '400 Sites'
-            },
-            'natures-path': {
-                type: '3D SCULPTURE',
-                client: 'SUSTAINABLE TECH / PUBLIC PARK',
-                title: 'NATURE\'S PATH',
-                summary: 'A living digital sculpture fusing reclaimed curved timber structural elements with flexible outdoor LED panels.',
-                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
-                challenge: 'Introducing digital tech advertising into a protected public park without disturbing natural aesthetics or community sentiment.',
-                solution: 'We built a curved architectural wood structure integrated with eco-powered flexible screens that run contextual ambient nature artwork alongside subtle brand messaging.',
-                stat1: '950K+',
-                stat2: '+185%',
-                stat3: 'Eco-Powered'
+                stat3: 'Art'
             }
         };
 
