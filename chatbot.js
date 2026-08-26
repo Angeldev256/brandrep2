@@ -159,7 +159,7 @@
             'location': 'We have prime locations across Uganda:\n• Kampala (City Centre, Jinja Road, Entebbe Road)\n• Entebbe\n• Jinja\n• Gulu\n\nOur interactive map shows real-time availability.',
             'cost': 'Our pricing depends on:\n• Location & traffic\n• Media type & size\n• Campaign duration\n• Production complexity\n\n📩 Request a quotation for a custom quote!',
             'billboard': 'Billboards in Uganda range from USD 500–5,000+ per month depending on:\n• Location (prime vs secondary)\n• Size (48-sheet, 96-sheet, etc.)\n• Digital vs static\n• Duration\n\nWe can help you find the perfect spot!',
-            'contact': '📞 Call us: +256 700 123 456\n📧 Email: hello@brandrepublic.ug\n📍 Visit: Kampala, Uganda\n\nOr fill out our contact form on the website!',
+            'contact': '📞 Call us: +256 764 904 754\n📧 Email: gm@brandrepublic.com \n📍 Visit: Kampala, Uganda-Plot 82, Kulambiro Ring road \n\nOr fill out our contact form on the website!',
             'about': 'Brand Republic is Uganda\'s premier outdoor advertising and brand experience company. We combine strategic locations, bold creativity, and reliable execution to make brands impossible to ignore. 🚀',
             'services': 'Our services include:\n• Outdoor Media (Billboards, DOOH, Transit)\n• Brand Solutions (Environmental, Retail, Corporate)\n• Innovation (3D, Digital Experiences, Activations)\n• Media Planning & Strategy\n\nWe handle everything from concept to execution!',
             'thank': 'You\'re welcome! 😊 Is there anything else I can help you with?',
