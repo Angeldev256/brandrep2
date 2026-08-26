@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+     <link rel="icon" type="image/png" href="assets/bg.png">
     <title>Brand Republic – Intelligence for the Real World</title>
 
     <!-- Tailwind CSS CDN with plugins -->
@@ -149,20 +150,20 @@
         .brutalist-border-box {
             border: 2px solid #1a1c1c;
             border-radius: 0px !important;
-            
+
         }
 
         .brutalist-card {
             background-color: #ffffff;
             border: 2px solid #1a1c1c;
             border-radius: 0px !important;
-           
+
             transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .brutalist-card:hover {
             transform: translate(-3px, -3px);
-           
+
             border-color: #470082;
         }
 
@@ -302,7 +303,7 @@
 
     <!-- ============================================================ -->
     <!--  STANDARD HEADER / NAVBAR (shared component)                  -->
-   <!-- ========================================================= -->
+    <!-- ========================================================= -->
     <nav
         class="fixed top-0 w-full z-[100] h-24 bg-surface/90 backdrop-blur-md border-b-2 border-outline-variant flex justify-between items-center px-[4rem] max-w-full mx-auto nav-blur">
         <a href="/" class="h-auto py-2 flex items-center focus:outline-none">
@@ -360,40 +361,41 @@
     <!-- ============================================================ -->
     <!--  HERO SECTION – "Our Story"                                  -->
     <!-- ============================================================ -->
-   <header class="relative min-h-[90vh] w-full flex items-center overflow-hidden bg-on-background">
-    <!-- Background Image with subtle overlay for readability -->
-    <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-black/40 z-10"></div> <!-- Dark overlay ensures text stays legible -->
-        <img alt="Ugandan urban landscape with high-impact billboards" class="w-full h-full object-cover opacity-60"
-            src="/assets/imgs/12.PNG" />
-    </div>
-
-    <!-- Text Content -->
-    <div class="relative z-20 w-full px-4 sm:px-6 md:px-grid-margin">
-        <div class="max-w-4xl">
-            <!-- Est. Badge -->
-            <span
-                class="inline-block bg-primary text-on-primary font-label-bold text-label-bold px-4 py-1 mb-6 uppercase tracking-widest">Est.
-                2015</span>
-
-            <!-- Optimized Headline (Responsive sizes) -->
-            <h1 class="font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-display-xl text-on-primary uppercase leading-[1.05] mb-6">
-                IMPOSSIBLE <br />to <span class="text-on-primary-container">IGNORE.</span>
-            </h1>
-
-            <!-- Optimized Paragraph (Shorter, punchier, and mobile-friendly sizing) -->
-            <p class="font-body text-base sm:text-lg md:text-xl text-surface-container-highest max-w-2xl mb-10 brutal-border pl-4 sm:pl-6 border-l-4 border-primary">
-                Uganda's premier high-impact media house. We don't place ads—we dominate landscapes, command attention, and shape the nation's urban fabric.
-            </p>
+    <header class="relative min-h-[90vh] w-full flex items-center overflow-hidden bg-on-background">
+        <!-- Background Image with subtle overlay for readability -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-black/40 z-10"></div> <!-- Dark overlay ensures text stays legible -->
+            <img alt="Ugandan urban landscape with high-impact billboards" class="w-full h-full object-cover opacity-60"
+                src="/assets/imgs/12.PNG" />
         </div>
-    </div>
 
-    <!-- Decorative bottom-right element (hidden on mobile) -->
-    <div class="absolute bottom-0 right-0 p-grid-margin hidden md:block">
-        <div class="flex flex-col items-end">
+        <!-- Text Content -->
+        <div class="relative z-20 w-full px-4 sm:px-6 md:px-grid-margin">
+            <div class="max-w-4xl">
+                <!-- Est. Badge -->
+
+
+                <!-- Optimized Headline (Responsive sizes) -->
+                <h1
+                    class="font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-display-xl text-on-primary uppercase leading-[1.05] mb-6">
+                    IMPOSSIBLE <br />to <span class="text-on-primary-container">IGNORE.</span>
+                </h1>
+
+                <!-- Optimized Paragraph (Shorter, punchier, and mobile-friendly sizing) -->
+                <p
+                    class="font-body text-base sm:text-lg md:text-xl text-surface-container-highest max-w-2xl mb-10 brutal-border pl-4 sm:pl-6 border-l-4 border-primary">
+                    Uganda's premier high-impact media house. We don't place ads—we dominate landscapes, command
+                    attention, and shape the nation's urban fabric.
+                </p>
+            </div>
         </div>
-    </div>
-</header>
+
+        <!-- Decorative bottom-right element (hidden on mobile) -->
+        <div class="absolute bottom-0 right-0 p-grid-margin hidden md:block">
+            <div class="flex flex-col items-end">
+            </div>
+        </div>
+    </header>
 
 
     <!-- ============================================================ -->
@@ -535,25 +537,26 @@
         </div>
     </div>
 
-    <!-- ============================================================ -->
-    <!--  FOOTER                                                      -->
-    <!-- ============================================================ -->
-    <!-- ========================================================= -->
+<!-- ========================================================= -->
     <!-- FOOTER – redesigned with social icons and updated links  -->
     <!-- ========================================================= -->
     <footer class="bg-[#111113] text-white relative w-full pt-20 pb-12 border-t-8 border-[#4a0e9b]">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
             <!-- Brand + Social Icons -->
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 border-b border-slate-800 pb-8 gap-4">
+            <div
+                class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 border-b border-slate-800 pb-8 gap-4">
                 <div class="font-headline text-3xl font-bold text-white tracking-tight uppercase">Brand Republic</div>
                 <div class="flex gap-4">
-                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#" aria-label="Twitter">
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all"
+                        href="#" aria-label="Twitter">
                         <i class="fa-brands fa-x-twitter"></i>
                     </a>
-                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#" aria-label="LinkedIn">
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all"
+                        href="#" aria-label="LinkedIn">
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
-                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#" aria-label="YouTube">
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all"
+                        href="#" aria-label="YouTube">
                         <i class="fa-brands fa-youtube"></i>
                     </a>
                 </div>
@@ -565,35 +568,29 @@
                 <div>
                     <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Legal</h4>
                     <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="about.html">About</a></li>
                         <li><a class="hover:text-white transition-colors uppercase" href="#">Privacy Policy</a></li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="#">Cookie Policy</a></li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="#">Terms of use</a></li>
-                    </ul>
+                               </ul>
                 </div>
                 <!-- Company -->
                 <div>
                     <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Company</h4>
                     <ul class="space-y-2 text-caption text-slate-400">
-                        <li><a class="hover:text-white transition-colors uppercase" href="about.html">About</a></li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="project.html">Innovation</a></li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="insight.html">Insights</a></li>
+                        
+                        <li><a class="hover:text-white transition-colors uppercase" href="project.html">Innovation</a>
+                        </li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="insights.html">Insights</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- Investors -->
-                <div>
-                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Investors</h4>
-                    <ul class="space-y-2 text-caption text-slate-400">
-                        <li><a class="hover:text-white transition-colors uppercase" href="#">Real Estate</a></li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="#">Stock Info</a></li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="#">Financials</a></li>
-                    </ul>
-                </div>
+                
                 <!-- Support -->
                 <div>
                     <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Support</h4>
                     <ul class="space-y-2 text-caption text-slate-400">
                         <li><a class="hover:text-white transition-colors uppercase" href="contact.html">Contact</a></li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="#">Newsroom</a></li>
+                        
                     </ul>
                 </div>
             </div>
@@ -604,7 +601,6 @@
             </div>
         </div>
     </footer>
-
 
     <!-- ============================================================ -->
     <!--  SUCCESS MODAL (for brief form)                              -->

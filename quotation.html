@@ -5,16 +5,21 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Our Story | Brand Republic</title>
+     <link rel="icon" type="image/png" href="assets/bg.png">
 
     <!-- Tailwind CSS CDN with plugins -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries">
     </script>
 
-    <!-- Google Fonts: Anton, Hanken Grotesk, Space Grotesk, Manrope -->
-    <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@400;500;700;900&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@400;500;700;900&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
 
     <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
 
     <!-- Tailwind Config -->
     <script id="tailwind-config">
@@ -105,12 +110,16 @@
                     },
                     fontSize: {
                         "label-bold": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700" }],
-                        "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.02em",
-                            "fontWeight": "400" }],
+                        "display-xl": ["120px", {
+                            "lineHeight": "110px", "letterSpacing": "-0.02em",
+                            "fontWeight": "400"
+                        }],
                         "headline-lg-mobile": ["48px", { "lineHeight": "52px", "fontWeight": "400" }],
                         "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }],
-                        "headline-lg": ["72px", { "lineHeight": "76px", "letterSpacing": "-0.01em",
-                            "fontWeight": "400" }],
+                        "headline-lg": ["72px", {
+                            "lineHeight": "76px", "letterSpacing": "-0.01em",
+                            "fontWeight": "400"
+                        }],
                         "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
                         "headline-md": ["40px", { "lineHeight": "44px", "fontWeight": "400" }]
                     }
@@ -129,6 +138,7 @@
         .slant-clip {
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
         }
+
         .slant-clip-reverse {
             clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
         }
@@ -137,6 +147,7 @@
         .brutal-border {
             border-left: 8px solid #470082;
         }
+
         .text-outline {
             -webkit-text-stroke: 1px #470082;
             color: transparent;
@@ -148,30 +159,36 @@
             border-radius: 0px !important;
             box-shadow: 4px 4px 0px 0px #1a1c1c;
         }
+
         .brutalist-card {
             background-color: #ffffff;
             border: 2px solid #1a1c1c;
             border-radius: 0px !important;
         }
+
         .brutalist-input {
             border: 2px solid #1a1c1c;
             border-radius: 0px !important;
             background-color: #ffffff;
             transition: all 0.15s ease;
         }
+
         .brutalist-input:focus {
             outline: none;
             border-color: #6121a1;
             box-shadow: 3px 3px 0px 0px #6121a1;
         }
+
         .brutalist-input[type="date"]::-webkit-calendar-picker-indicator {
             filter: invert(1);
             cursor: pointer;
             opacity: 0.6;
         }
+
         .brutalist-input[type="date"]::-webkit-calendar-picker-indicator:hover {
             opacity: 1;
         }
+
         .service-option {
             border: 1px solid #1a1c1c;
             border-radius: 0px !important;
@@ -179,20 +196,24 @@
             transition: all 0.15s ease;
             cursor: pointer;
         }
+
         .service-option:hover {
             background-color: #f3f3f4;
             transform: translate(-2px, -2px);
             box-shadow: 3px 3px 0px 0px #1a1c1c;
         }
+
         .service-option.selected {
             background-color: #6121a1;
             color: #ffffff;
             border-width: 2px;
             box-shadow: 3px 3px 0px 0px #1a1c1c;
         }
+
         .service-option.selected .service-icon {
             color: #ffffff;
         }
+
         .brutalist-btn-purple {
             background-color: #6121a1;
             color: #ffffff;
@@ -201,15 +222,18 @@
             border-radius: 0px !important;
             transition: all 0.15s ease;
         }
+
         .brutalist-btn-purple:hover {
             transform: translate(-2px, -2px);
             box-shadow: 6px 6px 0px 0px #1a1c1c;
             background-color: #470082;
         }
+
         .brutalist-btn-purple:active {
             transform: translate(2px, 2px);
             box-shadow: 0px 0px 0px 0px #1a1c1c;
         }
+
         .field-label {
             font-family: 'Manrope', sans-serif;
             font-size: 11px;
@@ -225,6 +249,7 @@
             font-family: 'Manrope', sans-serif;
             font-weight: 700;
         }
+
         .text-label-bold {
             font-size: 14px;
             letter-spacing: 0.05em;
@@ -235,12 +260,15 @@
         .bar {
             transition: all 0.3s ease;
         }
+
         .hamburger-active .bar:nth-child(1) {
             transform: rotate(45deg) translateY(7px);
         }
+
         .hamburger-active .bar:nth-child(2) {
             opacity: 0;
         }
+
         .hamburger-active .bar:nth-child(3) {
             transform: rotate(-45deg) translateY(-7px);
         }
@@ -269,9 +297,17 @@
 
         /* ── Pulse glow for CTA ── */
         @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(71, 0, 130, 0.4); }
-            50% { box-shadow: 0 0 0 12px rgba(71, 0, 130, 0); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(71, 0, 130, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 0 12px rgba(71, 0, 130, 0);
+            }
         }
+
         .pulse-glow {
             animation: pulseGlow 2s ease-in-out infinite;
         }
@@ -281,9 +317,10 @@
 <body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary">
 
     <!-- ============================================================ -->
-    <!--  NAVBAR – Updated to match media page version                 -->
+    <!--  NAVBAR                                                      -->
     <!-- ============================================================ -->
-    <nav class="fixed top-0 w-full z-[100] h-24 bg-surface/90 backdrop-blur-md border-b-2 border-outline-variant flex justify-between items-center px-[4rem] max-w-full mx-auto nav-blur">
+    <nav
+        class="fixed top-0 w-full z-[100] h-24 bg-surface/90 backdrop-blur-md border-b-2 border-outline-variant flex justify-between items-center px-[4rem] max-w-full mx-auto nav-blur">
 
         <!-- Logo -->
         <a href="/" class="h-auto py-2 flex items-center focus:outline-none">
@@ -292,22 +329,30 @@
 
         <!-- Desktop Navigation -->
         <div class="font-ui hidden lg:flex gap-6 items-center">
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="about.html">About</a>
-            <a class="text-primary font-label-bold text-label-bold uppercase tracking-wide border-b-2 border-primary pb-1" href="media.html">Media</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="project.html">Innovation</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="insights.html">Insights</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide"
+                href="about.html">About</a>
+            <a class="text-primary font-label-bold text-label-bold uppercase tracking-wide border-b-2 border-primary pb-1"
+                href="media.html">Media</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide"
+                href="project.html">Innovation</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide"
+                href="insight.html">Insights</a>
         </div>
 
         <!-- Right Controls -->
         <div class="flex items-center gap-4">
-            <a href="quotation.html" class="hidden lg:inline-block bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 shadow-sm">
+            <a href="quotation.html"
+                class="hidden lg:inline-block bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 shadow-sm">
                 Request Quotation
             </a>
-            <a href="contact.html" class="hidden lg:inline-block bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg pulse-glow">
+            <a href="contact.html"
+                class="hidden lg:inline-block bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg pulse-glow">
                 Contact Us
             </a>
             <!-- Mobile hamburger -->
-            <button id="mobile-menu-btn" class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none z-[110]" aria-label="Toggle Navigation Menu">
+            <button id="mobile-menu-btn"
+                class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none z-[110]"
+                aria-label="Toggle Navigation Menu">
                 <span class="bar w-6 h-0.5 bg-on-surface"></span>
                 <span class="bar w-6 h-0.5 bg-on-surface"></span>
                 <span class="bar w-6 h-0.5 bg-on-surface"></span>
@@ -315,25 +360,35 @@
         </div>
 
         <!-- Mobile Drawer -->
-        <div id="mobile-menu" class="hidden fixed inset-x-0 top-24 bg-surface border-b-2 border-outline-variant p-6 flex-col gap-4 shadow-xl lg:hidden transition-all duration-300">
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/about.html">About Us</a>
-            <a class="text-primary font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/media.html">Media</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/project.html">Innovation</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/insight.html">Insights</a>
-            <a href="/quotation.html" class="mt-4 w-full text-center bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 block">Request Quotation</a>
-            <a href="contact.html" class="mt-2 w-full text-center bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg block">Contact Us</a>
+        <div id="mobile-menu"
+            class="hidden fixed inset-x-0 top-24 bg-surface border-b-2 border-outline-variant p-6 flex-col gap-4 shadow-xl lg:hidden transition-all duration-300">
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30"
+                href="/about.html">About Us</a>
+            <a class="text-primary font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30"
+                href="/media.html">Media</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30"
+                href="/project.html">Innovation</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30"
+                href="/insight.html">Insights</a>
+            <a href="/quotation.html"
+                class="mt-4 w-full text-center bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 block">Request
+                Quotation</a>
+            <a href="contact.html"
+                class="mt-2 w-full text-center bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg block">Contact
+                Us</a>
         </div>
     </nav>
 
     <!-- ============================================================ -->
-    <!--  BRIEF SUBMISSION FORM                                       -->
+    <!--  BRIEF SUBMISSION FORM – UPDATED WITH CONTACT NAME          -->
     <!-- ============================================================ -->
     <section class="py-section-padding px-4 sm:px-8 lg:px-12 bg-background">
         <div class="max-w-7xl mx-auto space-y-8">
 
             <!-- Main Headline Container -->
             <header class="border-2 border-on-surface bg-white p-6 sm:p-10 shadow-[6px_6px_0px_0px_#1a1c1c]">
-                <h1 class="font-headline font-bold text-3xl sm:text-5xl lg:text-6xl tracking-tight text-on-surface uppercase leading-[1.1]">
+                <h1
+                    class="font-headline font-bold text-3xl sm:text-5xl lg:text-6xl tracking-tight text-on-surface uppercase leading-[1.1]">
                     LET'S PUT YOUR BRAND WHERE IT MATTERS.
                 </h1>
             </header>
@@ -349,36 +404,55 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
                 <!-- LEFT COLUMN: Main Intake Form -->
-                <form id="brief-form" onsubmit="handleBriefSubmit(event)" class="lg:col-span-8 brutalist-card p-6 sm:p-10 space-y-8">
+                <form id="brief-form"
+                      action="send-brief.php"
+                      method="POST"
+                      class="lg:col-span-8 brutalist-card p-6 sm:p-10 space-y-8">
+
+                    <!-- Hidden field for selected services -->
+                    <input type="hidden" name="services" id="services-input" value="" />
 
                     <!-- 1. WHAT ARE YOU LOOKING FOR? -->
                     <div class="space-y-4">
-                        <h2 class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight text-on-surface">
+                        <h2
+                            class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight text-on-surface">
                             WHAT ARE YOU LOOKING FOR?
                         </h2>
                         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-                            <div onclick="toggleService(this, 'Outdoor Media')" class="service-option p-4 flex flex-col items-center justify-center text-center gap-2 h-24">
-                                <span class="material-symbols-outlined text-2xl service-icon text-on-surface">qr_code_scanner</span>
+                            <div onclick="toggleService(this, 'Outdoor Media')"
+                                class="service-option p-4 flex flex-col items-center justify-center text-center gap-2 h-24">
+                                <span
+                                    class="material-symbols-outlined text-2xl service-icon text-on-surface">qr_code_scanner</span>
                                 <span class="field-label">OUTDOOR MEDIA</span>
                             </div>
-                            <div onclick="toggleService(this, 'Digital OOH')" class="service-option p-4 flex flex-col items-center justify-center text-center gap-2 h-24">
-                                <span class="material-symbols-outlined text-2xl service-icon text-on-surface">desktop_windows</span>
+                            <div onclick="toggleService(this, 'Digital OOH')"
+                                class="service-option p-4 flex flex-col items-center justify-center text-center gap-2 h-24">
+                                <span
+                                    class="material-symbols-outlined text-2xl service-icon text-on-surface">desktop_windows</span>
                                 <span class="field-label">DIGITAL OOH</span>
                             </div>
-                            <div onclick="toggleService(this, 'Special Build')" class="service-option p-4 flex flex-col items-center justify-center text-center gap-2 h-24">
-                                <span class="material-symbols-outlined text-2xl service-icon text-on-surface">accessibility_new</span>
+                            <div onclick="toggleService(this, 'Special Build')"
+                                class="service-option p-4 flex flex-col items-center justify-center text-center gap-2 h-24">
+                                <span
+                                    class="material-symbols-outlined text-2xl service-icon text-on-surface">accessibility_new</span>
                                 <span class="field-label">SPECIAL BUILD</span>
                             </div>
-                            <div onclick="toggleService(this, 'Branding')" class="service-option p-4 flex flex-col items-center justify-center text-center gap-2 h-24">
-                                <span class="material-symbols-outlined text-2xl service-icon text-on-surface">draw</span>
+                            <div onclick="toggleService(this, 'Branding')"
+                                class="service-option p-4 flex flex-col items-center justify-center text-center gap-2 h-24">
+                                <span
+                                    class="material-symbols-outlined text-2xl service-icon text-on-surface">draw</span>
                                 <span class="field-label">BRANDING</span>
                             </div>
-                            <div onclick="toggleService(this, 'Experiential')" class="service-option p-4 flex flex-col items-center justify-center text-center gap-2 h-24">
-                                <span class="material-symbols-outlined text-2xl service-icon text-on-surface">campaign</span>
+                            <div onclick="toggleService(this, 'Experiential')"
+                                class="service-option p-4 flex flex-col items-center justify-center text-center gap-2 h-24">
+                                <span
+                                    class="material-symbols-outlined text-2xl service-icon text-on-surface">campaign</span>
                                 <span class="field-label">EXPERIENTIAL</span>
                             </div>
-                            <div onclick="toggleService(this, 'Need Recs')" class="service-option p-4 flex flex-col items-center justify-center text-center gap-2 h-24">
-                                <span class="material-symbols-outlined text-2xl service-icon text-on-surface">help</span>
+                            <div onclick="toggleService(this, 'Need Recs')"
+                                class="service-option p-4 flex flex-col items-center justify-center text-center gap-2 h-24">
+                                <span
+                                    class="material-symbols-outlined text-2xl service-icon text-on-surface">help</span>
                                 <span class="field-label">NEED RECS</span>
                             </div>
                         </div>
@@ -386,52 +460,67 @@
 
                     <hr class="border-t-2 border-on-surface/20">
 
-                    <!-- 2. CONTACT DETAILS -->
+                    <!-- 2. CONTACT DETAILS – Added "Contact Name" field -->
                     <div class="space-y-4">
-                        <h2 class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight text-on-surface">
+                        <h2
+                            class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight text-on-surface">
                             CONTACT DETAILS
                         </h2>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div class="space-y-1">
                                 <label for="company_name" class="field-label">COMPANY NAME</label>
-                                <input type="text" id="company_name" required placeholder="e.g. Acme Corp" class="brutalist-input w-full p-3 font-body text-sm">
+                                <input type="text" id="company_name" name="company_name" required placeholder="e.g. Acme Corp"
+                                    class="brutalist-input w-full p-3 font-body text-sm">
                             </div>
                             <div class="space-y-1">
                                 <label for="email" class="field-label">EMAIL</label>
-                                <input type="email" id="email" required placeholder="hello@company.com" class="brutalist-input w-full p-3 font-body text-sm">
+                                <input type="email" id="email" name="email" required placeholder="hello@company.com"
+                                    class="brutalist-input w-full p-3 font-body text-sm">
                             </div>
                         </div>
+
+                        <!-- NEW: Contact Name (full width) -->
+                        <div class="space-y-1">
+                            <label for="contact_name" class="field-label">CONTACT NAME</label>
+                            <input type="text" id="contact_name" name="contact_name" required placeholder="e.g. John Doe"
+                                class="brutalist-input w-full p-3 font-body text-sm">
+                        </div>
+
                         <div class="space-y-1">
                             <label for="telephone" class="field-label">TELEPHONE</label>
-                            <input type="tel" id="telephone" placeholder="+256 ..." class="brutalist-input w-full p-3 font-body text-sm">
+                            <input type="tel" id="telephone" name="telephone" placeholder="+256 ..."
+                                class="brutalist-input w-full p-3 font-body text-sm">
                         </div>
                     </div>
 
                     <hr class="border-t-2 border-on-surface/20">
 
-                    <!-- 3. CAMPAIGN DETAILS – Updated with date pickers -->
+                    <!-- 3. CAMPAIGN DETAILS -->
                     <div class="space-y-4">
-                        <h2 class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight text-on-surface">
+                        <h2
+                            class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight text-on-surface">
                             CAMPAIGN DETAILS
                         </h2>
                         <div class="space-y-1">
                             <label for="objective" class="field-label">CAMPAIGN BRIEF</label>
-                            <textarea id="objective" rows="3" placeholder="What is the main goal of this campaign?" class="brutalist-input w-full p-3 font-body text-sm resize-none"></textarea>
+                            <textarea id="objective" name="objective" rows="3" placeholder="What is the main goal of this campaign?"
+                                class="brutalist-input w-full p-3 font-body text-sm resize-none"></textarea>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div class="space-y-1">
                                 <label for="locations" class="field-label">PREFERRED LOCATIONS</label>
-                                <input type="text" id="locations" placeholder="e.g. Kampala, Entebbe" class="brutalist-input w-full p-3 font-body text-sm">
+                                <input type="text" id="locations" name="locations" placeholder="e.g. Kampala, Entebbe"
+                                    class="brutalist-input w-full p-3 font-body text-sm">
                             </div>
                             <div class="space-y-1">
                                 <label for="start_date" class="field-label">CAMPAIGN START DATE</label>
-                                <input type="date" id="start_date" class="brutalist-input w-full p-3 font-body text-sm">
+                                <input type="date" id="start_date" name="start_date" class="brutalist-input w-full p-3 font-body text-sm">
                             </div>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div class="space-y-1">
                                 <label for="end_date" class="field-label">CAMPAIGN END DATE</label>
-                                <input type="date" id="end_date" class="brutalist-input w-full p-3 font-body text-sm">
+                                <input type="date" id="end_date" name="end_date" class="brutalist-input w-full p-3 font-body text-sm">
                             </div>
                             <div class="space-y-1">
                                 <!-- Empty cell for alignment -->
@@ -443,7 +532,8 @@
 
                     <!-- 4. FINANCIALS -->
                     <div class="space-y-4">
-                        <h2 class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight text-on-surface">
+                        <h2
+                            class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight text-on-surface">
                             FINANCIALS
                         </h2>
                         <div class="space-y-1">
@@ -452,22 +542,25 @@
                                 <span class="field-label text-on-surface-variant">(OPTIONAL)</span>
                             </div>
                             <div class="relative">
-                                <select id="budget" class="brutalist-input w-full p-3 font-body text-sm appearance-none bg-white pr-10 cursor-pointer">
+                                <select id="budget" name="budget"
+                                    class="brutalist-input w-full p-3 font-body text-sm appearance-none bg-white pr-10 cursor-pointer">
                                     <option value="" disabled selected>Select a range</option>
                                     <option value="<5k">Under $5,000</option>
                                     <option value="5k-15k">$5,000 - $15,000</option>
                                     <option value="15k-50k">$15,000 - $50,000</option>
                                     <option value="50k+">$50,000+</option>
                                 </select>
-                                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface">expand_more</span>
+                                <span
+                                    class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface">expand_more</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Submit Button -->
                     <div class="pt-2">
-                        <button type="submit" class="brutalist-btn-purple font-body font-bold text-sm uppercase py-3.5 px-8 flex items-center gap-2">
-                            <span>SEND BRIEF</span>
+                        <button type="submit" id="submit-btn"
+                            class="brutalist-btn-purple font-body font-bold text-sm uppercase py-3.5 px-8 flex items-center gap-2">
+                            <span id="btn-text">SEND BRIEF</span>
                         </button>
                     </div>
                 </form>
@@ -476,7 +569,8 @@
                 <aside class="lg:col-span-4 space-y-6">
 
                     <!-- Purple What Happens Next Card -->
-                    <div class="bg-primary text-on-primary border-2 border-on-surface p-6 sm:p-8 shadow-[6px_6px_0px_0px_#1a1c1c] space-y-3">
+                    <div
+                        class="bg-primary text-on-primary border-2 border-on-surface p-6 sm:p-8 shadow-[6px_6px_0px_0px_#1a1c1c] space-y-3">
                         <div class="flex items-center gap-2">
                             <span class="material-symbols-outlined text-2xl">info</span>
                             <h3 class="font-headline font-bold text-lg sm:text-xl uppercase tracking-tight">
@@ -484,13 +578,15 @@
                             </h3>
                         </div>
                         <p class="font-body text-sm leading-relaxed text-on-primary/90">
-                            Our strategy team will review your brief and get back to you within 24 hours with tailored recommendations.
+                            Our strategy team will review your brief and get back to you within 24 hours with tailored
+                            recommendations.
                         </p>
                     </div>
 
                     <!-- Get In Touch Details Card -->
                     <div class="brutalist-card p-6 sm:p-8 space-y-6">
-                        <h3 class="font-headline font-bold text-xl uppercase tracking-tight text-on-surface border-b-2 border-on-surface pb-3">
+                        <h3
+                            class="font-headline font-bold text-xl uppercase tracking-tight text-on-surface border-b-2 border-on-surface pb-3">
                             GET IN TOUCH
                         </h3>
                         <div class="space-y-4 font-body">
@@ -501,8 +597,9 @@
                                 </div>
                                 <div>
                                     <span class="field-label block text-[10px]">PHONE</span>
-                                    <a href="tel:+256800123456" class="font-bold text-sm hover:text-primary transition-colors">
-                                        +256 800 123 456
+                                    <a href="tel:+256764904754"
+                                        class="font-bold text-sm hover:text-primary transition-colors">
+                                        +256 764 904 754
                                     </a>
                                 </div>
                             </div>
@@ -513,8 +610,9 @@
                                 </div>
                                 <div>
                                     <span class="field-label block text-[10px]">EMAIL</span>
-                                    <a href="mailto:hello@brandrepublic.ug" class="font-bold text-sm hover:text-primary transition-colors break-all">
-                                        hello@brandrepublic.ug
+                                    <a href="mailto:gm@brandrepublicug.com"
+                                        class="font-bold text-sm hover:text-primary transition-colors break-all">
+                                        gm@brandrepublicug.com
                                     </a>
                                 </div>
                             </div>
@@ -525,7 +623,7 @@
                                 </div>
                                 <div>
                                     <span class="field-label block text-[10px]">OFFICE</span>
-                                    <p class="font-bold text-sm">Plot 14, Kololo Avenue</p>
+                                    <p class="font-bold text-sm">Plot 82, Kulambiro Ring road</p>
                                     <p class="text-xs text-on-surface-variant font-medium">Kampala, Uganda</p>
                                 </div>
                             </div>
@@ -536,26 +634,26 @@
             </div>
         </div>
     </section>
-
-    <!-- ============================================================ -->
-    <!--  FOOTER                                                      -->
-    <!-- ============================================================ -->
-    <!-- ========================================================= -->
+<!-- ========================================================= -->
     <!-- FOOTER – redesigned with social icons and updated links  -->
     <!-- ========================================================= -->
     <footer class="bg-[#111113] text-white relative w-full pt-20 pb-12 border-t-8 border-[#4a0e9b]">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
             <!-- Brand + Social Icons -->
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 border-b border-slate-800 pb-8 gap-4">
+            <div
+                class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 border-b border-slate-800 pb-8 gap-4">
                 <div class="font-headline text-3xl font-bold text-white tracking-tight uppercase">Brand Republic</div>
                 <div class="flex gap-4">
-                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#" aria-label="Twitter">
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all"
+                        href="#" aria-label="Twitter">
                         <i class="fa-brands fa-x-twitter"></i>
                     </a>
-                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#" aria-label="LinkedIn">
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all"
+                        href="#" aria-label="LinkedIn">
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
-                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#" aria-label="YouTube">
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all"
+                        href="#" aria-label="YouTube">
                         <i class="fa-brands fa-youtube"></i>
                     </a>
                 </div>
@@ -567,35 +665,29 @@
                 <div>
                     <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Legal</h4>
                     <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="about.html">About</a></li>
                         <li><a class="hover:text-white transition-colors uppercase" href="#">Privacy Policy</a></li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="#">Cookie Policy</a></li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="#">Terms of use</a></li>
-                    </ul>
+                               </ul>
                 </div>
                 <!-- Company -->
                 <div>
                     <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Company</h4>
                     <ul class="space-y-2 text-caption text-slate-400">
-                        <li><a class="hover:text-white transition-colors uppercase" href="about.html">About</a></li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="project.html">Innovation</a></li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="insight.html">Insights</a></li>
+                        
+                        <li><a class="hover:text-white transition-colors uppercase" href="project.html">Innovation</a>
+                        </li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="insights.html">Insights</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- Investors -->
-                <div>
-                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Investors</h4>
-                    <ul class="space-y-2 text-caption text-slate-400">
-                        <li><a class="hover:text-white transition-colors uppercase" href="#">Real Estate</a></li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="#">Stock Info</a></li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="#">Financials</a></li>
-                    </ul>
-                </div>
+                
                 <!-- Support -->
                 <div>
                     <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Support</h4>
                     <ul class="space-y-2 text-caption text-slate-400">
                         <li><a class="hover:text-white transition-colors uppercase" href="contact.html">Contact</a></li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="#">Newsroom</a></li>
+                        
                     </ul>
                 </div>
             </div>
@@ -610,16 +702,19 @@
     <!-- ============================================================ -->
     <!--  SUCCESS MODAL                                                -->
     <!-- ============================================================ -->
-    <div id="success-modal" class="fixed inset-0 bg-on-surface/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div id="success-modal"
+        class="fixed inset-0 bg-on-surface/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="brutalist-card p-8 max-w-md w-full bg-white space-y-4 text-center border-4 border-on-surface">
-            <div class="w-12 h-12 bg-primary text-on-primary border-2 border-on-surface flex items-center justify-center mx-auto shadow-[3px_3px_0px_0px_#1a1c1c]">
+            <div
+                class="w-12 h-12 bg-primary text-on-primary border-2 border-on-surface flex items-center justify-center mx-auto shadow-[3px_3px_0px_0px_#1a1c1c]">
                 <span class="material-symbols-outlined text-2xl">check</span>
             </div>
             <h3 class="font-headline font-bold text-2xl uppercase tracking-tight">BRIEF RECEIVED!</h3>
             <p class="font-body text-sm text-on-surface-variant leading-relaxed">
                 Thank you! Our strategy team is currently analyzing your request and will reach out within 24 hours.
             </p>
-            <button onclick="closeSuccessModal()" class="brutalist-btn-purple w-full font-body font-bold text-xs uppercase py-3">
+            <button onclick="closeSuccessModal()"
+                class="brutalist-btn-purple w-full font-body font-bold text-xs uppercase py-3">
                 CLOSE
             </button>
         </div>
@@ -630,21 +725,21 @@
     <!-- ============================================================ -->
     <script>
         // ── Navbar toggle ──
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const menuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
 
             if (menuBtn && mobileMenu) {
                 const bars = menuBtn.querySelectorAll('.bar');
 
-                menuBtn.addEventListener('click', function(e) {
+                menuBtn.addEventListener('click', function (e) {
                     e.stopPropagation();
                     const isOpen = !mobileMenu.classList.contains('hidden');
 
                     if (isOpen) {
                         mobileMenu.classList.add('hidden');
                         mobileMenu.classList.remove('flex');
-                        bars.forEach(function(bar, index) {
+                        bars.forEach(function (bar, index) {
                             if (index === 0) bar.classList.remove('rotate-45', 'translate-y-2');
                             if (index === 1) bar.classList.remove('opacity-0');
                             if (index === 2) bar.classList.remove('-rotate-45', '-translate-y-2');
@@ -652,7 +747,7 @@
                     } else {
                         mobileMenu.classList.remove('hidden');
                         mobileMenu.classList.add('flex');
-                        bars.forEach(function(bar, index) {
+                        bars.forEach(function (bar, index) {
                             if (index === 0) bar.classList.add('rotate-45', 'translate-y-2');
                             if (index === 1) bar.classList.add('opacity-0');
                             if (index === 2) bar.classList.add('-rotate-45', '-translate-y-2');
@@ -660,11 +755,11 @@
                     }
                 });
 
-                document.addEventListener('click', function(e) {
+                document.addEventListener('click', function (e) {
                     if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
                         mobileMenu.classList.add('hidden');
                         mobileMenu.classList.remove('flex');
-                        bars.forEach(function(bar, index) {
+                        bars.forEach(function (bar, index) {
                             if (index === 0) bar.classList.remove('rotate-45', 'translate-y-2');
                             if (index === 1) bar.classList.remove('opacity-0');
                             if (index === 2) bar.classList.remove('-rotate-45', '-translate-y-2');
@@ -672,11 +767,11 @@
                     }
                 });
 
-                document.addEventListener('keydown', function(e) {
+                document.addEventListener('keydown', function (e) {
                     if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
                         mobileMenu.classList.add('hidden');
                         mobileMenu.classList.remove('flex');
-                        bars.forEach(function(bar, index) {
+                        bars.forEach(function (bar, index) {
                             if (index === 0) bar.classList.remove('rotate-45', 'translate-y-2');
                             if (index === 1) bar.classList.remove('opacity-0');
                             if (index === 2) bar.classList.remove('-rotate-45', '-translate-y-2');
@@ -686,7 +781,7 @@
             }
         });
 
-        // ── Brief form handlers ──
+        // ── Service selection toggles ──
         const selectedServices = new Set();
 
         function toggleService(element, serviceName) {
@@ -697,36 +792,57 @@
                 selectedServices.add(serviceName);
                 element.classList.add('selected');
             }
+            // Update hidden field
+            document.getElementById('services-input').value = Array.from(selectedServices).join(', ');
         }
 
-        function handleBriefSubmit(e) {
+        // ── Form submission with AJAX ──
+        document.getElementById('brief-form').addEventListener('submit', function (e) {
             e.preventDefault();
 
-            const formData = {
-                services: Array.from(selectedServices),
-                company: document.getElementById('company_name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('telephone').value,
-                objective: document.getElementById('objective').value,
-                locations: document.getElementById('locations').value,
-                startDate: document.getElementById('start_date').value,
-                endDate: document.getElementById('end_date').value,
-                budget: document.getElementById('budget').value,
-            };
+            const form = this;
+            const formData = new FormData(form);
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText = document.getElementById('btn-text');
+            const originalText = btnText.textContent;
 
-            console.log('Submitted Campaign Brief:', formData);
-            document.getElementById('success-modal').classList.remove('hidden');
-        }
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            btnText.textContent = 'SENDING...';
+
+            fetch('send-brief.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                submitBtn.disabled = false;
+                btnText.textContent = originalText;
+
+                if (data.success) {
+                    // Show success modal
+                    document.getElementById('success-modal').classList.remove('hidden');
+                    // Reset form
+                    form.reset();
+                    document.querySelectorAll('.service-option').forEach(el => el.classList.remove('selected'));
+                    selectedServices.clear();
+                    document.getElementById('services-input').value = '';
+                } else {
+                    alert('Error: ' + (data.error || 'Something went wrong. Please try again.'));
+                }
+            })
+            .catch(error => {
+                submitBtn.disabled = false;
+                btnText.textContent = originalText;
+                alert('Network error. Please check your connection and try again.');
+            });
+        });
 
         function closeSuccessModal() {
             document.getElementById('success-modal').classList.add('hidden');
-            document.getElementById('brief-form').reset();
-            document.querySelectorAll('.service-option').forEach(el => el.classList.remove('selected'));
-            selectedServices.clear();
         }
     </script>
     <script src="/chatbot.js"></script>
 
 </body>
-
 </html>
