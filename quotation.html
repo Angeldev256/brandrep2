@@ -4,8 +4,36 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Our Story | Brand Republic</title>
-     <link rel="icon" type="image/png" href="assets/bg.png">
+    <title>Brief Submission | Brand Republic – Start Your Campaign</title>
+    <link rel="icon" type="image/png" href="assets/bg.png">
+
+    <!-- ============================================================ -->
+    <!--  SEO TITLE & DESCRIPTION                                     -->
+    <!-- ============================================================ -->
+    <meta name="description" content="Submit your campaign brief to Brand Republic. Tell us about your goals and we'll create a tailored outdoor advertising solution for your brand." />
+    <link rel="canonical" href="https://www.brandrepublicug.com/brief.html" />
+
+    <!-- ============================================================ -->
+    <!--  OPEN GRAPH (SOCIAL SHARING)                                 -->
+    <!-- ============================================================ -->
+    <meta property="og:title" content="Submit Your Campaign Brief | Brand Republic" />
+    <meta property="og:description" content="Tell us about your campaign goals and we'll help you find the perfect high-impact media solutions." />
+    <meta property="og:image" content="https://www.brandrepublicug.com/Assets/bg.png" />
+    <meta property="og:url" content="https://www.brandrepublicug.com/brief.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- ============================================================ -->
+    <!--  SECURITY HEADERS                                            -->
+    <!-- ============================================================ -->
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+
+    <!-- ============================================================ -->
+    <!--  reCAPTCHA v3 (Google)                                      -->
+    <!-- ============================================================ -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6Ld_4qItAAAAAHUacfPqIc-h1Hv8-TfjO41NFjGy">
+    </script>
 
     <!-- Tailwind CSS CDN with plugins -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries">
@@ -157,7 +185,6 @@
         .brutalist-border-box {
             border: 2px solid #1a1c1c;
             border-radius: 0px !important;
-           
         }
 
         .brutalist-card {
@@ -176,7 +203,6 @@
         .brutalist-input:focus {
             outline: none;
             border-color: #6121a1;
-            
         }
 
         .brutalist-input[type="date"]::-webkit-calendar-picker-indicator {
@@ -187,6 +213,13 @@
 
         .brutalist-input[type="date"]::-webkit-calendar-picker-indicator:hover {
             opacity: 1;
+        }
+
+        /* ── Honeypot hidden field ── */
+        .honeypot-field {
+            position: absolute;
+            left: -9999px;
+            top: -9999px;
         }
 
         .service-option {
@@ -200,14 +233,12 @@
         .service-option:hover {
             background-color: #f3f3f4;
             transform: translate(-2px, -2px);
-           
         }
 
         .service-option.selected {
             background-color: #6121a1;
             color: #ffffff;
             border-width: 2px;
-            
         }
 
         .service-option.selected .service-icon {
@@ -218,20 +249,22 @@
             background-color: #6121a1;
             color: #ffffff;
             border: 2px solid #1a1c1c;
-           
             border-radius: 0px !important;
             transition: all 0.15s ease;
         }
 
         .brutalist-btn-purple:hover {
             transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0px 0px #1a1c1c;
             background-color: #470082;
         }
 
         .brutalist-btn-purple:active {
             transform: translate(2px, 2px);
-            box-shadow: 0px 0px 0px 0px #1a1c1c;
+        }
+
+        .brutalist-btn-purple:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
         }
 
         .field-label {
@@ -311,6 +344,23 @@
         .pulse-glow {
             animation: pulseGlow 2s ease-in-out infinite;
         }
+
+        /* ── Spinner ── */
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #ffffff;
+            animation: spin 0.8s ease-in-out infinite;
+        }
+        .spinner.active {
+            display: inline-block;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
     </style>
 </head>
 
@@ -380,13 +430,13 @@
     </nav>
 
     <!-- ============================================================ -->
-    <!--  BRIEF SUBMISSION FORM – UPDATED WITH CONTACT NAME          -->
+    <!--  BRIEF SUBMISSION FORM – FULLY SECURED                       -->
     <!-- ============================================================ -->
     <section class="py-section-padding px-4 sm:px-8 lg:px-12 bg-background">
         <div class="max-w-7xl mx-auto space-y-8">
 
             <!-- Main Headline Container -->
-            <header class="border-2 border-on-surface bg-white p-6 sm:p-10 ">
+            <header class="border-2 border-on-surface bg-white p-6 sm:p-10">
                 <h1
                     class="font-headline font-bold text-3xl sm:text-5xl lg:text-6xl tracking-tight text-on-surface uppercase leading-[1.1]">
                     LET'S PUT YOUR BRAND WHERE IT MATTERS.
@@ -405,9 +455,34 @@
 
                 <!-- LEFT COLUMN: Main Intake Form -->
                 <form id="brief-form"
-                      action="send-brief.php"
+                      action="https://api.web3forms.com/submit"
                       method="POST"
-                      class="lg:col-span-8 brutalist-card p-6 sm:p-10 space-y-8">
+                      class="lg:col-span-8 brutalist-card p-6 sm:p-10 space-y-8 relative">
+
+                    <!-- ========================================================= -->
+                    <!--  WEB3FORMS CONFIGURATION                                  -->
+                    <!-- ========================================================= -->
+                    <input type="hidden" name="access_key" value="5cff91d1-b560-43a8-9c6b-692e6f051cbd" />
+                    <input type="hidden" name="subject" value="New Campaign Brief - Brand Republic" />
+                    <input type="hidden" name="redirect" value="https://www.brandrepublicug.com/thank-you.html" />
+
+                    <!-- ========================================================= -->
+                    <!--  HONEYPOT – Hidden field to trap bots                    -->
+                    <!-- ========================================================= -->
+                    <div class="honeypot-field">
+                        <label for="honeypot">Leave this field empty</label>
+                        <input type="text" id="honeypot" name="honeypot" value="" tabindex="-1" autocomplete="off" />
+                    </div>
+
+                    <!-- ========================================================= -->
+                    <!--  reCAPTCHA v3 – Invisible token                         -->
+                    <!-- ========================================================= -->
+                    <input type="hidden" id="recaptcha-token" name="recaptcha-token" />
+
+                    <!-- ========================================================= -->
+                    <!--  RATE LIMITING – Timestamp field                        -->
+                    <!-- ========================================================= -->
+                    <input type="hidden" id="form-timestamp" name="form-timestamp" value="" />
 
                     <!-- Hidden field for selected services -->
                     <input type="hidden" name="services" id="services-input" value="" />
@@ -416,7 +491,7 @@
                     <div class="space-y-4">
                         <h2
                             class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight text-on-surface">
-                            WHAT ARE YOU LOOKING FOR?
+                            WHAT ARE YOU LOOKING FOR? <span class="text-primary">*</span>
                         </h2>
                         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
                             <div onclick="toggleService(this, 'Outdoor Media')"
@@ -456,40 +531,44 @@
                                 <span class="field-label">NEED RECS</span>
                             </div>
                         </div>
+                        <p class="text-xs text-on-surface-variant mt-1">Select all that apply</p>
                     </div>
 
                     <hr class="border-t-2 border-on-surface/20">
 
-                    <!-- 2. CONTACT DETAILS – Added "Contact Name" field -->
+                    <!-- 2. CONTACT DETAILS -->
                     <div class="space-y-4">
                         <h2
                             class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight text-on-surface">
-                            CONTACT DETAILS
+                            CONTACT DETAILS <span class="text-primary">*</span>
                         </h2>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div class="space-y-1">
                                 <label for="company_name" class="field-label">COMPANY NAME</label>
                                 <input type="text" id="company_name" name="company_name" required placeholder="e.g. Acme Corp"
-                                    class="brutalist-input w-full p-3 font-body text-sm">
+                                    class="brutalist-input w-full p-3 font-body text-sm"
+                                    minlength="2" maxlength="100" />
                             </div>
                             <div class="space-y-1">
                                 <label for="email" class="field-label">EMAIL</label>
                                 <input type="email" id="email" name="email" required placeholder="hello@company.com"
-                                    class="brutalist-input w-full p-3 font-body text-sm">
+                                    class="brutalist-input w-full p-3 font-body text-sm"
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
                             </div>
                         </div>
 
-                        <!-- NEW: Contact Name (full width) -->
                         <div class="space-y-1">
                             <label for="contact_name" class="field-label">CONTACT NAME</label>
                             <input type="text" id="contact_name" name="contact_name" required placeholder="e.g. John Doe"
-                                class="brutalist-input w-full p-3 font-body text-sm">
+                                class="brutalist-input w-full p-3 font-body text-sm"
+                                minlength="2" maxlength="100" />
                         </div>
 
                         <div class="space-y-1">
                             <label for="telephone" class="field-label">TELEPHONE</label>
                             <input type="tel" id="telephone" name="telephone" placeholder="+256 ..."
-                                class="brutalist-input w-full p-3 font-body text-sm">
+                                class="brutalist-input w-full p-3 font-body text-sm"
+                                pattern="[\+]?[0-9]{7,15}" />
                         </div>
                     </div>
 
@@ -499,28 +578,34 @@
                     <div class="space-y-4">
                         <h2
                             class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight text-on-surface">
-                            CAMPAIGN DETAILS
+                            CAMPAIGN DETAILS <span class="text-primary">*</span>
                         </h2>
                         <div class="space-y-1">
                             <label for="objective" class="field-label">CAMPAIGN BRIEF</label>
-                            <textarea id="objective" name="objective" rows="3" placeholder="What is the main goal of this campaign?"
-                                class="brutalist-input w-full p-3 font-body text-sm resize-none"></textarea>
+                            <textarea id="objective" name="objective" rows="4" placeholder="What is the main goal of this campaign? Please describe your target audience, desired locations, and any specific requirements."
+                                required
+                                class="brutalist-input w-full p-3 font-body text-sm resize-none"
+                                minlength="10" maxlength="2000"></textarea>
+                            <div class="text-right text-xs text-on-surface-variant mt-1">
+                                <span id="char-count">0</span> / 2000
+                            </div>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div class="space-y-1">
                                 <label for="locations" class="field-label">PREFERRED LOCATIONS</label>
                                 <input type="text" id="locations" name="locations" placeholder="e.g. Kampala, Entebbe"
-                                    class="brutalist-input w-full p-3 font-body text-sm">
+                                    class="brutalist-input w-full p-3 font-body text-sm"
+                                    maxlength="200" />
                             </div>
                             <div class="space-y-1">
                                 <label for="start_date" class="field-label">CAMPAIGN START DATE</label>
-                                <input type="date" id="start_date" name="start_date" class="brutalist-input w-full p-3 font-body text-sm">
+                                <input type="date" id="start_date" name="start_date" class="brutalist-input w-full p-3 font-body text-sm" />
                             </div>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div class="space-y-1">
                                 <label for="end_date" class="field-label">CAMPAIGN END DATE</label>
-                                <input type="date" id="end_date" name="end_date" class="brutalist-input w-full p-3 font-body text-sm">
+                                <input type="date" id="end_date" name="end_date" class="brutalist-input w-full p-3 font-body text-sm" />
                             </div>
                             <div class="space-y-1">
                                 <!-- Empty cell for alignment -->
@@ -530,48 +615,27 @@
 
                     <hr class="border-t-2 border-on-surface/20">
 
-                    <!-- 4. FINANCIALS -->
-                 <!--  <div class="space-y-4">
-                        <h2
-                            class="font-headline font-bold text-2xl sm:text-3xl uppercase tracking-tight text-on-surface">
-                            FINANCIALS
-                        </h2>
-                        <div class="space-y-1">
-                            <div class="flex justify-between items-center">
-                                <label for="budget" class="field-label">ESTIMATED BUDGET</label>
-                                <span class="field-label text-on-surface-variant">(OPTIONAL)</span>
-                            </div>
-                            <div class="relative">
-                                <select id="budget" name="budget"
-                                    class="brutalist-input w-full p-3 font-body text-sm appearance-none bg-white pr-10 cursor-pointer">
-                                    <option value="" disabled selected>Select a range</option>
-                                    <option value="<5k">Under $5,000</option>
-                                    <option value="5k-15k">$5,000 - $15,000</option>
-                                    <option value="15k-50k">$15,000 - $50,000</option>
-                                    <option value="50k+">$50,000+</option>
-                                </select>   
-                                <span
-                                    class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface">expand_more</span>
-                            </div>
-                        </div>
-                    </div>
-                    --> 
-
                     <!-- Submit Button -->
                     <div class="pt-2">
                         <button type="submit" id="submit-btn"
-                            class="brutalist-btn-purple font-body font-bold text-sm uppercase py-3.5 px-8 flex items-center gap-2">
+                            class="brutalist-btn-purple font-body font-bold text-sm uppercase py-3.5 px-8 flex items-center gap-2 w-full sm:w-auto justify-center">
                             <span id="btn-text">SEND BRIEF</span>
+                            <span class="spinner" id="spinner"></span>
                         </button>
+                        <div id="form-status" class="text-sm font-bold hidden mt-3"></div>
                     </div>
+
+                    <!-- Security Badge -->
+                    <p class="text-xs text-on-surface-variant mt-4 flex items-center gap-1">
+                        <span class="text-green-600">✓</span> Protected by reCAPTCHA &amp; spam filters
+                    </p>
                 </form>
 
                 <!-- RIGHT COLUMN: Sidebar Info Cards -->
                 <aside class="lg:col-span-4 space-y-6">
 
                     <!-- Purple What Happens Next Card -->
-                    <div
-                        class="bg-primary text-on-primary border-2 border-on-surface p-6 sm:p-8  space-y-3">
+                    <div class="bg-primary text-on-primary border-2 border-on-surface p-6 sm:p-8 space-y-3">
                         <div class="flex items-center gap-2">
                             <span class="material-symbols-outlined text-2xl">info</span>
                             <h3 class="font-headline font-bold text-lg sm:text-xl uppercase tracking-tight">
@@ -611,9 +675,9 @@
                                 </div>
                                 <div>
                                     <span class="field-label block text-[10px]">EMAIL</span>
-                                    <a href="mailto:gm@brandrepublicug.com"
+                                    <a href="mailto:info@brandrepublicug.com"
                                         class="font-bold text-sm hover:text-primary transition-colors break-all">
-                                        gm@brandrepublicug.com
+                                        info@brandrepublicug.com
                                     </a>
                                 </div>
                             </div>
@@ -635,7 +699,8 @@
             </div>
         </div>
     </section>
-<!-- ========================================================= -->
+
+    <!-- ========================================================= -->
     <!-- FOOTER – redesigned with social icons and updated links  -->
     <!-- ========================================================= -->
     <footer class="bg-[#111113] text-white relative w-full pt-20 pb-12 border-t-8 border-[#4a0e9b]">
@@ -668,27 +733,23 @@
                     <ul class="space-y-2 text-caption text-slate-400">
                         <li><a class="hover:text-white transition-colors uppercase" href="about.html">About</a></li>
                         <li><a class="hover:text-white transition-colors uppercase" href="#">Privacy Policy</a></li>
-                               </ul>
+                    </ul>
                 </div>
                 <!-- Company -->
                 <div>
                     <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Company</h4>
                     <ul class="space-y-2 text-caption text-slate-400">
-                        
                         <li><a class="hover:text-white transition-colors uppercase" href="project.html">Innovation</a>
                         </li>
                         <li><a class="hover:text-white transition-colors uppercase" href="insights.html">Insights</a>
                         </li>
                     </ul>
                 </div>
-                <!-- Investors -->
-                
                 <!-- Support -->
                 <div>
                     <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Support</h4>
                     <ul class="space-y-2 text-caption text-slate-400">
                         <li><a class="hover:text-white transition-colors uppercase" href="contact.html">Contact</a></li>
-                        
                     </ul>
                 </div>
             </div>
@@ -782,6 +843,31 @@
             }
         });
 
+        // ── Set form timestamp (rate limiting) ──
+        document.addEventListener('DOMContentLoaded', function() {
+            const timestampField = document.getElementById('form-timestamp');
+            if (timestampField) {
+                timestampField.value = Date.now();
+            }
+        });
+
+        // ── Character counter ──
+        document.addEventListener('DOMContentLoaded', function() {
+            const messageField = document.getElementById('objective');
+            const charCount = document.getElementById('char-count');
+
+            if (messageField && charCount) {
+                messageField.addEventListener('input', function() {
+                    charCount.textContent = this.value.length;
+                    if (this.value.length > 1800) {
+                        charCount.classList.add('text-primary');
+                    } else {
+                        charCount.classList.remove('text-primary');
+                    }
+                });
+            }
+        });
+
         // ── Service selection toggles ──
         const selectedServices = new Set();
 
@@ -797,45 +883,125 @@
             document.getElementById('services-input').value = Array.from(selectedServices).join(', ');
         }
 
-        // ── Form submission with AJAX ──
+        // ── Form submission with ALL security features ──
         document.getElementById('brief-form').addEventListener('submit', function (e) {
             e.preventDefault();
 
             const form = this;
-            const formData = new FormData(form);
             const submitBtn = document.getElementById('submit-btn');
             const btnText = document.getElementById('btn-text');
+            const spinner = document.getElementById('spinner');
+            const statusDiv = document.getElementById('form-status');
             const originalText = btnText.textContent;
 
-            // Disable button and show loading
+            // ── 1. HONEYPOT CHECK ──
+            const honeypot = document.getElementById('honeypot');
+            if (honeypot.value !== '') {
+                // Bot detected – silently fail but show success
+                statusDiv.className = 'text-green-600 font-bold text-sm';
+                statusDiv.textContent = '✓ Thank you! We\'ll get back to you shortly.';
+                statusDiv.classList.remove('hidden');
+                form.reset();
+                document.getElementById('services-input').value = '';
+                document.querySelectorAll('.service-option').forEach(el => el.classList.remove('selected'));
+                selectedServices.clear();
+                return false;
+            }
+
+            // ── 2. RATE LIMITING CHECK ──
+            const timestamp = parseInt(document.getElementById('form-timestamp').value);
+            const now = Date.now();
+            const timeSince = (now - timestamp) / 1000;
+
+            if (timeSince < 5) {
+                statusDiv.className = 'text-red-600 font-bold text-sm';
+                statusDiv.textContent = '⏳ Please wait a moment before submitting again.';
+                statusDiv.classList.remove('hidden');
+                return false;
+            }
+
+            // ── 3. INPUT VALIDATION ──
+            const company = document.getElementById('company_name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const contactName = document.getElementById('contact_name').value.trim();
+            const objective = document.getElementById('objective').value.trim();
+
+            if (!company || !email || !contactName || !objective) {
+                statusDiv.className = 'text-red-600 font-bold text-sm';
+                statusDiv.textContent = '⚠️ All required fields must be filled.';
+                statusDiv.classList.remove('hidden');
+                return false;
+            }
+
+            // Email validation
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(email)) {
+                statusDiv.className = 'text-red-600 font-bold text-sm';
+                statusDiv.textContent = '⚠️ Please enter a valid email address.';
+                statusDiv.classList.remove('hidden');
+                return false;
+            }
+
+            // ── 4. Check at least one service is selected ──
+            if (selectedServices.size === 0) {
+                statusDiv.className = 'text-red-600 font-bold text-sm';
+                statusDiv.textContent = '⚠️ Please select at least one service type.';
+                statusDiv.classList.remove('hidden');
+                return false;
+            }
+
+            // ── 5. reCAPTCHA v3 TOKEN ──
             submitBtn.disabled = true;
-            btnText.textContent = 'SENDING...';
+            btnText.textContent = 'VERIFYING...';
+            spinner.classList.add('active');
+            statusDiv.classList.add('hidden');
 
-            fetch('send-brief.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                submitBtn.disabled = false;
-                btnText.textContent = originalText;
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6Ld_4qItAAAAAHUacfPqIc-h1Hv8-TfjO41NFjGy', { action: 'submit' })
+                    .then(function(token) {
+                        document.getElementById('recaptcha-token').value = token;
 
-                if (data.success) {
-                    // Show success modal
-                    document.getElementById('success-modal').classList.remove('hidden');
-                    // Reset form
-                    form.reset();
-                    document.querySelectorAll('.service-option').forEach(el => el.classList.remove('selected'));
-                    selectedServices.clear();
-                    document.getElementById('services-input').value = '';
-                } else {
-                    alert('Error: ' + (data.error || 'Something went wrong. Please try again.'));
-                }
-            })
-            .catch(error => {
-                submitBtn.disabled = false;
-                btnText.textContent = originalText;
-                alert('Network error. Please check your connection and try again.');
+                        // ── 6. SUBMIT TO WEB3FORMS ──
+                        btnText.textContent = 'SENDING...';
+
+                        const formData = new FormData(form);
+
+                        fetch('https://api.web3forms.com/submit', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            submitBtn.disabled = false;
+                            spinner.classList.remove('active');
+
+                            if (data.success) {
+                                // Show success modal
+                                document.getElementById('success-modal').classList.remove('hidden');
+                                // Reset form
+                                form.reset();
+                                document.getElementById('char-count').textContent = '0';
+                                document.querySelectorAll('.service-option').forEach(el => el.classList.remove('selected'));
+                                selectedServices.clear();
+                                document.getElementById('services-input').value = '';
+                                statusDiv.className = 'hidden';
+                                btnText.textContent = originalText;
+                            } else {
+                                statusDiv.className = 'text-red-600 font-bold text-sm';
+                                statusDiv.textContent = '❌ ' + (data.message || 'Something went wrong. Please try again.');
+                                statusDiv.classList.remove('hidden');
+                                btnText.textContent = originalText;
+                            }
+                        })
+                        .catch(error => {
+                            submitBtn.disabled = false;
+                            spinner.classList.remove('active');
+                            btnText.textContent = originalText;
+                            statusDiv.className = 'text-red-600 font-bold text-sm';
+                            statusDiv.textContent = '❌ Network error. Please check your connection and try again.';
+                            statusDiv.classList.remove('hidden');
+                        });
+                    });
             });
         });
 

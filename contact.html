@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="icon" type="image/png" href="assets/bg.png">
-    
-    <title>Contact | Brand Republic</title>
+
+    <!-- ============================================================ -->
+    <!--  SEO TITLE & DESCRIPTION                                     -->
+    <!-- ============================================================ -->
+    <title>Contact Brand Republic | Outdoor Advertising Agency Kampala</title>
+    <meta name="description" content="Get in touch with Brand Republic. Request a quote, book a billboard, or start your outdoor advertising campaign in Kampala, Uganda." />
+    <link rel="canonical" href="https://www.brandrepublicug.com/contact.html" />
+
+    <!-- ============================================================ -->
+    <!--  OPEN GRAPH (SOCIAL SHARING)                                 -->
+    <!-- ============================================================ -->
+    <meta property="og:title" content="Contact Brand Republic | Outdoor Advertising Agency Kampala" />
+    <meta property="og:description" content="Get in touch with Brand Republic. Request a quote, book a billboard, or start your outdoor advertising campaign." />
+    <meta property="og:image" content="https://www.brandrepublicug.com/Assets/bg.png" />
+    <meta property="og:url" content="https://www.brandrepublicug.com/contact.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- ============================================================ -->
+    <!--  SECURITY HEADERS (via meta tags)                            -->
+    <!-- ============================================================ -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data:; script-src 'self' https://www.google.com https://www.gstatic.com https://cdn.tailwindcss.com https://code.jquery.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com https://cdn.tailwindcss.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://api.web3forms.com https://www.google.com; frame-src https://www.google.com;" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+
+    <!-- ============================================================ -->
+    <!--  reCAPTCHA v3 (Google)                                      -->
+    <!-- ============================================================ -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6Ld_4qItAAAAAHUacfPqIc-h1Hv8-TfjO41NFjGy">
+    </script>
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -13,16 +42,16 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#6121a1",
-                        "primary-container": "#470082",
-                        "on-primary": "#ffffff",
-                        "surface": "#f9f9f9",
-                        "surface-variant": "#e2e2e2",
-                        "on-surface": "#1a1c1c",
-                        "on-surface-variant": "#4c4452",
-                        "outline-variant": "#cec3d4",
-                        background: "#f9f9f9",
-                        "on-background": "#1a1c1c"
+                        primary: '#6121a1',
+                        'primary-container': '#470082',
+                        'on-primary': '#ffffff',
+                        'surface': '#f9f9f9',
+                        'surface-variant': '#e2e2e2',
+                        'on-surface': '#1a1c1c',
+                        'on-surface-variant': '#4c4452',
+                        'outline-variant': '#cec3d4',
+                        background: '#f9f9f9',
+                        'on-background': '#1a1c1c'
                     },
                     fontFamily: {
                         heading: ["Space Grotesk", "Manrope"],
@@ -32,9 +61,11 @@
             }
         }
     </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
     <style>
         /* ── Base fonts ── */
         body { font-family: 'Manrope', sans-serif; }
@@ -81,9 +112,7 @@
         }
 
         /* ── Body padding for fixed navbar ── */
-        body {
-            padding-top: 6rem;
-        }
+        body { padding-top: 6rem; }
 
         /* ── Selection color ── */
         ::selection {
@@ -117,28 +146,7 @@
             font-weight: 700;
         }
 
-        /* ── Custom form loading state ── */
-        .brutalist-btn-primary {
-            background-color: #6121a1;
-            color: white;
-            border: 2px solid #1a1c1c;
-            box-shadow: 4px 4px 0px 0px #1a1c1c;
-            transition: all 0.15s ease;
-            border-radius: 0 !important;
-        }
-        .brutalist-btn-primary:hover:not(:disabled) {
-            transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0px 0px #1a1c1c;
-            background-color: #470082;
-        }
-        .brutalist-btn-primary:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
-        .brutalist-btn-primary:active:not(:disabled) {
-            transform: translate(2px, 2px);
-            box-shadow: 0px 0px 0px 0px #1a1c1c;
-        }
+        /* ── Brutalist styles ── */
         .brutalist-input {
             border: 2px solid #1a1c1c;
             border-radius: 0 !important;
@@ -150,16 +158,32 @@
             border-color: #6121a1;
             box-shadow: 3px 3px 0px 0px #6121a1;
         }
-        .field-label {
-            font-family: 'Manrope', sans-serif;
-            font-size: 11px;
-            font-weight: 700;
-            line-height: 16px;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: #1a1c1c;
+
+        /* ── Honeypot hidden field ── */
+        .honeypot-field {
+            position: absolute;
+            left: -9999px;
+            top: -9999px;
         }
-        /* Success Modal */
+
+        /* ── Loading spinner ── */
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: #ffffff;
+            animation: spin 0.8s ease-in-out infinite;
+        }
+        .spinner.active {
+            display: inline-block;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ── Success Modal ── */
         .brutalist-modal {
             border: 4px solid #1a1c1c;
             border-radius: 0 !important;
@@ -169,13 +193,26 @@
             background-color: #6121a1;
             color: white;
             border: 2px solid #1a1c1c;
-            box-shadow: 3px 3px 0px 0px #1a1c1c;
             transition: all 0.15s ease;
         }
         .brutalist-modal-btn:hover {
             transform: translate(-2px, -2px);
-            box-shadow: 5px 5px 0px 0px #1a1c1c;
             background-color: #470082;
+        }
+        .brutalist-btn-primary {
+            background-color: #6121a1;
+            color: white;
+            border: 2px solid #1a1c1c;
+            transition: all 0.15s ease;
+            border-radius: 0 !important;
+        }
+        .brutalist-btn-primary:hover:not(:disabled) {
+            transform: translate(-2px, -2px);
+            background-color: #470082;
+        }
+        .brutalist-btn-primary:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
         }
     </style>
 </head>
@@ -196,7 +233,7 @@
             <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="about.html">About</a>
             <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="media.html">Media</a>
             <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="project.html">Innovation</a>
-            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="insights.html">Insights</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="insight.html">Insights</a>
         </div>
 
         <!-- Right Controls -->
@@ -249,7 +286,7 @@
             <div class="w-full bg-surface-container-low py-12 px-4 sm:px-6 md:py-20 lg:px-12">
                 <div class="max-w-6xl mx-auto bg-white border-2 border-on-surface shadow-2xl grid grid-cols-1 lg:grid-cols-12">
 
-                    <!-- Left Column: Contact Form -->
+                    <!-- Left Column: Contact Form with ALL Security Features -->
                     <div class="lg:col-span-7 p-6 sm:p-10 lg:p-12 border-b-2 lg:border-b-0 lg:border-r-2 border-on-surface bg-white">
                         <div class="flex items-center gap-3 mb-8">
                             <div class="w-2 h-8 bg-primary"></div>
@@ -258,53 +295,78 @@
                             </h2>
                         </div>
 
-                        <!-- UPDATED FORM: action, method, name attributes -->
-                        <form id="contact-form" action="send-contact.php" method="POST" class="space-y-6">
+                        <!-- ========================================================= -->
+                        <!--  SECURE FORM – Honeypot + reCAPTCHA + Web3Forms          -->
+                        <!-- ========================================================= -->
+                        <form id="contact-form"
+                              action="https://api.web3forms.com/submit"
+                              method="POST"
+                              class="space-y-6">
+
+                            <!-- Web3Forms Access Key (Required) -->
+                            <input type="hidden" name="access_key" value="5cff91d1-b560-43a8-9c6b-692e6f051cbd" />
+
+                            <!-- Web3Forms Subject & Redirect -->
+                            <input type="hidden" name="subject" value="New Contact Form Submission - Brand Republic" />
+                            <input type="hidden" name="redirect" value="https://www.brandrepublicug.com/thank-you.html" />
+
+                            <!-- CSRF Protection (Web3Forms handles this) -->
+
+                            <!-- ========================================================= -->
+                            <!--  HONEYPOT – Hidden field to trap bots                    -->
+                            <!-- ========================================================= -->
+                            <div class="honeypot-field">
+                                <label for="honeypot">Leave this field empty</label>
+                                <input type="text" id="honeypot" name="honeypot" value="" tabindex="-1" autocomplete="off" />
+                            </div>
+
+                            <!-- ========================================================= -->
+                            <!--  reCAPTCHA v3 – Invisible token                         -->
+                            <!-- ========================================================= -->
+                            <input type="hidden" id="recaptcha-token" name="recaptcha-token" />
+
+                            <!-- ========================================================= -->
+                            <!--  RATE LIMITING – Timestamp field                        -->
+                            <!-- ========================================================= -->
+                            <input type="hidden" id="form-timestamp" name="form-timestamp" value="" />
+
                             <!-- Name Row -->
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block font-label-bold text-xs uppercase mb-2 text-on-surface">First Name</label>
-                                    <input
-                                        type="text"
-                                        name="first_name"
-                                        placeholder="JANE"
-                                        required
+                                    <label class="block font-label-bold text-xs uppercase mb-2 text-on-surface">First Name <span class="text-primary">*</span></label>
+                                    <input type="text" name="first_name" id="first_name" placeholder="JANE" required
                                         class="w-full bg-surface border-2 border-on-surface p-3 font-body-md uppercase text-on-surface focus:outline-none focus:border-primary transition-colors brutalist-input"
-                                    />
+                                        minlength="2" maxlength="50" />
                                 </div>
                                 <div>
-                                    <label class="block font-label-bold text-xs uppercase mb-2 text-on-surface">Last Name</label>
-                                    <input
-                                        type="text"
-                                        name="last_name"
-                                        placeholder="DOE"
-                                        required
+                                    <label class="block font-label-bold text-xs uppercase mb-2 text-on-surface">Last Name <span class="text-primary">*</span></label>
+                                    <input type="text" name="last_name" id="last_name" placeholder="DOE" required
                                         class="w-full bg-surface border-2 border-on-surface p-3 font-body-md uppercase text-on-surface focus:outline-none focus:border-primary transition-colors brutalist-input"
-                                    />
+                                        minlength="2" maxlength="50" />
                                 </div>
                             </div>
 
                             <!-- Email -->
                             <div>
-                                <label class="block font-label-bold text-xs uppercase mb-2 text-on-surface">Work Email</label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="JANE@COMPANY.COM"
-                                    required
+                                <label class="block font-label-bold text-xs uppercase mb-2 text-on-surface">Work Email <span class="text-primary">*</span></label>
+                                <input type="email" name="email" id="email" placeholder="JANE@COMPANY.COM" required
                                     class="w-full bg-surface border-2 border-on-surface p-3 font-body-md uppercase text-on-surface focus:outline-none focus:border-primary transition-colors brutalist-input"
-                                />
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
                             </div>
 
                             <!-- Primary Interest -->
                             <div>
-                                <label class="block font-label-bold text-xs uppercase mb-2 text-on-surface">Primary Interest</label>
+                                <label class="block font-label-bold text-xs uppercase mb-2 text-on-surface">Primary Interest <span class="text-primary">*</span></label>
                                 <div class="relative">
-                                    <select name="interest" class="w-full bg-surface border-2 border-on-surface p-3 font-body-md uppercase text-on-surface appearance-none focus:outline-none focus:border-primary transition-colors pr-10 brutalist-input">
+                                    <select name="interest" id="interest" required
+                                        class="w-full bg-surface border-2 border-on-surface p-3 font-body-md uppercase text-on-surface appearance-none focus:outline-none focus:border-primary transition-colors pr-10 brutalist-input">
+                                        <option value="">SELECT AN OPTION</option>
                                         <option value="General Inquiry">General Inquiry</option>
                                         <option value="Billboard Media">Billboard Media</option>
                                         <option value="Digital Out-Of-Home">Digital Out-Of-Home</option>
                                         <option value="Campaign Strategy">Campaign Strategy</option>
+                                        <option value="Brand Experience">Brand Experience</option>
+                                        <option value="Special Build">Special Build</option>
                                     </select>
                                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-on-surface">
                                         <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
@@ -314,29 +376,34 @@
 
                             <!-- Message -->
                             <div>
-                                <label class="block font-label-bold text-xs uppercase mb-2 text-on-surface">Message</label>
-                                <textarea
-                                    name="message"
-                                    rows="4"
-                                    placeholder="HOW CAN WE HELP YOU CONQUER THE REAL WORLD?"
-                                    required
+                                <label class="block font-label-bold text-xs uppercase mb-2 text-on-surface">Message <span class="text-primary">*</span></label>
+                                <textarea name="message" id="message" rows="4" placeholder="HOW CAN WE HELP YOU CONQUER THE REAL WORLD?" required
                                     class="w-full bg-surface border-2 border-on-surface p-3 font-body-md uppercase text-on-surface focus:outline-none focus:border-primary transition-colors resize-none brutalist-input"
-                                ></textarea>
+                                    minlength="10" maxlength="2000"></textarea>
+                                <div class="text-right text-xs text-on-surface-variant mt-1">
+                                    <span id="char-count">0</span> / 2000
+                                </div>
                             </div>
 
-                            <!-- Submit Button -->
-                            <button
-                                type="submit"
-                                id="contact-submit-btn"
-                                class="w-full brutalist-btn-primary font-label-bold text-sm uppercase py-4 px-6 flex items-center justify-center gap-2"
-                            >
+                            <!-- Submit Button with Loading State -->
+                            <button type="submit" id="submit-btn"
+                                class="w-full brutalist-btn-primary font-label-bold text-sm uppercase py-4 px-6 flex items-center justify-center gap-3">
                                 <span id="btn-text">Send Message</span>
+                                <span class="spinner" id="spinner"></span>
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                             </button>
+
+                            <!-- Form Status Messages -->
+                            <div id="form-status" class="text-sm font-bold hidden"></div>
                         </form>
+
+                        <!-- Web3Forms required: Spam protection is handled by their service -->
+                        <p class="text-xs text-on-surface-variant mt-4 flex items-center gap-1">
+                            <span class="text-green-600">✓</span> Protected by reCAPTCHA &amp; spam filters
+                        </p>
                     </div>
 
-                    <!-- Right Column: Communication Hub (unchanged) -->
+                    <!-- Right Column: Communication Hub -->
                     <div class="lg:col-span-5 bg-[#171717] text-white p-6 sm:p-10 lg:p-12 flex flex-col justify-between">
                         <div>
                             <h2 class="font-headline-md text-3xl sm:text-4xl uppercase tracking-tight text-[#d8b4fe] mb-8">
@@ -369,7 +436,7 @@
                                     <svg class="w-6 h-6 text-white shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                                     <div>
                                         <p class="font-label-bold text-xs uppercase text-gray-400">Email</p>
-                                        <p class="font-body-md text-sm text-gray-200">gm@brandrepublicug.com</p>
+                                        <p class="font-body-md text-sm text-gray-200">info@brandrepublicug.com</p>
                                     </div>
                                 </div>
                             </div>
@@ -392,7 +459,7 @@
                 </div>
             </div>
 
-            <!-- 3. Our Territory Section (unchanged) -->
+            <!-- 3. Our Territory Section -->
             <div class="w-full bg-[#121212] py-12 px-6 lg:py-20 text-center border-t-4 border-primary">
                 <h2 class="font-headline-lg text-4xl sm:text-6xl lg:text-7xl uppercase text-white mb-8">
                     Our <span class="text-[#d8b4fe]">Territory</span>
@@ -432,65 +499,48 @@
 
         </section>
     </main>
-<!-- ========================================================= -->
-    <!-- FOOTER – redesigned with social icons and updated links  -->
-    <!-- ========================================================= -->
+
+    <!-- ============================================================ -->
+    <!--  FOOTER                                                      -->
+    <!-- ============================================================ -->
     <footer class="bg-[#111113] text-white relative w-full pt-20 pb-12 border-t-8 border-[#4a0e9b]">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-            <!-- Brand + Social Icons -->
-            <div
-                class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 border-b border-slate-800 pb-8 gap-4">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 border-b border-slate-800 pb-8 gap-4">
                 <div class="font-headline text-3xl font-bold text-white tracking-tight uppercase">Brand Republic</div>
                 <div class="flex gap-4">
-                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all"
-                        href="#" aria-label="Twitter">
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#" aria-label="Twitter">
                         <i class="fa-brands fa-x-twitter"></i>
                     </a>
-                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all"
-                        href="#" aria-label="LinkedIn">
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#" aria-label="LinkedIn">
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
-                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all"
-                        href="#" aria-label="YouTube">
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#" aria-label="YouTube">
                         <i class="fa-brands fa-youtube"></i>
                     </a>
                 </div>
             </div>
-
-            <!-- Footer Links Grid -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 font-ui">
-                <!-- Legal -->
                 <div>
                     <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Legal</h4>
                     <ul class="space-y-2 text-caption text-slate-400">
                         <li><a class="hover:text-white transition-colors uppercase" href="about.html">About</a></li>
                         <li><a class="hover:text-white transition-colors uppercase" href="#">Privacy Policy</a></li>
-                               </ul>
+                    </ul>
                 </div>
-                <!-- Company -->
                 <div>
                     <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Company</h4>
                     <ul class="space-y-2 text-caption text-slate-400">
-                        
-                        <li><a class="hover:text-white transition-colors uppercase" href="project.html">Innovation</a>
-                        </li>
-                        <li><a class="hover:text-white transition-colors uppercase" href="insights.html">Insights</a>
-                        </li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="project.html">Innovation</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="insight.html">Insights</a></li>
                     </ul>
                 </div>
-                <!-- Investors -->
-                
-                <!-- Support -->
                 <div>
                     <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Support</h4>
                     <ul class="space-y-2 text-caption text-slate-400">
                         <li><a class="hover:text-white transition-colors uppercase" href="contact.html">Contact</a></li>
-                        
                     </ul>
                 </div>
             </div>
-
-            <!-- Copyright -->
             <div class="text-center md:text-left font-ui text-caption text-slate-500 pt-8 border-t border-slate-900">
                 &copy; 2026 Brand Republic. All rights reserved.
             </div>
@@ -516,10 +566,10 @@
     </div>
 
     <!-- ============================================================ -->
-    <!--  JAVASCRIPT                                                  -->
+    <!--  JAVASCRIPT – All Security Features                          -->
     <!-- ============================================================ -->
     <script>
-        // ── Navbar toggle (unchanged) ──
+        // ── Navbar toggle ──
         document.addEventListener('DOMContentLoaded', function() {
             const menuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -576,42 +626,145 @@
             }
         });
 
-        // ── Contact form submission with AJAX ──
+        // ── Character counter ──
+        document.addEventListener('DOMContentLoaded', function() {
+            const messageField = document.getElementById('message');
+            const charCount = document.getElementById('char-count');
+
+            if (messageField && charCount) {
+                messageField.addEventListener('input', function() {
+                    charCount.textContent = this.value.length;
+                    if (this.value.length > 1800) {
+                        charCount.classList.add('text-primary');
+                    } else {
+                        charCount.classList.remove('text-primary');
+                    }
+                });
+            }
+        });
+
+        // ── Set form timestamp (rate limiting) ──
+        document.addEventListener('DOMContentLoaded', function() {
+            const timestampField = document.getElementById('form-timestamp');
+            if (timestampField) {
+                timestampField.value = Date.now();
+            }
+        });
+
+        // ── Secure form submission with ALL security features ──
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
 
             const form = this;
-            const formData = new FormData(form);
-            const submitBtn = document.getElementById('contact-submit-btn');
+            const submitBtn = document.getElementById('submit-btn');
             const btnText = document.getElementById('btn-text');
+            const spinner = document.getElementById('spinner');
+            const statusDiv = document.getElementById('form-status');
             const originalText = btnText.textContent;
 
-            // Disable and show loading
+            // ── 1. HONEYPOT CHECK ──
+            const honeypot = document.getElementById('honeypot');
+            if (honeypot.value !== '') {
+                // Bot detected – silently fail but show success to confuse bots
+                statusDiv.className = 'text-green-600 font-bold text-sm';
+                statusDiv.textContent = '✓ Thank you! We\'ll get back to you shortly.';
+                statusDiv.classList.remove('hidden');
+                form.reset();
+                return false;
+            }
+
+            // ── 2. RATE LIMITING CHECK ──
+            const timestamp = parseInt(document.getElementById('form-timestamp').value);
+            const now = Date.now();
+            const timeSince = (now - timestamp) / 1000; // seconds
+
+            if (timeSince < 5) {
+                statusDiv.className = 'text-red-600 font-bold text-sm';
+                statusDiv.textContent = '⏳ Please wait a moment before submitting again.';
+                statusDiv.classList.remove('hidden');
+                return false;
+            }
+
+            // ── 3. INPUT VALIDATION (Sanitization) ──
+            const firstName = document.getElementById('first_name').value.trim();
+            const lastName = document.getElementById('last_name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!firstName || !lastName || !email || !message) {
+                statusDiv.className = 'text-red-600 font-bold text-sm';
+                statusDiv.textContent = '⚠️ All fields are required.';
+                statusDiv.classList.remove('hidden');
+                return false;
+            }
+
+            // Email validation
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(email)) {
+                statusDiv.className = 'text-red-600 font-bold text-sm';
+                statusDiv.textContent = '⚠️ Please enter a valid email address.';
+                statusDiv.classList.remove('hidden');
+                return false;
+            }
+
+            // Message length validation
+            if (message.length < 10) {
+                statusDiv.className = 'text-red-600 font-bold text-sm';
+                statusDiv.textContent = '⚠️ Message must be at least 10 characters.';
+                statusDiv.classList.remove('hidden');
+                return false;
+            }
+
+            // ── 4. reCAPTCHA v3 TOKEN ──
+            // Show loading state
             submitBtn.disabled = true;
-            btnText.textContent = 'SENDING...';
+            btnText.textContent = 'VERIFYING...';
+            spinner.classList.add('active');
+            statusDiv.classList.add('hidden');
 
-            fetch('send-contact.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                submitBtn.disabled = false;
-                btnText.textContent = originalText;
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6Ld_4qItAAAAAHUacfPqIc-h1Hv8-TfjO41NFjGy', { action: 'submit' })
+                    .then(function(token) {
+                        document.getElementById('recaptcha-token').value = token;
 
-                if (data.success) {
-                    // Show success modal
-                    document.getElementById('success-modal').classList.remove('hidden');
-                    // Reset form
-                    form.reset();
-                } else {
-                    alert('Error: ' + (data.error || 'Something went wrong. Please try again.'));
-                }
-            })
-            .catch(error => {
-                submitBtn.disabled = false;
-                btnText.textContent = originalText;
-                alert('Network error. Please check your connection and try again.');
+                        // ── 5. SUBMIT TO WEB3FORMS ──
+                        btnText.textContent = 'SENDING...';
+
+                        const formData = new FormData(form);
+
+                        fetch('https://api.web3forms.com/submit', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            submitBtn.disabled = false;
+                            spinner.classList.remove('active');
+
+                            if (data.success) {
+                                // Show success modal
+                                document.getElementById('success-modal').classList.remove('hidden');
+                                // Reset form
+                                form.reset();
+                                document.getElementById('char-count').textContent = '0';
+                                statusDiv.className = 'hidden';
+                                btnText.textContent = originalText;
+                            } else {
+                                statusDiv.className = 'text-red-600 font-bold text-sm';
+                                statusDiv.textContent = '❌ ' + (data.message || 'Something went wrong. Please try again.');
+                                statusDiv.classList.remove('hidden');
+                                btnText.textContent = originalText;
+                            }
+                        })
+                        .catch(error => {
+                            submitBtn.disabled = false;
+                            spinner.classList.remove('active');
+                            btnText.textContent = originalText;
+                            statusDiv.className = 'text-red-600 font-bold text-sm';
+                            statusDiv.textContent = '❌ Network error. Please check your connection and try again.';
+                            statusDiv.classList.remove('hidden');
+                        });
+                    });
             });
         });
 

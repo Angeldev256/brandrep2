@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ============================================================ -->
+    <!--  SEO TITLE & DESCRIPTION                                     -->
+    <!-- ============================================================ -->
+    <title>Thank You | Brand Republic – We'll Be in Touch</title>
+    <meta name="description" content="Thank you for contacting Brand Republic. Our team will review your message and get back to you within 24 hours." />
+    <link rel="canonical" href="https://www.brandrepublicug.com/thank-you.html" />
+
+    <!-- ============================================================ -->
+    <!--  OPEN GRAPH (SOCIAL SHARING)                                 -->
+    <!-- ============================================================ -->
+    <meta property="og:title" content="Thank You | Brand Republic" />
+    <meta property="og:description" content="Thank you for contacting Brand Republic. Our team will get back to you within 24 hours." />
+    <meta property="og:image" content="https://www.brandrepublicug.com/Assets/bg.png" />
+    <meta property="og:url" content="https://www.brandrepublicug.com/thank-you.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- ============================================================ -->
+    <!--  SECURITY HEADERS                                            -->
+    <!-- ============================================================ -->
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6121a1',
+                        'primary-container': '#470082',
+                        'on-primary': '#ffffff',
+                        'surface': '#f9f9f9',
+                        'surface-variant': '#e2e2e2',
+                        'on-surface': '#1a1c1c',
+                        'on-surface-variant': '#4c4452',
+                        'outline-variant': '#cec3d4',
+                        background: '#f9f9f9',
+                        'on-background': '#1a1c1c'
+                    },
+                    fontFamily: {
+                        heading: ["Space Grotesk", "Manrope"],
+                        body: ["Manrope", "Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <style>
+        /* ── Base fonts ── */
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+
+        /* ── Navbar utilities ── */
+        .font-label-bold {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+        }
+        .text-label-bold {
+            font-size: 14px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* ── Hamburger animation ── */
+        .bar {
+            transition: all 0.3s ease;
+        }
+        .hamburger-active .bar:nth-child(1) {
+            transform: rotate(45deg) translateY(7px);
+        }
+        .hamburger-active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-active .bar:nth-child(3) {
+            transform: rotate(-45deg) translateY(-7px);
+        }
+
+        /* ── Navbar backdrop blur ── */
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* ── Pulse glow for CTA ── */
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(71, 0, 130, 0.4); }
+            50% { box-shadow: 0 0 0 12px rgba(71, 0, 130, 0); }
+        }
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        /* ── Body padding for fixed navbar ── */
+        body { padding-top: 6rem; }
+
+        /* ── Selection color ── */
+        ::selection {
+            background: #4a0e9b;
+            color: #ffffff;
+        }
+
+        /* ── Font classes ── */
+        .font-headline-md {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+        .font-display-xl {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+        .font-body-md {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 400;
+        }
+        .font-body-lg {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 500;
+        }
+
+        /* ── Brutalist styles ── */
+        .brutalist-btn-purple {
+            background-color: #6121a1;
+            color: #ffffff;
+            border: 2px solid #1a1c1c;
+            box-shadow: 4px 4px 0px 0px #1a1c1c;
+            border-radius: 0px !important;
+            transition: all 0.15s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        .brutalist-btn-purple:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #1a1c1c;
+            background-color: #470082;
+        }
+
+        .brutalist-card {
+            background-color: #ffffff;
+            border: 2px solid #1a1c1c;
+            border-radius: 0px !important;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .brutalist-card:hover {
+            transform: translate(-3px, -3px);
+            border-color: #470082;
+        }
+
+        /* ── Confetti / Particle animation ── */
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+            50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+        }
+        .float-icon {
+            animation: float 4s ease-in-out infinite;
+        }
+        .float-icon:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+        .float-icon:nth-child(3) {
+            animation-delay: 1.2s;
+        }
+        .float-icon:nth-child(4) {
+            animation-delay: 2s;
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface antialiased selection:bg-primary selection:text-on-primary">
+
+    <!-- ============================================================ -->
+    <!--  NAVBAR                                                      -->
+    <!-- ============================================================ -->
+    <nav class="fixed top-0 w-full z-[100] h-24 bg-surface/90 backdrop-blur-md border-b-2 border-outline-variant flex justify-between items-center px-[4rem] max-w-full mx-auto nav-blur">
+
+        <!-- Logo -->
+        <a href="/" class="h-auto py-2 flex items-center focus:outline-none">
+            <img src="/Assets/bg.png" alt="Brand Republic Logo" class="h-20 md:h-25 w-auto object-contain">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="font-ui hidden lg:flex gap-6 items-center">
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="about.html">About</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="media.html">Media</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="project.html">Innovation</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide" href="insight.html">Insights</a>
+        </div>
+
+        <!-- Right Controls -->
+        <div class="flex items-center gap-4">
+            <a href="quotation.html" class="hidden lg:inline-block bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 shadow-sm">
+                Request Quotation
+            </a>
+            <a href="contact.html" class="hidden lg:inline-block bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-2 px-6 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg pulse-glow">
+                Contact Us
+            </a>
+            <!-- Mobile hamburger -->
+            <button id="mobile-menu-btn" class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none z-[110]" aria-label="Toggle Navigation Menu">
+                <span class="bar w-6 h-0.5 bg-on-surface"></span>
+                <span class="bar w-6 h-0.5 bg-on-surface"></span>
+                <span class="bar w-6 h-0.5 bg-on-surface"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden fixed inset-x-0 top-24 bg-surface border-b-2 border-outline-variant p-6 flex-col gap-4 shadow-xl lg:hidden transition-all duration-300">
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/about.html">About Us</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/media.html">Media</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/project.html">Innovation</a>
+            <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-bold text-label-bold uppercase tracking-wide py-2 border-b border-outline-variant/30" href="/insight.html">Insights</a>
+            <a href="/quotation.html" class="mt-4 w-full text-center bg-transparent text-primary border-2 border-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-300 block">Request Quotation</a>
+            <a href="contact.html" class="mt-2 w-full text-center bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-wider py-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 shadow-lg block">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- ============================================================ -->
+    <!--  THANK YOU CONTENT                                           -->
+    <!-- ============================================================ -->
+    <main class="pt-20 min-h-screen flex items-center">
+        <section class="w-full bg-surface text-on-surface font-body-md overflow-hidden py-16 px-4 sm:px-8">
+
+            <div class="max-w-4xl mx-auto">
+
+                <!-- Header with Brand Badge -->
+                <div class="text-center mb-6">
+                    <span class="inline-block bg-primary text-on-primary font-headline font-bold text-xs uppercase tracking-wider px-4 py-1.5 border-2 border-on-surface">
+                        ✓ Message Delivered
+                    </span>
+                </div>
+
+                <!-- Main Thank You Card -->
+                <div class="brutalist-card p-8 sm:p-12 md:p-16 text-center border-4 border-on-surface">
+
+                    <!-- Floating Checkmark Icons -->
+                    <div class="flex justify-center gap-4 mb-6">
+                        <span class="material-symbols-outlined text-4xl text-primary float-icon">done</span>
+                        <span class="material-symbols-outlined text-4xl text-primary float-icon">done</span>
+                        <span class="material-symbols-outlined text-4xl text-primary float-icon">done</span>
+                        <span class="material-symbols-outlined text-4xl text-primary float-icon">done</span>
+                    </div>
+
+                    <!-- Large Checkmark -->
+                    <div class="w-24 h-24 bg-primary text-on-primary border-4 border-on-surface flex items-center justify-center mx-auto mb-6 shadow-[6px_6px_0px_0px_#1a1c1c]">
+                        <span class="material-symbols-outlined text-5xl">check</span>
+                    </div>
+
+                    <!-- Thank You Title -->
+                    <h1 class="font-headline font-bold text-4xl sm:text-5xl md:text-6xl uppercase tracking-tight text-on-surface mb-4">
+                        Thank You!
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="font-headline font-bold text-xl sm:text-2xl text-primary uppercase tracking-wide mb-6">
+                        We've received your message
+                    </p>
+
+                    <!-- Divider -->
+                    <div class="w-16 h-1 bg-primary mx-auto mb-6"></div>
+
+                    <!-- Description -->
+                    <p class="font-body text-base sm:text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed mb-8">
+                        Our strategy team is currently reviewing your request and will get back to you <strong class="text-primary">within 24 hours</strong> with tailored recommendations.
+                    </p>
+
+                    <!-- What Happens Next -->
+                    <div class="border-2 border-on-surface p-6 sm:p-8 bg-surface-container-low text-left mb-8">
+                        <h3 class="font-headline font-bold text-sm uppercase tracking-wider text-primary mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg">info</span>
+                            What Happens Next?
+                        </h3>
+                        <ul class="space-y-3 font-body text-sm text-on-surface-variant">
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">1.</span>
+                                <span>Our team reviews your inquiry and campaign requirements.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">2.</span>
+                                <span>We prepare a custom media recommendation tailored to your goals.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-primary font-bold">3.</span>
+                                <span>You receive a detailed proposal with pricing and next steps.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="/" class="brutalist-btn-purple font-body font-bold text-sm uppercase py-3.5 px-8 flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-base">home</span>
+                            Return to Home
+                        </a>
+                        <a href="media.html" class="bg-surface text-on-surface border-2 border-on-surface font-body font-bold text-sm uppercase py-3.5 px-8 flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-colors duration-300">
+                            <span class="material-symbols-outlined text-base">explore</span>
+                            Explore Media
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Contact Info -->
+                <div class="mt-8 text-center">
+                    <p class="font-body text-sm text-on-surface-variant">
+                        Need immediate assistance?
+                        <a href="tel:+256764904754" class="text-primary font-bold hover:underline">+256 764 904 754</a>
+                        or
+                        <a href="mailto:gm@brandrepublicug.com" class="text-primary font-bold hover:underline">gm@brandrepublicug.com</a>
+                    </p>
+                    <div class="flex justify-center gap-4 mt-4">
+                        <a href="https://wa.me/256764904754" target="_blank" class="text-on-surface-variant hover:text-primary transition-colors">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                        </a>
+                        <a href="https://linkedin.com/company/brand-republic-uganda" target="_blank" class="text-on-surface-variant hover:text-primary transition-colors">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================================ -->
+    <!--  FOOTER                                                      -->
+    <!-- ============================================================ -->
+    <footer class="bg-[#111113] text-white relative w-full pt-20 pb-12 border-t-8 border-[#4a0e9b]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 border-b border-slate-800 pb-8 gap-4">
+                <div class="font-headline text-3xl font-bold text-white tracking-tight uppercase">Brand Republic</div>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#" aria-label="Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-white hover:bg-[#4a0e9b] hover:border-[#4a0e9b] transition-all" href="#" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 font-ui">
+                <div>
+                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Legal</h4>
+                    <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="about.html">About</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Company</h4>
+                    <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="project.html">Innovation</a></li>
+                        <li><a class="hover:text-white transition-colors uppercase" href="insight.html">Insights</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[#6d13e2] mb-4 text-caption uppercase tracking-widest">Support</h4>
+                    <ul class="space-y-2 text-caption text-slate-400">
+                        <li><a class="hover:text-white transition-colors uppercase" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center md:text-left font-ui text-caption text-slate-500 pt-8 border-t border-slate-900">
+                &copy; 2026 Brand Republic. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================ -->
+    <!--  JAVASCRIPT                                                  -->
+    <!-- ============================================================ -->
+    <script>
+        // ── Navbar toggle ──
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuBtn && mobileMenu) {
+                const bars = menuBtn.querySelectorAll('.bar');
+
+                menuBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const isOpen = !mobileMenu.classList.contains('hidden');
+
+                    if (isOpen) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                        bars.forEach(function(bar, index) {
+                            if (index === 0) bar.classList.remove('rotate-45', 'translate-y-2');
+                            if (index === 1) bar.classList.remove('opacity-0');
+                            if (index === 2) bar.classList.remove('-rotate-45', '-translate-y-2');
+                        });
+                    } else {
+                        mobileMenu.classList.remove('hidden');
+                        mobileMenu.classList.add('flex');
+                        bars.forEach(function(bar, index) {
+                            if (index === 0) bar.classList.add('rotate-45', 'translate-y-2');
+                            if (index === 1) bar.classList.add('opacity-0');
+                            if (index === 2) bar.classList.add('-rotate-45', '-translate-y-2');
+                        });
+                    }
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                        bars.forEach(function(bar, index) {
+                            if (index === 0) bar.classList.remove('rotate-45', 'translate-y-2');
+                            if (index === 1) bar.classList.remove('opacity-0');
+                            if (index === 2) bar.classList.remove('-rotate-45', '-translate-y-2');
+                        });
+                    }
+                });
+
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                        bars.forEach(function(bar, index) {
+                            if (index === 0) bar.classList.remove('rotate-45', 'translate-y-2');
+                            if (index === 1) bar.classList.remove('opacity-0');
+                            if (index === 2) bar.classList.remove('-rotate-45', '-translate-y-2');
+                        });
+                    }
+                });
+            }
+        });
+
+        // ── Optional: Confetti effect on load ──
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple confetti-like animation using the floating icons
+            const icons = document.querySelectorAll('.float-icon');
+            icons.forEach((icon, index) => {
+                icon.style.animationDelay = (index * 0.3) + 's';
+            });
+        });
+    </script>
+
+    <!-- Font Awesome for footer icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</body>
+</html>
