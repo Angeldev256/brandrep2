@@ -304,13 +304,18 @@
                               class="space-y-6">
 
                             <!-- Web3Forms Access Key (Required) -->
-                            <input type="hidden" name="access_key" value="5cff91d1-b560-43a8-9c6b-692e6f051cbd" />
+                            <input type="hidden" name="access_key" value="87114d25-e0ab-47c3-8ed9-0e3f158df1da" />
 
                             <!-- Web3Forms Subject & Redirect -->
                             <input type="hidden" name="subject" value="New Contact Form Submission - Brand Republic" />
                             <input type="hidden" name="redirect" value="https://www.brandrepublicug.com/thank-you.html" />
 
-                            <!-- CSRF Protection (Web3Forms handles this) -->
+                            <!-- ========================================================= -->
+                            <!--  🔥 IGNORE THESE FIELDS IN EMAIL (Hides tokens)          -->
+                            <!-- ========================================================= -->
+                            <input type="hidden" name="_ignore" value="recaptcha-token" />
+                            <input type="hidden" name="_ignore" value="form-timestamp" />
+                            <input type="hidden" name="_ignore" value="honeypot" />
 
                             <!-- ========================================================= -->
                             <!--  HONEYPOT – Hidden field to trap bots                    -->
@@ -670,13 +675,14 @@
                 statusDiv.textContent = '✓ Thank you! We\'ll get back to you shortly.';
                 statusDiv.classList.remove('hidden');
                 form.reset();
+                document.getElementById('char-count').textContent = '0';
                 return false;
             }
 
             // ── 2. RATE LIMITING CHECK ──
             const timestamp = parseInt(document.getElementById('form-timestamp').value);
             const now = Date.now();
-            const timeSince = (now - timestamp) / 1000; // seconds
+            const timeSince = (now - timestamp) / 1000;
 
             if (timeSince < 5) {
                 statusDiv.className = 'text-red-600 font-bold text-sm';
@@ -716,7 +722,6 @@
             }
 
             // ── 4. reCAPTCHA v3 TOKEN ──
-            // Show loading state
             submitBtn.disabled = true;
             btnText.textContent = 'VERIFYING...';
             spinner.classList.add('active');
