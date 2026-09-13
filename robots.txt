@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block unnecessary folders if needed
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://www.brandrepublicug.com/sitemap.xml

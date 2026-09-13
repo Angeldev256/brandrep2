@@ -1,6 +1,6 @@
 // chatbot.js – Include this file on every page
 
-(function() {
+(function () {
     'use strict';
 
     // ── 1. Inject the chatbot HTML ──
@@ -31,7 +31,9 @@
         <!-- Header -->
         <div class="bg-gradient-to-r from-[#470082] to-[#6121a1] text-white px-5 py-4 flex items-center justify-between flex-shrink-0">
           <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center font-bold text-base border-2 border-white/30">BR</div>
+           <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center border-2 border-white/30 overflow-hidden">
+  <img src="/Assets/bg.png" alt="Brand Republic Logo" class="w-full h-full object-contain p-1" />
+</div>
             <div>
               <div class="font-bold text-sm">Brand Republic</div>
               <div class="text-xs opacity-75">✦ Online • Ready to help</div>
@@ -134,7 +136,7 @@
 
     // ── 4. Initialize the chatbot logic ──
     // Wait a tick for DOM to be ready
-    setTimeout(function() {
+    setTimeout(function () {
         // DOM refs
         var toggle = document.getElementById('brChatToggle');
         var windowEl = document.getElementById('brChatWindow');
@@ -219,12 +221,12 @@
         function renderQuickReplies() {
             var wrap = document.createElement('div');
             wrap.className = 'flex flex-wrap gap-2 mt-2';
-            quickReplies.forEach(function(q) {
+            quickReplies.forEach(function (q) {
                 var btn = document.createElement('button');
                 btn.className =
                     'br-quick-reply-btn bg-gray-100 border border-gray-300 rounded-full px-3.5 py-1 text-xs font-semibold text-[#470082] transition-all duration-200 cursor-pointer';
                 btn.textContent = q.label;
-                btn.addEventListener('click', function() {
+                btn.addEventListener('click', function () {
                     input.value = q.value;
                     sendMessage();
                 });
@@ -240,7 +242,7 @@
                 'self-end bg-gradient-to-r from-[#470082] to-[#6121a1] text-white rounded-2xl rounded-br-none px-4 py-2.5 text-sm shadow-sm max-w-[85%]');
 
             var lines = text.split('\n');
-            lines.forEach(function(line, index) {
+            lines.forEach(function (line, index) {
                 if (index > 0) {
                     div.appendChild(document.createElement('br'));
                 }
@@ -295,7 +297,7 @@
             showTyping();
 
             var delay = 400 + Math.random() * 500;
-            setTimeout(function() {
+            setTimeout(function () {
                 hideTyping();
                 var reply = getResponse(text);
                 var qr = (text.toLowerCase().includes('help') || text.toLowerCase().includes('hi') ||
@@ -315,7 +317,7 @@
             toggle.querySelector('.br-icon-open').classList.add('hidden');
             toggle.querySelector('.br-icon-close').classList.remove('hidden');
             if (dot) dot.style.display = 'none';
-            setTimeout(function() { input.focus(); }, 400);
+            setTimeout(function () { input.focus(); }, 400);
             var firstMsg = messages.querySelector('.br-message.bot');
             if (firstMsg && !firstMsg.querySelector('.flex.flex-wrap')) {
                 var qr = renderQuickReplies();
@@ -339,20 +341,20 @@
         toggle.addEventListener('click', toggleChat);
         closeBtn.addEventListener('click', closeChat);
         sendBtn.addEventListener('click', sendMessage);
-        input.addEventListener('keydown', function(e) {
+        input.addEventListener('keydown', function (e) {
             if (e.key === 'Enter') {
                 e.preventDefault();
                 sendMessage();
             }
         });
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && isOpen) {
                 closeChat();
             }
         });
 
         // ── Add quick replies to welcome message after a moment ──
-        setTimeout(function() {
+        setTimeout(function () {
             var firstMsg = messages.querySelector('.br-message.bot');
             if (firstMsg && !firstMsg.querySelector('.flex.flex-wrap')) {
                 var qr = renderQuickReplies();
@@ -361,7 +363,7 @@
         }, 800);
 
         // ── Hide dot on first click ──
-        toggle.addEventListener('click', function() {
+        toggle.addEventListener('click', function () {
             if (dot) dot.style.display = 'none';
         });
 
